@@ -6,7 +6,7 @@ public final class AfterRome extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        getName();
+        System.out.println("Если что меня прервали");
 
     }
 
