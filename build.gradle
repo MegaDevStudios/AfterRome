@@ -15,6 +15,10 @@ repositories {
         name = "sonatype"
         url = "https://oss.sonatype.org/content/groups/public/"
     }
+    maven {
+        name = 'citizens-repo'
+        url = 'https://maven.citizensnpcs.co/repo'
+    }
 }
 
 dependencies {
@@ -26,6 +30,10 @@ dependencies {
 
     testCompileOnly 'org.projectlombok:lombok:1.18.32'
     testAnnotationProcessor 'org.projectlombok:lombok:1.18.32'
+
+    compileOnly('net.citizensnpcs:citizens-main:2.0.33-SNAPSHOT') {
+        exclude group: '*', module: '*'
+    }
 }
 
 def targetJavaVersion = 17
