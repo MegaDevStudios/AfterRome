@@ -1,20 +1,21 @@
 package com.megadev.afterrome;
 
 import com.megadev.afterrome.config.ConfigManager;
-import org.bukkit.plugin.java.JavaPlugin;
+import dev.mega.megacore.MegaCore;
 
-public final class AfterRome extends JavaPlugin {
+public final class AfterRome extends MegaCore {
+
     @Override
-    public void onEnable() {
+    public void enable() {
+        setupManagers();
+    }
+
+    @Override
+    public void disable() {
 
     }
 
     private void setupManagers() {
         ConfigManager.init(this);
-    }
-
-    @Override
-    public void onDisable() {
-
     }
 }
