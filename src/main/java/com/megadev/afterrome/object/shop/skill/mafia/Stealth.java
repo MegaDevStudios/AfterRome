@@ -1,6 +1,11 @@
 package com.megadev.afterrome.object.shop.skill.mafia;
 
+import com.megadev.afterrome.object.ShopItem;
 import com.megadev.afterrome.object.shop.skill.Skill;
+import lombok.Getter;
+import org.bukkit.inventory.ItemStack;
 
-public class Stealth implements Skill {
+public class Stealth implements Skill, ShopItem {
+    @Getter
+    private ItemStack item;
 }

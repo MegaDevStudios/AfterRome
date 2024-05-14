@@ -1,6 +1,7 @@
 package com.megadev.afterrome;
 
 import com.megadev.afterrome.config.ConfigManager;
+
 import dev.mega.megacore.MegaCore;
 
 public final class AfterRome extends MegaCore {

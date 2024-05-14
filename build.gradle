@@ -11,18 +11,28 @@ repositories {
         name = "spigotmc-repo"
         url = "https://hub.spigotmc.org/nexus/content/repositories/snapshots/"
     }
+
     maven {
         name = "sonatype"
         url = "https://oss.sonatype.org/content/groups/public/"
     }
+
     maven {
         name = 'citizens-repo'
         url = 'https://maven.citizensnpcs.co/repo'
+    }
+
+    maven {
+        name = "github"
+        url = uri("https://maven.pkg.github.com/BGMP/CommandFramework")
+
     }
 }
 
 dependencies {
     implementation files (new File("libs/megacore-1.0-beta.jar"))
+
+    implementation 'cl.bgm:command-framework-bukkit:1.0.4-SNAPSHOT'
 
     implementation 'org.jetbrains:annotations:24.0.0'
     compileOnly "org.spigotmc:spigot-api:1.20.4-R0.1-SNAPSHOT"
