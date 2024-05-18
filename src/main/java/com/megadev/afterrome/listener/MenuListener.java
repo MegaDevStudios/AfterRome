@@ -12,8 +12,7 @@ import org.bukkit.inventory.ItemStack;
 
 public class MenuListener implements Listener {
     @EventHandler(priority = EventPriority.NORMAL)
-    public void onMenuClick(InventoryClickEvent event)
-    {
+    public void onMenuClick(InventoryClickEvent event) {
         if (!(event.getWhoClicked() instanceof Player)) return;
 
         Inventory inventory = event.getView().getTopInventory();
@@ -27,6 +26,6 @@ public class MenuListener implements Listener {
         if (item == null) return;
         if (event.getClickedInventory() != inventory) return;
 
-        menu.handleMenu(event);
+        menu.handleClick(event);
     }
 }

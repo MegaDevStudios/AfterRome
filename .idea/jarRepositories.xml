@@ -36,5 +36,15 @@
       <option name="name" value="github" />
       <option name="url" value="https://maven.pkg.github.com/BGMP/CommandFramework" />
     </remote-repository>
+    <remote-repository>
+      <option name="id" value="authlib" />
+      <option name="name" value="authlib" />
+      <option name="url" value="https://mvnrepository.com/artifact/com.mojang/authlib" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="minecraft-repo" />
+      <option name="name" value="minecraft-repo" />
+      <option name="url" value="https://libraries.minecraft.net/" />
+    </remote-repository>
   </component>
 </project>

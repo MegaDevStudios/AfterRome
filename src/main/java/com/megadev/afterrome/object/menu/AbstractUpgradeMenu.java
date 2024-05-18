@@ -1,16 +1,20 @@
 package com.megadev.afterrome.object.menu;
 
 
-import org.bukkit.entity.Player;
-import org.bukkit.event.inventory.InventoryType;
+import com.megadev.afterrome.object.menu.shop.upgrade.skill.Skill;
 
-public abstract class AbstractUpgradeMenu extends AbstractMenu implements UpgradeMenu {
+import com.megadev.afterrome.object.user.User;
 
-    public AbstractUpgradeMenu(Player player, int rows) {
-        super(player, rows);
+public abstract class AbstractUpgradeMenu extends AbstractMenu {
+
+    public AbstractUpgradeMenu(User user, Skill skill) {
+        super(user, 3);
     }
 
-    public AbstractUpgradeMenu(Player player, InventoryType type) {
-        super(player, type);
+    @Override
+    public void open() {
+
+
+        super.open();
     }
 }

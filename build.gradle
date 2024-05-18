@@ -25,11 +25,16 @@ repositories {
     maven {
         name = "github"
         url = uri("https://maven.pkg.github.com/BGMP/CommandFramework")
-
+    }
+    maven {
+        name = 'minecraft-repo'
+        url = 'https://libraries.minecraft.net/'
     }
 }
 
 dependencies {
+    compileOnly group: 'com.mojang', name: 'authlib', version: '1.5.25'
+
     implementation files (new File("libs/megacore-1.0-beta.jar"))
 
     implementation 'cl.bgm:command-framework-bukkit:1.0.4-SNAPSHOT'

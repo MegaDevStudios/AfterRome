@@ -4,6 +4,7 @@ import com.megadev.afterrome.object.item.AbstractItemBuilder;
 import com.megadev.afterrome.object.menu.action.ClickAction;
 
 import org.bukkit.Material;
+import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.ItemStack;
 
 import java.util.ArrayList;
@@ -22,5 +23,19 @@ public class MenuItem extends AbstractItemBuilder<MenuItem> {
 
     public MenuItem(Material type) {
         super(type);
+    }
+
+    @Override
+    public MenuItem getThis() {
+        return this;
+    }
+
+    @Override
+    public MenuItem clone() {
+        return new MenuItem(itemStack.clone());
+    }
+
+    public void doClickActions(InventoryClickEvent event) {
+        clickActions.forEach(action -> action.execute(event));
     }
 }

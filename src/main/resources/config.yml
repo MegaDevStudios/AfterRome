@@ -1,0 +1,24 @@
+menu:
+  choice-menu:
+    name: "&fВыберите класс"
+    head:
+      aesculapius:
+        name: "&aЭскулап"
+        lore: "&8Описание"
+        texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTQ2MDFlNjY0ZTJhZjA3NmI1NDU1MzViN2E2ODljYzc5YjEwODI2YWE2NTc1M2ZiYzZmNjU0MmJjOTRjZjcxIn19fQ=="
+      agronomist:
+        name: "&2Агроном"
+        lore: "&8Описание"
+        texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzJkZmE3NWFkZGYyYmY3YWVkYTcwNzdiMWNiOGI3Mzc5ZTVlMTE1YzEwMDU2YzBjOTU0ZDBkYjBhNmM4MzgwZiJ9fX0="
+      artisan:
+        name: "&8Кустарь"
+        lore: "&8Описание"
+        texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDY1YmIxOTJhNjU2YmQ2ZGVjOGQ4YzhlNGRiM2I1NzNjZjcxNjliYjczOTM5MTZlZjlhYzE5ZGExNjNhZGE1In19fQ=="
+      forester:
+        name: "&3Форестьер"
+        lore: "&8Описание"
+        texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmIxNzliNTY0ODc2MGRiNjY1NTg1YTMwZWM4YjFiZThjM2QyNTFjYTMwNzUwNjA1OTJhYzU1YmI5ZDg1M2U4In19fQ=="
+      son-of-mars:
+        name: "&cСын Марса"
+        lore: "&8Описание"
+        texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOGI1ZDYyNWY4OWM5MDgxZTcxZmU2NGQ3NjQ4MjRmYzk1ZjcxMDc4MzE5YTZiMjZhOGYyMTQ3OTM0ZjM4OWIwIn19fQ=="
