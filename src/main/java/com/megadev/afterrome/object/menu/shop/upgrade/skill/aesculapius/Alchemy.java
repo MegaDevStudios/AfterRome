@@ -12,4 +12,5 @@ public class Alchemy implements Skill {
     public Alchemy() {
         this.item = new ItemStack(Material.POTION); //todo Пузырек с водой
     }
+
 }

@@ -7,4 +7,5 @@ import org.bukkit.inventory.ItemStack;
 public class Drawings implements Skill {
     @Getter
     private ItemStack item;
+
 }

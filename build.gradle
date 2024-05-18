@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'com.github.johnrengelman.shadow' version '7.1.2'
 }
 
 group = 'dev.mega'
@@ -37,8 +38,6 @@ dependencies {
 
     implementation files (new File("libs/megacore-1.0-beta.jar"))
 
-    implementation 'cl.bgm:command-framework-bukkit:1.0.4-SNAPSHOT'
-
     implementation 'org.jetbrains:annotations:24.0.0'
     compileOnly "org.spigotmc:spigot-api:1.20.4-R0.1-SNAPSHOT"
 
@@ -47,10 +46,6 @@ dependencies {
 
     testCompileOnly 'org.projectlombok:lombok:1.18.32'
     testAnnotationProcessor 'org.projectlombok:lombok:1.18.32'
-
-    compileOnly('net.citizensnpcs:citizens-main:2.0.33-SNAPSHOT') {
-        exclude group: '*', module: '*'
-    }
 }
 
 def targetJavaVersion = 17
@@ -78,4 +73,9 @@ processResources {
     filesMatching('plugin.yml') {
         expand props
     }
+}
+
+shadowJar {
+    destinationDirectory.set(new File("D:/sever/plugins"))
+    archiveFileName = "AfterRome-${version}.jar"
 }
