@@ -11,15 +11,6 @@ public class ProfessionsManager extends Manager {
     public ProfessionsManager(Plugin plugin, String dataFolder) {
         super(plugin, dataFolder);
 
-        addConfig(AesculapiusConfig.class, new AesculapiusConfig(plugin, "aesculapius"));
-        addConfig(AgronomistConfig.class, new AgronomistConfig(plugin, "agronomist"));
-        addConfig(ArtisanConfig.class, new ArtisanConfig(plugin, "artisan"));
-        addConfig(EngineerConfig.class, new EngineerConfig(plugin, "engineer"));
-        addConfig(ForesterConfig.class, new ForesterConfig(plugin, "forester"));
-        addConfig(InitiatedConfig.class, new InitiatedConfig(plugin, "initiated"));
-        addConfig(MafiaConfig.class, new MafiaConfig(plugin, "mafia"));
-        addConfig(SantaConfig.class, new SantaConfig(plugin, "santa"));
-        addConfig(SheriffConfig.class, new SheriffConfig(plugin, "sheriff"));
-        addConfig(SonOfMarsConfig.class, new SonOfMarsConfig(plugin, "sonOfMars"));
+
     }
 }

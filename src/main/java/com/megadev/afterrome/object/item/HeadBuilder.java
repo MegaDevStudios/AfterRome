@@ -20,7 +20,7 @@ public class HeadBuilder extends AbstractItemBuilder<HeadBuilder> {
         super(new ItemStack(Material.PLAYER_HEAD));
 
         SkullMeta headMeta = (SkullMeta) getItemMeta();
-        GameProfile profile = new GameProfile(UUID.randomUUID(), null);
+        GameProfile profile = new GameProfile(UUID.randomUUID(), "null");
         profile.getProperties().put("textures", new Property("textures", texture));
 
         try {

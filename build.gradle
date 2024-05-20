@@ -3,7 +3,7 @@ plugins {
     id 'com.github.johnrengelman.shadow' version '7.1.2'
 }
 
-group = 'dev.mega'
+group = 'com.megadev'
 version = '1.0-beta'
 
 repositories {
@@ -76,6 +76,6 @@ processResources {
 }
 
 shadowJar {
-    destinationDirectory.set(new File("D:/sever/plugins"))
+    destinationDirectory.set(new File("/home/dreaght/Desktop/MegaServer/plugins"))
     archiveFileName = "AfterRome-${version}.jar"
 }

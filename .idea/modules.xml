@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/AfterRome.main.iml" filepath="$PROJECT_DIR$/.idea/modules/AfterRome.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.megadev.AfterRome.main.iml" filepath="$PROJECT_DIR$/.idea/modules/com.megadev.AfterRome.main.iml" />
     </modules>
   </component>
 </project>
