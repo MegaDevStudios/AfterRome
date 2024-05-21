@@ -1,5 +1,6 @@
 package com.megadev.afterrome;
 
+import com.megadev.afterrome.listener.MenuListener;
 import com.megadev.afterrome.listener.PlayerJoinListener;
 import com.megadev.afterrome.manager.ConfigManager;
 
@@ -14,6 +15,7 @@ public final class AfterRome extends MegaCore {
     @Override
     public void enable() {
         Bukkit.getPluginManager().registerEvents(new PlayerJoinListener(), this);
+        Bukkit.getPluginManager().registerEvents(new MenuListener(), this);
 
         setupManagers();
     }

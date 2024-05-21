@@ -35,6 +35,11 @@ public class MenuItem extends AbstractItemBuilder<MenuItem> {
         return new MenuItem(itemStack.clone());
     }
 
+    public MenuItem addClickAction(ClickAction action) {
+        this.clickActions.add(action);
+        return this;
+    }
+
     public void doClickActions(InventoryClickEvent event) {
         clickActions.forEach(action -> action.execute(event));
     }

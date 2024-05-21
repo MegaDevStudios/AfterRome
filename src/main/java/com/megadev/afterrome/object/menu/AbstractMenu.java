@@ -20,6 +20,7 @@ import org.bukkit.inventory.ItemStack;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.net.MalformedURLException;
 import java.util.Arrays;
 import java.util.List;
 
@@ -105,7 +106,7 @@ public abstract class AbstractMenu implements Menu {
         return items.length;
     }
 
-    public int updateTime() {
+    protected int updateTime() {
         return 20;
     }
 
