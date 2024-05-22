@@ -1,6 +1,6 @@
 menu:
   choice-menu:
-    name: "&fВыберите класс"
+    name: "&8Выберите класс"
     head:
       aesculapius:
         name: "&aЭскулап"

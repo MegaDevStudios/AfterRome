@@ -13,6 +13,8 @@ public interface User {
 
     Player getPlayer();
 
+    void setPlayer(Player player);
+
     String getName();
 
     UUID getUuid();

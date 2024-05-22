@@ -11,7 +11,6 @@ import dev.mega.megacore.MegaCore;
 import org.bukkit.Bukkit;
 
 public final class AfterRome extends MegaCore {
-
     @Override
     public void enable() {
         Bukkit.getPluginManager().registerEvents(new PlayerJoinListener(), this);
@@ -27,6 +26,7 @@ public final class AfterRome extends MegaCore {
 
     private void setupManagers() {
         ConfigManager.init(this);
+
         MenuManager.init(this);
         UserManager.init(this);
     }

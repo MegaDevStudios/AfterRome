@@ -20,7 +20,6 @@ import org.bukkit.inventory.ItemStack;
 
 import org.jetbrains.annotations.NotNull;
 
-import java.net.MalformedURLException;
 import java.util.Arrays;
 import java.util.List;
 
@@ -92,15 +91,24 @@ public abstract class AbstractMenu implements Menu {
         }, updateTime(), updateTime()));
     }
 
+    @Override
+    public void close() {
+        user.getPlayer().closeInventory();
+    }
+
     public void update() {
         items = new MenuItem[this.items.length];
         setMenuItems();
         inventory.setContents(convertToItemStacks(items));
     }
 
+    @Override
     public void handleOpen(InventoryOpenEvent event) {}
 
-    public void handleClose(InventoryCloseEvent event) {}
+    @Override
+    public void handleClose(InventoryCloseEvent event) {
+
+    }
 
     public int getSize() {
         return items.length;

@@ -19,12 +19,19 @@ public class PlayerJoinListener implements Listener {
         Player player = event.getPlayer();
         UserManager userManager = UserManager.getInstance();
 
-        if (!userManager.userExist(player))
-            userManager.saveUser(player);
+        User user;
 
-        Optional<User> optionalUser = userManager.getUser(player);
-        if (optionalUser.isEmpty()) return;
-        User user = optionalUser.get();
+        if (!userManager.userExist(player)) {
+            userManager.saveUser(player);
+            Optional<User> optionalUser = userManager.getUser(player);
+            if (optionalUser.isEmpty()) return;
+            user = optionalUser.get();
+        } else {
+            Optional<User> optionalUser = userManager.getUser(player);
+            if (optionalUser.isEmpty()) return;
+            user = optionalUser.get();
+            user.setPlayer(player);
+        }
 
         if (user.getProfession() == null) {
             Menu menu = new ChoiceMenu(user);

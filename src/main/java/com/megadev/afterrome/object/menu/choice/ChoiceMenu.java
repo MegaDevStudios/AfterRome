@@ -39,35 +39,35 @@ public class ChoiceMenu extends AbstractMenu {
                 .setName(mainConfig.getAgronomistName())
                 .setLore(mainConfig.getAgronomistLore())
                 .toMenuItem()
-                .addClickAction(e -> getUser().setProfession(new Agronomist())),
+                .addClickAction(event -> clickAction(new Agronomist())),
                 9);
 
         setItem(new HeadBuilder(mainConfig.getArtisanTexture())
                 .setName(mainConfig.getArtisanName())
                 .setLore(mainConfig.getArtisanLore())
                 .toMenuItem()
-                .addClickAction(e -> getUser().setProfession(new Artisan())),
+                .addClickAction(event -> clickAction(new Artisan())),
                 11);
 
         setItem(new HeadBuilder(mainConfig.getSonOfMarsTexture())
                 .setName(mainConfig.getSonOfMarsName())
                 .setLore(mainConfig.getSonOfMarsLore())
                 .toMenuItem()
-                .addClickAction(e -> getUser().setProfession(new SonOfMars())),
+                .addClickAction(event -> clickAction(new SonOfMars())),
                 13);
 
         setItem(new HeadBuilder(mainConfig.getForesterTexture())
                 .setName(mainConfig.getForesterName())
                 .setLore(mainConfig.getForesterLore())
                 .toMenuItem()
-                .addClickAction(e -> getUser().setProfession(new Forester())),
+                .addClickAction(event -> clickAction(new Forester())),
                 15);
 
         setItem(new HeadBuilder(mainConfig.getAesculapiusTexture())
                 .setName(mainConfig.getAesculapiusName())
                 .setLore(mainConfig.getAesculapiusLore())
                 .toMenuItem()
-                .addClickAction(e -> getUser().setProfession(new Aesculapius())),
+                .addClickAction(event -> clickAction(new Aesculapius())),
                 17);
     }
 
@@ -80,6 +80,7 @@ public class ChoiceMenu extends AbstractMenu {
         User user = optionalUser.get();
 
         if (!(event.getInventory().getHolder() instanceof ChoiceMenu)) return;
+        if (user.getProfession() != null) return;
 
         Bukkit.getScheduler().runTaskLater(AfterRome.getInstance(), () -> {
             Menu choiceMenu = new ChoiceMenu(user);
@@ -90,6 +91,12 @@ public class ChoiceMenu extends AbstractMenu {
     @Override
     public String getMenuName() {
         return getConfigManager().getConfig(MainConfig.class).getChoiceMenuName();
+    }
+
+    private void clickAction(Profession profession) {
+        if (getUser().getProfession() != null) return;
+        getUser().setProfession(profession);
+        close();
     }
 
     private void fillItems() {

@@ -11,4 +11,5 @@ public interface Menu extends InventoryHolder {
     void handleOpen(InventoryOpenEvent event);
 
     void open();
+    void close();
 }

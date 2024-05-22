@@ -50,7 +50,14 @@ public class UserManager {
 
     public Optional<User> getUser(Player player) {
         return users.stream()
-                .filter(user -> user.getPlayer().equals(player))
+                .filter(user -> user.getUuid().equals(player.getUniqueId()))
                 .findFirst();
+    }
+
+    public void printUsers() {
+        System.out.println("==================================================================");
+        for (User user : users)
+            System.out.println(user + " " + user.getName());
+        System.out.println("==================================================================");
     }
 }

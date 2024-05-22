@@ -3,12 +3,12 @@ package com.megadev.afterrome.object.user;
 import com.megadev.afterrome.object.item.ItemBuilder;
 import com.megadev.afterrome.object.profession.Profession;
 
+import com.megadev.afterrome.util.Color;
 import lombok.Setter;
 
 import net.md_5.bungee.api.ChatMessageType;
 import net.md_5.bungee.api.chat.TextComponent;
 
-import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 
@@ -21,8 +21,9 @@ import java.util.List;
 public class AfterRomeUser implements User {
     @Setter
     private Profession profession;
+    @Setter
+    private Player player;
     private int healths;
-    private final Player player;
     private final String name;
     private final UUID uuid;
 
@@ -36,14 +37,14 @@ public class AfterRomeUser implements User {
     @Override
     public void sendMessage(String... messages) {
         for (String message : messages) {
-            player.sendMessage(ChatColor.translateAlternateColorCodes('&', message));
+            player.sendMessage(Color.colorize(message));
         }
     }
 
     @Override
     public void sendMessage(List<String> messages) {
         for (String message : messages) {
-            player.sendMessage(ChatColor.translateAlternateColorCodes('&', message));
+            player.sendMessage(Color.colorize(message));
         }
     }
 
@@ -55,8 +56,8 @@ public class AfterRomeUser implements User {
     @Override
     public void sendTitle(String first, String second, int input, int delay, int out) {
         player.sendTitle(
-                ChatColor.translateAlternateColorCodes('&', first),
-                ChatColor.translateAlternateColorCodes('&', second),
+                Color.colorize(first),
+                Color.colorize(second),
                 input, delay, out
         );
     }
