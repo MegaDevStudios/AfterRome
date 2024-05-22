@@ -1,10 +1,21 @@
 package com.megadev.afterrome.object.menu.shop.upgrade.skill.forester;
 
+import com.megadev.afterrome.object.menu.item.MenuItem;
 import com.megadev.afterrome.object.menu.shop.upgrade.skill.Skill;
+
 import lombok.Getter;
-import org.bukkit.inventory.ItemStack;
 
 public class LungCapacity implements Skill {
     @Getter
-    private ItemStack item;
+    private MenuItem menuItem;
+
+    @Override
+    public String getTitle() {
+        return "";
+    }
+
+    @Override
+    public String getLore() {
+        return "";
+    }
 }

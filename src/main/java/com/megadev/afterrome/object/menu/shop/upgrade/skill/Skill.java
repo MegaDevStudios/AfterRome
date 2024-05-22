@@ -1,10 +1,12 @@
 package com.megadev.afterrome.object.menu.shop.upgrade.skill;
 
 
-import org.bukkit.inventory.ItemStack;
+import com.megadev.afterrome.object.menu.item.MenuItem;
 
 public interface Skill {
-    ItemStack getItemStack();
+    String getTitle();
 
+    String getLore();
 
+    MenuItem getMenuItem();
 }

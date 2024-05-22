@@ -1,15 +1,22 @@
 package com.megadev.afterrome.object.menu.shop.upgrade.skill.aesculapius;
 
+import com.megadev.afterrome.object.menu.item.MenuItem;
 import com.megadev.afterrome.object.menu.shop.upgrade.skill.Skill;
+
 import lombok.Getter;
-import org.bukkit.Material;
-import org.bukkit.inventory.ItemStack;
 
 @Getter
 public class BrutalSurgery implements Skill {
-    private final ItemStack item;
+    @Getter
+    private MenuItem menuItem;
 
-    public BrutalSurgery() {
-        this.item = new ItemStack(Material.POTION);
+    @Override
+    public String getTitle() {
+        return "";
+    }
+
+    @Override
+    public String getLore() {
+        return "";
     }
 }
