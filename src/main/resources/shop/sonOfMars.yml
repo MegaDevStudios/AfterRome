@@ -1,0 +1,26 @@
+menu-name: "&cСын Марса"
+skill:
+  iron-inside:
+    item: ""
+    name: "&aАлхимия"
+    lore: "&Описание"
+  iron-outside:
+    item: ""
+    name: "&aАлхимия"
+    lore: "&Описание"
+  landing:
+    item: ""
+    name: "&aАлхимия"
+    lore: "&Описание"
+  melee-combat:
+    item: ""
+    name: "&aАлхимия"
+    lore: "&Описание"
+  protein-diet:
+    item: ""
+    name: "&aАлхимия"
+    lore: "&Описание"
+  shooting:
+    item: ""
+    name: "&aАлхимия"
+    lore: "&Описание"

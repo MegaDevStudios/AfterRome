@@ -5,6 +5,7 @@ import com.megadev.afterrome.manager.MenuManager;
 import com.megadev.afterrome.object.menu.item.MenuItem;
 
 import com.megadev.afterrome.object.user.User;
+import com.megadev.afterrome.util.Color;
 import lombok.Getter;
 
 import org.bukkit.Bukkit;
@@ -62,8 +63,8 @@ public abstract class AbstractMenu implements Menu {
     @Override
     public @NotNull Inventory getInventory() {
         inventory = type == InventoryType.CHEST
-                ? Bukkit.createInventory(this, getSize(), ChatColor.translateAlternateColorCodes('&', getMenuName()))
-                : Bukkit.createInventory(this, type, ChatColor.translateAlternateColorCodes('&', getMenuName()));
+                ? Bukkit.createInventory(this, getSize(), Color.colorize(getMenuName()))
+                : Bukkit.createInventory(this, type, Color.colorize(getMenuName()));
         update();
 
         return inventory;

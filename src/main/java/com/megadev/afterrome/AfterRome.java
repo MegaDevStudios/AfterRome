@@ -1,6 +1,7 @@
 package com.megadev.afterrome;
 
 import co.aikar.commands.PaperCommandManager;
+import com.megadev.afterrome.command.ProgCommand;
 import com.megadev.afterrome.command.SkillsCommand;
 import com.megadev.afterrome.listener.MenuListener;
 import com.megadev.afterrome.listener.PlayerJoinListener;
@@ -18,13 +19,14 @@ public final class AfterRome extends MegaCore {
         Bukkit.getPluginManager().registerEvents(new PlayerJoinListener(), this);
         Bukkit.getPluginManager().registerEvents(new MenuListener(), this);
 
+        System.out.println("ЛАЛА");
+
         setupManagers();
         setupCommands();
     }
 
     @Override
     public void disable() {
-
     }
 
     private void setupManagers() {
@@ -36,6 +38,8 @@ public final class AfterRome extends MegaCore {
 
     private void setupCommands() {
         PaperCommandManager commandManager = new PaperCommandManager(this);
+        System.out.println("ЛАЛА");
         commandManager.registerCommand(new SkillsCommand());
+        commandManager.registerCommand(new ProgCommand());
     }
 }

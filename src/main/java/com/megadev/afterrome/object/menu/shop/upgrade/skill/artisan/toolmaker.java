@@ -3,9 +3,10 @@ package com.megadev.afterrome.object.menu.shop.upgrade.skill.artisan;
 import com.megadev.afterrome.object.menu.item.MenuItem;
 import com.megadev.afterrome.object.menu.shop.upgrade.skill.Skill;
 
+import dev.mega.megacore.config.Configurator;
 import lombok.Getter;
 
-public class ToolMaker implements Skill {
+public class toolmaker implements Skill {
     @Getter
     private MenuItem menuItem;
 

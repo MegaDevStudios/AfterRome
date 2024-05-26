@@ -2,3 +2,7 @@ name: AfterRome
 version: '${version}'
 main: com.megadev.afterrome.AfterRome
 api-version: '1.20'
+commands:
+  skills: {}
+  prog: {}
+  progress: {}

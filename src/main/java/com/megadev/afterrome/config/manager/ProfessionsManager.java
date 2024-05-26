@@ -1,12 +1,14 @@
-package com.megadev.afterrome.config.profession;
+package com.megadev.afterrome.config.manager;
 
-import dev.mega.megacore.config.Manager;
+import com.megadev.afterrome.config.profession.*;
+
+import dev.mega.megacore.config.AbstractManager;
 
 import lombok.Getter;
 
 import org.bukkit.plugin.Plugin;
 
-public class ProfessionsManager extends Manager {
+public class ProfessionsManager extends AbstractManager {
     @Getter private static ProfessionsManager instance;
     public ProfessionsManager(Plugin plugin, String dataFolder) {
         super(plugin, dataFolder);

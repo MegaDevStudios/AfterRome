@@ -18,5 +18,4 @@ public class Alchemy implements Skill {
     public String getLore() {
         return "";
     }
-
 }

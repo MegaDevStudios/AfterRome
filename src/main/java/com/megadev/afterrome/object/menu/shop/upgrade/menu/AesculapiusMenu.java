@@ -1,9 +1,10 @@
 package com.megadev.afterrome.object.menu.shop.upgrade.menu;
 
-import com.megadev.afterrome.config.shop.ShopConfig;
 import com.megadev.afterrome.object.menu.AbstractUpgradeMenu;
+import com.megadev.afterrome.object.menu.item.MenuItem;
 import com.megadev.afterrome.object.menu.shop.upgrade.skill.Skill;
 import com.megadev.afterrome.object.user.User;
+import org.bukkit.Material;
 
 import java.util.List;
 
@@ -14,11 +15,12 @@ public class AesculapiusMenu extends AbstractUpgradeMenu {
 
     @Override
     protected void setMenuItems() {
-
+        super.setMenuItems();
+        setItem(new MenuItem(Material.DIORITE_STAIRS), 3);
     }
 
     @Override
     public String getMenuName() {
-        return (String) getConfigManager().getConfig(ShopConfig.class).getValue("asas");
+        return "Меню эскулапа";
     }
 }
