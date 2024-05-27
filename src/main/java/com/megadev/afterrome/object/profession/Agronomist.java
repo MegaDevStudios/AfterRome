@@ -28,8 +28,4 @@ public class Agronomist implements Profession {
         return List.of();
     }
 
-    @Override
-    public Configurator getConfig() {
-        return null;
-    }
 }

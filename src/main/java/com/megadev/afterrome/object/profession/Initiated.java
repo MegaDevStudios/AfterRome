@@ -27,9 +27,4 @@ public class Initiated implements Profession {
     public List<Skill> getSkills() {
         return List.of();
     }
-
-    @Override
-    public Configurator getConfig() {
-        return null;
-    }
 }

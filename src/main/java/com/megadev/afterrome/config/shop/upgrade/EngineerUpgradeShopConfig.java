@@ -21,13 +21,98 @@ public class EngineerUpgradeShopConfig extends Configurator implements UpgradeSh
     }
 
     @Override
-    public List<Skill> getSkills() {
-        return List.of();
-    }
-
-    @Override
     public MenuItem getBackgroundItem() {
         return new MenuItem(Material.valueOf(getString("background-item"))).setName("&f");
+    }
+
+    public String getArmorerName() {
+        return Color.colorize(getString("skill.armorer.name")); //тут надо поменять TODO
+    }
+
+    public String getArmorerLore() {
+        return Color.colorize(getString("skill.armorer.name"));
+    }
+
+    public MenuItem getArmorerItem() {
+        return new MenuItem(
+                Material.valueOf(getString("skill.armorer.item")))
+                .setName(getArmorerName())
+                .setLore(getArmorerLore());
+    }
+
+    public String getBosnianArtilleryName() {
+        return Color.colorize(getString("skill.bosnian-artillery.name"));
+    }
+
+    public String getBosnianArtilleryLore() {
+        return Color.colorize(getString("skill.bosnian-artillery.name"));
+    }
+
+    public MenuItem getBosnianArtilleryItem() {
+        return new MenuItem(
+                Material.valueOf(getString("skill.bosnian-artillery.item")))
+                .setName(getBosnianArtilleryName())
+                .setLore(getBosnianArtilleryLore());
+    }
+
+    public String getChemicalWeaponsName() {
+        return Color.colorize(getString("skill.chemical-weapons.name"));
+    }
+
+    public String getChemicalWeaponsLore() {
+        return Color.colorize(getString("skill.chemical-weapons.name"));
+    }
+
+    public MenuItem getChemicalWeaponsItem() {
+        return new MenuItem(
+                Material.valueOf(getString("skill.chemical-weapons.item")))
+                .setName(getChemicalWeaponsName())
+                .setLore(getChemicalWeaponsLore());
+    }
+
+    public String getMetallurgistName() {
+        return Color.colorize(getString("skill.metallurgist.name"));
+    }
+
+    public String getMetallurgistLore() {
+        return Color.colorize(getString("skill.metallurgist.name"));
+    }
+
+    public MenuItem getMetallurgistItem() {
+        return new MenuItem(
+                Material.valueOf(getString("skill.metallurgist.item")))
+                .setName(getMetallurgistName())
+                .setLore(getMetallurgistLore());
+    }
+
+    public String getMinerName() {
+        return Color.colorize(getString("skill.miner.name"));
+    }
+
+    public String getMinerLore() {
+        return Color.colorize(getString("skill.miner.name"));
+    }
+
+    public MenuItem getMinerItem() {
+        return new MenuItem(
+                Material.valueOf(getString("skill.miner.item")))
+                .setName(getMinerName())
+                .setLore(getMinerLore());
+    }
+
+    public String getToolmakerName() {
+        return Color.colorize(getString("skill.toolmaker.name"));
+    }
+
+    public String getToolmakerLore() {
+        return Color.colorize(getString("skill.toolmaker.name"));
+    }
+
+    public MenuItem getToolmakerItem() {
+        return new MenuItem(
+                Material.valueOf(getString("skill.toolmaker.item")))
+                .setName(getToolmakerName())
+                .setLore(getToolmakerLore());
     }
 
 }

@@ -1,33 +1,21 @@
 package com.megadev.afterrome.config.shop.upgrade;
 
 import com.megadev.afterrome.object.menu.item.MenuItem;
-import com.megadev.afterrome.object.menu.shop.upgrade.skill.Skill;
-import com.megadev.afterrome.object.menu.shop.upgrade.skill.aesculapius.*;
 import com.megadev.afterrome.util.Color;
 
 import dev.mega.megacore.config.Configurator;
+
 import lombok.Getter;
+
 import org.bukkit.Material;
 import org.bukkit.plugin.Plugin;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @Getter
 public class AesculapiusUpgradeShopConfig extends Configurator implements UpgradeShopConfig {
-    private final List<Skill> skills = new ArrayList<>();
 
     public AesculapiusUpgradeShopConfig(@NotNull Plugin plugin, String... path) {
         super(plugin, path);
-        skills.addAll(List.of(
-                new Alchemy(),
-                new BrutalSurgery(),
-                new CombatStimulants(),
-                new DoctorMask(),
-                new Healing(),
-                new UrineTherapy()
-        ));
     }
 
     @Override
@@ -38,5 +26,95 @@ public class AesculapiusUpgradeShopConfig extends Configurator implements Upgrad
     @Override
     public MenuItem getBackgroundItem() {
         return new MenuItem(Material.valueOf(getString("background-item"))).setName("&f");
+    }
+
+    public String getAlchemyName() {
+        return Color.colorize(getString("skill.alchemy.name"));
+    }
+
+    public String getBrutalSurgeryName() {
+        return Color.colorize(getString("skill.brutal-surgery.name"));
+    }
+
+    public String getCombatStimulantsName() {
+        return Color.colorize(getString("skill.combat-stimulants.name"));
+    }
+
+    public String getDoctorMaskName() {
+        return Color.colorize(getString("skill.doctor-mask.name"));
+    }
+
+    public String getHealingName() {
+        return Color.colorize(getString("skill.healing.name"));
+    }
+
+    public String getUrineTherapyName() {
+        return Color.colorize(getString("skill.urine-therapy.name"));
+    }
+
+    public String getAlchemyLore() {
+        return Color.colorize(getString("skill.alchemy.name"));
+    }
+
+    public String getBrutalSurgeryLore() {
+        return Color.colorize(getString("skill.brutal-surgery.name"));
+    }
+
+    public String getCombatStimulantsLore() {
+        return Color.colorize(getString("skill.combat-stimulants.name"));
+    }
+
+    public String getDoctorMaskLore() {
+        return Color.colorize(getString("skill.doctor-mask.name"));
+    }
+
+    public String getHealingLore() {
+        return Color.colorize(getString("skill.healing.name"));
+    }
+
+    public String getUrineTherapyLore() {
+        return Color.colorize(getString("skill.urine-therapy.name"));
+    }
+
+    public MenuItem getAlchemyItem() {
+        return new MenuItem(
+                Material.valueOf(getString("skill.alchemy.item")))
+                .setName(getAlchemyName())
+                .setLore(getAlchemyLore());
+    }
+
+    public MenuItem getBrutalSurgeryItem() {
+        return new MenuItem(
+                Material.valueOf(getString("skill.brutal-surgery.item")))
+                .setName(getBrutalSurgeryName())
+                .setLore(getBrutalSurgeryLore());
+    }
+
+    public MenuItem getCombatStimulantsItem() {
+        return new MenuItem(
+                Material.valueOf(getString("skill.combat-stimulants.item")))
+                .setName(getCombatStimulantsName())
+                .setLore(getCombatStimulantsLore());
+    }
+
+    public MenuItem getDoctorMaskItem() {
+        return new MenuItem(
+                Material.valueOf(getString("skill.doctor-mask.item")))
+                .setName(getDoctorMaskName())
+                .setLore(getDoctorMaskLore());
+    }
+
+    public MenuItem getHealingItem() {
+        return new MenuItem(
+                Material.valueOf(getString("skill.healing.item")))
+                .setName(getHealingName())
+                .setLore(getHealingLore());
+    }
+
+    public MenuItem getUrineTherapyItem() {
+        return new MenuItem(
+                Material.valueOf(getString("skill.urine-therapy.item")))
+                .setName(getUrineTherapyName())
+                .setLore(getUrineTherapyLore());
     }
 }
