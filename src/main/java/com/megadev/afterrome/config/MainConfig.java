@@ -75,4 +75,8 @@ public class MainConfig extends Configurator {
     public String getSonOfMarsTexture() {
         return getString("menu.choice-menu.head.son-of-mars.texture");
     }
+
+    public int getMaxUnitsPerPoint() {
+        return (int) getValue("player.max-units-per-points");
+    }
 }

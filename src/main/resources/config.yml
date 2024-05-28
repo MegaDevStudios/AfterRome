@@ -1,3 +1,5 @@
+player:
+  max-units-per-points: 100
 menu:
   choice-menu:
     name: "&8Выберите класс"

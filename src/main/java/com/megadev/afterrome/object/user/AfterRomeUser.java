@@ -1,5 +1,7 @@
 package com.megadev.afterrome.object.user;
 
+import com.megadev.afterrome.config.MainConfig;
+import com.megadev.afterrome.manager.ConfigManager;
 import com.megadev.afterrome.object.item.ItemBuilder;
 import com.megadev.afterrome.object.profession.Profession;
 
@@ -18,7 +20,10 @@ import java.util.*;
 import java.util.List;
 
 @Getter
-public class AfterRomeUser implements User {
+public class AfterRomeUser implements User, PointsHolder {
+    private static final MainConfig mainConfig = ConfigManager.getInstance().getConfig(MainConfig.class);
+    private static final int MAX_UNIT_PER_POINT = mainConfig.getMaxUnitsPerPoint();
+
     @Setter
     private Profession profession;
     @Setter
@@ -26,6 +31,7 @@ public class AfterRomeUser implements User {
     private int healths;
     private final String name;
     private final UUID uuid;
+    private double points;
 
     public AfterRomeUser(Player player) {
         this.player = player;
@@ -75,5 +81,15 @@ public class AfterRomeUser implements User {
     public void subtractHealth() {
         if (healths > 0)
             --healths;
+    }
+
+    @Override
+    public double getPoints() {
+        return points;
+    }
+
+    @Override
+    public void addPoints(double amount) {
+        points += (amount / MAX_UNIT_PER_POINT);
     }
 }
