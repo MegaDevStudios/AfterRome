@@ -1,7 +1,9 @@
 package com.megadev.afterrome.object.profession;
 
-import com.megadev.afterrome.object.menu.Menu;
+import com.megadev.afterrome.object.menu.AbstractUpgradeMenu;
 import com.megadev.afterrome.object.menu.shop.upgrade.skill.Skill;
+import com.megadev.afterrome.object.user.User;
+import dev.mega.megacore.config.Configurator;
 
 import java.util.List;
 
@@ -12,7 +14,7 @@ public class Artisan implements Profession {
     }
 
     @Override
-    public Menu getUpgradeMenu() {
+    public AbstractUpgradeMenu getUpgradeMenu(User user) {
         return null;
     }
 
@@ -25,4 +27,5 @@ public class Artisan implements Profession {
     public List<Skill> getSkills() {
         return List.of();
     }
+
 }

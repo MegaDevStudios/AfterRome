@@ -1,0 +1,26 @@
+menu-name: "&uИнициированный"
+skill:
+  datura:
+    item: ""
+    name: "&aАлхимия"
+    lore: "&Описание"
+  leprosy:
+    item: ""
+    name: "&aАлхимия"
+    lore: "&Описание"
+  participle:
+    item: ""
+    name: "&aАлхимия"
+    lore: "&Описание"
+  saint-face:
+    item: ""
+    name: "&aАлхимия"
+    lore: "&Описание"
+  spider-eye:
+    item: ""
+    name: "&aАлхимия"
+    lore: "&Описание"
+  start-whisper:
+    item: ""
+    name: "&aАлхимия"
+    lore: "&Описание"

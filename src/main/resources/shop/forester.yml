@@ -1,0 +1,26 @@
+menu-name: "&3Форестьер"
+skill:
+  camp-cooking:
+    item: ""
+    name: "&aАлхимия"
+    lore: "&Описание"
+  halt:
+    item: ""
+    name: "&aАлхимия"
+    lore: "&Описание"
+  horse-riding:
+    item: ""
+    name: "&aАлхимия"
+    lore: "&Описание"
+  ladle-staff:
+    item: ""
+    name: "&aАлхимия"
+    lore: "&Описание"
+  lung-capacity:
+    item: ""
+    name: "&aАлхимия"
+    lore: "&Описание"
+  seafaring:
+    item: ""
+    name: "&aАлхимия"
+    lore: "&Описание"

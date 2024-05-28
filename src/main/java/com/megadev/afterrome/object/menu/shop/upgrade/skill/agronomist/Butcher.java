@@ -1,21 +1,18 @@
 package com.megadev.afterrome.object.menu.shop.upgrade.skill.agronomist;
 
+import com.megadev.afterrome.config.shop.upgrade.AesculapiusUpgradeShopConfig;
+import com.megadev.afterrome.config.shop.upgrade.AgronomistUpgradeShopConfig;
+import com.megadev.afterrome.manager.ConfigManager;
 import com.megadev.afterrome.object.menu.item.MenuItem;
 import com.megadev.afterrome.object.menu.shop.upgrade.skill.Skill;
 
 import lombok.Getter;
 
+@Getter
 public class Butcher implements Skill {
-    @Getter
-    private MenuItem menuItem;
+    private final MenuItem menuItem;
 
-    @Override
-    public String getTitle() {
-        return "";
-    }
-
-    @Override
-    public String getLore() {
-        return "";
+    public Butcher() {
+        menuItem = ConfigManager.getInstance().getConfig(AgronomistUpgradeShopConfig.class).getButcherItem();
     }
 }

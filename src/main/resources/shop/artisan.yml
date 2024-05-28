@@ -1,0 +1,26 @@
+menu-name: "&8Кустарь"
+skill:
+  blacksmith:
+    item: "IRON_AXE"
+    name: "&aАлхимия"
+    lore: "&Описание"
+  fisherman:
+    item: ""
+    name: "&aАлхимия"
+    lore: "&Описание"
+  horseman:
+    item: ""
+    name: "&aАлхимия"
+    lore: "&Описание"
+  metallurgist:
+    item: ""
+    name: "&aАлхимия"
+    lore: "&Описание"
+  miner:
+    item: ""
+    name: "&aАлхимия"
+    lore: "&Описание"
+  toolmaker:
+    item: ""
+    name: "&aАлхимия"
+    lore: "&Описание"

@@ -1,0 +1,26 @@
+menu-name: "&0Мафия"
+skill:
+  hack:
+    item: ""
+    name: "&aАлхимия"
+    lore: "&Описание"
+  killer:
+    item: ""
+    name: "&aАлхимия"
+    lore: "&Описание"
+  poison:
+    item: ""
+    name: "&aАлхимия"
+    lore: "&Описание"
+  slippery:
+    item: ""
+    name: "&aАлхимия"
+    lore: "&Описание"
+  stealth:
+    item: ""
+    name: "&aАлхимия"
+    lore: "&Описание"
+  wake:
+    item: ""
+    name: "&aАлхимия"
+    lore: "&Описание"

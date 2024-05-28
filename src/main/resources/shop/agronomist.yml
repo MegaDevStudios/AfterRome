@@ -1,0 +1,26 @@
+menu-name: "&2Агроном"
+skill:
+  butcher:
+    item: "WHEAT"
+    name: "&2Фермер"
+    lore: "&8Описание"
+  cook:
+    item: "BEEF"
+    name: "&2Мясник"
+    lore: "&8Описание"
+  farmer:
+    item: "LEATHER"
+    name: "&2Кожевник"
+    lore: "&8Описание"
+  hatcher:
+    item: "PUMPKIN_PIE"
+    name: "&2Кулинар"
+    lore: "&8Описание"
+  lumberjack:
+    item: "WHEAT_SEEDS"
+    name: "&2Дровосек"
+    lore: "&8Описание"
+  tanner:
+    item: "EGG"
+    name: "&2Инкубатор"
+    lore: "&8Описание"

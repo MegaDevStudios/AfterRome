@@ -2,8 +2,8 @@ package com.megadev.afterrome.object.menu;
 
 import com.megadev.afterrome.object.menu.item.MenuItem;
 import com.megadev.afterrome.object.menu.shop.upgrade.skill.Skill;
-
 import com.megadev.afterrome.object.user.User;
+
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 
@@ -25,7 +25,7 @@ public abstract class AbstractUpgradeMenu extends AbstractMenu {
     @Override
     protected void setMenuItems() {
         for (int i = 0; i < getSize(); i++) {
-            setItem(new MenuItem(new ItemStack(Material.ACACIA_FENCE)), 1);
+            setItem(new MenuItem(new ItemStack(Material.BLACK_STAINED_GLASS_PANE)), i);
         }
     }
 }

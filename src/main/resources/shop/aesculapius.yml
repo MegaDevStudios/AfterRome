@@ -1,0 +1,27 @@
+menu-name: "&aЭскулап"
+background-item: "LIME_STAINED_GLASS_PANE"
+skill:
+  alchemy:
+    item: ""
+    name: "&aАлхимия"
+    lore: "&Описание"
+  brutal-surgery:
+    item: ""
+    name: "&aАлхимия"
+    lore: "&Описание"
+  combat-stimulants:
+    item: ""
+    name: "&aАлхимия"
+    lore: "&Описание"
+  doctor-mask:
+    item: ""
+    name: "&aАлхимия"
+    lore: "&Описание"
+  healing:
+    item: ""
+    name: "&aАлхимия"
+    lore: "&Описание"
+  urine-therapy:
+    item: ""
+    name: "&aАлхимия"
+    lore: "&Описание"
