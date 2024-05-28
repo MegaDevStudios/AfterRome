@@ -6,6 +6,7 @@ import com.megadev.afterrome.object.menu.Menu;
 import com.megadev.afterrome.object.menu.choice.ChoiceMenu;
 import com.megadev.afterrome.object.user.User;
 
+import dev.mega.megacore.MegaCore;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -28,7 +29,7 @@ public class PlayerJoinListener implements Listener {
         User user = optionalUser.get();
 
         if (user.getProfession() == null) {
-            Menu menu = new ChoiceMenu(user);
+            Menu menu = new ChoiceMenu(MegaCore.getInstance(), user);
             menu.open();
         }
     }

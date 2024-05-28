@@ -6,8 +6,13 @@ import org.bukkit.plugin.Plugin;
 
 import org.jetbrains.annotations.NotNull;
 
-public class SheriffConfig extends Configurator {
+public class SheriffConfig extends ProfessionConfig {
     public SheriffConfig(@NotNull Plugin plugin, String... path) {
         super(plugin, path);
+    }
+
+    @Override
+    public String getName() {
+        return "";
     }
 }

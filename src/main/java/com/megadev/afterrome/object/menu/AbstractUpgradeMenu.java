@@ -4,6 +4,7 @@ import com.megadev.afterrome.object.menu.item.MenuItem;
 import com.megadev.afterrome.object.menu.shop.upgrade.skill.Skill;
 import com.megadev.afterrome.object.user.User;
 
+import dev.mega.megacore.MegaCore;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 
@@ -12,8 +13,8 @@ import java.util.List;
 public abstract class AbstractUpgradeMenu extends AbstractMenu {
     List<Skill> skills;
 
-    public AbstractUpgradeMenu(User user, List<Skill> skills) {
-        super(user, 3);
+    public AbstractUpgradeMenu(MegaCore megaCore, User user, List<Skill> skills) {
+        super(megaCore, user, 3);
         this.skills = skills;
     }
 

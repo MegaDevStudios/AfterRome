@@ -10,6 +10,7 @@ import com.megadev.afterrome.object.menu.item.MenuItem;
 import com.megadev.afterrome.object.profession.*;
 import com.megadev.afterrome.object.user.User;
 
+import dev.mega.megacore.MegaCore;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -18,8 +19,8 @@ import org.bukkit.event.inventory.InventoryCloseEvent;
 import java.util.Optional;
 
 public class ChoiceMenu extends AbstractMenu {
-    public ChoiceMenu(User user) {
-        super(user, 3);
+    public ChoiceMenu(MegaCore megaCore, User user) {
+        super(megaCore, user, 3);
     }
 
     @Override

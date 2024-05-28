@@ -10,7 +10,12 @@ import com.megadev.afterrome.object.user.User;
 
 import java.util.List;
 
-public class Aesculapius implements Profession {
+public class Aesculapius extends Profession<AesculapiusConfig, AesculapiusMenu> {
+
+    protected Aesculapius(Class<AesculapiusConfig> configClass, Class<AesculapiusMenu> menuClass) {
+        super(configClass, menuClass);
+    }
+
     @Override
     public String getNameOfProfession() {
         return ConfigManager.getInstance().getConfig(AesculapiusConfig.class).getName();
@@ -28,6 +33,6 @@ public class Aesculapius implements Profession {
 
     @Override
     public List<Skill> getSkills() {
-        return ConfigManager.getInstance().getConfig(AesculapiusUpgradeShopConfig.class).getSkills();
+        return List.of();
     }
 }

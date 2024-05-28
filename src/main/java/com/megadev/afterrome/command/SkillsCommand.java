@@ -9,11 +9,12 @@ import com.megadev.afterrome.object.user.User;
 
 import org.bukkit.entity.Player;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Optional;
 
 public class SkillsCommand extends BaseCommand {
     @CommandAlias("skills")
-    public void onCommand(Player player) {
+    public void onCommand(Player player) throws InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
         Optional<User> optionalUser = UserManager.getInstance().getUser(player);
 
         if (optionalUser.isEmpty()) return;
