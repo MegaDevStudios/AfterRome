@@ -7,9 +7,12 @@ import org.bukkit.inventory.InventoryHolder;
 
 public interface Menu extends InventoryHolder {
     void handleClick(InventoryClickEvent event);
+
     void handleClose(InventoryCloseEvent event);
+
     void handleOpen(InventoryOpenEvent event);
 
     void open();
+
     void close();
 }

@@ -13,8 +13,6 @@ public interface User {
 
     Player getPlayer();
 
-    String getName();
-
     UUID getUuid();
 
     Profession getProfession();

@@ -13,7 +13,7 @@ public class AgronomistMenu extends AbstractUpgradeMenu {
 
     @Override
     protected void setMenuItems() {
-
+        super.setMenuItems();
     }
 
     @Override

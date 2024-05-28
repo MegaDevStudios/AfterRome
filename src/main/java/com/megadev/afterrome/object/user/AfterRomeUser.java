@@ -1,5 +1,6 @@
 package com.megadev.afterrome.object.user;
 
+import com.google.common.collect.Maps;
 import com.megadev.afterrome.config.MainConfig;
 import com.megadev.afterrome.config.ConfigManager;
 import com.megadev.afterrome.object.item.ItemBuilder;
@@ -13,6 +14,7 @@ import net.md_5.bungee.api.chat.TextComponent;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
+import org.bukkit.configuration.serialization.SerializableAs;
 import org.bukkit.entity.Player;
 
 import lombok.Getter;
@@ -21,6 +23,7 @@ import java.util.*;
 import java.util.List;
 
 @Getter
+@SerializableAs("users")
 public class AfterRomeUser implements User, PointsHolder {
     private static final MainConfig mainConfig = ConfigManager.getInstance().getConfig(MainConfig.class);
     private static final int MAX_UNIT_PER_POINT = mainConfig.getMaxUnitsPerPoint();
@@ -28,12 +31,10 @@ public class AfterRomeUser implements User, PointsHolder {
     @Setter
     private Profession profession;
     private int healths;
-    private final String name;
     private final UUID uuid;
     private double points;
 
     public AfterRomeUser(Player player) {
-        this.name = player.getName();
         this.uuid = player.getUniqueId();
         this.healths = 3;
     }
@@ -91,5 +92,14 @@ public class AfterRomeUser implements User, PointsHolder {
     @Override
     public void addPoints(double amount) {
         points += (amount / MAX_UNIT_PER_POINT);
+    }
+
+    public Map<String, Object> serialize() {
+        Map<String, Object> data = Maps.newConcurrentMap();
+        data.put("uuid", this.uuid);
+        data.put("profession", this.profession);
+        data.put("healths", this.healths);
+        data.put("points", this.points);
+        return data;
     }
 }
