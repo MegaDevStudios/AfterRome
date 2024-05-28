@@ -1,21 +1,18 @@
 package com.megadev.afterrome.object.menu.shop.upgrade.skill.sonofmars;
 
+import com.megadev.afterrome.config.ConfigManager;
+import com.megadev.afterrome.config.shop.upgrade.SantaUpgradeShopConfig;
+import com.megadev.afterrome.config.shop.upgrade.SonOfMarsUpgradeShopConfig;
 import com.megadev.afterrome.object.menu.item.MenuItem;
 import com.megadev.afterrome.object.menu.shop.upgrade.skill.Skill;
 
 import lombok.Getter;
 
+@Getter
 public class Landing implements Skill {
-    @Getter
-    private MenuItem menuItem;
+    private final MenuItem menuItem;
 
-    @Override
-    public String getTitle() {
-        return "";
-    }
-
-    @Override
-    public String getLore() {
-        return "";
+    public Landing() {
+        menuItem = ConfigManager.getInstance().getConfig(SonOfMarsUpgradeShopConfig.class).getLandingItem();
     }
 }
