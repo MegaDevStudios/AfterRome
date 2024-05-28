@@ -7,8 +7,8 @@ import com.megadev.afterrome.object.menu.shop.upgrade.skill.Skill;
 
 import lombok.Getter;
 
+@Getter
 public class Wake implements Skill {
-    @Getter
     private final MenuItem menuItem;
 
     public Wake() {
