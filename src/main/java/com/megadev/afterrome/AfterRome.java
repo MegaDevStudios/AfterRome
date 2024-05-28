@@ -19,8 +19,6 @@ public final class AfterRome extends MegaCore {
         Bukkit.getPluginManager().registerEvents(new PlayerJoinListener(), this);
         Bukkit.getPluginManager().registerEvents(new MenuListener(), this);
 
-        System.out.println("ЛАЛА");
-
         setupManagers();
         setupCommands();
     }
@@ -38,7 +36,6 @@ public final class AfterRome extends MegaCore {
 
     private void setupCommands() {
         PaperCommandManager commandManager = new PaperCommandManager(this);
-        System.out.println("ЛАЛА");
         commandManager.registerCommand(new SkillsCommand());
         commandManager.registerCommand(new ProgCommand());
     }
