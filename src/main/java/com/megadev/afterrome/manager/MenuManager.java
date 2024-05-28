@@ -2,40 +2,80 @@ package com.megadev.afterrome.manager;
 
 import com.megadev.afterrome.object.user.User;
 
+import com.megadev.afterrome.storage.RefreshingData;
+import dev.mega.megacore.MegaCore;
+import dev.mega.megacore.manager.Manager;
 import lombok.Getter;
 
-import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.scheduler.BukkitTask;
 
 import java.util.HashMap;
 
-public class MenuManager {
-    @Getter
-    private static JavaPlugin plugin;
-    @Getter
-    private final static HashMap<User, BukkitTask> refreshingMenus = new HashMap<>();
+@Getter
+public class MenuManager extends Manager {
+    @Getter private static MenuManager instance;
+    @Getter private final static HashMap<User, BukkitTask> refreshingMenus = new HashMap<>();
+    private RefreshingData refreshingData;
 
-    public static void init(JavaPlugin plugin) {
-        MenuManager.plugin = plugin;
+    private MenuManager(MegaCore megaCore) {
+        super(megaCore);
     }
 
-    public static boolean containsPlayer(User user) {
+    public static void init(MegaCore megaCore) {
+        if (instance == null) {
+            instance = new MenuManager(megaCore);
+        }
+    }
+
+    public void startRefreshingMenus(User user) {
+        //todo: just do it, make it runnable
+    }
+
+    public boolean containsPlayer(User user) {
         return refreshingMenus.containsKey(user);
     }
 
-    private static BukkitTask getBukkitTask(User user) {
+    private BukkitTask getBukkitTask(User user) {
         return refreshingMenus.get(user);
     }
 
-    public static void cancelTask(User user) {
+    public void cancelTask(User user) {
         getBukkitTask(user).cancel();
     }
 
-    public static void remove(User user) {
+    public void remove(User user) {
         refreshingMenus.remove(user);
     }
 
-    public static void put(User user, BukkitTask task) {
+    public void put(User user, BukkitTask task) {
         refreshingMenus.put(user, task);
+    }
+
+    public void putTaskForUser(User user, BukkitTask task) {
+        refreshingData.addValue(user.getUuid(), task);
+    }
+
+    public void removeTaskForUser(User user) {
+        refreshingData.remove(user.getUuid());
+    }
+
+    public void cancelTaskForUser(User user) {
+        refreshingData.getValue(user.getUuid()).cancel();
+    }
+
+    public boolean containsTaskForUser(User user) {
+        return refreshingData.contains(user.getUuid());
+    }
+
+    @Override
+    public void reload() {
+        refreshingData = new RefreshingData();
+    }
+
+    @Override
+    public void disable() {
+        refreshingData = null;
     }
 }

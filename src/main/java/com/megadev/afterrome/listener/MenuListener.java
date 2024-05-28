@@ -63,7 +63,8 @@ public class MenuListener implements Listener {
         if (optionalUser.isPresent()) {
             User user = optionalUser.get();
 
-            if (MenuManager.getRefreshingMenus().containsKey(user)) {
+
+            if (MenuManager.getInstance().getRefreshingMenus().containsKey(user)) {
                 MenuManager.getRefreshingMenus().get(user).cancel();
                 MenuManager.getRefreshingMenus().remove(user);
             }

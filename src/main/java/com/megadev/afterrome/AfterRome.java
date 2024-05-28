@@ -5,7 +5,7 @@ import com.megadev.afterrome.command.ProgCommand;
 import com.megadev.afterrome.command.SkillsCommand;
 import com.megadev.afterrome.listener.MenuListener;
 import com.megadev.afterrome.listener.PlayerJoinListener;
-import com.megadev.afterrome.manager.ConfigManager;
+import com.megadev.afterrome.config.ConfigManager;
 
 import com.megadev.afterrome.manager.MenuManager;
 import com.megadev.afterrome.manager.UserManager;
@@ -16,10 +16,8 @@ import org.bukkit.Bukkit;
 public final class AfterRome extends MegaCore {
     @Override
     public void enable() {
-        Bukkit.getPluginManager().registerEvents(new PlayerJoinListener(), this);
-        Bukkit.getPluginManager().registerEvents(new MenuListener(), this);
-
         setupManagers();
+        setupListeners();
         setupCommands();
     }
 
@@ -38,5 +36,10 @@ public final class AfterRome extends MegaCore {
         PaperCommandManager commandManager = new PaperCommandManager(this);
         commandManager.registerCommand(new SkillsCommand());
         commandManager.registerCommand(new ProgCommand());
+    }
+
+    private void setupListeners() {
+        Bukkit.getPluginManager().registerEvents(new PlayerJoinListener(), this);
+        Bukkit.getPluginManager().registerEvents(new MenuListener(), this);
     }
 }

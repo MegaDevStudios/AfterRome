@@ -1,11 +1,12 @@
 package com.megadev.afterrome.object.menu;
 
-import com.megadev.afterrome.manager.ConfigManager;
+import com.megadev.afterrome.config.ConfigManager;
 import com.megadev.afterrome.manager.MenuManager;
 import com.megadev.afterrome.object.menu.item.MenuItem;
 
 import com.megadev.afterrome.object.user.User;
 import com.megadev.afterrome.util.Color;
+import dev.mega.megacore.MegaCore;
 import lombok.Getter;
 
 import org.bukkit.Bukkit;
@@ -25,6 +26,8 @@ import java.util.Arrays;
 import java.util.List;
 
 public abstract class AbstractMenu implements Menu {
+    private final MegaCore megaCore;
+
     @Getter
     private final User user;
     @Getter
@@ -34,14 +37,16 @@ public abstract class AbstractMenu implements Menu {
     private Inventory inventory;
     private boolean allowClicks = true;
 
-    public AbstractMenu(User user, int rows) {
+    public AbstractMenu(MegaCore megaCore, User user, int rows) {
+        this.megaCore = megaCore;
         this.user = user;
         this.items = new MenuItem[rows * 9];
         this.type = InventoryType.CHEST;
         this.configManager = ConfigManager.getInstance();
     }
 
-    public AbstractMenu(User user, InventoryType type) {
+    public AbstractMenu(MegaCore megaCore, User user, InventoryType type) {
+        this.megaCore = megaCore;
         this.user = user;
         this.type = type;
         this.configManager = ConfigManager.getInstance();
@@ -77,15 +82,17 @@ public abstract class AbstractMenu implements Menu {
 
         if (updateTime() <= 0) return;
 
-        if (MenuManager.containsPlayer(user)) {
-            MenuManager.cancelTask(user);
-            MenuManager.remove(user);
+        MenuManager menuManager = MenuManager.getInstance();
+
+        if (menuManager.containsPlayer(user)) {
+            menuManager.cancelTask(user);
+            menuManager.remove(user);
         }
 
-        MenuManager.put(user, Bukkit.getScheduler().runTaskTimer(MenuManager.getPlugin(), () -> {
+        menuManager.put(user, Bukkit.getScheduler().runTaskTimer(megaCore, () -> {
             if (!player.getOpenInventory().getTitle().equals(ChatColor.translateAlternateColorCodes('&', getMenuName()))) {
-                MenuManager.cancelTask(user);
-                MenuManager.remove(user);
+                menuManager.cancelTask(user);
+                menuManager.remove(user);
                 return;
             }
             update();

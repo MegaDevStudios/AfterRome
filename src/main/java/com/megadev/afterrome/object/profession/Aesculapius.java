@@ -2,7 +2,7 @@ package com.megadev.afterrome.object.profession;
 
 import com.megadev.afterrome.config.profession.AesculapiusConfig;
 import com.megadev.afterrome.config.shop.upgrade.AesculapiusUpgradeShopConfig;
-import com.megadev.afterrome.manager.ConfigManager;
+import com.megadev.afterrome.config.ConfigManager;
 import com.megadev.afterrome.object.menu.AbstractUpgradeMenu;
 import com.megadev.afterrome.object.menu.shop.upgrade.menu.AesculapiusMenu;
 import com.megadev.afterrome.object.menu.shop.upgrade.skill.Skill;

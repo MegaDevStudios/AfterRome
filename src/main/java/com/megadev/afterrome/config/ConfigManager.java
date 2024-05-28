@@ -1,9 +1,7 @@
-package com.megadev.afterrome.manager;
+package com.megadev.afterrome.config;
 
-import com.megadev.afterrome.config.MainConfig;
 import com.megadev.afterrome.config.manager.ProfessionsManager;
 import com.megadev.afterrome.config.manager.ShopManager;
-import com.megadev.afterrome.config.shop.ShopConfig;
 import dev.mega.megacore.config.AbstractManager;
 
 import lombok.Getter;
