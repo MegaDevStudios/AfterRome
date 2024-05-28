@@ -1,9 +1,9 @@
 package com.megadev.afterrome.config.shop.upgrade;
 
 import com.megadev.afterrome.object.menu.item.MenuItem;
-import com.megadev.afterrome.util.Color;
 import dev.mega.megacore.config.Configurator;
 
+import dev.mega.megacore.util.Color;
 import org.bukkit.Material;
 import org.bukkit.plugin.Plugin;
 import org.jetbrains.annotations.NotNull;
@@ -15,7 +15,7 @@ public class ArtisanUpgradeShopConfig extends Configurator implements UpgradeSho
 
     @Override
     public String getMenuName() {
-        return Color.colorize(getString("menu-name"));
+        return Color.getTranslated(getString("menu-name"));
     }
 
     @Override
@@ -24,11 +24,11 @@ public class ArtisanUpgradeShopConfig extends Configurator implements UpgradeSho
     }
 
     public String getBlacksmithName() {
-        return Color.colorize(getString("skill.blacksmith.name"));
+        return Color.getTranslated(getString("skill.blacksmith.name"));
     }
 
     public String getBlacksmithLore() {
-        return Color.colorize(getString("skill.blacksmith.lore"));
+        return Color.getTranslated(getString("skill.blacksmith.lore"));
     }
 
     public MenuItem getBlacksmithItem() {
@@ -39,11 +39,11 @@ public class ArtisanUpgradeShopConfig extends Configurator implements UpgradeSho
     }
 
     public String getFishermanName() {
-        return Color.colorize(getString("skill.fisherman.name"));
+        return Color.getTranslated(getString("skill.fisherman.name"));
     }
 
     public String getFishermanLore() {
-        return Color.colorize(getString("skill.fisherman.lore"));
+        return Color.getTranslated(getString("skill.fisherman.lore"));
     }
 
     public MenuItem getFishermanItem() {
@@ -54,11 +54,11 @@ public class ArtisanUpgradeShopConfig extends Configurator implements UpgradeSho
     }
 
     public String getHorsemanName() {
-        return Color.colorize(getString("skill.horseman.name"));
+        return Color.getTranslated(getString("skill.horseman.name"));
     }
 
     public String getHorsemanLore() {
-        return Color.colorize(getString("skill.horseman.lore"));
+        return Color.getTranslated(getString("skill.horseman.lore"));
     }
 
     public MenuItem getHorsemanItem() {
@@ -69,11 +69,11 @@ public class ArtisanUpgradeShopConfig extends Configurator implements UpgradeSho
     }
 
     public String getMetallurgistName() {
-        return Color.colorize(getString("skill.metallurgist.name"));
+        return Color.getTranslated(getString("skill.metallurgist.name"));
     }
 
     public String getMetallurgistLore() {
-        return Color.colorize(getString("skill.metallurgist.lore"));
+        return Color.getTranslated(getString("skill.metallurgist.lore"));
     }
 
     public MenuItem getMetallurgistItem() {
@@ -84,11 +84,11 @@ public class ArtisanUpgradeShopConfig extends Configurator implements UpgradeSho
     }
 
     public String getMinerName() {
-        return Color.colorize(getString("skill.miner.name"));
+        return Color.getTranslated(getString("skill.miner.name"));
     }
 
     public String getMinerLore() {
-        return Color.colorize(getString("skill.miner.lore"));
+        return Color.getTranslated(getString("skill.miner.lore"));
     }
 
     public MenuItem getMinerItem() {
@@ -99,11 +99,11 @@ public class ArtisanUpgradeShopConfig extends Configurator implements UpgradeSho
     }
 
     public String getToolmakerName() {
-        return Color.colorize(getString("skill.toolmaker.name"));
+        return Color.getTranslated(getString("skill.toolmaker.name"));
     }
 
     public String getToolmakerLore() {
-        return Color.colorize(getString("skill.toolmaker.lore"));
+        return Color.getTranslated(getString("skill.toolmaker.lore"));
     }
 
     public MenuItem getToolmakerItem() {

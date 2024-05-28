@@ -1,9 +1,9 @@
 package com.megadev.afterrome.config.shop.upgrade;
 
 import com.megadev.afterrome.object.menu.item.MenuItem;
-import com.megadev.afterrome.util.Color;
 import dev.mega.megacore.config.Configurator;
 
+import dev.mega.megacore.util.Color;
 import org.bukkit.Material;
 import org.bukkit.plugin.Plugin;
 import org.jetbrains.annotations.NotNull;
@@ -16,7 +16,7 @@ public class SheriffUpgradeShopConfig extends Configurator implements UpgradeSho
 
     @Override
     public String getMenuName() {
-        return Color.colorize(getString("menu-name"));
+        return Color.getTranslated(getString("menu-name"));
     }
 
     @Override
@@ -25,11 +25,11 @@ public class SheriffUpgradeShopConfig extends Configurator implements UpgradeSho
     }
 
     public String getChaseName() {
-        return Color.colorize(getString("skill.chase.name"));
+        return Color.getTranslated(getString("skill.chase.name"));
     }
 
     public String getChaseLore() {
-        return Color.colorize(getString("skill.chase.lore"));
+        return Color.getTranslated(getString("skill.chase.lore"));
     }
 
     public MenuItem getChaseItem() {
@@ -40,11 +40,11 @@ public class SheriffUpgradeShopConfig extends Configurator implements UpgradeSho
     }
 
     public String getCriminologyName() {
-        return Color.colorize(getString("skill.criminology.name"));
+        return Color.getTranslated(getString("skill.criminology.name"));
     }
 
     public String getCriminologyLore() {
-        return Color.colorize(getString("skill.criminology.lore"));
+        return Color.getTranslated(getString("skill.criminology.lore"));
     }
 
     public MenuItem getCriminologyItem() {
@@ -55,11 +55,11 @@ public class SheriffUpgradeShopConfig extends Configurator implements UpgradeSho
     }
 
     public String getDonutsName() {
-        return Color.colorize(getString("skill.donuts.name"));
+        return Color.getTranslated(getString("skill.donuts.name"));
     }
 
     public String getDonutsLore() {
-        return Color.colorize(getString("skill.donuts.lore"));
+        return Color.getTranslated(getString("skill.donuts.lore"));
     }
 
     public MenuItem getDonutsItem() {
@@ -70,11 +70,11 @@ public class SheriffUpgradeShopConfig extends Configurator implements UpgradeSho
     }
 
     public String getHoldingName() {
-        return Color.colorize(getString("skill.holding.name"));
+        return Color.getTranslated(getString("skill.holding.name"));
     }
 
     public String getHoldingLore() {
-        return Color.colorize(getString("skill.holding.lore"));
+        return Color.getTranslated(getString("skill.holding.lore"));
     }
 
     public MenuItem getHoldingItem() {
@@ -85,11 +85,11 @@ public class SheriffUpgradeShopConfig extends Configurator implements UpgradeSho
     }
 
     public String getShortBarreledName() {
-        return Color.colorize(getString("skill.short-barreled.name"));
+        return Color.getTranslated(getString("skill.short-barreled.name"));
     }
 
     public String getShortBarreledLore() {
-        return Color.colorize(getString("skill.short-barreled.lore"));
+        return Color.getTranslated(getString("skill.short-barreled.lore"));
     }
 
     public MenuItem getShortBarreledItem() {
@@ -100,11 +100,11 @@ public class SheriffUpgradeShopConfig extends Configurator implements UpgradeSho
     }
 
     public String getWakeName() {
-        return Color.colorize(getString("skill.wake.name"));
+        return Color.getTranslated(getString("skill.wake.name"));
     }
 
     public String getWakeLore() {
-        return Color.colorize(getString("skill.wake.lore"));
+        return Color.getTranslated(getString("skill.wake.lore"));
     }
 
     public MenuItem getWakeItem() {

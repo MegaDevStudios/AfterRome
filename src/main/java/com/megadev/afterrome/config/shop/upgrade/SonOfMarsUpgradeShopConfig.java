@@ -1,9 +1,9 @@
 package com.megadev.afterrome.config.shop.upgrade;
 
 import com.megadev.afterrome.object.menu.item.MenuItem;
-import com.megadev.afterrome.util.Color;
 import dev.mega.megacore.config.Configurator;
 
+import dev.mega.megacore.util.Color;
 import org.bukkit.Material;
 import org.bukkit.plugin.Plugin;
 import org.jetbrains.annotations.NotNull;
@@ -15,7 +15,7 @@ public class SonOfMarsUpgradeShopConfig extends Configurator implements UpgradeS
 
     @Override
     public String getMenuName() {
-        return Color.colorize(getString("menu-name"));
+        return Color.getTranslated(getString("menu-name"));
     }
 
     @Override
@@ -24,11 +24,11 @@ public class SonOfMarsUpgradeShopConfig extends Configurator implements UpgradeS
     }
 
     public String getIronInsideName() {
-        return Color.colorize(getString("skill.iron-inside.name"));
+        return Color.getTranslated(getString("skill.iron-inside.name"));
     }
 
     public String getIronInsideLore() {
-        return Color.colorize(getString("skill.iron-inside.lore"));
+        return Color.getTranslated(getString("skill.iron-inside.lore"));
     }
 
     public MenuItem getIronInsideItem() {
@@ -39,11 +39,11 @@ public class SonOfMarsUpgradeShopConfig extends Configurator implements UpgradeS
     }
 
     public String getIronOutsideName() {
-        return Color.colorize(getString("skill.iron-outside.name"));
+        return Color.getTranslated(getString("skill.iron-outside.name"));
     }
 
     public String getIronOutsideLore() {
-        return Color.colorize(getString("skill.iron-outside.lore"));
+        return Color.getTranslated(getString("skill.iron-outside.lore"));
     }
 
     public MenuItem getIronOutsideItem() {
@@ -54,11 +54,11 @@ public class SonOfMarsUpgradeShopConfig extends Configurator implements UpgradeS
     }
 
     public String getLandingName() {
-        return Color.colorize(getString("skill.landing.name"));
+        return Color.getTranslated(getString("skill.landing.name"));
     }
 
     public String getLandingLore() {
-        return Color.colorize(getString("skill.landing.lore"));
+        return Color.getTranslated(getString("skill.landing.lore"));
     }
 
     public MenuItem getLandingItem() {
@@ -69,11 +69,11 @@ public class SonOfMarsUpgradeShopConfig extends Configurator implements UpgradeS
     }
 
     public String getMeleeCombatName() {
-        return Color.colorize(getString("skill.melee-combat.name"));
+        return Color.getTranslated(getString("skill.melee-combat.name"));
     }
 
     public String getMeleeCombatLore() {
-        return Color.colorize(getString("skill.melee-combat.lore"));
+        return Color.getTranslated(getString("skill.melee-combat.lore"));
     }
 
     public MenuItem getMeleeCombatItem() {
@@ -84,11 +84,11 @@ public class SonOfMarsUpgradeShopConfig extends Configurator implements UpgradeS
     }
 
     public String getProteinDietName() {
-        return Color.colorize(getString("skill.protein-diet.name"));
+        return Color.getTranslated(getString("skill.protein-diet.name"));
     }
 
     public String getProteinDietLore() {
-        return Color.colorize(getString("skill.protein-diet.lore"));
+        return Color.getTranslated(getString("skill.protein-diet.lore"));
     }
 
     public MenuItem getProteinDietItem() {
@@ -99,11 +99,11 @@ public class SonOfMarsUpgradeShopConfig extends Configurator implements UpgradeS
     }
 
     public String getShootingName() {
-        return Color.colorize(getString("skill.shooting.name"));
+        return Color.getTranslated(getString("skill.shooting.name"));
     }
 
     public String getShootingLore() {
-        return Color.colorize(getString("skill.shooting.lore"));
+        return Color.getTranslated(getString("skill.shooting.lore"));
     }
 
     public MenuItem getShootingItem() {

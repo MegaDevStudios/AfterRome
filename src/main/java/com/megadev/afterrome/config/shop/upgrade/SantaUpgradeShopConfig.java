@@ -1,14 +1,11 @@
 package com.megadev.afterrome.config.shop.upgrade;
 
 import com.megadev.afterrome.object.menu.item.MenuItem;
-import com.megadev.afterrome.object.menu.shop.upgrade.skill.Skill;
-import com.megadev.afterrome.util.Color;
 import dev.mega.megacore.config.Configurator;
+import dev.mega.megacore.util.Color;
 import org.bukkit.Material;
 import org.bukkit.plugin.Plugin;
 import org.jetbrains.annotations.NotNull;
-
-import java.util.List;
 
 public class SantaUpgradeShopConfig extends Configurator implements UpgradeShopConfig {
     public SantaUpgradeShopConfig(@NotNull Plugin plugin, String... path) {
@@ -17,7 +14,7 @@ public class SantaUpgradeShopConfig extends Configurator implements UpgradeShopC
 
     @Override
     public String getMenuName() {
-        return Color.colorize(getString("menu-name"));
+        return Color.getTranslated(getString("menu-name"));
     }
 
     @Override
@@ -26,11 +23,11 @@ public class SantaUpgradeShopConfig extends Configurator implements UpgradeShopC
     }
 
     public String getForTheFaithName() {
-        return Color.colorize(getString("skill.for-the-faith.name"));
+        return Color.getTranslated(getString("skill.for-the-faith.name"));
     }
 
     public String getForTheFaithLore() {
-        return Color.colorize(getString("skill.for-the-faith.lore"));
+        return Color.getTranslated(getString("skill.for-the-faith.lore"));
     }
 
     public MenuItem getForTheFaithItem() {
@@ -41,11 +38,11 @@ public class SantaUpgradeShopConfig extends Configurator implements UpgradeShopC
     }
 
     public String getForTheGraceName() {
-        return Color.colorize(getString("skill.for-the-grace.name"));
+        return Color.getTranslated(getString("skill.for-the-grace.name"));
     }
 
     public String getForTheGraceLore() {
-        return Color.colorize(getString("skill.for-the-grace.lore"));
+        return Color.getTranslated(getString("skill.for-the-grace.lore"));
     }
 
     public MenuItem getForTheGraceItem() {
@@ -56,11 +53,11 @@ public class SantaUpgradeShopConfig extends Configurator implements UpgradeShopC
     }
 
     public String getForTheHomeOfTheHolyName() {
-        return Color.colorize(getString("skill.for-the-home-of-the-holy.name"));
+        return Color.getTranslated(getString("skill.for-the-home-of-the-holy.name"));
     }
 
     public String getForTheHomeOfTheHolyLore() {
-        return Color.colorize(getString("skill.for-the-home-of-the-holy.lore"));
+        return Color.getTranslated(getString("skill.for-the-home-of-the-holy.lore"));
     }
 
     public MenuItem getForTheHomeOfTheHolyItem() {
@@ -71,11 +68,11 @@ public class SantaUpgradeShopConfig extends Configurator implements UpgradeShopC
     }
 
     public String getForTheMightOfOurLordName() {
-        return Color.colorize(getString("skill.for-the-might-of-our-lord.name"));
+        return Color.getTranslated(getString("skill.for-the-might-of-our-lord.name"));
     }
 
     public String getForTheMightOfOurLordLore() {
-        return Color.colorize(getString("skill.for-the-might-of-our-lord.lore"));
+        return Color.getTranslated(getString("skill.for-the-might-of-our-lord.lore"));
     }
 
     public MenuItem getForTheMightOfOurLordItem() {
@@ -86,11 +83,11 @@ public class SantaUpgradeShopConfig extends Configurator implements UpgradeShopC
     }
 
     public String getForTheWayOfTheSwordName() {
-        return Color.colorize(getString("skill.for-the-way-of-the-sword.name"));
+        return Color.getTranslated(getString("skill.for-the-way-of-the-sword.name"));
     }
 
     public String getForTheWayOfTheSwordLore() {
-        return Color.colorize(getString("skill.for-the-way-of-the-sword.lore"));
+        return Color.getTranslated(getString("skill.for-the-way-of-the-sword.lore"));
     }
 
     public MenuItem getForTheWayOfTheSwordItem() {
@@ -101,11 +98,11 @@ public class SantaUpgradeShopConfig extends Configurator implements UpgradeShopC
     }
 
     public String getHighlightsName() {
-        return Color.colorize(getString("skill.highlights.name"));
+        return Color.getTranslated(getString("skill.highlights.name"));
     }
 
     public String getHighlightsLore() {
-        return Color.colorize(getString("skill.highlights.lore"));
+        return Color.getTranslated(getString("skill.highlights.lore"));
     }
 
     public MenuItem getHighlightsItem() {

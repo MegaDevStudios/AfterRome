@@ -1,8 +1,7 @@
 package com.megadev.afterrome.config;
 
-import com.megadev.afterrome.util.Color;
-
 import dev.mega.megacore.config.Configurator;
+import dev.mega.megacore.util.Color;
 import org.bukkit.plugin.Plugin;
 import org.jetbrains.annotations.NotNull;
 
@@ -12,48 +11,48 @@ public class MainConfig extends Configurator {
     }
 
     public String getChoiceMenuName() {
-        return Color.colorize(getString("menu.choice-menu.name"));
+        return Color.getTranslated(getString("menu.choice-menu.name"));
     }
 
     public String getAgronomistLore() {
-        return Color.colorize(getString("menu.choice-menu.head.agronomist.lore"));
+        return Color.getTranslated(getString("menu.choice-menu.head.agronomist.lore"));
     }
 
     public String getArtisanLore() {
-        return Color.colorize(getString("menu.choice-menu.head.artisan.lore"));
+        return Color.getTranslated(getString("menu.choice-menu.head.artisan.lore"));
     }
 
     public String getAesculapiusLore() {
-        return Color.colorize(getString("menu.choice-menu.head.aesculapius.lore"));
+        return Color.getTranslated(getString("menu.choice-menu.head.aesculapius.lore"));
     }
 
     public String getForesterLore() {
-        return Color.colorize(getString("menu.choice-menu.head.forester.lore"));
+        return Color.getTranslated(getString("menu.choice-menu.head.forester.lore"));
     }
 
     public String getSonOfMarsLore() {
-        return Color.colorize(getString("menu.choice-menu.head.son-of-mars.lore"));
+        return Color.getTranslated(getString("menu.choice-menu.head.son-of-mars.lore"));
     }
 
 
     public String getAgronomistName() {
-        return Color.colorize(getString("menu.choice-menu.head.agronomist.name"));
+        return Color.getTranslated(getString("menu.choice-menu.head.agronomist.name"));
     }
 
     public String getSonOfMarsName() {
-        return Color.colorize(getString("menu.choice-menu.head.son-of-mars.name"));
+        return Color.getTranslated(getString("menu.choice-menu.head.son-of-mars.name"));
     }
 
     public String getArtisanName() {
-        return Color.colorize(getString("menu.choice-menu.head.artisan.name"));
+        return Color.getTranslated(getString("menu.choice-menu.head.artisan.name"));
     }
 
     public String getAesculapiusName() {
-        return Color.colorize(getString("menu.choice-menu.head.aesculapius.name"));
+        return Color.getTranslated(getString("menu.choice-menu.head.aesculapius.name"));
     }
 
     public String getForesterName() {
-        return Color.colorize(getString("menu.choice-menu.head.forester.name"));
+        return Color.getTranslated(getString("menu.choice-menu.head.forester.name"));
     }
 
     public String getAgronomistTexture() {

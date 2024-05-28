@@ -1,10 +1,10 @@
 package com.megadev.afterrome.config.shop.upgrade;
 
 import com.megadev.afterrome.object.menu.item.MenuItem;
-import com.megadev.afterrome.util.Color;
 
 import dev.mega.megacore.config.Configurator;
 
+import dev.mega.megacore.util.Color;
 import org.bukkit.Material;
 import org.bukkit.plugin.Plugin;
 import org.jetbrains.annotations.NotNull;
@@ -16,7 +16,7 @@ public class MafiaUpgradeShopConfig extends Configurator implements UpgradeShopC
 
     @Override
     public String getMenuName() {
-        return Color.colorize(getString("menu-name"));
+        return Color.getTranslated(getString("menu-name"));
     }
 
     @Override
@@ -25,11 +25,11 @@ public class MafiaUpgradeShopConfig extends Configurator implements UpgradeShopC
     }
 
     public String getHackName() {
-        return Color.colorize(getString("skill.hack.name"));
+        return Color.getTranslated(getString("skill.hack.name"));
     }
 
     public String getHackLore() {
-        return Color.colorize(getString("skill.hack.lore"));
+        return Color.getTranslated(getString("skill.hack.lore"));
     }
 
     public MenuItem getHackItem() {
@@ -40,11 +40,11 @@ public class MafiaUpgradeShopConfig extends Configurator implements UpgradeShopC
     }
 
     public String getKillerName() {
-        return Color.colorize(getString("skill.killer.name"));
+        return Color.getTranslated(getString("skill.killer.name"));
     }
 
     public String getKillerLore() {
-        return Color.colorize(getString("skill.killer.lore"));
+        return Color.getTranslated(getString("skill.killer.lore"));
     }
 
     public MenuItem getKillerItem() {
@@ -55,11 +55,11 @@ public class MafiaUpgradeShopConfig extends Configurator implements UpgradeShopC
     }
 
     public String getPoisonName() {
-        return Color.colorize(getString("skill.poison.name"));
+        return Color.getTranslated(getString("skill.poison.name"));
     }
 
     public String getPoisonLore() {
-        return Color.colorize(getString("skill.poison.lore"));
+        return Color.getTranslated(getString("skill.poison.lore"));
     }
 
     public MenuItem getPoisonItem() {
@@ -70,11 +70,11 @@ public class MafiaUpgradeShopConfig extends Configurator implements UpgradeShopC
     }
 
     public String getSlipperyName() {
-        return Color.colorize(getString("skill.slippery.name"));
+        return Color.getTranslated(getString("skill.slippery.name"));
     }
 
     public String getSlipperyLore() {
-        return Color.colorize(getString("skill.slippery.lore"));
+        return Color.getTranslated(getString("skill.slippery.lore"));
     }
 
     public MenuItem getSlipperyItem() {
@@ -85,11 +85,11 @@ public class MafiaUpgradeShopConfig extends Configurator implements UpgradeShopC
     }
 
     public String getStealthName() {
-        return Color.colorize(getString("skill.stealth.name"));
+        return Color.getTranslated(getString("skill.stealth.name"));
     }
 
     public String getStealthLore() {
-        return Color.colorize(getString("skill.stealth.lore"));
+        return Color.getTranslated(getString("skill.stealth.lore"));
     }
 
     public MenuItem getStealthItem() {
@@ -100,11 +100,11 @@ public class MafiaUpgradeShopConfig extends Configurator implements UpgradeShopC
     }
 
     public String getWakeName() {
-        return Color.colorize(getString("skill.wake.name"));
+        return Color.getTranslated(getString("skill.wake.name"));
     }
 
     public String getWakeLore() {
-        return Color.colorize(getString("skill.wake.lore"));
+        return Color.getTranslated(getString("skill.wake.lore"));
     }
 
     public MenuItem getWakeItem() {
