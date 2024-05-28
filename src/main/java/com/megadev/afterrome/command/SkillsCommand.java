@@ -14,7 +14,7 @@ import java.util.Optional;
 
 public class SkillsCommand extends BaseCommand {
     @CommandAlias("skills")
-    public void onCommand(Player player) throws InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
+    public void onCommand(Player player) {
         Optional<User> optionalUser = UserManager.getInstance().getUser(player);
 
         if (optionalUser.isEmpty()) return;

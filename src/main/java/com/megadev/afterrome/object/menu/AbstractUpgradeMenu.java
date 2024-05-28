@@ -13,8 +13,8 @@ import java.util.List;
 public abstract class AbstractUpgradeMenu extends AbstractMenu {
     List<Skill> skills;
 
-    public AbstractUpgradeMenu(MegaCore megaCore, User user, List<Skill> skills) {
-        super(megaCore, user, 3);
+    public AbstractUpgradeMenu(User user, List<Skill> skills) {
+        super(user, 3);
         this.skills = skills;
     }
 
@@ -27,6 +27,11 @@ public abstract class AbstractUpgradeMenu extends AbstractMenu {
     protected void setMenuItems() {
         for (int i = 0; i < getSize(); i++) {
             setItem(new MenuItem(new ItemStack(Material.BLACK_STAINED_GLASS_PANE)), i);
+        }
+
+        int i = 0;
+        for (Skill skill : skills) {
+            setItem(skill.getMenuItem(), i++);
         }
     }
 }

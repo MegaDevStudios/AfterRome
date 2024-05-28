@@ -1,12 +1,12 @@
 menu-name: "&2Агроном"
 skill:
   butcher:
-    item: "WHEAT"
-    name: "&2Фермер"
-    lore: "&8Описание"
-  cook:
     item: "BEEF"
     name: "&2Мясник"
+    lore: "&8Описание"
+  cook:
+    item: "WHEAT"
+    name: "&2Фермер"
     lore: "&8Описание"
   farmer:
     item: "LEATHER"

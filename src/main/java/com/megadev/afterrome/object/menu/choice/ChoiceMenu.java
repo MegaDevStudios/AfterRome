@@ -10,7 +10,6 @@ import com.megadev.afterrome.object.menu.item.MenuItem;
 import com.megadev.afterrome.object.profession.*;
 import com.megadev.afterrome.object.user.User;
 
-import dev.mega.megacore.MegaCore;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
