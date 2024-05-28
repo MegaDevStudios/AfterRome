@@ -80,6 +80,6 @@ processResources {
 }
 
 shadowJar {
-    destinationDirectory.set(new File(System.getenv("OUTPUT_DIRECTORY").toString()))
+    destinationDirectory.set(new File(System.getenv("OUTPUT_DIR").toString()))
     archiveFileName = "AfterRome-${version}.jar"
 }
