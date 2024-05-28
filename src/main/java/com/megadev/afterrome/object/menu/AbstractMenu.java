@@ -25,28 +25,23 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Arrays;
 import java.util.List;
 
+@Getter
 public abstract class AbstractMenu implements Menu {
-    private final MegaCore megaCore;
-
-    @Getter
     private final User user;
-    @Getter
     private final ConfigManager configManager;
     private final InventoryType type;
     private MenuItem[] items;
     private Inventory inventory;
     private boolean allowClicks = true;
 
-    public AbstractMenu(MegaCore megaCore, User user, int rows) {
-        this.megaCore = megaCore;
+    public AbstractMenu(User user, int rows) {
         this.user = user;
         this.items = new MenuItem[rows * 9];
         this.type = InventoryType.CHEST;
         this.configManager = ConfigManager.getInstance();
     }
 
-    public AbstractMenu(MegaCore megaCore, User user, InventoryType type) {
-        this.megaCore = megaCore;
+    public AbstractMenu(User user, InventoryType type) {
         this.user = user;
         this.type = type;
         this.configManager = ConfigManager.getInstance();
@@ -89,7 +84,7 @@ public abstract class AbstractMenu implements Menu {
             menuManager.remove(user);
         }
 
-        menuManager.put(user, Bukkit.getScheduler().runTaskTimer(megaCore, () -> {
+        menuManager.put(user, Bukkit.getScheduler().runTaskTimer(MegaCore.getInstance(), () -> {
             if (!player.getOpenInventory().getTitle().equals(ChatColor.translateAlternateColorCodes('&', getMenuName()))) {
                 menuManager.cancelTask(user);
                 menuManager.remove(user);

@@ -29,7 +29,7 @@ public class PlayerJoinListener implements Listener {
         User user = optionalUser.get();
 
         if (user.getProfession() == null) {
-            Menu menu = new ChoiceMenu(MegaCore.getInstance(), user);
+            Menu menu = new ChoiceMenu(user);
             menu.open();
         }
     }

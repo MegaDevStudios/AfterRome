@@ -19,8 +19,8 @@ import org.bukkit.event.inventory.InventoryCloseEvent;
 import java.util.Optional;
 
 public class ChoiceMenu extends AbstractMenu {
-    public ChoiceMenu(MegaCore megaCore, User user) {
-        super(megaCore, user, 3);
+    public ChoiceMenu(User user) {
+        super(user, 3);
     }
 
     @Override
