@@ -1,6 +1,7 @@
 package com.megadev.afterrome.object.profession;
 
 import com.megadev.afterrome.object.menu.AbstractUpgradeMenu;
+import com.megadev.afterrome.object.menu.shop.upgrade.menu.AgronomistMenu;
 import com.megadev.afterrome.object.menu.shop.upgrade.skill.Skill;
 import com.megadev.afterrome.object.user.User;
 
@@ -14,12 +15,13 @@ public class Agronomist implements Profession {
 
     @Override
     public AbstractUpgradeMenu getUpgradeMenu(User user) {
-        return null;
+        return new AgronomistMenu(user, getSkills());
     }
 
     @Override
     public List<Skill> getSkills() {
-        return List.of();
-    }
+        return List.of(
 
+        );
+    }
 }
