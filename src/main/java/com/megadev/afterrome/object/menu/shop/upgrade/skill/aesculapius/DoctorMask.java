@@ -9,10 +9,9 @@ import lombok.Getter;
 
 @Getter
 public class DoctorMask implements Skill {
-
     private final MenuItem menuItem;
 
     public DoctorMask() {
-        menuItem = ConfigManager.getInstance().getConfig(AesculapiusUpgradeShopConfig.class).getAlchemyItem();
+        menuItem = ConfigManager.getInstance().getConfig(AesculapiusUpgradeShopConfig.class).getDoctorMaskItem();
     }
 }

@@ -12,6 +12,6 @@ public class BrutalSurgery implements Skill {
     private final MenuItem menuItem;
 
     public BrutalSurgery() {
-        menuItem = ConfigManager.getInstance().getConfig(AesculapiusUpgradeShopConfig.class).getAlchemyItem();
+        menuItem = ConfigManager.getInstance().getConfig(AesculapiusUpgradeShopConfig.class).getBrutalSurgeryItem();
     }
 }

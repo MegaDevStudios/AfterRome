@@ -49,27 +49,27 @@ public class AgronomistUpgradeShopConfig extends Configurator implements Upgrade
     }
 
     public String getButcherLore() {
-        return Color.colorize(getString("skill.butcher.name"));
+        return Color.colorize(getString("skill.butcher.lore"));
     }
 
     public String getCookLore() {
-        return Color.colorize(getString("skill.cook.name"));
+        return Color.colorize(getString("skill.cook.lore"));
     }
 
     public String getFarmerLore() {
-        return Color.colorize(getString("skill.farmer.name"));
+        return Color.colorize(getString("skill.farmer.lore"));
     }
 
     public String getHatcherLore() {
-        return Color.colorize(getString("skill.hatcher.name"));
+        return Color.colorize(getString("skill.hatcher.lore"));
     }
 
     public String getLumberjackLore() {
-        return Color.colorize(getString("skill.lumberjack.name"));
+        return Color.colorize(getString("skill.lumberjack.lore"));
     }
 
     public String getTannerLore() {
-        return Color.colorize(getString("skill.tanner.name"));
+        return Color.colorize(getString("skill.tanner.lore"));
     }
 
     public MenuItem getButcherItem() {

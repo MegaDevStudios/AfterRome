@@ -26,11 +26,11 @@ public class EngineerUpgradeShopConfig extends Configurator implements UpgradeSh
     }
 
     public String getArmorerName() {
-        return Color.colorize(getString("skill.armorer.name")); //тут надо поменять TODO
+        return Color.colorize(getString("skill.armorer.name"));
     }
 
     public String getArmorerLore() {
-        return Color.colorize(getString("skill.armorer.name"));
+        return Color.colorize(getString("skill.armorer.lore"));
     }
 
     public MenuItem getArmorerItem() {
@@ -45,7 +45,7 @@ public class EngineerUpgradeShopConfig extends Configurator implements UpgradeSh
     }
 
     public String getBosnianArtilleryLore() {
-        return Color.colorize(getString("skill.bosnian-artillery.name"));
+        return Color.colorize(getString("skill.bosnian-artillery.lore"));
     }
 
     public MenuItem getBosnianArtilleryItem() {
@@ -60,7 +60,7 @@ public class EngineerUpgradeShopConfig extends Configurator implements UpgradeSh
     }
 
     public String getChemicalWeaponsLore() {
-        return Color.colorize(getString("skill.chemical-weapons.name"));
+        return Color.colorize(getString("skill.chemical-weapons.lore"));
     }
 
     public MenuItem getChemicalWeaponsItem() {
@@ -70,49 +70,49 @@ public class EngineerUpgradeShopConfig extends Configurator implements UpgradeSh
                 .setLore(getChemicalWeaponsLore());
     }
 
-    public String getMetallurgistName() {
-        return Color.colorize(getString("skill.metallurgist.name"));
+    public String getDrawingsName() {
+        return Color.colorize(getString("skill.drawings.name"));
     }
 
-    public String getMetallurgistLore() {
-        return Color.colorize(getString("skill.metallurgist.name"));
+    public String getDrawingsLore() {
+        return Color.colorize(getString("skill.drawings.lore"));
     }
 
-    public MenuItem getMetallurgistItem() {
+    public MenuItem getDrawingsItem() {
         return new MenuItem(
-                Material.valueOf(getString("skill.metallurgist.item")))
-                .setName(getMetallurgistName())
-                .setLore(getMetallurgistLore());
+                Material.valueOf(getString("skill.drawings.item")))
+                .setName(getDrawingsName())
+                .setLore(getDrawingsLore());
     }
 
-    public String getMinerName() {
-        return Color.colorize(getString("skill.miner.name"));
+    public String getHeavyIndustryName() {
+        return Color.colorize(getString("skill.heavy-industry.name"));
     }
 
-    public String getMinerLore() {
-        return Color.colorize(getString("skill.miner.name"));
+    public String getHeavyIndustryLore() {
+        return Color.colorize(getString("skill.heavy-industry.lore"));
     }
 
-    public MenuItem getMinerItem() {
+    public MenuItem getHeavyIndustryItem() {
         return new MenuItem(
-                Material.valueOf(getString("skill.miner.item")))
-                .setName(getMinerName())
-                .setLore(getMinerLore());
+                Material.valueOf(getString("skill.heavy-industry.item")))
+                .setName(getHeavyIndustryName())
+                .setLore(getHeavyIndustryLore());
     }
 
-    public String getToolmakerName() {
-        return Color.colorize(getString("skill.toolmaker.name"));
+    public String getModificationsName() {
+        return Color.colorize(getString("skill.modifications.name"));
     }
 
-    public String getToolmakerLore() {
-        return Color.colorize(getString("skill.toolmaker.name"));
+    public String getModificationsLore() {
+        return Color.colorize(getString("skill.modifications.lore"));
     }
 
-    public MenuItem getToolmakerItem() {
+    public MenuItem getModificationsItem() {
         return new MenuItem(
-                Material.valueOf(getString("skill.toolmaker.item")))
-                .setName(getToolmakerName())
-                .setLore(getToolmakerLore());
+                Material.valueOf(getString("skill.modifications.item")))
+                .setName(getModificationsName())
+                .setLore(getModificationsLore());
     }
 
 }

@@ -12,6 +12,6 @@ public class CombatStimulants implements Skill {
     private final MenuItem menuItem;
 
     public CombatStimulants() {
-        menuItem = ConfigManager.getInstance().getConfig(AesculapiusUpgradeShopConfig.class).getAlchemyItem();
+        menuItem = ConfigManager.getInstance().getConfig(AesculapiusUpgradeShopConfig.class).getCombatStimulantsItem();
     }
 }

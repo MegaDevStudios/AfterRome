@@ -25,93 +25,93 @@ public class SantaUpgradeShopConfig extends Configurator implements UpgradeShopC
         return new MenuItem(Material.valueOf(getString("background-item"))).setName("&f");
     }
 
-    public String getBlacksmithName() {
-        return Color.colorize(getString("skill.blacksmith.name"));
+    public String getForTheFaithName() {
+        return Color.colorize(getString("skill.for-the-faith.name"));
     }
 
-    public String getBlacksmithLore() {
-        return Color.colorize(getString("skill.blacksmith.name"));
+    public String getForTheFaithLore() {
+        return Color.colorize(getString("skill.for-the-faith.lore"));
     }
 
-    public MenuItem getBlacksmithItem() {
+    public MenuItem getForTheFaithItem() {
         return new MenuItem(
-                Material.valueOf(getString("skill.blacksmith.item")))
-                .setName(getBlacksmithName())
-                .setLore(getBlacksmithLore());
+                Material.valueOf(getString("skill.for-the-faith.item")))
+                .setName(getForTheFaithName())
+                .setLore(getForTheFaithLore());
     }
 
-    public String getFishermanName() {
-        return Color.colorize(getString("skill.fisherman.name"));
+    public String getForTheGraceName() {
+        return Color.colorize(getString("skill.for-the-grace.name"));
     }
 
-    public String getFishermanLore() {
-        return Color.colorize(getString("skill.fisherman.name"));
+    public String getForTheGraceLore() {
+        return Color.colorize(getString("skill.for-the-grace.lore"));
     }
 
-    public MenuItem getFishermanItem() {
+    public MenuItem getForTheGraceItem() {
         return new MenuItem(
-                Material.valueOf(getString("skill.fisherman.item")))
-                .setName(getFishermanName())
-                .setLore(getFishermanLore());
+                Material.valueOf(getString("skill.for-the-grace.item")))
+                .setName(getForTheGraceName())
+                .setLore(getForTheGraceLore());
     }
 
-    public String getHorsemanName() {
-        return Color.colorize(getString("skill.horseman.name"));
+    public String getForTheHomeOfTheHolyName() {
+        return Color.colorize(getString("skill.for-the-home-of-the-holy.name"));
     }
 
-    public String getHorsemanLore() {
-        return Color.colorize(getString("skill.horseman.name"));
+    public String getForTheHomeOfTheHolyLore() {
+        return Color.colorize(getString("skill.for-the-home-of-the-holy.lore"));
     }
 
-    public MenuItem getHorsemanItem() {
+    public MenuItem getForTheHomeOfTheHolyItem() {
         return new MenuItem(
-                Material.valueOf(getString("skill.horseman.item")))
-                .setName(getHorsemanName())
-                .setLore(getHorsemanLore());
+                Material.valueOf(getString("skill.for-the-home-of-the-holy.item")))
+                .setName(getForTheHomeOfTheHolyName())
+                .setLore(getForTheHomeOfTheHolyLore());
     }
 
-    public String getMetallurgistName() {
-        return Color.colorize(getString("skill.metallurgist.name"));
+    public String getForTheMightOfOurLordName() {
+        return Color.colorize(getString("skill.for-the-might-of-our-lord.name"));
     }
 
-    public String getMetallurgistLore() {
-        return Color.colorize(getString("skill.metallurgist.name"));
+    public String getForTheMightOfOurLordLore() {
+        return Color.colorize(getString("skill.for-the-might-of-our-lord.lore"));
     }
 
-    public MenuItem getMetallurgistItem() {
+    public MenuItem getForTheMightOfOurLordItem() {
         return new MenuItem(
-                Material.valueOf(getString("skill.metallurgist.item")))
-                .setName(getMetallurgistName())
-                .setLore(getMetallurgistLore());
+                Material.valueOf(getString("skill.for-the-might-of-our-lord.item")))
+                .setName(getForTheMightOfOurLordName())
+                .setLore(getForTheMightOfOurLordLore());
     }
 
-    public String getMinerName() {
-        return Color.colorize(getString("skill.miner.name"));
+    public String getForTheWayOfTheSwordName() {
+        return Color.colorize(getString("skill.for-the-way-of-the-sword.name"));
     }
 
-    public String getMinerLore() {
-        return Color.colorize(getString("skill.miner.name"));
+    public String getForTheWayOfTheSwordLore() {
+        return Color.colorize(getString("skill.for-the-way-of-the-sword.lore"));
     }
 
-    public MenuItem getMinerItem() {
+    public MenuItem getForTheWayOfTheSwordItem() {
         return new MenuItem(
-                Material.valueOf(getString("skill.miner.item")))
-                .setName(getMinerName())
-                .setLore(getMinerLore());
+                Material.valueOf(getString("skill.for-the-way-of-the-sword.item")))
+                .setName(getForTheWayOfTheSwordName())
+                .setLore(getForTheWayOfTheSwordLore());
     }
 
-    public String getToolmakerName() {
-        return Color.colorize(getString("skill.toolmaker.name"));
+    public String getHighlightsName() {
+        return Color.colorize(getString("skill.highlights.name"));
     }
 
-    public String getToolmakerLore() {
-        return Color.colorize(getString("skill.toolmaker.name"));
+    public String getHighlightsLore() {
+        return Color.colorize(getString("skill.highlights.lore"));
     }
 
-    public MenuItem getToolmakerItem() {
+    public MenuItem getHighlightsItem() {
         return new MenuItem(
-                Material.valueOf(getString("skill.toolmaker.item")))
-                .setName(getToolmakerName())
-                .setLore(getToolmakerLore());
+                Material.valueOf(getString("skill.highlights.item")))
+                .setName(getHighlightsName())
+                .setLore(getHighlightsLore());
     }
 }

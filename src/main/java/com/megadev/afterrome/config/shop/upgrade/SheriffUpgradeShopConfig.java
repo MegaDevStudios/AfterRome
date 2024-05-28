@@ -1,14 +1,13 @@
 package com.megadev.afterrome.config.shop.upgrade;
 
 import com.megadev.afterrome.object.menu.item.MenuItem;
-import com.megadev.afterrome.object.menu.shop.upgrade.skill.Skill;
 import com.megadev.afterrome.util.Color;
 import dev.mega.megacore.config.Configurator;
+
 import org.bukkit.Material;
 import org.bukkit.plugin.Plugin;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.List;
 
 public class SheriffUpgradeShopConfig extends Configurator implements UpgradeShopConfig {
     public SheriffUpgradeShopConfig(@NotNull Plugin plugin, String... path) {
@@ -25,93 +24,93 @@ public class SheriffUpgradeShopConfig extends Configurator implements UpgradeSho
         return new MenuItem(Material.valueOf(getString("background-item"))).setName("&f");
     }
 
-    public String getBlacksmithName() {
-        return Color.colorize(getString("skill.blacksmith.name"));
+    public String getChaseName() {
+        return Color.colorize(getString("skill.chase.name"));
     }
 
-    public String getBlacksmithLore() {
-        return Color.colorize(getString("skill.blacksmith.name"));
+    public String getChaseLore() {
+        return Color.colorize(getString("skill.chase.lore"));
     }
 
-    public MenuItem getBlacksmithItem() {
+    public MenuItem getChaseItem() {
         return new MenuItem(
-                Material.valueOf(getString("skill.blacksmith.item")))
-                .setName(getBlacksmithName())
-                .setLore(getBlacksmithLore());
+                Material.valueOf(getString("skill.chase.item")))
+                .setName(getChaseName())
+                .setLore(getChaseLore());
     }
 
-    public String getFishermanName() {
-        return Color.colorize(getString("skill.fisherman.name"));
+    public String getCriminologyName() {
+        return Color.colorize(getString("skill.criminology.name"));
     }
 
-    public String getFishermanLore() {
-        return Color.colorize(getString("skill.fisherman.name"));
+    public String getCriminologyLore() {
+        return Color.colorize(getString("skill.criminology.lore"));
     }
 
-    public MenuItem getFishermanItem() {
+    public MenuItem getCriminologyItem() {
         return new MenuItem(
-                Material.valueOf(getString("skill.fisherman.item")))
-                .setName(getFishermanName())
-                .setLore(getFishermanLore());
+                Material.valueOf(getString("skill.criminology.item")))
+                .setName(getCriminologyName())
+                .setLore(getCriminologyLore());
     }
 
-    public String getHorsemanName() {
-        return Color.colorize(getString("skill.horseman.name"));
+    public String getDonutsName() {
+        return Color.colorize(getString("skill.donuts.name"));
     }
 
-    public String getHorsemanLore() {
-        return Color.colorize(getString("skill.horseman.name"));
+    public String getDonutsLore() {
+        return Color.colorize(getString("skill.donuts.lore"));
     }
 
-    public MenuItem getHorsemanItem() {
+    public MenuItem getDonutsItem() {
         return new MenuItem(
-                Material.valueOf(getString("skill.horseman.item")))
-                .setName(getHorsemanName())
-                .setLore(getHorsemanLore());
+                Material.valueOf(getString("skill.donuts.item")))
+                .setName(getDonutsName())
+                .setLore(getDonutsLore());
     }
 
-    public String getMetallurgistName() {
-        return Color.colorize(getString("skill.metallurgist.name"));
+    public String getHoldingName() {
+        return Color.colorize(getString("skill.holding.name"));
     }
 
-    public String getMetallurgistLore() {
-        return Color.colorize(getString("skill.metallurgist.name"));
+    public String getHoldingLore() {
+        return Color.colorize(getString("skill.holding.lore"));
     }
 
-    public MenuItem getMetallurgistItem() {
+    public MenuItem getHoldingItem() {
         return new MenuItem(
-                Material.valueOf(getString("skill.metallurgist.item")))
-                .setName(getMetallurgistName())
-                .setLore(getMetallurgistLore());
+                Material.valueOf(getString("skill.holding.item")))
+                .setName(getHoldingName())
+                .setLore(getHoldingLore());
     }
 
-    public String getMinerName() {
-        return Color.colorize(getString("skill.miner.name"));
+    public String getShortBarreledName() {
+        return Color.colorize(getString("skill.short-barreled.name"));
     }
 
-    public String getMinerLore() {
-        return Color.colorize(getString("skill.miner.name"));
+    public String getShortBarreledLore() {
+        return Color.colorize(getString("skill.short-barreled.lore"));
     }
 
-    public MenuItem getMinerItem() {
+    public MenuItem getShortBarreledItem() {
         return new MenuItem(
-                Material.valueOf(getString("skill.miner.item")))
-                .setName(getMinerName())
-                .setLore(getMinerLore());
+                Material.valueOf(getString("skill.short-barreled.item")))
+                .setName(getShortBarreledName())
+                .setLore(getShortBarreledLore());
     }
 
-    public String getToolmakerName() {
-        return Color.colorize(getString("skill.toolmaker.name"));
+    public String getWakeName() {
+        return Color.colorize(getString("skill.wake.name"));
     }
 
-    public String getToolmakerLore() {
-        return Color.colorize(getString("skill.toolmaker.name"));
+    public String getWakeLore() {
+        return Color.colorize(getString("skill.wake.lore"));
     }
 
-    public MenuItem getToolmakerItem() {
+    public MenuItem getWakeItem() {
         return new MenuItem(
-                Material.valueOf(getString("skill.toolmaker.item")))
-                .setName(getToolmakerName())
-                .setLore(getToolmakerLore());
+                Material.valueOf(getString("skill.wake.item")))
+                .setName(getWakeName())
+                .setLore(getWakeLore());
     }
 }

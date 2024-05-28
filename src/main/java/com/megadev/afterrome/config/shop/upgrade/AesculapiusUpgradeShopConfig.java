@@ -53,27 +53,27 @@ public class AesculapiusUpgradeShopConfig extends Configurator implements Upgrad
     }
 
     public String getAlchemyLore() {
-        return Color.colorize(getString("skill.alchemy.name"));
+        return Color.colorize(getString("skill.alchemy.lore"));
     }
 
     public String getBrutalSurgeryLore() {
-        return Color.colorize(getString("skill.brutal-surgery.name"));
+        return Color.colorize(getString("skill.brutal-surgery.lore"));
     }
 
     public String getCombatStimulantsLore() {
-        return Color.colorize(getString("skill.combat-stimulants.name"));
+        return Color.colorize(getString("skill.combat-stimulants.lore"));
     }
 
     public String getDoctorMaskLore() {
-        return Color.colorize(getString("skill.doctor-mask.name"));
+        return Color.colorize(getString("skill.doctor-mask.lore"));
     }
 
     public String getHealingLore() {
-        return Color.colorize(getString("skill.healing.name"));
+        return Color.colorize(getString("skill.healing.lore"));
     }
 
     public String getUrineTherapyLore() {
-        return Color.colorize(getString("skill.urine-therapy.name"));
+        return Color.colorize(getString("skill.urine-therapy.lore"));
     }
 
     public MenuItem getAlchemyItem() {

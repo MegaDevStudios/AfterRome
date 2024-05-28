@@ -25,93 +25,93 @@ public class InitiatedUpgradeShopConfig extends Configurator implements UpgradeS
         return new MenuItem(Material.valueOf(getString("background-item"))).setName("&f");
     }
 
-    public String getBlacksmithName() {
-        return Color.colorize(getString("skill.blacksmith.name"));
+    public String getDaturaName() {
+        return Color.colorize(getString("skill.datura.name"));
     }
 
-    public String getBlacksmithLore() {
-        return Color.colorize(getString("skill.blacksmith.name"));
+    public String getDaturaLore() {
+        return Color.colorize(getString("skill.datura.lore"));
     }
 
-    public MenuItem getBlacksmithItem() {
+    public MenuItem getDaturaItem() {
         return new MenuItem(
-                Material.valueOf(getString("skill.blacksmith.item")))
-                .setName(getBlacksmithName())
-                .setLore(getBlacksmithLore());
+                Material.valueOf(getString("skill.datura.item")))
+                .setName(getDaturaName())
+                .setLore(getDaturaLore());
     }
 
-    public String getFishermanName() {
-        return Color.colorize(getString("skill.fisherman.name"));
+    public String getLeprosyName() {
+        return Color.colorize(getString("skill.leprosy.name"));
     }
 
-    public String getFishermanLore() {
-        return Color.colorize(getString("skill.fisherman.name"));
+    public String getLeprosyLore() {
+        return Color.colorize(getString("skill.leprosy.lore"));
     }
 
-    public MenuItem getFishermanItem() {
+    public MenuItem getLeprosyItem() {
         return new MenuItem(
-                Material.valueOf(getString("skill.fisherman.item")))
-                .setName(getFishermanName())
-                .setLore(getFishermanLore());
+                Material.valueOf(getString("skill.leprosy.item")))
+                .setName(getLeprosyName())
+                .setLore(getLeprosyLore());
     }
 
-    public String getHorsemanName() {
-        return Color.colorize(getString("skill.horseman.name"));
+    public String getParticipleName() {
+        return Color.colorize(getString("skill.participle.name"));
     }
 
-    public String getHorsemanLore() {
-        return Color.colorize(getString("skill.horseman.name"));
+    public String getParticipleLore() {
+        return Color.colorize(getString("skill.participle.lore"));
     }
 
-    public MenuItem getHorsemanItem() {
+    public MenuItem getParticipleItem() {
         return new MenuItem(
-                Material.valueOf(getString("skill.horseman.item")))
-                .setName(getHorsemanName())
-                .setLore(getHorsemanLore());
+                Material.valueOf(getString("skill.participle.item")))
+                .setName(getParticipleName())
+                .setLore(getParticipleLore());
     }
 
-    public String getMetallurgistName() {
-        return Color.colorize(getString("skill.metallurgist.name"));
+    public String getSaintFaceName() {
+        return Color.colorize(getString("skill.saint-face.name"));
     }
 
-    public String getMetallurgistLore() {
-        return Color.colorize(getString("skill.metallurgist.name"));
+    public String getSaintFaceLore() {
+        return Color.colorize(getString("skill.saint-face.lore"));
     }
 
-    public MenuItem getMetallurgistItem() {
+    public MenuItem getSaintFaceItem() {
         return new MenuItem(
-                Material.valueOf(getString("skill.metallurgist.item")))
-                .setName(getMetallurgistName())
-                .setLore(getMetallurgistLore());
+                Material.valueOf(getString("skill.saint-face.item")))
+                .setName(getSaintFaceName())
+                .setLore(getSaintFaceLore());
     }
 
-    public String getMinerName() {
-        return Color.colorize(getString("skill.miner.name"));
+    public String getSpiderEyeName() {
+        return Color.colorize(getString("skill.spider-eye.name"));
     }
 
-    public String getMinerLore() {
-        return Color.colorize(getString("skill.miner.name"));
+    public String getSpiderEyeLore() {
+        return Color.colorize(getString("skill.spider-eye.lore"));
     }
 
-    public MenuItem getMinerItem() {
+    public MenuItem getSpiderEyeItem() {
         return new MenuItem(
-                Material.valueOf(getString("skill.miner.item")))
-                .setName(getMinerName())
-                .setLore(getMinerLore());
+                Material.valueOf(getString("skill.spider-eye.item")))
+                .setName(getSpiderEyeName())
+                .setLore(getSpiderEyeLore());
     }
 
-    public String getToolmakerName() {
-        return Color.colorize(getString("skill.toolmaker.name"));
+    public String getStartWhisperName() {
+        return Color.colorize(getString("skill.start-whisper.name"));
     }
 
-    public String getToolmakerLore() {
-        return Color.colorize(getString("skill.toolmaker.name"));
+    public String getStartWhisperLore() {
+        return Color.colorize(getString("skill.start-whisper.lore"));
     }
 
-    public MenuItem getToolmakerItem() {
+    public MenuItem getStartWhisperItem() {
         return new MenuItem(
-                Material.valueOf(getString("skill.toolmaker.item")))
-                .setName(getToolmakerName())
-                .setLore(getToolmakerLore());
+                Material.valueOf(getString("skill.start-whisper.item")))
+                .setName(getStartWhisperName())
+                .setLore(getStartWhisperLore());
     }
 }

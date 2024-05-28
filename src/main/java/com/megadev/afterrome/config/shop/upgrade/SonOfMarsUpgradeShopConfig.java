@@ -1,14 +1,12 @@
 package com.megadev.afterrome.config.shop.upgrade;
 
 import com.megadev.afterrome.object.menu.item.MenuItem;
-import com.megadev.afterrome.object.menu.shop.upgrade.skill.Skill;
 import com.megadev.afterrome.util.Color;
 import dev.mega.megacore.config.Configurator;
+
 import org.bukkit.Material;
 import org.bukkit.plugin.Plugin;
 import org.jetbrains.annotations.NotNull;
-
-import java.util.List;
 
 public class SonOfMarsUpgradeShopConfig extends Configurator implements UpgradeShopConfig {
     public SonOfMarsUpgradeShopConfig(@NotNull Plugin plugin, String... path) {
@@ -25,93 +23,93 @@ public class SonOfMarsUpgradeShopConfig extends Configurator implements UpgradeS
         return new MenuItem(Material.valueOf(getString("background-item"))).setName("&f");
     }
 
-    public String getBlacksmithName() {
-        return Color.colorize(getString("skill.blacksmith.name"));
+    public String getIronInsideName() {
+        return Color.colorize(getString("skill.iron-inside.name"));
     }
 
-    public String getBlacksmithLore() {
-        return Color.colorize(getString("skill.blacksmith.name"));
+    public String getIronInsideLore() {
+        return Color.colorize(getString("skill.iron-inside.lore"));
     }
 
-    public MenuItem getBlacksmithItem() {
+    public MenuItem getIronInsideItem() {
         return new MenuItem(
-                Material.valueOf(getString("skill.blacksmith.item")))
-                .setName(getBlacksmithName())
-                .setLore(getBlacksmithLore());
+                Material.valueOf(getString("skill.iron-inside.item")))
+                .setName(getIronInsideName())
+                .setLore(getIronInsideLore());
     }
 
-    public String getFishermanName() {
-        return Color.colorize(getString("skill.fisherman.name"));
+    public String getIronOutsideName() {
+        return Color.colorize(getString("skill.iron-outside.name"));
     }
 
-    public String getFishermanLore() {
-        return Color.colorize(getString("skill.fisherman.name"));
+    public String getIronOutsideLore() {
+        return Color.colorize(getString("skill.iron-outside.lore"));
     }
 
-    public MenuItem getFishermanItem() {
+    public MenuItem getIronOutsideItem() {
         return new MenuItem(
-                Material.valueOf(getString("skill.fisherman.item")))
-                .setName(getFishermanName())
-                .setLore(getFishermanLore());
+                Material.valueOf(getString("skill.iron-outside.item")))
+                .setName(getIronOutsideName())
+                .setLore(getIronOutsideLore());
     }
 
-    public String getHorsemanName() {
-        return Color.colorize(getString("skill.horseman.name"));
+    public String getLandingName() {
+        return Color.colorize(getString("skill.landing.name"));
     }
 
-    public String getHorsemanLore() {
-        return Color.colorize(getString("skill.horseman.name"));
+    public String getLandingLore() {
+        return Color.colorize(getString("skill.landing.lore"));
     }
 
-    public MenuItem getHorsemanItem() {
+    public MenuItem getLandingItem() {
         return new MenuItem(
-                Material.valueOf(getString("skill.horseman.item")))
-                .setName(getHorsemanName())
-                .setLore(getHorsemanLore());
+                Material.valueOf(getString("skill.landing.item")))
+                .setName(getLandingName())
+                .setLore(getLandingLore());
     }
 
-    public String getMetallurgistName() {
-        return Color.colorize(getString("skill.metallurgist.name"));
+    public String getMeleeCombatName() {
+        return Color.colorize(getString("skill.melee-combat.name"));
     }
 
-    public String getMetallurgistLore() {
-        return Color.colorize(getString("skill.metallurgist.name"));
+    public String getMeleeCombatLore() {
+        return Color.colorize(getString("skill.melee-combat.lore"));
     }
 
-    public MenuItem getMetallurgistItem() {
+    public MenuItem getMeleeCombatItem() {
         return new MenuItem(
-                Material.valueOf(getString("skill.metallurgist.item")))
-                .setName(getMetallurgistName())
-                .setLore(getMetallurgistLore());
+                Material.valueOf(getString("skill.melee-combat.item")))
+                .setName(getMeleeCombatName())
+                .setLore(getMeleeCombatLore());
     }
 
-    public String getMinerName() {
-        return Color.colorize(getString("skill.miner.name"));
+    public String getProteinDietName() {
+        return Color.colorize(getString("skill.protein-diet.name"));
     }
 
-    public String getMinerLore() {
-        return Color.colorize(getString("skill.miner.name"));
+    public String getProteinDietLore() {
+        return Color.colorize(getString("skill.protein-diet.lore"));
     }
 
-    public MenuItem getMinerItem() {
+    public MenuItem getProteinDietItem() {
         return new MenuItem(
-                Material.valueOf(getString("skill.miner.item")))
-                .setName(getMinerName())
-                .setLore(getMinerLore());
+                Material.valueOf(getString("skill.protein-diet.item")))
+                .setName(getProteinDietName())
+                .setLore(getProteinDietLore());
     }
 
-    public String getToolmakerName() {
-        return Color.colorize(getString("skill.toolmaker.name"));
+    public String getShootingName() {
+        return Color.colorize(getString("skill.shooting.name"));
     }
 
-    public String getToolmakerLore() {
-        return Color.colorize(getString("skill.toolmaker.name"));
+    public String getShootingLore() {
+        return Color.colorize(getString("skill.shooting.lore"));
     }
 
-    public MenuItem getToolmakerItem() {
+    public MenuItem getShootingItem() {
         return new MenuItem(
-                Material.valueOf(getString("skill.toolmaker.item")))
-                .setName(getToolmakerName())
-                .setLore(getToolmakerLore());
+                Material.valueOf(getString("skill.shooting.item")))
+                .setName(getShootingName())
+                .setLore(getShootingLore());
     }
 }
