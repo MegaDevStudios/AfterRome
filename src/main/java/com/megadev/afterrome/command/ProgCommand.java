@@ -19,6 +19,6 @@ public class ProgCommand extends BaseCommand {
 
         PointsHolder pointsHolder = (PointsHolder) optionalUser.get();
         int points = pointsHolder.getPoints();
-
+//
     }
 }
