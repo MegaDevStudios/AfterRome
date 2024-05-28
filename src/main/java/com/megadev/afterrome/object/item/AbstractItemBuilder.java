@@ -1,7 +1,6 @@
 package com.megadev.afterrome.object.item;
 
-import com.megadev.afterrome.util.Color;
-
+import dev.mega.megacore.util.Color;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemFlag;
@@ -60,7 +59,7 @@ public abstract class AbstractItemBuilder<T extends AbstractItemBuilder<T>>  {
 
     public T setName(String name) {
         ItemMeta itemMeta = getItemMeta();
-        itemMeta.setDisplayName(Color.colorize(name));
+        itemMeta.setDisplayName(Color.getTranslated(name));
         itemStack.setItemMeta(itemMeta);
         return getThis();
     }
@@ -69,7 +68,7 @@ public abstract class AbstractItemBuilder<T extends AbstractItemBuilder<T>>  {
         ItemMeta itemMeta = getItemMeta();
 
         lore = lore.stream()
-                .map(Color::colorize)
+                .map(Color::getTranslated)
                 .collect(Collectors.toList());
 
         itemMeta.setLore(lore);
@@ -119,7 +118,7 @@ public abstract class AbstractItemBuilder<T extends AbstractItemBuilder<T>>  {
 
         lore.add(index, line);
         lore = lore.stream()
-                .map(Color::colorize)
+                .map(Color::getTranslated)
                 .collect(Collectors.toList());
 
         itemMeta.setLore(lore);
@@ -134,7 +133,7 @@ public abstract class AbstractItemBuilder<T extends AbstractItemBuilder<T>>  {
         lore.set(index, line);
 
         lore = lore.stream()
-                .map(Color::colorize)
+                .map(Color::getTranslated)
                 .collect(Collectors.toList());
 
         itemMeta.setLore(lore);

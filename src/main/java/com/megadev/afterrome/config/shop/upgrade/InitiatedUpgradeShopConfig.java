@@ -1,14 +1,11 @@
 package com.megadev.afterrome.config.shop.upgrade;
 
 import com.megadev.afterrome.object.menu.item.MenuItem;
-import com.megadev.afterrome.object.menu.shop.upgrade.skill.Skill;
-import com.megadev.afterrome.util.Color;
 import dev.mega.megacore.config.Configurator;
+import dev.mega.megacore.util.Color;
 import org.bukkit.Material;
 import org.bukkit.plugin.Plugin;
 import org.jetbrains.annotations.NotNull;
-
-import java.util.List;
 
 public class InitiatedUpgradeShopConfig extends Configurator implements UpgradeShopConfig {
     public InitiatedUpgradeShopConfig(@NotNull Plugin plugin, String... path) {
@@ -17,7 +14,7 @@ public class InitiatedUpgradeShopConfig extends Configurator implements UpgradeS
 
     @Override
     public String getMenuName() {
-        return Color.colorize(getString("menu-name"));
+        return Color.getTranslated(getString("menu-name"));
     }
 
     @Override
@@ -26,11 +23,11 @@ public class InitiatedUpgradeShopConfig extends Configurator implements UpgradeS
     }
 
     public String getDaturaName() {
-        return Color.colorize(getString("skill.datura.name"));
+        return Color.getTranslated(getString("skill.datura.name"));
     }
 
     public String getDaturaLore() {
-        return Color.colorize(getString("skill.datura.lore"));
+        return Color.getTranslated(getString("skill.datura.lore"));
     }
 
     public MenuItem getDaturaItem() {
@@ -41,11 +38,11 @@ public class InitiatedUpgradeShopConfig extends Configurator implements UpgradeS
     }
 
     public String getLeprosyName() {
-        return Color.colorize(getString("skill.leprosy.name"));
+        return Color.getTranslated(getString("skill.leprosy.name"));
     }
 
     public String getLeprosyLore() {
-        return Color.colorize(getString("skill.leprosy.lore"));
+        return Color.getTranslated(getString("skill.leprosy.lore"));
     }
 
     public MenuItem getLeprosyItem() {
@@ -56,11 +53,11 @@ public class InitiatedUpgradeShopConfig extends Configurator implements UpgradeS
     }
 
     public String getParticipleName() {
-        return Color.colorize(getString("skill.participle.name"));
+        return Color.getTranslated(getString("skill.participle.name"));
     }
 
     public String getParticipleLore() {
-        return Color.colorize(getString("skill.participle.lore"));
+        return Color.getTranslated(getString("skill.participle.lore"));
     }
 
     public MenuItem getParticipleItem() {
@@ -71,11 +68,11 @@ public class InitiatedUpgradeShopConfig extends Configurator implements UpgradeS
     }
 
     public String getSaintFaceName() {
-        return Color.colorize(getString("skill.saint-face.name"));
+        return Color.getTranslated(getString("skill.saint-face.name"));
     }
 
     public String getSaintFaceLore() {
-        return Color.colorize(getString("skill.saint-face.lore"));
+        return Color.getTranslated(getString("skill.saint-face.lore"));
     }
 
     public MenuItem getSaintFaceItem() {
@@ -86,11 +83,11 @@ public class InitiatedUpgradeShopConfig extends Configurator implements UpgradeS
     }
 
     public String getSpiderEyeName() {
-        return Color.colorize(getString("skill.spider-eye.name"));
+        return Color.getTranslated(getString("skill.spider-eye.name"));
     }
 
     public String getSpiderEyeLore() {
-        return Color.colorize(getString("skill.spider-eye.lore"));
+        return Color.getTranslated(getString("skill.spider-eye.lore"));
     }
 
     public MenuItem getSpiderEyeItem() {
@@ -101,11 +98,11 @@ public class InitiatedUpgradeShopConfig extends Configurator implements UpgradeS
     }
 
     public String getStartWhisperName() {
-        return Color.colorize(getString("skill.start-whisper.name"));
+        return Color.getTranslated(getString("skill.start-whisper.name"));
     }
 
     public String getStartWhisperLore() {
-        return Color.colorize(getString("skill.start-whisper.lore"));
+        return Color.getTranslated(getString("skill.start-whisper.lore"));
     }
 
     public MenuItem getStartWhisperItem() {

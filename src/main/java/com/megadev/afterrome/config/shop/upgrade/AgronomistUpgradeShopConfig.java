@@ -1,10 +1,10 @@
 package com.megadev.afterrome.config.shop.upgrade;
 
 import com.megadev.afterrome.object.menu.item.MenuItem;
-import com.megadev.afterrome.util.Color;
 
 import dev.mega.megacore.config.Configurator;
 
+import dev.mega.megacore.util.Color;
 import org.bukkit.Material;
 import org.bukkit.plugin.Plugin;
 import org.jetbrains.annotations.NotNull;
@@ -16,7 +16,7 @@ public class AgronomistUpgradeShopConfig extends Configurator implements Upgrade
 
     @Override
     public String getMenuName() {
-        return Color.colorize(getString("menu-name"));
+        return Color.getTranslated(getString("menu-name"));
     }
 
     @Override
@@ -25,51 +25,51 @@ public class AgronomistUpgradeShopConfig extends Configurator implements Upgrade
     }
 
     public String getButcherName() {
-        return Color.colorize(getString("skill.butcher.name"));
+        return Color.getTranslated(getString("skill.butcher.name"));
     }
 
     public String getCookName() {
-        return Color.colorize(getString("skill.cook.name"));
+        return Color.getTranslated(getString("skill.cook.name"));
     }
 
     public String getFarmerName() {
-        return Color.colorize(getString("skill.farmer.name"));
+        return Color.getTranslated(getString("skill.farmer.name"));
     }
 
     public String getHatcherName() {
-        return Color.colorize(getString("skill.hatcher.name"));
+        return Color.getTranslated(getString("skill.hatcher.name"));
     }
 
     public String getLumberjackName() {
-        return Color.colorize(getString("skill.lumberjack.name"));
+        return Color.getTranslated(getString("skill.lumberjack.name"));
     }
 
     public String getTannerName() {
-        return Color.colorize(getString("skill.tanner.name"));
+        return Color.getTranslated(getString("skill.tanner.name"));
     }
 
     public String getButcherLore() {
-        return Color.colorize(getString("skill.butcher.lore"));
+        return Color.getTranslated(getString("skill.butcher.lore"));
     }
 
     public String getCookLore() {
-        return Color.colorize(getString("skill.cook.lore"));
+        return Color.getTranslated(getString("skill.cook.lore"));
     }
 
     public String getFarmerLore() {
-        return Color.colorize(getString("skill.farmer.lore"));
+        return Color.getTranslated(getString("skill.farmer.lore"));
     }
 
     public String getHatcherLore() {
-        return Color.colorize(getString("skill.hatcher.lore"));
+        return Color.getTranslated(getString("skill.hatcher.lore"));
     }
 
     public String getLumberjackLore() {
-        return Color.colorize(getString("skill.lumberjack.lore"));
+        return Color.getTranslated(getString("skill.lumberjack.lore"));
     }
 
     public String getTannerLore() {
-        return Color.colorize(getString("skill.tanner.lore"));
+        return Color.getTranslated(getString("skill.tanner.lore"));
     }
 
     public MenuItem getButcherItem() {

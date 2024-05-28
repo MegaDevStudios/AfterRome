@@ -1,14 +1,11 @@
 package com.megadev.afterrome.config.shop.upgrade;
 
 import com.megadev.afterrome.object.menu.item.MenuItem;
-import com.megadev.afterrome.object.menu.shop.upgrade.skill.Skill;
-import com.megadev.afterrome.util.Color;
 import dev.mega.megacore.config.Configurator;
+import dev.mega.megacore.util.Color;
 import org.bukkit.Material;
 import org.bukkit.plugin.Plugin;
 import org.jetbrains.annotations.NotNull;
-
-import java.util.List;
 
 public class ForesterUpgradeShopConfig extends Configurator implements UpgradeShopConfig {
     public ForesterUpgradeShopConfig(@NotNull Plugin plugin, String... path) {
@@ -17,7 +14,7 @@ public class ForesterUpgradeShopConfig extends Configurator implements UpgradeSh
 
     @Override
     public String getMenuName() {
-        return Color.colorize(getString("menu-name"));
+        return Color.getTranslated(getString("menu-name"));
     }
 
     @Override
@@ -26,11 +23,11 @@ public class ForesterUpgradeShopConfig extends Configurator implements UpgradeSh
     }
 
     public String getCampCookingName() {
-        return Color.colorize(getString("skill.camp-cooking.name"));
+        return Color.getTranslated(getString("skill.camp-cooking.name"));
     }
 
     public String getCampCookingLore() {
-        return Color.colorize(getString("skill.camp-cooking.lore"));
+        return Color.getTranslated(getString("skill.camp-cooking.lore"));
     }
 
     public MenuItem getCampCookingItem() {
@@ -41,11 +38,11 @@ public class ForesterUpgradeShopConfig extends Configurator implements UpgradeSh
     }
 
     public String getHaltName() {
-        return Color.colorize(getString("skill.halt.name"));
+        return Color.getTranslated(getString("skill.halt.name"));
     }
 
     public String getHaltLore() {
-        return Color.colorize(getString("skill.halt.lore"));
+        return Color.getTranslated(getString("skill.halt.lore"));
     }
 
     public MenuItem getHaltItem() {
@@ -56,11 +53,11 @@ public class ForesterUpgradeShopConfig extends Configurator implements UpgradeSh
     }
 
     public String getHorseRidingName() {
-        return Color.colorize(getString("skill.horse-riding.name"));
+        return Color.getTranslated(getString("skill.horse-riding.name"));
     }
 
     public String getHorseRidingLore() {
-        return Color.colorize(getString("skill.horse-riding.lore"));
+        return Color.getTranslated(getString("skill.horse-riding.lore"));
     }
 
     public MenuItem getHorseRidingItem() {
@@ -71,11 +68,11 @@ public class ForesterUpgradeShopConfig extends Configurator implements UpgradeSh
     }
 
     public String getLadleStaffName() {
-        return Color.colorize(getString("skill.ladle-staff.name"));
+        return Color.getTranslated(getString("skill.ladle-staff.name"));
     }
 
     public String getLadleStaffLore() {
-        return Color.colorize(getString("skill.ladle-staff.lore"));
+        return Color.getTranslated(getString("skill.ladle-staff.lore"));
     }
 
     public MenuItem getLadleStaffItem() {
@@ -86,11 +83,11 @@ public class ForesterUpgradeShopConfig extends Configurator implements UpgradeSh
     }
 
     public String getLungCapacityName() {
-        return Color.colorize(getString("skill.lung-capacity.name"));
+        return Color.getTranslated(getString("skill.lung-capacity.name"));
     }
 
     public String getLungCapacityLore() {
-        return Color.colorize(getString("skill.lung-capacity.lore"));
+        return Color.getTranslated(getString("skill.lung-capacity.lore"));
     }
 
     public MenuItem getLungCapacityItem() {
@@ -101,11 +98,11 @@ public class ForesterUpgradeShopConfig extends Configurator implements UpgradeSh
     }
 
     public String getSeafaringName() {
-        return Color.colorize(getString("skill.seafaring.name"));
+        return Color.getTranslated(getString("skill.seafaring.name"));
     }
 
     public String getSeafaringLore() {
-        return Color.colorize(getString("skill.seafaring.lore"));
+        return Color.getTranslated(getString("skill.seafaring.lore"));
     }
 
     public MenuItem getSeafaringItem() {

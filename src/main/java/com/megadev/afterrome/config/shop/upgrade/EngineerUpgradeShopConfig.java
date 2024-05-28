@@ -1,14 +1,11 @@
 package com.megadev.afterrome.config.shop.upgrade;
 
 import com.megadev.afterrome.object.menu.item.MenuItem;
-import com.megadev.afterrome.object.menu.shop.upgrade.skill.Skill;
-import com.megadev.afterrome.util.Color;
 import dev.mega.megacore.config.Configurator;
+import dev.mega.megacore.util.Color;
 import org.bukkit.Material;
 import org.bukkit.plugin.Plugin;
 import org.jetbrains.annotations.NotNull;
-
-import java.util.List;
 
 public class EngineerUpgradeShopConfig extends Configurator implements UpgradeShopConfig {
     public EngineerUpgradeShopConfig(@NotNull Plugin plugin, String... path) {
@@ -17,7 +14,7 @@ public class EngineerUpgradeShopConfig extends Configurator implements UpgradeSh
 
     @Override
     public String getMenuName() {
-        return Color.colorize(getString("menu-name"));
+        return Color.getTranslated(getString("menu-name"));
     }
 
     @Override
@@ -26,11 +23,11 @@ public class EngineerUpgradeShopConfig extends Configurator implements UpgradeSh
     }
 
     public String getArmorerName() {
-        return Color.colorize(getString("skill.armorer.name"));
+        return Color.getTranslated(getString("skill.armorer.name"));
     }
 
     public String getArmorerLore() {
-        return Color.colorize(getString("skill.armorer.lore"));
+        return Color.getTranslated(getString("skill.armorer.lore"));
     }
 
     public MenuItem getArmorerItem() {
@@ -41,11 +38,11 @@ public class EngineerUpgradeShopConfig extends Configurator implements UpgradeSh
     }
 
     public String getBosnianArtilleryName() {
-        return Color.colorize(getString("skill.bosnian-artillery.name"));
+        return Color.getTranslated(getString("skill.bosnian-artillery.name"));
     }
 
     public String getBosnianArtilleryLore() {
-        return Color.colorize(getString("skill.bosnian-artillery.lore"));
+        return Color.getTranslated(getString("skill.bosnian-artillery.lore"));
     }
 
     public MenuItem getBosnianArtilleryItem() {
@@ -56,11 +53,11 @@ public class EngineerUpgradeShopConfig extends Configurator implements UpgradeSh
     }
 
     public String getChemicalWeaponsName() {
-        return Color.colorize(getString("skill.chemical-weapons.name"));
+        return Color.getTranslated(getString("skill.chemical-weapons.name"));
     }
 
     public String getChemicalWeaponsLore() {
-        return Color.colorize(getString("skill.chemical-weapons.lore"));
+        return Color.getTranslated(getString("skill.chemical-weapons.lore"));
     }
 
     public MenuItem getChemicalWeaponsItem() {
@@ -71,11 +68,11 @@ public class EngineerUpgradeShopConfig extends Configurator implements UpgradeSh
     }
 
     public String getDrawingsName() {
-        return Color.colorize(getString("skill.drawings.name"));
+        return Color.getTranslated(getString("skill.drawings.name"));
     }
 
     public String getDrawingsLore() {
-        return Color.colorize(getString("skill.drawings.lore"));
+        return Color.getTranslated(getString("skill.drawings.lore"));
     }
 
     public MenuItem getDrawingsItem() {
@@ -86,11 +83,11 @@ public class EngineerUpgradeShopConfig extends Configurator implements UpgradeSh
     }
 
     public String getHeavyIndustryName() {
-        return Color.colorize(getString("skill.heavy-industry.name"));
+        return Color.getTranslated(getString("skill.heavy-industry.name"));
     }
 
     public String getHeavyIndustryLore() {
-        return Color.colorize(getString("skill.heavy-industry.lore"));
+        return Color.getTranslated(getString("skill.heavy-industry.lore"));
     }
 
     public MenuItem getHeavyIndustryItem() {
@@ -101,11 +98,11 @@ public class EngineerUpgradeShopConfig extends Configurator implements UpgradeSh
     }
 
     public String getModificationsName() {
-        return Color.colorize(getString("skill.modifications.name"));
+        return Color.getTranslated(getString("skill.modifications.name"));
     }
 
     public String getModificationsLore() {
-        return Color.colorize(getString("skill.modifications.lore"));
+        return Color.getTranslated(getString("skill.modifications.lore"));
     }
 
     public MenuItem getModificationsItem() {

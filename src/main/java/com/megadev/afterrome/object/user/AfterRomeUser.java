@@ -5,7 +5,7 @@ import com.megadev.afterrome.config.ConfigManager;
 import com.megadev.afterrome.object.item.ItemBuilder;
 import com.megadev.afterrome.object.profession.Profession;
 
-import com.megadev.afterrome.util.Color;
+import dev.mega.megacore.util.Color;
 import lombok.Setter;
 
 import net.md_5.bungee.api.ChatMessageType;
@@ -44,15 +44,13 @@ public class AfterRomeUser implements User, PointsHolder {
 
     @Override
     public void sendMessage(String... messages) {
-        for (String message : messages) {
-            getPlayer().sendMessage(Color.colorize(message));
-        }
+        sendMessage(List.of(messages));
     }
 
     @Override
     public void sendMessage(List<String> messages) {
         for (String message : messages) {
-            getPlayer().sendMessage(Color.colorize(message));
+            getPlayer().sendMessage(Color.getTranslated(message));
         }
     }
 
@@ -64,8 +62,8 @@ public class AfterRomeUser implements User, PointsHolder {
     @Override
     public void sendTitle(String first, String second, int input, int delay, int out) {
         getPlayer().sendTitle(
-                Color.colorize(first),
-                Color.colorize(second),
+                Color.getTranslated(first),
+                Color.getTranslated(second),
                 input, delay, out
         );
     }

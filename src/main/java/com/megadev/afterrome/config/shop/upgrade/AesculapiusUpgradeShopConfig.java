@@ -1,10 +1,10 @@
 package com.megadev.afterrome.config.shop.upgrade;
 
 import com.megadev.afterrome.object.menu.item.MenuItem;
-import com.megadev.afterrome.util.Color;
 
 import dev.mega.megacore.config.Configurator;
 
+import dev.mega.megacore.util.Color;
 import lombok.Getter;
 
 import org.bukkit.Material;
@@ -20,7 +20,7 @@ public class AesculapiusUpgradeShopConfig extends Configurator implements Upgrad
 
     @Override
     public String getMenuName() {
-        return Color.colorize(getString("menu-name"));
+        return Color.getTranslated(getString("menu-name"));
     }
 
     @Override
@@ -29,51 +29,51 @@ public class AesculapiusUpgradeShopConfig extends Configurator implements Upgrad
     }
 
     public String getAlchemyName() {
-        return Color.colorize(getString("skill.alchemy.name"));
+        return Color.getTranslated(getString("skill.alchemy.name"));
     }
 
     public String getBrutalSurgeryName() {
-        return Color.colorize(getString("skill.brutal-surgery.name"));
+        return Color.getTranslated(getString("skill.brutal-surgery.name"));
     }
 
     public String getCombatStimulantsName() {
-        return Color.colorize(getString("skill.combat-stimulants.name"));
+        return Color.getTranslated(getString("skill.combat-stimulants.name"));
     }
 
     public String getDoctorMaskName() {
-        return Color.colorize(getString("skill.doctor-mask.name"));
+        return Color.getTranslated(getString("skill.doctor-mask.name"));
     }
 
     public String getHealingName() {
-        return Color.colorize(getString("skill.healing.name"));
+        return Color.getTranslated(getString("skill.healing.name"));
     }
 
     public String getUrineTherapyName() {
-        return Color.colorize(getString("skill.urine-therapy.name"));
+        return Color.getTranslated(getString("skill.urine-therapy.name"));
     }
 
     public String getAlchemyLore() {
-        return Color.colorize(getString("skill.alchemy.lore"));
+        return Color.getTranslated(getString("skill.alchemy.lore"));
     }
 
     public String getBrutalSurgeryLore() {
-        return Color.colorize(getString("skill.brutal-surgery.lore"));
+        return Color.getTranslated(getString("skill.brutal-surgery.lore"));
     }
 
     public String getCombatStimulantsLore() {
-        return Color.colorize(getString("skill.combat-stimulants.lore"));
+        return Color.getTranslated(getString("skill.combat-stimulants.lore"));
     }
 
     public String getDoctorMaskLore() {
-        return Color.colorize(getString("skill.doctor-mask.lore"));
+        return Color.getTranslated(getString("skill.doctor-mask.lore"));
     }
 
     public String getHealingLore() {
-        return Color.colorize(getString("skill.healing.lore"));
+        return Color.getTranslated(getString("skill.healing.lore"));
     }
 
     public String getUrineTherapyLore() {
-        return Color.colorize(getString("skill.urine-therapy.lore"));
+        return Color.getTranslated(getString("skill.urine-therapy.lore"));
     }
 
     public MenuItem getAlchemyItem() {
