@@ -1,19 +1,12 @@
 package com.megadev.afterrome.object.profession;
 
-import com.megadev.afterrome.config.profession.SantaConfig;
 import com.megadev.afterrome.object.menu.AbstractUpgradeMenu;
-import com.megadev.afterrome.object.menu.shop.upgrade.menu.SantaMenu;
 import com.megadev.afterrome.object.menu.shop.upgrade.skill.Skill;
 import com.megadev.afterrome.object.user.User;
-import dev.mega.megacore.config.Configurator;
 
 import java.util.List;
 
-public class Santa extends Profession<SantaConfig, SantaMenu> {
-    protected Santa(Class<SantaConfig> configClass, Class<SantaMenu> menuClass) {
-        super(configClass, menuClass);
-    }
-
+public class Santa implements HiddenProfession{
     @Override
     public String getNameOfProfession() {
         return "";
@@ -22,10 +15,6 @@ public class Santa extends Profession<SantaConfig, SantaMenu> {
     @Override
     public AbstractUpgradeMenu getUpgradeMenu(User user) {
         return null;
-    }
-    @Override
-    public boolean isHidden() {
-        return false;
     }
 
     @Override

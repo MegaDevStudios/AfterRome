@@ -1,19 +1,12 @@
 package com.megadev.afterrome.object.profession;
 
-import com.megadev.afterrome.config.profession.SonOfMarsConfig;
 import com.megadev.afterrome.object.menu.AbstractUpgradeMenu;
-import com.megadev.afterrome.object.menu.shop.upgrade.menu.SonOfMarsMenu;
 import com.megadev.afterrome.object.menu.shop.upgrade.skill.Skill;
 import com.megadev.afterrome.object.user.User;
-import dev.mega.megacore.config.Configurator;
 
 import java.util.List;
 
-public class SonOfMars extends Profession<SonOfMarsConfig, SonOfMarsMenu> {
-    protected SonOfMars(Class<SonOfMarsConfig> configClass, Class<SonOfMarsMenu> menuClass) {
-        super(configClass, menuClass);
-    }
-
+public class SonOfMars implements Profession {
     @Override
     public String getNameOfProfession() {
         return "";
@@ -22,11 +15,6 @@ public class SonOfMars extends Profession<SonOfMarsConfig, SonOfMarsMenu> {
     @Override
     public AbstractUpgradeMenu getUpgradeMenu(User user) {
         return null;
-    }
-
-    @Override
-    public boolean isHidden() {
-        return false;
     }
 
     @Override

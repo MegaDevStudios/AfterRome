@@ -1,19 +1,12 @@
 package com.megadev.afterrome.object.profession;
 
-import com.megadev.afterrome.config.profession.ForesterConfig;
 import com.megadev.afterrome.object.menu.AbstractUpgradeMenu;
-import com.megadev.afterrome.object.menu.shop.upgrade.menu.ForesterMenu;
 import com.megadev.afterrome.object.menu.shop.upgrade.skill.Skill;
 import com.megadev.afterrome.object.user.User;
-import dev.mega.megacore.config.Configurator;
 
 import java.util.List;
 
-public class Forester extends Profession<ForesterConfig, ForesterMenu> {
-    protected Forester(Class<ForesterConfig> configClass, Class<ForesterMenu> menuClass) {
-        super(configClass, menuClass);
-    }
-
+public class Forester implements Profession {
     @Override
     public String getNameOfProfession() {
         return "";
@@ -22,11 +15,6 @@ public class Forester extends Profession<ForesterConfig, ForesterMenu> {
     @Override
     public AbstractUpgradeMenu getUpgradeMenu(User user) {
         return null;
-    }
-
-    @Override
-    public boolean isHidden() {
-        return false;
     }
 
     @Override

@@ -1,7 +1,6 @@
 package com.megadev.afterrome.object.profession;
 
 import com.megadev.afterrome.config.profession.AesculapiusConfig;
-import com.megadev.afterrome.config.shop.upgrade.AesculapiusUpgradeShopConfig;
 import com.megadev.afterrome.config.ConfigManager;
 import com.megadev.afterrome.object.menu.AbstractUpgradeMenu;
 import com.megadev.afterrome.object.menu.shop.upgrade.menu.AesculapiusMenu;
@@ -10,12 +9,7 @@ import com.megadev.afterrome.object.user.User;
 
 import java.util.List;
 
-public class Aesculapius extends Profession<AesculapiusConfig, AesculapiusMenu> {
-
-    protected Aesculapius(Class<AesculapiusConfig> configClass, Class<AesculapiusMenu> menuClass) {
-        super(configClass, menuClass);
-    }
-
+public class Aesculapius implements Profession {
     @Override
     public String getNameOfProfession() {
         return ConfigManager.getInstance().getConfig(AesculapiusConfig.class).getName();
@@ -24,11 +18,6 @@ public class Aesculapius extends Profession<AesculapiusConfig, AesculapiusMenu> 
     @Override
     public AbstractUpgradeMenu getUpgradeMenu(User user) {
         return new AesculapiusMenu(user, getSkills());
-    }
-
-    @Override
-    public boolean isHidden() {
-        return false;
     }
 
     @Override
