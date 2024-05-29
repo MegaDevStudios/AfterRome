@@ -5,25 +5,22 @@ import com.megadev.afterrome.config.MainConfig;
 import com.megadev.afterrome.config.ConfigManager;
 import com.megadev.afterrome.object.item.ItemBuilder;
 import com.megadev.afterrome.object.profession.Profession;
-
 import dev.mega.megacore.util.Color;
 import lombok.Setter;
-
 import net.md_5.bungee.api.ChatMessageType;
 import net.md_5.bungee.api.chat.TextComponent;
-
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
+import org.bukkit.configuration.serialization.ConfigurationSerializable;
 import org.bukkit.configuration.serialization.SerializableAs;
 import org.bukkit.entity.Player;
-
 import lombok.Getter;
-
+import org.jetbrains.annotations.NotNull;
 import java.util.*;
 import java.util.List;
 
 @Getter
-@SerializableAs("users")
+@SerializableAs("user")
 public class AfterRomeUser implements User, PointsHolder {
     private static final MainConfig mainConfig = ConfigManager.getInstance().getConfig(MainConfig.class);
     private static final int MAX_UNIT_PER_POINT = mainConfig.getMaxUnitsPerPoint();
@@ -37,6 +34,13 @@ public class AfterRomeUser implements User, PointsHolder {
     public AfterRomeUser(Player player) {
         this.uuid = player.getUniqueId();
         this.healths = 3;
+    }
+
+    public AfterRomeUser(UUID uuid, Profession profession, int healths, double points) {
+        this.uuid = uuid;
+        this.profession = profession;
+        this.healths = healths;
+        this.points = points;
     }
 
     public Player getPlayer() {
@@ -94,12 +98,22 @@ public class AfterRomeUser implements User, PointsHolder {
         points += (amount / MAX_UNIT_PER_POINT);
     }
 
-    public Map<String, Object> serialize() {
+    @Override
+    public @NotNull Map<String, Object> serialize() {
         Map<String, Object> data = Maps.newConcurrentMap();
         data.put("uuid", this.uuid);
         data.put("profession", this.profession);
         data.put("healths", this.healths);
         data.put("points", this.points);
         return data;
+    }
+
+    public static AfterRomeUser deserialize(Map<String, Object> args) {
+        UUID uuid = (UUID) args.get("uuid");
+        Profession profession = (Profession) args.get("profession");
+        int healths = (int) args.get("healths");
+        double points = (double) args.get("points");
+
+        return new AfterRomeUser(uuid, profession, healths, points);
     }
 }

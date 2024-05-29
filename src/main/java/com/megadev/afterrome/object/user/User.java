@@ -4,12 +4,13 @@ import com.megadev.afterrome.object.item.ItemBuilder;
 import com.megadev.afterrome.object.profession.Profession;
 
 import org.bukkit.Location;
+import org.bukkit.configuration.serialization.ConfigurationSerializable;
 import org.bukkit.entity.Player;
 
 import java.util.List;
 import java.util.UUID;
 
-public interface User {
+public interface User extends ConfigurationSerializable {
 
     Player getPlayer();
 

@@ -8,8 +8,10 @@ import com.megadev.afterrome.object.menu.shop.upgrade.skill.Skill;
 import com.megadev.afterrome.object.menu.shop.upgrade.skill.agronomist.*;
 import com.megadev.afterrome.object.user.User;
 import lombok.Getter;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
+import java.util.Map;
 
 @Getter
 public class Agronomist implements Profession {
@@ -34,5 +36,10 @@ public class Agronomist implements Profession {
     @Override
     public AbstractUpgradeMenu getUpgradeMenu(User user) {
         return new AgronomistMenu(user, getSkills());
+    }
+
+    @Override
+    public @NotNull Map<String, Object> serialize() {
+        return Map.of("skills", skills);
     }
 }
