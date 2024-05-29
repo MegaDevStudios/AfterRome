@@ -79,15 +79,15 @@ public abstract class AbstractMenu implements Menu {
 
         MenuManager menuManager = MenuManager.getInstance();
 
-        if (menuManager.containsPlayer(user)) {
-            menuManager.cancelTask(user);
-            menuManager.remove(user);
+        if (menuManager.containsTaskForUser(user)) {
+            menuManager.cancelTaskForUser(user);
+            menuManager.removeTaskForUser(user);
         }
 
-        menuManager.put(user, Bukkit.getScheduler().runTaskTimer(MegaCore.getInstance(), () -> {
+        menuManager.putTaskForUser(user, Bukkit.getScheduler().runTaskTimer(MegaCore.getInstance(), () -> {
             if (!player.getOpenInventory().getTitle().equals(ChatColor.translateAlternateColorCodes('&', getMenuName()))) {
-                menuManager.cancelTask(user);
-                menuManager.remove(user);
+                menuManager.cancelTaskForUser(user);
+                menuManager.removeTaskForUser(user);
                 return;
             }
             update();
