@@ -3,6 +3,7 @@ package com.megadev.afterrome.object.profession;
 import com.megadev.afterrome.object.menu. AbstractUpgradeMenu;
 import com.megadev.afterrome.object.menu.item.MenuItem;
 import com.megadev.afterrome.object.menu.shop.upgrade.skill.Skill;
+import com.megadev.afterrome.object.menu.shop.upgrade.skill.agronomist.AgronomistSkill;
 import com.megadev.afterrome.object.user.User;
 
 import org.bukkit.configuration.serialization.ConfigurationSerializable;
@@ -17,4 +18,6 @@ public interface Profession extends ConfigurationSerializable {
     MenuItem getBackgroundItem();
 
     List<Skill> getSkills();
+
+    Skill getSkill(AgronomistSkill agronomistSkill);
 }

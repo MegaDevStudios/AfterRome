@@ -12,6 +12,7 @@ import java.util.Map;
 public class Engineer implements HiddenProfession {
     List<Skill> skills;
 
+
     @Override
     public String getNameOfProfession() {
         return "";

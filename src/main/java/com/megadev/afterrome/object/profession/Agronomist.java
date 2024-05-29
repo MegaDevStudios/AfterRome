@@ -31,11 +31,16 @@ public class Agronomist implements Profession {
        );
     }
 
-    public Skill getFarmerSkill() {
-        for (Skill skill : skills) {
-            if (skill instanceof Farmer) return skill;
-        }
-        return null;
+    @Override
+    public Skill getSkill(AgronomistSkill agronomistSkill) {
+        return switch (agronomistSkill){
+            case COOK -> skills.get(1);
+            case FARMER -> skills.get(2);
+            case TANNER -> skills.get(5);
+            case BUTCHER -> skills.get(0);
+            case HATCHER -> skills.get(3);
+            case LUMBERJACK -> skills.get(4);
+        };
     }
 
 
