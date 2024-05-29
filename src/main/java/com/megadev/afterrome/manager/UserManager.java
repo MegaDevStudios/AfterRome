@@ -39,6 +39,10 @@ public class UserManager {
         users.add(new AfterRomeUser(player));
     }
 
+    public void saveUser(AfterRomeUser afterRomeUser) {
+        users.add(afterRomeUser);
+    }
+
     public boolean userExist(Player player) {
         return getUser(player).isPresent();
     }

@@ -20,12 +20,6 @@ public final class AfterRome extends MegaCore {
         setupManagers();
         setupListeners();
         setupCommands();
-
-        UserManager userManager = UserManager.getInstance();
-        ConfigManager configManager = ConfigManager.getInstance();
-        ConfigUserManager configUserManager = configManager.getManager(ConfigUserManager.class);
-
-        //todo: store users from config to userManager may be?
     }
 
     @Override
