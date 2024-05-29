@@ -1,6 +1,7 @@
 package com.megadev.afterrome.listener.skill;
 
 import com.megadev.afterrome.manager.UserManager;
+import com.megadev.afterrome.object.menu.shop.upgrade.skill.SkillType;
 import com.megadev.afterrome.object.menu.shop.upgrade.skill.agronomist.AgronomistSkill;
 import com.megadev.afterrome.object.profession.Agronomist;
 import com.megadev.afterrome.object.profession.Profession;
@@ -29,7 +30,7 @@ public class BlockListener implements Listener {
         }
 
         if (block.getBlockData() instanceof Ageable) {
-            profession.getSkill(AgronomistSkill.FARMER).execute(event);
+            profession.getSkill(SkillType.FARMER).execute(event);
         }
     }
 }

@@ -7,6 +7,7 @@ import com.megadev.afterrome.object.menu.AbstractUpgradeMenu;
 import com.megadev.afterrome.object.menu.item.MenuItem;
 import com.megadev.afterrome.object.menu.shop.upgrade.menu.AgronomistMenu;
 import com.megadev.afterrome.object.menu.shop.upgrade.skill.Skill;
+import com.megadev.afterrome.object.menu.shop.upgrade.skill.SkillType;
 import com.megadev.afterrome.object.menu.shop.upgrade.skill.agronomist.*;
 import com.megadev.afterrome.object.user.User;
 import lombok.Getter;
@@ -32,14 +33,14 @@ public class Agronomist implements Profession {
     }
 
     @Override
-    public Skill getSkill(AgronomistSkill agronomistSkill) {
-        return switch (agronomistSkill){
+    public Skill getSkill(SkillType agronomistSkill) {
+        return switch (agronomistSkill) {
+            case BUTCHER -> skills.get(0);
             case COOK -> skills.get(1);
             case FARMER -> skills.get(2);
-            case TANNER -> skills.get(5);
-            case BUTCHER -> skills.get(0);
             case HATCHER -> skills.get(3);
             case LUMBERJACK -> skills.get(4);
+            case TANNER -> skills.get(5);
         };
     }
 

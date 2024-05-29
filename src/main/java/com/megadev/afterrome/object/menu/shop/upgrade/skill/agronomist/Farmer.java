@@ -18,4 +18,9 @@ public class Farmer implements Skill {
         ShopManager shopManager = ConfigManager.getInstance().getManager(ShopManager.class);
         menuItem = shopManager.getConfig(AgronomistUpgradeShopConfig.class).getFarmerItem();
     }
+
+    @Override
+    public void execute(Event event) {
+
+    }
 }
