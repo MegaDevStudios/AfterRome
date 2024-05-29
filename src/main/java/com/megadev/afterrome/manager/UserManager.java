@@ -44,18 +44,13 @@ public class UserManager {
     }
 
     public boolean userExist(Player player) {
-        return getUser(player).isPresent();
+        return getUser(player) != null;
     }
 
-    public User getUserNonNull(Player player) {
-        Optional<User> optionalUser = getUser(player);
-        return optionalUser.orElseGet(() -> new AfterRomeUser(player));
-    }
-
-    public Optional<User> getUser(Player player) {
+    public User getUser(Player player) {
         return users.stream()
                 .filter(user -> user.getUuid().equals(player.getUniqueId()))
-                .findFirst();
+                .findFirst().orElse(null);
     }
 
     public void printUsers() {
