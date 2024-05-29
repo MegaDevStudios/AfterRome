@@ -27,30 +27,6 @@ public class MenuManager extends Manager {
         }
     }
 
-    public void startRefreshingMenus(User user) {
-        //todo: just do it, make it runnable
-    }
-
-    public boolean containsPlayer(User user) {
-        return refreshingMenus.containsKey(user);
-    }
-
-    private BukkitTask getBukkitTask(User user) {
-        return refreshingMenus.get(user);
-    }
-
-    public void cancelTask(User user) {
-        getBukkitTask(user).cancel();
-    }
-
-    public void remove(User user) {
-        refreshingMenus.remove(user);
-    }
-
-    public void put(User user, BukkitTask task) {
-        refreshingMenus.put(user, task);
-    }
-
     public void putTaskForUser(User user, BukkitTask task) {
         refreshingData.addValue(user.getUuid(), task);
     }
