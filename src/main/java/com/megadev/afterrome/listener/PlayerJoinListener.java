@@ -19,7 +19,6 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import java.util.Optional;
 
 public class PlayerJoinListener implements Listener {
-    UserManager userManager = UserManager.getInstance();
     ConfigManager configManager = ConfigManager.getInstance();
     ConfigUserManager configUserManager = configManager.getManager(ConfigUserManager.class);
 
