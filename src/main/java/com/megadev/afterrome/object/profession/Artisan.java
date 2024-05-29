@@ -1,6 +1,9 @@
 package com.megadev.afterrome.object.profession;
 
+import com.megadev.afterrome.config.ConfigManager;
+import com.megadev.afterrome.config.shop.upgrade.ArtisanUpgradeShopConfig;
 import com.megadev.afterrome.object.menu.AbstractUpgradeMenu;
+import com.megadev.afterrome.object.menu.item.MenuItem;
 import com.megadev.afterrome.object.menu.shop.upgrade.skill.Skill;
 import com.megadev.afterrome.object.user.User;
 import org.jetbrains.annotations.NotNull;
@@ -19,6 +22,11 @@ public class Artisan implements Profession {
     @Override
     public AbstractUpgradeMenu getUpgradeMenu(User user) {
         return null;
+    }
+
+    @Override
+    public MenuItem getBackgroundItem() {
+        return ConfigManager.getInstance().getConfig(ArtisanUpgradeShopConfig.class).getBackgroundItem();
     }
 
     @Override

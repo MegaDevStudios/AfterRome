@@ -2,6 +2,7 @@ package com.megadev.afterrome.object.profession;
 
 import com.megadev.afterrome.config.ConfigManager;
 import com.megadev.afterrome.config.profession.AgronomistConfig;
+import com.megadev.afterrome.config.shop.upgrade.AgronomistUpgradeShopConfig;
 import com.megadev.afterrome.object.menu.AbstractUpgradeMenu;
 import com.megadev.afterrome.object.menu.item.MenuItem;
 import com.megadev.afterrome.object.menu.shop.upgrade.menu.AgronomistMenu;
@@ -9,7 +10,7 @@ import com.megadev.afterrome.object.menu.shop.upgrade.skill.Skill;
 import com.megadev.afterrome.object.menu.shop.upgrade.skill.agronomist.*;
 import com.megadev.afterrome.object.user.User;
 import lombok.Getter;
-import org.bukkit.Material;
+
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
@@ -37,12 +38,12 @@ public class Agronomist implements Profession {
 
     @Override
     public AbstractUpgradeMenu getUpgradeMenu(User user) {
-        return new AgronomistMenu(user, getSkills());
+        return new AgronomistMenu(user, this);
     }
 
     @Override
     public MenuItem getBackgroundItem() {
-        return new MenuItem(Material.valueOf(ConfigManager.getInstance().getConfig()));
+        return ConfigManager.getInstance().getConfig(AgronomistUpgradeShopConfig.class).getBackgroundItem();
     }
 
     @Override

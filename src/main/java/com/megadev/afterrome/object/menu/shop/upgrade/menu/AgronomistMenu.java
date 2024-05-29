@@ -1,23 +1,18 @@
 package com.megadev.afterrome.object.menu.shop.upgrade.menu;
 
+import com.megadev.afterrome.config.ConfigManager;
+import com.megadev.afterrome.config.shop.upgrade.AgronomistUpgradeShopConfig;
 import com.megadev.afterrome.object.menu.AbstractUpgradeMenu;
-import com.megadev.afterrome.object.menu.shop.upgrade.skill.Skill;
+import com.megadev.afterrome.object.profession.Profession;
 import com.megadev.afterrome.object.user.User;
 
-import java.util.List;
-
 public class AgronomistMenu extends AbstractUpgradeMenu {
-    public AgronomistMenu(User user, List<Skill> skills) {
-        super(user, skills);
-    }
-
-    @Override
-    protected void setMenuItems() {
-        super.setMenuItems();
+    public AgronomistMenu(User user, Profession profession) {
+        super(user, profession);
     }
 
     @Override
     public String getMenuName() {
-        return "";
+        return ConfigManager.getInstance().getConfig(AgronomistUpgradeShopConfig.class).getMenuName();
     }
 }

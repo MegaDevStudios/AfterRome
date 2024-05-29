@@ -7,6 +7,8 @@ import com.megadev.afterrome.object.menu.item.MenuItem;
 import com.megadev.afterrome.object.menu.shop.upgrade.skill.Skill;
 
 import lombok.Getter;
+import org.bukkit.event.Event;
+import org.bukkit.event.block.BlockBreakEvent;
 
 @Getter
 public class Farmer implements Skill {

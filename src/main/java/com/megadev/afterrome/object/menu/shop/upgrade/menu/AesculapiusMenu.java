@@ -10,11 +10,6 @@ public class AesculapiusMenu extends AbstractUpgradeMenu {
     }
 
     @Override
-    protected void setMenuItems() {
-        super.setMenuItems();
-    }
-
-    @Override
     public String getMenuName() {
         return "Меню эскулапа";
     }

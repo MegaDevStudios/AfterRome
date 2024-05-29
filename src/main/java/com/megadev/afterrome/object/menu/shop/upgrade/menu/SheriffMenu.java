@@ -2,13 +2,14 @@ package com.megadev.afterrome.object.menu.shop.upgrade.menu;
 
 import com.megadev.afterrome.object.menu.AbstractUpgradeMenu;
 import com.megadev.afterrome.object.menu.shop.upgrade.skill.Skill;
+import com.megadev.afterrome.object.profession.Profession;
 import com.megadev.afterrome.object.user.User;
 
 import java.util.List;
 
 public class SheriffMenu extends AbstractUpgradeMenu {
-    public SheriffMenu(User user, List<Skill> skills) {
-        super(user, skills);
+    public SheriffMenu(User user, Profession profession) {
+        super(user, profession);
     }
 
     @Override
