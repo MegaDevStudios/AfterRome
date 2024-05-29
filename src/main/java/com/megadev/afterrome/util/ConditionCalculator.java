@@ -4,6 +4,6 @@ import java.util.Random;
 
 public class ConditionCalculator {
     public static boolean isPassed(double percent) {
-        return new Random().nextDouble() < percent;
+        return new Random().nextDouble() * 100 < percent;
     }
 }
