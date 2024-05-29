@@ -31,6 +31,15 @@ public class Agronomist implements Profession {
        );
     }
 
+    public Skill getFarmerSkill() {
+        for (Skill skill : skills) {
+            if (skill instanceof Farmer) return skill;
+        }
+        return null;
+    }
+
+
+
     @Override
     public String getNameOfProfession() {
         return ConfigManager.getInstance().getConfig(AgronomistConfig.class).getName();

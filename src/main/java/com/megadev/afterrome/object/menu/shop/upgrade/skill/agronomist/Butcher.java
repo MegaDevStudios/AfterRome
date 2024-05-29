@@ -7,6 +7,7 @@ import com.megadev.afterrome.object.menu.item.MenuItem;
 import com.megadev.afterrome.object.menu.shop.upgrade.skill.Skill;
 
 import lombok.Getter;
+import org.bukkit.event.Event;
 
 @Getter
 public class Butcher implements Skill {
@@ -15,5 +16,10 @@ public class Butcher implements Skill {
     public Butcher() {
         ShopManager shopManager = ConfigManager.getInstance().getManager(ShopManager.class);
         menuItem = shopManager.getConfig(AgronomistUpgradeShopConfig.class).getButcherItem();
+    }
+
+    @Override
+    public void execute(Event event) {
+
     }
 }

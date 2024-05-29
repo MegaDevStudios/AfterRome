@@ -3,6 +3,7 @@ package com.megadev.afterrome.listener;
 import com.megadev.afterrome.manager.MenuManager;
 import com.megadev.afterrome.manager.UserManager;
 import com.megadev.afterrome.object.menu.Menu;
+import com.megadev.afterrome.object.profession.Agronomist;
 import com.megadev.afterrome.object.user.User;
 
 import org.bukkit.entity.Player;
