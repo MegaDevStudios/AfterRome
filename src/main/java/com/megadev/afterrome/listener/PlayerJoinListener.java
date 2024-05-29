@@ -19,13 +19,13 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import java.util.Optional;
 
 public class PlayerJoinListener implements Listener {
+    UserManager userManager = UserManager.getInstance();
     ConfigManager configManager = ConfigManager.getInstance();
     ConfigUserManager configUserManager = configManager.getManager(ConfigUserManager.class);
 
     @EventHandler
     public void onLogin(PlayerJoinEvent event) {
         Player player = event.getPlayer();
-        UserManager userManager = UserManager.getInstance();
 
         UserConfig userConfig = configUserManager.getAfterRomeUserConfig(player.getUniqueId());
 

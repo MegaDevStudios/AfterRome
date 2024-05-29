@@ -61,7 +61,7 @@ public class UserManager {
     public void printUsers() {
         System.out.println("==================================================================");
         for (User user : users)
-            System.out.println(user + " " + user);
+            System.out.println(user + " " + user.getPlayer().getName());
         System.out.println("==================================================================");
     }
 }

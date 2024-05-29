@@ -9,6 +9,7 @@ import dev.mega.megacore.MegaCore;
 import dev.mega.megacore.util.Color;
 import lombok.Getter;
 
+import net.kyori.adventure.text.Component;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -85,7 +86,7 @@ public abstract class AbstractMenu implements Menu {
         }
 
         menuManager.put(user, Bukkit.getScheduler().runTaskTimer(MegaCore.getInstance(), () -> {
-            if (!player.getOpenInventory().getTitle().equals(ChatColor.translateAlternateColorCodes('&', getMenuName()))) {
+            if (!player.getOpenInventory().title().equals(Component.text(Color.getTranslated(getMenuName())))) {
                 menuManager.cancelTask(user);
                 menuManager.remove(user);
                 return;

@@ -1,4 +1,5 @@
 menu-name: "&9Мафия"
+background-item: "LIME_STAINED_GLASS_PANE"
 skill:
   chase:
     item: ""

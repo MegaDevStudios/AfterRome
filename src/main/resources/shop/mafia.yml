@@ -1,4 +1,5 @@
 menu-name: "&0Мафия"
+background-item: "LIME_STAINED_GLASS_PANE"
 skill:
   hack:
     item: ""

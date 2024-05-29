@@ -1,4 +1,5 @@
 menu-name: "&eСанта"
+background-item: "LIME_STAINED_GLASS_PANE"
 skill:
   for-the-faith:
     item: ""

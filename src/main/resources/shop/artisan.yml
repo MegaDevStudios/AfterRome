@@ -1,4 +1,5 @@
 menu-name: "&8Кустарь"
+background-item: "LIME_STAINED_GLASS_PANE"
 skill:
   blacksmith:
     item: "IRON_AXE"

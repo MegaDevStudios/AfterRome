@@ -1,4 +1,5 @@
 menu-name: "&3Форестьер"
+background-item: "LIME_STAINED_GLASS_PANE"
 skill:
   camp-cooking:
     item: ""

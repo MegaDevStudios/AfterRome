@@ -5,22 +5,27 @@ import com.megadev.afterrome.config.MainConfig;
 import com.megadev.afterrome.config.ConfigManager;
 import com.megadev.afterrome.object.item.ItemBuilder;
 import com.megadev.afterrome.object.profession.Profession;
+
 import dev.mega.megacore.util.Color;
 import lombok.Setter;
+
+import net.kyori.adventure.text.Component;
 import net.md_5.bungee.api.ChatMessageType;
 import net.md_5.bungee.api.chat.TextComponent;
+
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
-import org.bukkit.configuration.serialization.ConfigurationSerializable;
 import org.bukkit.configuration.serialization.SerializableAs;
 import org.bukkit.entity.Player;
+
 import lombok.Getter;
 import org.jetbrains.annotations.NotNull;
+
 import java.util.*;
 import java.util.List;
 
 @Getter
-@SerializableAs("user")
+@SerializableAs("users")
 public class AfterRomeUser implements User, PointsHolder {
     private static final MainConfig mainConfig = ConfigManager.getInstance().getConfig(MainConfig.class);
     private static final int MAX_UNIT_PER_POINT = mainConfig.getMaxUnitsPerPoint();
@@ -61,7 +66,7 @@ public class AfterRomeUser implements User, PointsHolder {
 
     @Override
     public void sendActionBar(String message) {
-        getPlayer().sendMessage(ChatMessageType.ACTION_BAR, new TextComponent(message));
+        getPlayer().sendActionBar(Component.text(Color.getTranslated(message)));
     }
 
     @Override
@@ -71,6 +76,9 @@ public class AfterRomeUser implements User, PointsHolder {
                 Color.getTranslated(second),
                 input, delay, out
         );
+
+        // getPlayer().showTitle(Title.title(Component.text(first), Component.text(second)));
+        // TODO: change deprecated method
     }
 
     @Override

@@ -1,4 +1,5 @@
 menu-name: "&6Инженер"
+background-item: "LIME_STAINED_GLASS_PANE"
 skill:
   armorer:
     item: ""
