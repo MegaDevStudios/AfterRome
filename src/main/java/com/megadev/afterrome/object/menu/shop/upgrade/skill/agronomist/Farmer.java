@@ -41,6 +41,5 @@ public class Farmer implements Skill {
 
         blockDropItemEvent.setCancelled(true);
         user.addItem(blockDropItemEvent.getItems().get(0).getItemStack(), countOfFetus);
-
     }
 }
