@@ -14,7 +14,7 @@ public class ConditionCalculator {
         return result == 100;
     }
 
-    public static double choiceOne(double[] probabilities) {
+    public static int choiceOne(double[] probabilities) {
         double[] cumulativeProbabilities = new double[probabilities.length];
 
         double cumulativeSum = 0.0;
