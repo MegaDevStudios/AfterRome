@@ -37,5 +37,7 @@ public class Butcher implements Skill {
         EntityDeathEvent entityDeathEvent = (EntityDeathEvent) event;
         User user = UserManager.getInstance().getUser(entityDeathEvent.getEntity().getKiller());
 
+        entityDeathEvent.setCancelled(true);
+        user.addItem(entityDeathEvent.getDrops().get(0), countOfMeat);
     }
 }
