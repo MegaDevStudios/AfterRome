@@ -12,6 +12,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDeathEvent;
 import org.bukkit.event.entity.PlayerDeathEvent;
+import org.bukkit.inventory.ItemStack;
 
 public class KillListener implements Listener {
     @EventHandler
@@ -29,7 +30,12 @@ public class KillListener implements Listener {
             return;
         }
 
-        if (event.getDrops().stream().anyMatch(drop -> drop.getType().equals(Material.BEEF))) {
+        if (event.getDrops().stream().map(ItemStack::getType)
+                .anyMatch(type -> type.equals(Material.BEEF) ||
+                        type.equals(Material.CHICKEN) ||
+                        type.equals(Material.RABBIT) ||
+                        type.equals(Material.PORKCHOP)
+                )) {
             profession.getSkill(SkillType.BUTCHER).execute(event);
         } else if (event.getDrops().stream().anyMatch(drop -> drop.getType().equals(Material.LEATHER))) {
             profession.getSkill(SkillType.TANNER).execute(event);
