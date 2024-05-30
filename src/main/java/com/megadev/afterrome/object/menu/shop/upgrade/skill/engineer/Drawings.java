@@ -6,6 +6,7 @@ import com.megadev.afterrome.object.menu.item.MenuItem;
 import com.megadev.afterrome.object.menu.shop.upgrade.skill.Skill;
 
 import lombok.Getter;
+import org.bukkit.event.Event;
 
 @Getter
 public class Drawings implements Skill {
@@ -15,4 +16,18 @@ public class Drawings implements Skill {
         menuItem = ConfigManager.getInstance().getConfig(EngineerUpgradeShopConfig.class).getDrawingsItem();
     }
 
+    @Override
+    public void incrementLevel() {
+
+    }
+
+    @Override
+    public int getLevel() {
+        return 0;
+    }
+
+    @Override
+    public void execute(Event event) {
+
+    }
 }

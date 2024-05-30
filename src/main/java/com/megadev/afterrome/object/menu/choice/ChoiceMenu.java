@@ -75,9 +75,8 @@ public class ChoiceMenu extends AbstractMenu {
     public void handleClose(InventoryCloseEvent event) {
         if (!(event.getPlayer() instanceof Player player)) return;
 
-        Optional<User> optionalUser = UserManager.getInstance().getUser(player);
-        if (optionalUser.isEmpty()) return;
-        User user = optionalUser.get();
+        User user = UserManager.getInstance().getUser(player);
+        if (user == null) return;
 
         if (!(event.getInventory().getHolder() instanceof ChoiceMenu)) return;
         if (user.getProfession() != null) return;

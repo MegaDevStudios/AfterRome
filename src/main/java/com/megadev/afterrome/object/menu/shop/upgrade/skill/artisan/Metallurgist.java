@@ -6,6 +6,7 @@ import com.megadev.afterrome.object.menu.item.MenuItem;
 import com.megadev.afterrome.object.menu.shop.upgrade.skill.Skill;
 
 import lombok.Getter;
+import org.bukkit.event.Event;
 
 @Getter
 public class Metallurgist implements Skill {
@@ -13,5 +14,20 @@ public class Metallurgist implements Skill {
 
     public Metallurgist() {
         menuItem = ConfigManager.getInstance().getConfig(ArtisanUpgradeShopConfig.class).getMetallurgistItem();
+    }
+
+    @Override
+    public void incrementLevel() {
+
+    }
+
+    @Override
+    public int getLevel() {
+        return 0;
+    }
+
+    @Override
+    public void execute(Event event) {
+
     }
 }

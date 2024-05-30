@@ -28,7 +28,7 @@ public class KillListener implements Listener {
             return;
         }
 
-        if (event.getDrops().stream().anyMatch(drop -> drop.getType().equals()))
+//        if (event.getDrops().stream().anyMatch(drop -> drop.getType().equals()))
 
         profession.getSkill(SkillType.BUTCHER).execute(event);
         profession.getSkill(SkillType.TANNER).execute(event);

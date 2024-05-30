@@ -30,8 +30,5 @@ public class Farmer implements Skill {
     @Override
     public void execute(Event event) {
         double[] percents = ConfigManager.getInstance().getConfig(AgronomistConfig.class).getFarmerPercents(this.level);
-        int count = ConditionCalculator.isPassed(percents);
-
-
     }
 }

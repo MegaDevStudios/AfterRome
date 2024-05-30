@@ -7,6 +7,7 @@ import com.megadev.afterrome.object.menu.shop.upgrade.skill.Skill;
 
 import dev.mega.megacore.config.Configurator;
 import lombok.Getter;
+import org.bukkit.event.Event;
 
 @Getter
 public class Chase implements Skill {
@@ -14,5 +15,20 @@ public class Chase implements Skill {
 
     public Chase() {
         menuItem = ConfigManager.getInstance().getConfig(SheriffUpgradeShopConfig.class).getChaseItem();
+    }
+
+    @Override
+    public void incrementLevel() {
+
+    }
+
+    @Override
+    public int getLevel() {
+        return 0;
+    }
+
+    @Override
+    public void execute(Event event) {
+
     }
 }

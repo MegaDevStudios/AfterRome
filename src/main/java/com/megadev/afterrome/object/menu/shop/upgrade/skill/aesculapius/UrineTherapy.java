@@ -6,6 +6,7 @@ import com.megadev.afterrome.object.menu.item.MenuItem;
 import com.megadev.afterrome.object.menu.shop.upgrade.skill.Skill;
 
 import lombok.Getter;
+import org.bukkit.event.Event;
 
 @Getter
 public class UrineTherapy implements Skill {
@@ -13,5 +14,20 @@ public class UrineTherapy implements Skill {
 
     public UrineTherapy() {
         menuItem = ConfigManager.getInstance().getConfig(AesculapiusUpgradeShopConfig.class).getUrineTherapyItem();
+    }
+
+    @Override
+    public void incrementLevel() {
+
+    }
+
+    @Override
+    public int getLevel() {
+        return 0;
+    }
+
+    @Override
+    public void execute(Event event) {
+
     }
 }

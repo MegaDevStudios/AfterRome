@@ -33,9 +33,8 @@ public class PlayerJoinListener implements Listener {
             userManager.saveUser(AfterRomeUser.deserialize(userConfig.getData()));
         }
 
-        Optional<User> optionalUser = userManager.getUser(player);
-        if (optionalUser.isEmpty()) return;
-        User user = optionalUser.get();
+        User user = userManager.getUser(player);
+        if (user == null) return;
 
         if (user.getProfession() == null) {
             Menu menu = new ChoiceMenu(user);

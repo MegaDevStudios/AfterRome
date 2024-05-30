@@ -15,10 +15,9 @@ import java.util.Optional;
 public class SkillsCommand extends BaseCommand {
     @CommandAlias("skills")
     public void onCommand(Player player) {
-        Optional<User> optionalUser = UserManager.getInstance().getUser(player);
+        User user = UserManager.getInstance().getUser(player);
 
-        if (optionalUser.isEmpty()) return;
-        User user = optionalUser.get();
+        if (user == null) return;
 
         AbstractUpgradeMenu upgradeMenu = user.getProfession().getUpgradeMenu(user);
         upgradeMenu.open();

@@ -60,11 +60,8 @@ public class MenuListener implements Listener {
 
         menu.handleClose(event);
 
-        Optional<User> optionalUser = UserManager.getInstance().getUser(player);
-        if (optionalUser.isPresent()) {
-            User user = optionalUser.get();
-
-
+        User user = UserManager.getInstance().getUser(player);
+        if (user != null) {
             if (MenuManager.getInstance().getRefreshingMenus().containsKey(user)) {
                 MenuManager.getRefreshingMenus().get(user).cancel();
                 MenuManager.getRefreshingMenus().remove(user);
@@ -76,9 +73,8 @@ public class MenuListener implements Listener {
     public void onMove(PlayerMoveEvent event) {
         Player player = event.getPlayer();
 
-        Optional<User> optionalUser = UserManager.getInstance().getUser(player);
-        if (optionalUser.isEmpty()) return;
-        User user = optionalUser.get();
+        User user = UserManager.getInstance().getUser(player);
+        if (user == null) return;
 
         if (user.getProfession() == null) event.setCancelled(true);
     }

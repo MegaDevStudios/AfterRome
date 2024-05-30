@@ -7,6 +7,7 @@ import com.megadev.afterrome.object.menu.item.MenuItem;
 import com.megadev.afterrome.object.menu.shop.upgrade.skill.Skill;
 
 import lombok.Getter;
+import org.bukkit.event.Event;
 
 @Getter
 public class Cook implements Skill {
@@ -15,5 +16,20 @@ public class Cook implements Skill {
     public Cook() {
         ShopManager shopManager = ConfigManager.getInstance().getManager(ShopManager.class);
         menuItem = shopManager.getConfig(AgronomistUpgradeShopConfig.class).getCookItem();
+    }
+
+    @Override
+    public void incrementLevel() {
+
+    }
+
+    @Override
+    public int getLevel() {
+        return 0;
+    }
+
+    @Override
+    public void execute(Event event) {
+
     }
 }
