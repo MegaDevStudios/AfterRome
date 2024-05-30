@@ -1,1 +1,39 @@
 name: "&2Агроном"
+skill:
+  farmer:
+    level:
+      1:
+        fetus1: 10
+        fetus2: 10
+        fetus3: 20
+        fetus4: 30
+        fetus5: 30
+      2:
+        fetus1: 15
+        fetus2: 15
+        fetus3: 20
+        fetus4: 25
+        fetus5: 25
+      3:
+        fetus1: 20
+        fetus2: 20
+        fetus3: 20
+        fetus4: 20
+        fetus5: 20
+      4:
+        fetus1: 25
+        fetus2: 30
+        fetus3: 20
+        fetus4: 15
+        fetus5: 10
+      5:
+        fetus1: 30
+        fetus2: 40
+        fetus3: 10
+        fetus4: 10
+        fetus5: 10
+  butcher:
+  cook:
+  hatcher:
+  lumberjack:
+  tanner:

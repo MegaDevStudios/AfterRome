@@ -12,10 +12,16 @@ import org.bukkit.event.Event;
 @Getter
 public class Butcher implements Skill {
     private final MenuItem menuItem;
+    private int level = 1;
 
     public Butcher() {
         ShopManager shopManager = ConfigManager.getInstance().getManager(ShopManager.class);
         menuItem = shopManager.getConfig(AgronomistUpgradeShopConfig.class).getButcherItem();
+    }
+
+    @Override
+    public void incrementLevel() {
+        level++;
     }
 
     @Override

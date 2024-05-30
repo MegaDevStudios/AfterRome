@@ -6,5 +6,9 @@ import org.bukkit.event.Event;
 public interface Skill {
     MenuItem getMenuItem();
 
+    void incrementLevel();
+
+    int getLevel();
+
     void execute(Event event);
 }
