@@ -35,7 +35,6 @@ public final class AfterRome extends MegaCore {
 
     private void setupManagers() {
         ConfigManager.init(this);
-
         MenuManager.init(this);
         UserManager.init(this);
     }

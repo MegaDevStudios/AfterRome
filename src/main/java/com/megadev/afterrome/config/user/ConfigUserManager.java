@@ -6,7 +6,7 @@ import org.bukkit.plugin.Plugin;
 import java.util.UUID;
 
 public class ConfigUserManager extends AbstractManager {
-    protected ConfigUserManager(Plugin plugin, String dataFolder) {
+    public ConfigUserManager(Plugin plugin, String dataFolder) {
         super(plugin, dataFolder);
     }
 
