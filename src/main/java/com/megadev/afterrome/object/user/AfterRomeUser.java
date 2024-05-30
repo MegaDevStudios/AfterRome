@@ -19,6 +19,7 @@ import org.bukkit.configuration.serialization.SerializableAs;
 import org.bukkit.entity.Player;
 
 import lombok.Getter;
+import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
@@ -89,6 +90,13 @@ public class AfterRomeUser implements User, PointsHolder {
     @Override
     public void setItem(int slot, ItemBuilder builder) {
         getPlayer().getInventory().setItem(slot, builder.toItemStack());
+    }
+
+    @Override
+    public void addItem(ItemStack itemStack, int count) {
+        ItemStack[] items = new ItemStack[count];
+        Arrays.fill(items, itemStack);
+        getPlayer().getInventory().addItem(items);
     }
 
     public void subtractHealth() {
