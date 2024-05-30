@@ -12,6 +12,7 @@ import org.bukkit.event.Event;
 @Getter
 public class Tanner implements Skill {
     private final MenuItem menuItem;
+    private int level = 1;
 
     public Tanner() {
         ShopManager shopManager = ConfigManager.getInstance().getManager(ShopManager.class);
@@ -20,12 +21,7 @@ public class Tanner implements Skill {
 
     @Override
     public void incrementLevel() {
-
-    }
-
-    @Override
-    public int getLevel() {
-        return 0;
+        level++;
     }
 
     @Override

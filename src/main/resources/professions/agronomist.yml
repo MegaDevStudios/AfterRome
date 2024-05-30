@@ -33,7 +33,62 @@ skill:
         fetus4: 10
         fetus5: 10
   butcher:
+    level:
+      1:
+        meat1: 10
+        meat2: 10
+        meat3: 20
+        meat4: 30
+        meat5: 30
+      2:
+        meat1: 15
+        meat2: 15
+        meat3: 20
+        meat4: 25
+        meat5: 25
+      3:
+        meat1: 20
+        meat2: 20
+        meat3: 20
+        meat4: 20
+        meat5: 20
+      4:
+        meat1: 25
+        meat2: 30
+        meat3: 20
+        meat4: 15
+        meat5: 10
+      5:
+        meat1: 30
+        meat2: 40
+        meat3: 10
+        meat4: 10
+        meat5: 10
   cook:
+    level:
+      1:
+      2:
+      3:
+      4:
+      5:
   hatcher:
+    level:
+      1:
+      2:
+      3:
+      4:
+      5:
   lumberjack:
+    level:
+      1:
+      2:
+      3:
+      4:
+      5:
   tanner:
+    level:
+      1:
+      2:
+      3:
+      4:
+      5:
