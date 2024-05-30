@@ -8,6 +8,7 @@ import com.megadev.afterrome.object.menu.shop.upgrade.skill.Skill;
 
 import dev.mega.megacore.config.Configurator;
 import lombok.Getter;
+import org.bukkit.event.Event;
 
 @Getter
 public class IronInside implements Skill {
@@ -15,5 +16,20 @@ public class IronInside implements Skill {
 
     public IronInside() {
         menuItem = ConfigManager.getInstance().getConfig(SonOfMarsUpgradeShopConfig.class).getIronInsideItem();
+    }
+
+    @Override
+    public void incrementLevel() {
+
+    }
+
+    @Override
+    public int getLevel() {
+        return 0;
+    }
+
+    @Override
+    public void execute(Event event) {
+
     }
 }

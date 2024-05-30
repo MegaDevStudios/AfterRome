@@ -2,6 +2,9 @@ package com.megadev.afterrome.util;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class ConditionCalculatorTest {
@@ -9,20 +12,17 @@ class ConditionCalculatorTest {
     @Test
     void choiceOne() {
         double[] probabilities = {0.10, 0.20, 0.25, 0.30, 0.15};
-        double[] cumulativeProbabilities = new double[probabilities.length];
 
-        // Тестируем функцию выбора событий
-        int numTrials = 100000;
-        int[] eventCounts = new int[probabilities.length];
+        List<Integer> integers = new ArrayList<>();
 
-        for (int i = 0; i < numTrials; i++) {
-            int event = ConditionCalculator.chooseEvent(cumulativeProbabilities);
-            eventCounts[event]++;
+        for (int i = 0; i < Math.pow(2, 30) - 1; i++) {
+            int index = ConditionCalculator.choiceOne(probabilities);
+            integers.add(index);
+            System.out.println(i + "; current index is " + index);
         }
 
-        // Выводим результаты
-        for (int i = 0; i < eventCounts.length; i++) {
-            System.out.printf("Событие %d: %.2f%%\n", i + 1, 100.0 * eventCounts[i] / numTrials);
-        }
+        double result = 0;
+        for (int anInt : integers) result += anInt;
+        System.out.println("Average index is: " + result / integers.size());
     }
 }

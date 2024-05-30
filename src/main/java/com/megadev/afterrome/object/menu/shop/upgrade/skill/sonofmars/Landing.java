@@ -7,6 +7,7 @@ import com.megadev.afterrome.object.menu.item.MenuItem;
 import com.megadev.afterrome.object.menu.shop.upgrade.skill.Skill;
 
 import lombok.Getter;
+import org.bukkit.event.Event;
 
 @Getter
 public class Landing implements Skill {
@@ -14,5 +15,20 @@ public class Landing implements Skill {
 
     public Landing() {
         menuItem = ConfigManager.getInstance().getConfig(SonOfMarsUpgradeShopConfig.class).getLandingItem();
+    }
+
+    @Override
+    public void incrementLevel() {
+
+    }
+
+    @Override
+    public int getLevel() {
+        return 0;
+    }
+
+    @Override
+    public void execute(Event event) {
+
     }
 }
