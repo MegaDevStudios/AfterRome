@@ -8,6 +8,8 @@ import com.megadev.afterrome.listener.MenuListener;
 import com.megadev.afterrome.listener.PlayerJoinListener;
 import com.megadev.afterrome.config.ConfigManager;
 
+import com.megadev.afterrome.listener.skill.BlockListener;
+import com.megadev.afterrome.listener.skill.KillListener;
 import com.megadev.afterrome.manager.MenuManager;
 import com.megadev.afterrome.manager.UserManager;
 
@@ -48,5 +50,7 @@ public final class AfterRome extends MegaCore {
     private void setupListeners() {
         Bukkit.getPluginManager().registerEvents(new PlayerJoinListener(), this);
         Bukkit.getPluginManager().registerEvents(new MenuListener(), this);
+        Bukkit.getPluginManager().registerEvents(new BlockListener(), this);
+        Bukkit.getPluginManager().registerEvents(new KillListener(), this);
     }
 }
