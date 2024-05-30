@@ -13,7 +13,7 @@ public class ConfigUserManager extends AbstractManager {
     }
 
     public UserConfig getAfterRomeUserConfig(UUID uuid) {
-        return new UserConfig(getPlugin(), getDataFolder(), uuid.toString());
+        return new UserConfig(getPlugin(), getDataFolder() + "/" + uuid.toString());
     }
 
     public boolean userExist(UUID uuid) {
