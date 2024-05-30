@@ -3,6 +3,7 @@ package com.megadev.afterrome.config;
 import com.megadev.afterrome.config.manager.ProfessionsManager;
 import com.megadev.afterrome.config.manager.ShopManager;
 import dev.mega.megacore.config.AbstractManager;
+import com.megadev.afterrome.config.user.ConfigUserManager;
 
 import lombok.Getter;
 
@@ -18,7 +19,7 @@ public class ConfigManager extends AbstractManager {
         addConfig(ProfessionsManager.class, new ProfessionsManager(plugin, "professions"));
         addConfig(ShopManager.class, new ShopManager(plugin, "shop"));
         addConfig(MainConfig.class, new MainConfig(plugin, "config"));
-
+        addConfig(ConfigUserManager.class, new ConfigUserManager(plugin, "data"));
     }
 
     public static void init(Plugin plugin) {
