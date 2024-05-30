@@ -4,6 +4,7 @@ import com.megadev.afterrome.manager.UserManager;
 import com.megadev.afterrome.object.menu.shop.upgrade.skill.SkillType;
 import com.megadev.afterrome.object.profession.Agronomist;
 import com.megadev.afterrome.object.profession.Profession;
+import org.bukkit.Material;
 import org.bukkit.block.data.Ageable;
 import org.bukkit.entity.Animals;
 import org.bukkit.entity.Entity;
@@ -28,9 +29,10 @@ public class KillListener implements Listener {
             return;
         }
 
-//        if (event.getDrops().stream().anyMatch(drop -> drop.getType().equals()))
-
-        profession.getSkill(SkillType.BUTCHER).execute(event);
-        profession.getSkill(SkillType.TANNER).execute(event);
+        if (event.getDrops().stream().anyMatch(drop -> drop.getType().equals(Material.BEEF))) {
+            profession.getSkill(SkillType.BUTCHER).execute(event);
+        } else if (event.getDrops().stream().anyMatch(drop -> drop.getType().equals(Material.LEATHER))) {
+            profession.getSkill(SkillType.TANNER).execute(event);
+        }
     }
 }
