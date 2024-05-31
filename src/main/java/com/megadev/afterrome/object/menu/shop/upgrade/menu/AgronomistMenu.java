@@ -1,6 +1,7 @@
 package com.megadev.afterrome.object.menu.shop.upgrade.menu;
 
 import com.megadev.afterrome.config.ConfigManager;
+import com.megadev.afterrome.config.manager.ShopManager;
 import com.megadev.afterrome.config.shop.upgrade.AgronomistUpgradeShopConfig;
 import com.megadev.afterrome.object.menu.AbstractUpgradeMenu;
 import com.megadev.afterrome.object.profession.Profession;
@@ -13,6 +14,7 @@ public class AgronomistMenu extends AbstractUpgradeMenu {
 
     @Override
     public String getMenuName() {
-        return ConfigManager.getInstance().getConfig(AgronomistUpgradeShopConfig.class).getMenuName();
+        ShopManager shopManager = ConfigManager.getInstance().getManager(ShopManager.class);
+        return shopManager.getConfig(AgronomistUpgradeShopConfig.class).getMenuName();
     }
 }

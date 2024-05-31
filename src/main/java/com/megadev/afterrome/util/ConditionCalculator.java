@@ -33,11 +33,11 @@ public class ConditionCalculator {
 
     public static int chooseEvent(double[] cumulativeProbabilities) {
         Random random = new Random();
-        double r = random.nextDouble();
+        double r = random.nextDouble() * 100;
 
         for (int i = 0; i < cumulativeProbabilities.length; i++) {
             if (r <= cumulativeProbabilities[i]) {
-                return i;
+                return i + 1;
             }
         }
 

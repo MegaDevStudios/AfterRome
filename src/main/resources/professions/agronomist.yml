@@ -3,22 +3,22 @@ skill:
   farmer:
     level:
       1:
-        fetus1: 10
-        fetus2: 10
-        fetus3: 20
-        fetus4: 30
-        fetus5: 30
+        fetus1: 10.0
+        fetus2: 10.0
+        fetus3: 20.0
+        fetus4: 30.0
+        fetus5: 30.0
       2:
-        fetus1: 15
-        fetus2: 15
-        fetus3: 20
-        fetus4: 25
-        fetus5: 25
+        fetus1: 15.0
+        fetus2: 15.0
+        fetus3: 20.0
+        fetus4: 25.0
+        fetus5: 25.0
       3:
-        fetus1: 20
-        fetus2: 20
-        fetus3: 20
-        fetus4: 20
+        fetus1: 20.0
+        fetus2: 20.0
+        fetus3: 20.0
+        fetus4: 20.0
         fetus5: 20
       4:
         fetus1: 25

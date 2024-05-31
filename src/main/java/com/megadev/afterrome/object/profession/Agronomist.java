@@ -1,6 +1,8 @@
 package com.megadev.afterrome.object.profession;
 
 import com.megadev.afterrome.config.ConfigManager;
+import com.megadev.afterrome.config.manager.ProfessionsManager;
+import com.megadev.afterrome.config.manager.ShopManager;
 import com.megadev.afterrome.config.profession.AgronomistConfig;
 import com.megadev.afterrome.config.shop.upgrade.AgronomistUpgradeShopConfig;
 import com.megadev.afterrome.object.menu.AbstractUpgradeMenu;
@@ -48,7 +50,8 @@ public class Agronomist implements Profession {
 
     @Override
     public String getNameOfProfession() {
-        return ConfigManager.getInstance().getConfig(AgronomistConfig.class).getName();
+        ProfessionsManager shopManager = ConfigManager.getInstance().getManager(ProfessionsManager.class);
+        return shopManager.getConfig(AgronomistConfig.class).getName();
     }
 
     @Override
@@ -58,7 +61,8 @@ public class Agronomist implements Profession {
 
     @Override
     public MenuItem getBackgroundItem() {
-        return ConfigManager.getInstance().getConfig(AgronomistUpgradeShopConfig.class).getBackgroundItem();
+        ShopManager shopManager = ConfigManager.getInstance().getManager(ShopManager.class);
+        return shopManager.getConfig(AgronomistUpgradeShopConfig.class).getBackgroundItem();
     }
 
     @Override
