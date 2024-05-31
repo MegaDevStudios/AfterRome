@@ -6,18 +6,16 @@ import com.megadev.afterrome.object.profession.Agronomist;
 import com.megadev.afterrome.object.profession.Profession;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.entity.CreatureSpawnEvent;
+import org.bukkit.event.player.PlayerEggThrowEvent;
 
 public class SpawnListener implements Listener {
     @EventHandler
-    public void onSpawn(CreatureSpawnEvent event) {
-        if (event.getSpawnReason().equals(CreatureSpawnEvent.SpawnReason.EGG)) {
-            Profession profession = UserManager.getInstance().getUser(event.getEntity().getKiller()).getProfession();
-            if (!(profession instanceof Agronomist)) {
-                return;
-            }
-
-            profession.getSkill(SkillType.HATCHER).execute(event);
+    public void onSpawn(PlayerEggThrowEvent event) {
+        Profession profession = UserManager.getInstance().getUser(event.getPlayer()).getProfession();
+        if (!(profession instanceof Agronomist)) {
+            return;
         }
+
+        profession.getSkill(SkillType.HATCHER).execute(event);
     }
 }

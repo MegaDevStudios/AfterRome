@@ -57,7 +57,5 @@ public final class AfterRome extends MegaCore {
         pluginManager.registerEvents(new BlockListener(), this);
         pluginManager.registerEvents(new KillListener(), this);
         pluginManager.registerEvents(new SpawnListener(), this);
-
-
     }
 }

@@ -1,7 +1,6 @@
 package com.megadev.afterrome.config.profession;
 
 import com.megadev.afterrome.util.ConditionCalculator;
-import lombok.Getter;
 import org.bukkit.plugin.Plugin;
 import org.jetbrains.annotations.NotNull;
 
@@ -20,7 +19,11 @@ public class AgronomistConfig extends ProfessionConfig {
     }
 
     public enum LevelType {
-        FETUS("fetus"), MEAT("meat"), LEATHER("leather");
+        FETUS("fetus"),
+        MEAT("meat"),
+        LEATHER("leather"),
+        CHICKEN("egg"),
+        ;
         private final String title;
         LevelType(String title) { this.title = title; }
     }

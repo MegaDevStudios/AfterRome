@@ -9,7 +9,10 @@ import com.megadev.afterrome.object.menu.shop.upgrade.skill.Skill;
 
 import com.megadev.afterrome.util.ConditionCalculator;
 import lombok.Getter;
+import org.bukkit.World;
 import org.bukkit.event.Event;
+import org.bukkit.event.entity.CreatureSpawnEvent;
+import org.bukkit.event.player.PlayerEggThrowEvent;
 
 @Getter
 public class Hatcher implements Skill {
@@ -28,7 +31,11 @@ public class Hatcher implements Skill {
 
     @Override
     public void execute(Event event) {
-        double[] percents = ConfigManager.getInstance().getConfig(AgronomistConfig.class).getPercents(this.level, AgronomistConfig.LevelType.FETUS);
-        int countOfFetus = ConditionCalculator.choiceOne(percents);
+        double[] percents = ConfigManager.getInstance().getConfig(AgronomistConfig.class).getPercents(this.level, AgronomistConfig.LevelType.CHICKEN);
+        int multiplier = ConditionCalculator.choiceOne(percents);
+
+        PlayerEggThrowEvent eggThrowEvent = ((PlayerEggThrowEvent) event);
+
+        eggThrowEvent.setNumHatches((byte) (eggThrowEvent.getNumHatches() * multiplier));
     }
 }

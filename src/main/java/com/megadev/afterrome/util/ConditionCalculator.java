@@ -2,7 +2,6 @@ package com.megadev.afterrome.util;
 
 import java.util.Arrays;
 import java.util.Random;
-import java.util.stream.Stream;
 
 public class ConditionCalculator {
     public static boolean isPassed(double percent) {
