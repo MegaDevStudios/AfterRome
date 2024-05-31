@@ -29,6 +29,12 @@ public final class AfterRome extends MegaCore {
     @Override
     public void disable() {
         UserManager userManager = UserManager.getInstance();
+
+        if (userManager == null) {
+            UserManager.init(this);
+            userManager = UserManager.getInstance();
+        }
+
         ConfigManager configManager = ConfigManager.getInstance();
         ConfigUserManager configUserManager = configManager.getManager(ConfigUserManager.class);
 
