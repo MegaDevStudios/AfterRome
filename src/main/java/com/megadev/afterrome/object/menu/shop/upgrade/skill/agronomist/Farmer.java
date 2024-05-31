@@ -12,12 +12,15 @@ import com.megadev.afterrome.object.menu.shop.upgrade.skill.Skill;
 import com.megadev.afterrome.object.user.User;
 import com.megadev.afterrome.util.ConditionCalculator;
 import lombok.Getter;
+import org.bukkit.Material;
 import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Event;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.block.BlockDropItemEvent;
 import org.bukkit.inventory.ItemStack;
+
+import java.util.List;
 
 @Getter
 public class Farmer implements Skill {
@@ -43,10 +46,17 @@ public class Farmer implements Skill {
         BlockDropItemEvent blockDropItemEvent = (BlockDropItemEvent) event;
         User user = UserManager.getInstance().getUser(blockDropItemEvent.getPlayer());
 
-        blockDropItemEvent.setCancelled(true);
+        List<Item> items = blockDropItemEvent.getItems();
 
-        for (Item item : blockDropItemEvent.getItems()) {
-            user.addItem(item.getItemStack(), countOfFetus);
+        if (items.size() == 1 &&
+                items.get(0).getItemStack().getType().equals(Material.MELON_SEEDS) ||
+                items.get(0).getItemStack().getType().equals(Material.WHEAT_SEEDS) ||
+                items.get(0).getItemStack().getType().equals(Material.PUMPKIN_SEEDS) ||
+                items.get(0).getItemStack().getType().equals(Material.TORCHFLOWER_SEEDS)) {
+            user.addItem(items.get(0).getItemStack().asOne(), 1);
         }
+
+        for (Item item : blockDropItemEvent.getItems())
+            user.addItem(item.getItemStack().asOne(), countOfFetus);
     }
 }
