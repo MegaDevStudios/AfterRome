@@ -32,7 +32,8 @@ public class Butcher implements Skill {
 
     @Override
     public void execute(Event event) {
-        double[] percents = ConfigManager.getInstance().getConfig(AgronomistConfig.class).getButcherPercents(this.level);
+        double[] percents = ConfigManager.getInstance().getConfig(AgronomistConfig.class)
+                .getPercents(this.level, AgronomistConfig.LevelType.MEAT);
         int countOfMeat = ConditionCalculator.choiceOne(percents);
         EntityDeathEvent entityDeathEvent = (EntityDeathEvent) event;
         User user = UserManager.getInstance().getUser(entityDeathEvent.getEntity().getKiller());

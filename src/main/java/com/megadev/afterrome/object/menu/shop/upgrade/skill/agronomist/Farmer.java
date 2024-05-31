@@ -34,7 +34,8 @@ public class Farmer implements Skill {
 
     @Override
     public void execute(Event event) {
-        double[] percents = ConfigManager.getInstance().getConfig(AgronomistConfig.class).getFarmerPercents(this.level);
+        double[] percents = ConfigManager.getInstance().getConfig(AgronomistConfig.class)
+                .getPercents(this.level, AgronomistConfig.LevelType.FETUS);
         int countOfFetus = ConditionCalculator.choiceOne(percents);
         BlockDropItemEvent blockDropItemEvent = (BlockDropItemEvent) event;
         User user = UserManager.getInstance().getUser(blockDropItemEvent.getPlayer());

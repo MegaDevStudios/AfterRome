@@ -1,6 +1,8 @@
 package com.megadev.afterrome.util;
 
+import java.util.Arrays;
 import java.util.Random;
+import java.util.stream.Stream;
 
 public class ConditionCalculator {
     public static boolean isPassed(double percent) {
@@ -8,10 +10,14 @@ public class ConditionCalculator {
     }
 
     public static boolean isValid(double[] percents) {
-        double result = 0;
-        for (double percent : percents)
-            result += percent;
-        return result == 100;
+        return Arrays.stream(percents).sum() == 100;
+    }
+
+    public static double[] validateAndGet(double[] percents) {
+        double sum = Arrays.stream(percents).sum();
+        return Arrays.stream(percents)
+                .map(percent -> percent + (100 - sum) / percents.length)
+                .toArray();
     }
 
     public static int choiceOne(double[] probabilities) {
