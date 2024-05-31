@@ -1,5 +1,6 @@
 package com.megadev.afterrome.object.menu.shop.upgrade.skill.agronomist;
 
+import com.megadev.afterrome.config.manager.ProfessionsManager;
 import com.megadev.afterrome.config.manager.ShopManager;
 import com.megadev.afterrome.config.profession.AgronomistConfig;
 import com.megadev.afterrome.config.shop.upgrade.AgronomistUpgradeShopConfig;
@@ -11,6 +12,7 @@ import com.megadev.afterrome.object.menu.shop.upgrade.skill.Skill;
 import com.megadev.afterrome.object.user.User;
 import com.megadev.afterrome.util.ConditionCalculator;
 import lombok.Getter;
+import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Event;
 import org.bukkit.event.block.BlockBreakEvent;
@@ -34,14 +36,17 @@ public class Farmer implements Skill {
 
     @Override
     public void execute(Event event) {
-        double[] percents = ConfigManager.getInstance().getConfig(AgronomistConfig.class)
+        ProfessionsManager professionsManager = ConfigManager.getInstance().getManager(ProfessionsManager.class);
+        double[] percents = professionsManager.getConfig(AgronomistConfig.class)
                 .getPercents(this.level, AgronomistConfig.LevelType.FETUS);
         int countOfFetus = ConditionCalculator.choiceOne(percents);
         BlockDropItemEvent blockDropItemEvent = (BlockDropItemEvent) event;
         User user = UserManager.getInstance().getUser(blockDropItemEvent.getPlayer());
 
         blockDropItemEvent.setCancelled(true);
-        user.addItem(blockDropItemEvent.getItems().get(0).getItemStack(), countOfFetus);
 
+        for (Item item : blockDropItemEvent.getItems()) {
+            user.addItem(item.getItemStack(), countOfFetus);
+        }
     }
 }
