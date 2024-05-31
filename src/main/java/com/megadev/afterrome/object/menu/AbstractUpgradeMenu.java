@@ -33,7 +33,7 @@ public abstract class AbstractUpgradeMenu extends AbstractMenu {
         int i = 1;
         for (Skill skill : profession.getSkills()) {
             setItem(skill.getMenuItem(), i);
-            if (i == 7) i += 11;
+            if (i == 7) i += 12;
             else i += 3;
         }
     }

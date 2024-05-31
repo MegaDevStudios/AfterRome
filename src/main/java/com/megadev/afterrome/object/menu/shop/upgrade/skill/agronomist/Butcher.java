@@ -52,7 +52,5 @@ public class Butcher implements Skill {
         } else if (entity instanceof Sheep) {
             user.addItem(entityDeathEvent.getDrops().get(0), countOfMeat);
         }
-
-
     }
 }
