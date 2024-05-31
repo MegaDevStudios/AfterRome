@@ -4,15 +4,13 @@ import com.google.common.collect.Maps;
 import com.megadev.afterrome.config.MainConfig;
 import com.megadev.afterrome.config.ConfigManager;
 import com.megadev.afterrome.object.item.ItemBuilder;
+import com.megadev.afterrome.object.profession.DefaultProfession;
 import com.megadev.afterrome.object.profession.Profession;
 
 import dev.mega.megacore.util.Color;
 import lombok.Setter;
 
 import net.kyori.adventure.text.Component;
-import net.md_5.bungee.api.ChatMessageType;
-import net.md_5.bungee.api.chat.TextComponent;
-
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.configuration.serialization.SerializableAs;
@@ -39,7 +37,9 @@ public class AfterRomeUser implements User, PointsHolder {
 
     public AfterRomeUser(Player player) {
         this.uuid = player.getUniqueId();
+        this.profession = new DefaultProfession();
         this.healths = 3;
+        this.points = 0;
     }
 
     public AfterRomeUser(UUID uuid, Profession profession, int healths, double points) {

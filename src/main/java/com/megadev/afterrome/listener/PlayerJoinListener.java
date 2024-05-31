@@ -7,6 +7,7 @@ import com.megadev.afterrome.manager.UserManager;
 
 import com.megadev.afterrome.object.menu.Menu;
 import com.megadev.afterrome.object.menu.choice.ChoiceMenu;
+import com.megadev.afterrome.object.profession.DefaultProfession;
 import com.megadev.afterrome.object.user.AfterRomeUser;
 import com.megadev.afterrome.object.user.User;
 
@@ -29,14 +30,19 @@ public class PlayerJoinListener implements Listener {
 
         UserConfig userConfig = configUserManager.getAfterRomeUserConfig(player.getUniqueId());
 
-        if (!userManager.userExist(player) && configUserManager.userExist(player.getUniqueId())) {
+        boolean fileExist = configUserManager.userExist(player.getUniqueId());
+        if (fileExist) {
             userManager.saveUser(AfterRomeUser.deserialize(userConfig.getData()));
+        } else {
+            userManager.saveUser(player);
         }
+
+        userConfig.saveData(userManager.getUser(player).serialize());
 
         User user = userManager.getUser(player);
         if (user == null) return;
 
-        if (user.getProfession() == null) {
+        if (user.getProfession() instanceof DefaultProfession) {
             Menu menu = new ChoiceMenu(user);
             menu.open();
         }

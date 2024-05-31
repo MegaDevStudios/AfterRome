@@ -4,6 +4,7 @@ import com.megadev.afterrome.manager.MenuManager;
 import com.megadev.afterrome.manager.UserManager;
 import com.megadev.afterrome.object.menu.Menu;
 import com.megadev.afterrome.object.profession.Agronomist;
+import com.megadev.afterrome.object.profession.DefaultProfession;
 import com.megadev.afterrome.object.user.User;
 
 import org.bukkit.entity.Player;
@@ -76,6 +77,6 @@ public class MenuListener implements Listener {
         User user = UserManager.getInstance().getUser(player);
         if (user == null) return;
 
-        if (user.getProfession() == null) event.setCancelled(true);
+        if (user.getProfession() instanceof DefaultProfession) event.setCancelled(true);
     }
 }

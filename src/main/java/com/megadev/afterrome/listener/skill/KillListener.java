@@ -18,6 +18,8 @@ import org.bukkit.inventory.ItemStack;
 public class KillListener implements Listener {
     @EventHandler
     public void onKill(EntityDeathEvent event) {
+        if (event.getEntity().getKiller() == null) return;
+
         Entity entity = event.getEntity();
 
         boolean isCattle = entity instanceof Animals;

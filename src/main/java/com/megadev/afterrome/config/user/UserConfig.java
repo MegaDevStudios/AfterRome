@@ -1,6 +1,7 @@
 package com.megadev.afterrome.config.user;
 
 import com.google.common.collect.Maps;
+import dev.mega.megacore.MegaCore;
 import dev.mega.megacore.config.Configurator;
 import org.bukkit.plugin.Plugin;
 import org.jetbrains.annotations.NotNull;
@@ -17,13 +18,13 @@ public class UserConfig extends Configurator {
             String key = arg.getKey();
             Object value = arg.getValue();
 
-            config.set(key, value);
+            setValue(key, value);
         }
     }
 
     public Map<String, Object> getData() {
         Map<String, Object> data = Maps.newConcurrentMap();
-        data.put("uuid", config.get("user.uuid"));
+      data.put("uuid", config.get("user.uuid"));
         data.put("profession", config.get("user.profession"));
         data.put("healths", config.get("user.healths"));
         data.put("points", config.get("user.points"));

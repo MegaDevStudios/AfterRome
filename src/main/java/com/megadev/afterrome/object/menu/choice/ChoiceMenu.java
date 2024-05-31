@@ -1,7 +1,10 @@
 package com.megadev.afterrome.object.menu.choice;
 
 import com.megadev.afterrome.AfterRome;
+import com.megadev.afterrome.config.ConfigManager;
 import com.megadev.afterrome.config.MainConfig;
+import com.megadev.afterrome.config.user.ConfigUserManager;
+import com.megadev.afterrome.config.user.UserConfig;
 import com.megadev.afterrome.manager.UserManager;
 import com.megadev.afterrome.object.item.HeadBuilder;
 import com.megadev.afterrome.object.menu.AbstractMenu;
@@ -18,6 +21,10 @@ import org.bukkit.event.inventory.InventoryCloseEvent;
 import java.util.Optional;
 
 public class ChoiceMenu extends AbstractMenu {
+    UserManager userManager = UserManager.getInstance();
+    ConfigManager configManager = ConfigManager.getInstance();
+    ConfigUserManager configUserManager = configManager.getManager(ConfigUserManager.class);
+
     public ChoiceMenu(User user) {
         super(user, 3);
     }
@@ -79,7 +86,7 @@ public class ChoiceMenu extends AbstractMenu {
         if (user == null) return;
 
         if (!(event.getInventory().getHolder() instanceof ChoiceMenu)) return;
-        if (user.getProfession() != null) return;
+        if (!(user.getProfession() instanceof DefaultProfession)) return;
 
         Bukkit.getScheduler().runTaskLater(AfterRome.getInstance(), () -> {
             Menu choiceMenu = new ChoiceMenu(user);
@@ -93,8 +100,11 @@ public class ChoiceMenu extends AbstractMenu {
     }
 
     private void clickAction(Profession profession) {
-        if (getUser().getProfession() != null) return;
+        if (!(getUser().getProfession() instanceof DefaultProfession)) return;
         getUser().setProfession(profession);
+
+        UserConfig userConfig = configUserManager.getAfterRomeUserConfig(getUser().getPlayer().getUniqueId());
+        userConfig.saveData(userManager.getUser(getUser().getPlayer()).serialize());
         close();
     }
 

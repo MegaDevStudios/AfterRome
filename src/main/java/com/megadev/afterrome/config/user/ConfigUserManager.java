@@ -13,16 +13,16 @@ public class ConfigUserManager extends AbstractManager {
     }
 
     public UserConfig getAfterRomeUserConfig(UUID uuid) {
-        return new UserConfig(getPlugin(), getDataFolder() + "/" + uuid.toString());
+        return new UserConfig(getPlugin(), getDataFolder(), uuid.toString());
     }
 
     public boolean userExist(UUID uuid) {
         String dataFolderPath = getPlugin().getDataFolder().getAbsolutePath();
 
-        File fileDataFolder = new File(dataFolderPath);
+        File fileDataFolder = new File(dataFolderPath + File.separator + "data");
 
         for (File file : Objects.requireNonNull(fileDataFolder.listFiles())) {
-            if (file.getName().equals(uuid.toString())) return true;
+            if (file.getName().replace(".yml", "").equals(uuid.toString())) return true;
         }
         return false;
     }
