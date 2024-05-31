@@ -4,8 +4,8 @@ import java.util.Arrays;
 import java.util.Random;
 
 public class ConditionCalculator {
-    public static boolean isPassed(double percent) {
-        return new Random().nextDouble() * 100 < percent;
+    public static int isPassed(double percent) {
+        return new Random().nextDouble() * 100 < percent ? 1 : 0;
     }
 
     public static double[] validateAndGet(double[] percents) {
@@ -27,7 +27,7 @@ public class ConditionCalculator {
         return chooseEvent(cumulativeProbabilities);
     }
 
-    public static int chooseEvent(double[] cumulativeProbabilities) {
+    private static int chooseEvent(double[] cumulativeProbabilities) {
         Random random = new Random();
         double r = random.nextDouble() * 100;
 

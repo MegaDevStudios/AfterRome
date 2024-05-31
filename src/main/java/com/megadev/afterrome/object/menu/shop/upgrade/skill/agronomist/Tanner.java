@@ -1,13 +1,21 @@
 package com.megadev.afterrome.object.menu.shop.upgrade.skill.agronomist;
 
+import com.megadev.afterrome.config.manager.ProfessionsManager;
 import com.megadev.afterrome.config.manager.ShopManager;
+import com.megadev.afterrome.config.profession.AgronomistConfig;
 import com.megadev.afterrome.config.shop.upgrade.AgronomistUpgradeShopConfig;
 import com.megadev.afterrome.config.ConfigManager;
 import com.megadev.afterrome.object.menu.item.MenuItem;
 import com.megadev.afterrome.object.menu.shop.upgrade.skill.Skill;
 
+import com.megadev.afterrome.util.ConditionCalculator;
 import lombok.Getter;
+import org.bukkit.Material;
 import org.bukkit.event.Event;
+import org.bukkit.event.entity.EntityDeathEvent;
+import org.bukkit.inventory.ItemStack;
+
+import java.util.List;
 
 @Getter
 public class Tanner implements Skill {
@@ -26,6 +34,16 @@ public class Tanner implements Skill {
 
     @Override
     public void execute(Event event) {
+        ProfessionsManager professionsManager = ConfigManager.getInstance().getManager(ProfessionsManager.class);
+        double[] percents = professionsManager.getConfig(AgronomistConfig.class).getPercents(this.level, AgronomistConfig.LevelType.LEATHER);
+        int countOfLeather = ConditionCalculator.choiceOne(percents);
 
+        EntityDeathEvent entityDeathEvent = (EntityDeathEvent) event;
+
+        List<ItemStack> items = entityDeathEvent.getDrops();
+
+        if (items.stream().map(ItemStack::getType).toList().contains(Material.LEATHER)) {
+            items.stream().filter(item -> item.getType() == Material.LEATHER).forEach(itemStack -> itemStack.setAmount(countOfLeather));
+        }
     }
 }

@@ -54,12 +54,12 @@ public class Farmer implements Skill {
         Material itemType = items.get(0).getItemStack().getType();
 
         if (items.size() == 1 &&
-                itemType.equals(Material.MELON_SEEDS) ||
+                (itemType.equals(Material.MELON_SEEDS) ||
                 itemType.equals(Material.WHEAT_SEEDS) ||
                 itemType.equals(Material.PUMPKIN_SEEDS) ||
                 itemType.equals(Material.TORCHFLOWER_SEEDS) ||
                 (itemType.equals(Material.POTATO) && items.get(0).getItemStack().getAmount() < 2) ||
-                (itemType.equals(Material.CARROT) && items.get(0).getItemStack().getAmount() < 2)) {
+                (itemType.equals(Material.CARROT) && items.get(0).getItemStack().getAmount() < 2))) {
             items = List.of(item);
             return;
         }

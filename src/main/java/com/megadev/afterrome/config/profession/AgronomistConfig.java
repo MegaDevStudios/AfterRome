@@ -28,6 +28,16 @@ public class AgronomistConfig extends ProfessionConfig {
         }
     }
 
+    public double getPercent(int level, LevelType type) {
+        String value = getPercentValue("skill." + type.skillName + ".level." + level);
+        try {
+            return Double.parseDouble(value);
+        } catch (NumberFormatException exception) {
+            return getPercent(value + ".0");
+        }
+    }
+
+
     public String getPercentValue(String path) {
         return getString(path);
     }
@@ -44,7 +54,8 @@ public class AgronomistConfig extends ProfessionConfig {
         FETUS("farmer", "fetus"),
         MEAT("butcher", "meat"),
         LEATHER("tanner", "leather"),
-        CHICKEN("hatcher", "egg"),
+        CHICKEN("hatcher", ""),
+        LUMBERJACK("lumberjack", "")
         ;
         private final String title;
         private final String skillName;

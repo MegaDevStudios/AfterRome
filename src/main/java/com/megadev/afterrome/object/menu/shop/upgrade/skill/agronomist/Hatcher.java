@@ -1,5 +1,6 @@
 package com.megadev.afterrome.object.menu.shop.upgrade.skill.agronomist;
 
+import com.megadev.afterrome.config.manager.ProfessionsManager;
 import com.megadev.afterrome.config.manager.ShopManager;
 import com.megadev.afterrome.config.profession.AgronomistConfig;
 import com.megadev.afterrome.config.shop.upgrade.AgronomistUpgradeShopConfig;
@@ -31,8 +32,9 @@ public class Hatcher implements Skill {
 
     @Override
     public void execute(Event event) {
-        double[] percents = ConfigManager.getInstance().getConfig(AgronomistConfig.class).getPercents(this.level, AgronomistConfig.LevelType.CHICKEN);
-        int multiplier = ConditionCalculator.choiceOne(percents);
+        ProfessionsManager professionsManager = ConfigManager.getInstance().getManager(ProfessionsManager.class);
+        double percent = professionsManager.getConfig(AgronomistConfig.class).getPercent(this.level, AgronomistConfig.LevelType.CHICKEN);
+        int multiplier = ConditionCalculator.isPassed(percent);
 
         PlayerEggThrowEvent eggThrowEvent = ((PlayerEggThrowEvent) event);
 

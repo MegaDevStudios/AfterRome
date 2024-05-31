@@ -49,7 +49,7 @@ public class BlockListener implements Listener {
 
         if (block.getType().name().endsWith("LOG")) {
             Profession profession = UserManager.getInstance().getUser(event.getPlayer().getKiller()).getProfession();
-            if (!(profession instanceof Lumberjack)) {
+            if (!(profession instanceof Agronomist)) {
                 return;
             }
 
