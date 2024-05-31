@@ -8,10 +8,6 @@ public class ConditionCalculator {
         return new Random().nextDouble() * 100 < percent;
     }
 
-    public static boolean isValid(double[] percents) {
-        return Arrays.stream(percents).sum() == 100;
-    }
-
     public static double[] validateAndGet(double[] percents) {
         double sum = Arrays.stream(percents).sum();
         return Arrays.stream(percents)

@@ -4,6 +4,7 @@ import com.megadev.afterrome.util.ConditionCalculator;
 import org.bukkit.plugin.Plugin;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.UUID;
 import java.util.stream.IntStream;
 
 public class AgronomistConfig extends ProfessionConfig {
@@ -13,18 +14,43 @@ public class AgronomistConfig extends ProfessionConfig {
 
     public double[] getPercents(int level, LevelType type) {
         double[] percents = IntStream.range(0, 5)
-                .mapToDouble(i -> (double) getValue("skill.farmer.level." + level + "." + type.title + (i + 1)))
+                .mapToDouble(i -> getPercent(level, type, i))
                 .toArray();
         return ConditionCalculator.validateAndGet(percents);
     }
 
+    public double getPercent(int level, LevelType type, int index) {
+        String value = getPercentValue("skill." + type.skillName + ".level." + level + "." + type.title + (index + 1));
+        try {
+            return Double.parseDouble(value);
+        } catch (NumberFormatException exception) {
+            return getPercent(value + ".0");
+        }
+    }
+
+    public String getPercentValue(String path) {
+        return getString(path);
+    }
+
+    private double getPercent(String value) {
+        try {
+            return Double.parseDouble(value);
+        } catch (NumberFormatException exception) {
+            return 0;
+        }
+    }
+
     public enum LevelType {
-        FETUS("fetus"),
-        MEAT("meat"),
-        LEATHER("leather"),
-        CHICKEN("egg"),
+        FETUS("farmer", "fetus"),
+        MEAT("butcher", "meat"),
+        LEATHER("tanner", "leather"),
+        CHICKEN("hatcher", "egg"),
         ;
         private final String title;
-        LevelType(String title) { this.title = title; }
+        private final String skillName;
+        LevelType(String skillName, String title) {
+            this.title = title;
+            this.skillName = skillName;
+        }
     }
 }

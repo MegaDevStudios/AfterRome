@@ -19,51 +19,51 @@ skill:
         fetus2: 20.0
         fetus3: 20.0
         fetus4: 20.0
-        fetus5: 20
+        fetus5: 20.0
       4:
-        fetus1: 25
-        fetus2: 30
-        fetus3: 20
-        fetus4: 15
-        fetus5: 10
+        fetus1: 25.0
+        fetus2: 30.0
+        fetus3: 20.0
+        fetus4: 15.0
+        fetus5: 10.0
       5:
-        fetus1: 30
-        fetus2: 40
-        fetus3: 10
-        fetus4: 10
-        fetus5: 10
+        fetus1: 30.0
+        fetus2: 40.0
+        fetus3: 10.0
+        fetus4: 10.0
+        fetus5: 10.0
   butcher:
     level:
       1:
-        meat1: 10
-        meat2: 10
-        meat3: 20
-        meat4: 30
-        meat5: 30
+        meat1: 10.0
+        meat2: 10.0
+        meat3: 20.0
+        meat4: 30.0
+        meat5: 30.0
       2:
-        meat1: 15
-        meat2: 15
-        meat3: 20
-        meat4: 25
-        meat5: 25
+        meat1: 15.0
+        meat2: 15.0
+        meat3: 20.0
+        meat4: 25.0
+        meat5: 25.0
       3:
-        meat1: 20
-        meat2: 20
-        meat3: 20
-        meat4: 20
-        meat5: 20
+        meat1: 20.0
+        meat2: 20.0
+        meat3: 20.0
+        meat4: 20.0
+        meat5: 20.0
       4:
-        meat1: 25
-        meat2: 30
-        meat3: 20
-        meat4: 15
-        meat5: 10
+        meat1: 25.0
+        meat2: 30.0
+        meat3: 20.0
+        meat4: 15.0
+        meat5: 10.0
       5:
-        meat1: 30
-        meat2: 40
-        meat3: 10
-        meat4: 10
-        meat5: 10
+        meat1: 30.0
+        meat2: 40.0
+        meat3: 10.0
+        meat4: 10.0
+        meat5: 10.0
   cook:
     level:
       1:

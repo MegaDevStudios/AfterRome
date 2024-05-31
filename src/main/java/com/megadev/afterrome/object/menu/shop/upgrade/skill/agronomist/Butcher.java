@@ -1,5 +1,6 @@
 package com.megadev.afterrome.object.menu.shop.upgrade.skill.agronomist;
 
+import com.megadev.afterrome.config.manager.ProfessionsManager;
 import com.megadev.afterrome.config.manager.ShopManager;
 import com.megadev.afterrome.config.profession.AgronomistConfig;
 import com.megadev.afterrome.config.shop.upgrade.AgronomistUpgradeShopConfig;
@@ -11,6 +12,7 @@ import com.megadev.afterrome.object.menu.shop.upgrade.skill.Skill;
 import com.megadev.afterrome.object.user.User;
 import com.megadev.afterrome.util.ConditionCalculator;
 import lombok.Getter;
+import org.bukkit.entity.*;
 import org.bukkit.event.Event;
 import org.bukkit.event.entity.EntityDeathEvent;
 import org.bukkit.event.entity.EntityDropItemEvent;
@@ -32,13 +34,25 @@ public class Butcher implements Skill {
 
     @Override
     public void execute(Event event) {
-        double[] percents = ConfigManager.getInstance().getConfig(AgronomistConfig.class)
+        ProfessionsManager professionsManager = ConfigManager.getInstance().getManager(ProfessionsManager.class);
+        double[] percents = professionsManager.getConfig(AgronomistConfig.class)
                 .getPercents(this.level, AgronomistConfig.LevelType.MEAT);
         int countOfMeat = ConditionCalculator.choiceOne(percents);
         EntityDeathEvent entityDeathEvent = (EntityDeathEvent) event;
         User user = UserManager.getInstance().getUser(entityDeathEvent.getEntity().getKiller());
 
-        entityDeathEvent.setCancelled(true);
-        user.addItem(entityDeathEvent.getDrops().get(0), countOfMeat);
+        LivingEntity entity = entityDeathEvent.getEntity();
+
+        if (entity instanceof Cow) {
+            user.addItem(entityDeathEvent.getDrops().get(0), countOfMeat);
+        } else if (entity instanceof Rabbit) {
+            user.addItem(entityDeathEvent.getDrops().get(0), countOfMeat);
+        } else if (entity instanceof Pig) {
+            user.addItem(entityDeathEvent.getDrops().get(0), countOfMeat);
+        } else if (entity instanceof Sheep) {
+            user.addItem(entityDeathEvent.getDrops().get(0), countOfMeat);
+        }
+
+
     }
 }
