@@ -9,7 +9,9 @@ import com.megadev.afterrome.object.menu.item.MenuItem;
 import com.megadev.afterrome.object.menu.shop.upgrade.skill.Skill;
 
 import com.megadev.afterrome.util.ConditionCalculator;
+import com.megadev.afterrome.util.TreeCapitator;
 import lombok.Getter;
+import org.bukkit.block.Block;
 import org.bukkit.event.Event;
 import org.bukkit.event.block.BlockBreakEvent;
 
@@ -32,10 +34,14 @@ public class Lumberjack implements Skill {
     public void execute(Event event) {
         ProfessionsManager professionsManager = ConfigManager.getInstance().getManager(ProfessionsManager.class);
         double percent = professionsManager.getConfig(AgronomistConfig.class).getPercent(this.level, AgronomistConfig.LevelType.LUMBERJACK);
-        int multiplier = ConditionCalculator.isPassed(percent);
 
         BlockBreakEvent breakEvent = (BlockBreakEvent) event;
 
-        //TODO: Сделать treecapitator
+        Block block = breakEvent.getBlock();
+
+        if (ConditionCalculator.isPassed(percent) == 1) {
+            TreeCapitator treeCapitator = new TreeCapitator(block.getLocation(), block.getType());
+            treeCapitator.treeCapitate();
+        }
     }
 }

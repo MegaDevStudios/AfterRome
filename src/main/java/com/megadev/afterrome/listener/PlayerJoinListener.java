@@ -31,7 +31,7 @@ public class PlayerJoinListener implements Listener {
         UserConfig userConfig = configUserManager.getAfterRomeUserConfig(player.getUniqueId());
 
         boolean fileExist = configUserManager.userExist(player.getUniqueId());
-        if (fileExist) {
+        if (fileExist && !userManager.userExist(player)) {
             userManager.saveUser(AfterRomeUser.deserialize(userConfig.getData()));
         } else {
             userManager.saveUser(player);

@@ -54,8 +54,8 @@ public class AgronomistConfig extends ProfessionConfig {
         FETUS("farmer", "fetus"),
         MEAT("butcher", "meat"),
         LEATHER("tanner", "leather"),
-        CHICKEN("hatcher", ""),
-        LUMBERJACK("lumberjack", "")
+        CHICKEN("hatcher", "hatcher"),
+        LUMBERJACK("lumberjack", "lumberjack")
         ;
         private final String title;
         private final String skillName;

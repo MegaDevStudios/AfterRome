@@ -33,20 +33,23 @@ public class AfterRomeUser implements User, PointsHolder {
     private Profession profession;
     private int healths;
     private final UUID uuid;
-    private double points;
+    private int points;
+    private final String name;
 
     public AfterRomeUser(Player player) {
         this.uuid = player.getUniqueId();
         this.profession = new DefaultProfession();
         this.healths = 3;
         this.points = 0;
+        this.name = player.getName();
     }
 
-    public AfterRomeUser(UUID uuid, Profession profession, int healths, double points) {
+    public AfterRomeUser(UUID uuid, Profession profession, int healths, int points) {
         this.uuid = uuid;
         this.profession = profession;
         this.healths = healths;
         this.points = points;
+        this.name = getPlayer().getName();
     }
 
     public Player getPlayer() {
@@ -111,7 +114,7 @@ public class AfterRomeUser implements User, PointsHolder {
 
     @Override
     public void addPoints(double amount) {
-        points += (amount / MAX_UNIT_PER_POINT);
+        points += (int) (amount / MAX_UNIT_PER_POINT);
     }
 
     @Override
@@ -128,8 +131,16 @@ public class AfterRomeUser implements User, PointsHolder {
         UUID uuid = (UUID) args.get("uuid");
         Profession profession = (Profession) args.get("profession");
         int healths = (int) args.get("healths");
-        double points = (double) args.get("points");
+        int points = (int) args.get("points");
 
         return new AfterRomeUser(uuid, profession, healths, points);
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        if (this == object) return true;
+        if (object == null || getClass() != object.getClass()) return false;
+        AfterRomeUser that = (AfterRomeUser) object;
+        return Objects.equals(getUuid(), that.getUuid());
     }
 }

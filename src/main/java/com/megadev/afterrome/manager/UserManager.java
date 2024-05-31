@@ -49,6 +49,7 @@ public class UserManager {
     }
 
     public void saveUser(Player player) {
+        if (!users.isEmpty()) return;
         saveUser(new AfterRomeUser(player));
     }
 
