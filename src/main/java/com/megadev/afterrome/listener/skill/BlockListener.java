@@ -25,8 +25,7 @@ public class BlockListener implements Listener {
 
         if (!(profession instanceof Agronomist)) return;
 
-        boolean temp = block instanceof Ageable;
-        if (temp)
+        if (block.getBlockData() instanceof Ageable)
             profession.getSkill(SkillType.FARMER).execute(event);
 
     }
