@@ -12,7 +12,6 @@ import com.megadev.afterrome.listener.skill.BlockListener;
 import com.megadev.afterrome.listener.skill.KillListener;
 import com.megadev.afterrome.listener.skill.SpawnListener;
 import com.megadev.afterrome.manager.MenuManager;
-import com.megadev.afterrome.manager.NPCManager;
 import com.megadev.afterrome.manager.UserManager;
 
 import dev.mega.megacore.MegaCore;
@@ -49,8 +48,6 @@ public final class AfterRome extends MegaCore {
         MenuManager.init(this);
         MenuManager.getInstance().reload();
         UserManager.init(this);
-        NPCManager.init(this);
-        NPCManager.getInstance().reload();
     }
 
     private void setupCommands() {

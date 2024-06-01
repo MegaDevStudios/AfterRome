@@ -20,6 +20,10 @@ public class ShopConfig extends Configurator {
         return getString("npc.name");
     }
 
+    public String getMenuName() {
+        return getString("menu.name");
+    }
+
     public Location getNpcLocation() {
         ConfigurationSection locationSection = config.getConfigurationSection("npc.location");
 

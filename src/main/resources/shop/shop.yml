@@ -1,3 +1,6 @@
+menu:
+  name: "Skills"
+
 npc:
   name: "Skills"
   location:
