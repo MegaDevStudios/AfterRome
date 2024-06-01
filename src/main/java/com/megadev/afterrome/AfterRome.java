@@ -5,6 +5,7 @@ import com.megadev.afterrome.command.ProgCommand;
 import com.megadev.afterrome.command.ShopCommand;
 import com.megadev.afterrome.command.SkillsCommand;
 import com.megadev.afterrome.config.user.ConfigUserManager;
+import com.megadev.afterrome.config.user.UserConfig;
 import com.megadev.afterrome.listener.MenuListener;
 import com.megadev.afterrome.listener.PlayerJoinListener;
 import com.megadev.afterrome.config.ConfigManager;
@@ -16,7 +17,7 @@ import com.megadev.afterrome.manager.MenuManager;
 import com.megadev.afterrome.manager.UserManager;
 
 import dev.mega.megacore.MegaCore;
-import dev.mega.megacore.config.AbstractManager;
+import dev.mega.megacore.config.serializer.SerializeUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
 
@@ -45,7 +46,7 @@ public class AfterRome extends MegaCore {
         ConfigUserManager configUserManager = configManager.getConfig(ConfigUserManager.class);
 
         userManager.getUsers().forEach(user -> {
-            configUserManager.getAfterRomeUserConfig(user.getUuid()).saveData(user.serialize());
+            SerializeUtil.serialize(configUserManager.getAfterRomeUserConfig(user.getUuid()), user);
         });
     }
 

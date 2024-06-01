@@ -7,6 +7,7 @@ import com.megadev.afterrome.object.user.AfterRomeUser;
 import com.megadev.afterrome.object.user.User;
 
 import dev.mega.megacore.MegaCore;
+import dev.mega.megacore.config.serializer.SerializeUtil;
 import lombok.Getter;
 
 import org.bukkit.Bukkit;
@@ -41,7 +42,7 @@ public class UserManager {
         for (Player player : Bukkit.getOnlinePlayers()) {
             UserConfig userConfig = configUserManager.getAfterRomeUserConfig(player.getUniqueId());
             if (configUserManager.userExist(player.getUniqueId())) {
-                saveUser(AfterRomeUser.deserialize(userConfig.getData()));
+                saveUser(AfterRomeUser.deserialize(SerializeUtil.deserialize(userConfig, "")));
             } else {
                 saveUser(player);
             }

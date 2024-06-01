@@ -3,9 +3,9 @@ package com.megadev.afterrome.config.user;
 import dev.mega.megacore.config.AbstractManager;
 import org.bukkit.plugin.Plugin;
 
+import java.io.*;
 import java.util.Objects;
 import java.util.UUID;
-import java.io.File;
 
 public class ConfigUserManager extends AbstractManager {
     public ConfigUserManager(Plugin plugin, String dataFolder) {
@@ -22,7 +22,13 @@ public class ConfigUserManager extends AbstractManager {
         File fileDataFolder = new File(dataFolderPath + File.separator + "data");
 
         for (File file : Objects.requireNonNull(fileDataFolder.listFiles())) {
-            if (file.getName().replace(".yml", "").equals(uuid.toString())) return true;
+            try {
+                if (file.getName().replace(".yml", "").equals(uuid.toString())
+                        && new BufferedReader(new FileReader(file)).readLine() != null)
+                    return true;
+            } catch (IOException exception) {
+                exception.printStackTrace();;
+            }
         }
         return false;
     }

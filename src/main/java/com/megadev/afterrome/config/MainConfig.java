@@ -2,7 +2,6 @@ package com.megadev.afterrome.config;
 
 import dev.mega.megacore.config.Configurator;
 import dev.mega.megacore.util.Color;
-import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.plugin.Plugin;
 import org.jetbrains.annotations.NotNull;
 
@@ -57,23 +56,23 @@ public class MainConfig extends Configurator {
     }
 
     public String getAgronomistTexture() {
-        return (String) getValue("menu.choice-menu.head.agronomist.texture");
+        return getValue("menu.choice-menu.head.agronomist.texture");
     }
 
     public String getArtisanTexture() {
-        return (String) getValue("menu.choice-menu.head.artisan.texture");
+        return getValue("menu.choice-menu.head.artisan.texture");
     }
 
     public String getAesculapiusTexture() {
-        return (String) getValue("menu.choice-menu.head.aesculapius.texture");
+        return getValue("menu.choice-menu.head.aesculapius.texture");
     }
 
     public String getForesterTexture() {
-        return (String) getValue("menu.choice-menu.head.forester.texture");
+        return getValue("menu.choice-menu.head.forester.texture");
     }
 
     public String getSonOfMarsTexture() {
-        return (String) getValue("menu.choice-menu.head.son-of-mars.texture");
+        return getValue("menu.choice-menu.head.son-of-mars.texture");
     }
 
     public int getMaxUnitsPerPoint() {

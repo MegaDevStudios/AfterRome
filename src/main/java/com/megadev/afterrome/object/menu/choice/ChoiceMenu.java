@@ -13,6 +13,7 @@ import com.megadev.afterrome.object.profession.*;
 import com.megadev.afterrome.object.user.User;
 
 import dev.mega.megacore.MegaCore;
+import dev.mega.megacore.config.serializer.SerializeUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -103,8 +104,7 @@ public class ChoiceMenu extends AbstractMenu {
         if (!(getUser().getProfession() instanceof DefaultProfession)) return;
         getUser().setProfession(profession);
 
-        UserConfig userConfig = configUserManager.getAfterRomeUserConfig(getUser().getPlayer().getUniqueId());
-        userConfig.saveData(userManager.getUser(getUser().getPlayer()).serialize());
+        SerializeUtil.serialize(configUserManager.getAfterRomeUserConfig(getUser().getUuid()), getUser());
         close();
     }
 
