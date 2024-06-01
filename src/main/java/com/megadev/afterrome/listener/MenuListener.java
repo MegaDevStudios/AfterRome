@@ -41,8 +41,7 @@ public class MenuListener implements Listener {
     }
 
     @EventHandler(priority = EventPriority.NORMAL)
-    public void onMenuOpen(InventoryOpenEvent event)
-    {
+    public void onMenuOpen(InventoryOpenEvent event) {
         if (!(event.getPlayer() instanceof Player)) return;
 
         InventoryHolder holder = event.getView().getTopInventory().getHolder();
@@ -52,8 +51,7 @@ public class MenuListener implements Listener {
     }
 
     @EventHandler(priority = EventPriority.NORMAL)
-    public void onMenuClose(InventoryCloseEvent event)
-    {
+    public void onMenuClose(InventoryCloseEvent event) {
         if (!(event.getPlayer() instanceof Player player)) return;
 
         InventoryHolder holder = event.getView().getTopInventory().getHolder();
@@ -63,7 +61,7 @@ public class MenuListener implements Listener {
 
         User user = UserManager.getInstance().getUser(player);
         if (user != null) {
-            if (MenuManager.getInstance().getRefreshingMenus().containsKey(user)) {
+            if (MenuManager.getRefreshingMenus().containsKey(user)) {
                 MenuManager.getRefreshingMenus().get(user).cancel();
                 MenuManager.getRefreshingMenus().remove(user);
             }
