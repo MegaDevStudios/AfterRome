@@ -4,7 +4,9 @@ import com.megadev.afterrome.config.ConfigManager;
 import com.megadev.afterrome.config.manager.ShopManager;
 import com.megadev.afterrome.config.shop.ShopConfig;
 import com.megadev.afterrome.object.menu.AbstractMenu;
+import com.megadev.afterrome.object.menu.item.MenuItem;
 import com.megadev.afterrome.object.user.User;
+import org.bukkit.Material;
 
 public class ShopMenu extends AbstractMenu {
     public ShopMenu(User user, int rows) {
@@ -13,8 +15,10 @@ public class ShopMenu extends AbstractMenu {
 
     @Override
     protected void setMenuItems() {
-        for (int i = 0; i < getItems().length; i++) {
+        for (int i = 0; i < getSize(); i++) {
+            if (i == getSize() / 2) continue;
 
+            setItem(new MenuItem(Material.GRAY_STAINED_GLASS_PANE), i);
         }
     }
 

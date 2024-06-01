@@ -2,6 +2,7 @@ package com.megadev.afterrome;
 
 import co.aikar.commands.PaperCommandManager;
 import com.megadev.afterrome.command.ProgCommand;
+import com.megadev.afterrome.command.ShopCommand;
 import com.megadev.afterrome.command.SkillsCommand;
 import com.megadev.afterrome.config.user.ConfigUserManager;
 import com.megadev.afterrome.listener.MenuListener;
@@ -54,6 +55,8 @@ public final class AfterRome extends MegaCore {
         PaperCommandManager commandManager = new PaperCommandManager(this);
         commandManager.registerCommand(new SkillsCommand());
         commandManager.registerCommand(new ProgCommand());
+        commandManager.registerCommand(new ShopCommand());
+        commandManager.registerCommand(new ShopCommand2());
     }
 
     private void setupListeners() {
