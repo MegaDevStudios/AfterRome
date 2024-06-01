@@ -12,81 +12,71 @@ public class MainConfig extends Configurator {
     }
 
     public String getChoiceMenuName() {
-        return Color.getTranslated(getString("menu.choice-menu.name"));
+        return Color.getTranslated((String) getValue("menu.choice-menu.name"));
     }
 
     public String getAgronomistLore() {
-        return Color.getTranslated(getString("menu.choice-menu.head.agronomist.lore"));
+        return Color.getTranslated((String) getValue("menu.choice-menu.head.agronomist.lore"));
     }
 
     public String getArtisanLore() {
-        return Color.getTranslated(getString("menu.choice-menu.head.artisan.lore"));
+        return Color.getTranslated((String) getValue("menu.choice-menu.head.artisan.lore"));
     }
 
     public String getAesculapiusLore() {
-        return Color.getTranslated(getString("menu.choice-menu.head.aesculapius.lore"));
+        return Color.getTranslated((String) getValue("menu.choice-menu.head.aesculapius.lore"));
     }
 
     public String getForesterLore() {
-        return Color.getTranslated(getString("menu.choice-menu.head.forester.lore"));
+        return Color.getTranslated((String) getValue("menu.choice-menu.head.forester.lore"));
     }
 
     public String getSonOfMarsLore() {
-        return Color.getTranslated(getString("menu.choice-menu.head.son-of-mars.lore"));
+        return Color.getTranslated((String) getValue("menu.choice-menu.head.son-of-mars.lore"));
     }
 
 
     public String getAgronomistName() {
-        return Color.getTranslated(getString("menu.choice-menu.head.agronomist.name"));
+        return Color.getTranslated((String) getValue("menu.choice-menu.head.agronomist.name"));
     }
 
     public String getSonOfMarsName() {
-        return Color.getTranslated(getString("menu.choice-menu.head.son-of-mars.name"));
+        return Color.getTranslated((String) getValue("menu.choice-menu.head.son-of-mars.name"));
     }
 
     public String getArtisanName() {
-        return Color.getTranslated(getString("menu.choice-menu.head.artisan.name"));
+        return Color.getTranslated((String) getValue("menu.choice-menu.head.artisan.name"));
     }
 
     public String getAesculapiusName() {
-        return Color.getTranslated(getString("menu.choice-menu.head.aesculapius.name"));
+        return Color.getTranslated((String) getValue("menu.choice-menu.head.aesculapius.name"));
     }
 
     public String getForesterName() {
-        return Color.getTranslated(getString("menu.choice-menu.head.forester.name"));
+        return Color.getTranslated((String) getValue("menu.choice-menu.head.forester.name"));
     }
 
     public String getAgronomistTexture() {
-        return getString("menu.choice-menu.head.agronomist.texture");
+        return (String) getValue("menu.choice-menu.head.agronomist.texture");
     }
 
     public String getArtisanTexture() {
-        return getString("menu.choice-menu.head.artisan.texture");
+        return (String) getValue("menu.choice-menu.head.artisan.texture");
     }
 
     public String getAesculapiusTexture() {
-        return getString("menu.choice-menu.head.aesculapius.texture");
+        return (String) getValue("menu.choice-menu.head.aesculapius.texture");
     }
 
     public String getForesterTexture() {
-        return getString("menu.choice-menu.head.forester.texture");
+        return (String) getValue("menu.choice-menu.head.forester.texture");
     }
 
     public String getSonOfMarsTexture() {
-        return getString("menu.choice-menu.head.son-of-mars.texture");
+        return (String) getValue("menu.choice-menu.head.son-of-mars.texture");
     }
 
     public int getMaxUnitsPerPoint() {
         return getValue("player.max-units-per-points");
-    }
-
-    @Override
-    public @NotNull String saveToString() {
-        return "";
-    }
-
-    @Override
-    public void loadFromString(@NotNull String s) throws InvalidConfigurationException {
-
     }
 }

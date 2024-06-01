@@ -39,7 +39,7 @@ public class AgronomistConfig extends ProfessionConfig {
 
 
     public String getPercentValue(String path) {
-        return getString(path);
+        return getValue(path);
     }
 
     private double getPercent(String value) {

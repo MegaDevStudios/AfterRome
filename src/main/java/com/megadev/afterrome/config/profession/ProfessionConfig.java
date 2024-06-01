@@ -12,6 +12,6 @@ public abstract class ProfessionConfig extends Configurator {
     }
 
     public String getName() {
-        return Color.getTranslated(getString("name"));
+        return Color.getTranslated((String) getValue("name"));
     }
 }

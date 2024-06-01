@@ -26,65 +26,65 @@ public class AgronomistUpgradeShopConfig extends Configurator implements Upgrade
 
     @Override
     public String getMenuName() {
-        return Color.getTranslated(getString("menu-name"));
+        return Color.getTranslated((String) getValue("menu-name"));
     }
 
     @Override
     public MenuItem getBackgroundItem() {
-        return new MenuItem(Material.valueOf(getString("background-item"))).setName("&f");
+        return new MenuItem(Material.valueOf((String) getValue("background-item"))).setName("&f");
     }
 
     public String getButcherName() {
-        return Color.getTranslated(getString("skill.butcher.name"));
+        return Color.getTranslated((String) getValue("skill.butcher.name"));
     }
 
     public String getCookName() {
-        return Color.getTranslated(getString("skill.cook.name"));
+        return Color.getTranslated((String) getValue("skill.cook.name"));
     }
 
     public String getFarmerName() {
-        return Color.getTranslated(getString("skill.farmer.name"));
+        return Color.getTranslated((String) getValue("skill.farmer.name"));
     }
 
     public String getHatcherName() {
-        return Color.getTranslated(getString("skill.hatcher.name"));
+        return Color.getTranslated((String) getValue("skill.hatcher.name"));
     }
 
     public String getLumberjackName() {
-        return Color.getTranslated(getString("skill.lumberjack.name"));
+        return Color.getTranslated((String) getValue("skill.lumberjack.name"));
     }
 
     public String getTannerName() {
-        return Color.getTranslated(getString("skill.tanner.name"));
+        return Color.getTranslated((String) getValue("skill.tanner.name"));
     }
 
     public String getButcherLore() {
-        return Color.getTranslated(getString("skill.butcher.lore"));
+        return Color.getTranslated((String) getValue("skill.butcher.lore"));
     }
 
     public String getCookLore() {
-        return Color.getTranslated(getString("skill.cook.lore"));
+        return Color.getTranslated((String) getValue("skill.cook.lore"));
     }
 
     public String getFarmerLore() {
-        return Color.getTranslated(getString("skill.farmer.lore"));
+        return Color.getTranslated((String) getValue("skill.farmer.lore"));
     }
 
     public String getHatcherLore() {
-        return Color.getTranslated(getString("skill.hatcher.lore"));
+        return Color.getTranslated((String) getValue("skill.hatcher.lore"));
     }
 
     public String getLumberjackLore() {
-        return Color.getTranslated(getString("skill.lumberjack.lore"));
+        return Color.getTranslated((String) getValue("skill.lumberjack.lore"));
     }
 
     public String getTannerLore() {
-        return Color.getTranslated(getString("skill.tanner.lore"));
+        return Color.getTranslated((String) getValue("skill.tanner.lore"));
     }
 
     public MenuItem getButcherItem() {
         return new MenuItem(
-                Material.valueOf(getString("skill.butcher.item")))
+                Material.valueOf((String) getValue("skill.butcher.item")))
                 .setName(getButcherName())
                 .setLore(getButcherLore())
                 .addClickAction(event -> setAction(event, SkillType.BUTCHER));
@@ -92,7 +92,7 @@ public class AgronomistUpgradeShopConfig extends Configurator implements Upgrade
 
     public MenuItem getCookItem() {
         return new MenuItem(
-                Material.valueOf(getString("skill.cook.item")))
+                Material.valueOf((String) getValue("skill.cook.item")))
                 .setName(getCookName())
                 .setLore(getCookLore())
                 .addClickAction(event -> setAction(event, SkillType.COOK));
@@ -100,7 +100,7 @@ public class AgronomistUpgradeShopConfig extends Configurator implements Upgrade
 
     public MenuItem getFarmerItem() {
         return new MenuItem(
-                Material.valueOf(getString("skill.farmer.item")))
+                Material.valueOf((String) getValue("skill.farmer.item")))
                 .setName(getFarmerName())
                 .setLore(getFarmerLore())
                 .addClickAction(event -> setAction(event, SkillType.FARMER));
@@ -108,14 +108,14 @@ public class AgronomistUpgradeShopConfig extends Configurator implements Upgrade
 
     public MenuItem getHatcherItem() {
         return new MenuItem(
-                Material.valueOf(getString("skill.hatcher.item")))
+                Material.valueOf((String) getValue("skill.hatcher.item")))
                 .setName(getHatcherName())
                 .setLore(getHatcherLore())
                 .addClickAction(event -> setAction(event, SkillType.HATCHER));
     }
     public MenuItem getLumberjackItem() {
         return new MenuItem(
-                Material.valueOf(getString("skill.lumberjack.item")))
+                Material.valueOf((String) getValue("skill.lumberjack.item")))
                 .setName(getLumberjackName())
                 .setLore(getLumberjackLore())
                 .addClickAction(event -> setAction(event, SkillType.LUMBERJACK));
@@ -123,7 +123,7 @@ public class AgronomistUpgradeShopConfig extends Configurator implements Upgrade
 
     public MenuItem getTannerItem() {
         return new MenuItem(
-                Material.valueOf(getString("skill.tanner.item")))
+                Material.valueOf((String) getValue("skill.tanner.item")))
                 .setName(getTannerName())
                 .setLore(getTannerLore())
                 .addClickAction(event -> setAction(event, SkillType.TANNER));

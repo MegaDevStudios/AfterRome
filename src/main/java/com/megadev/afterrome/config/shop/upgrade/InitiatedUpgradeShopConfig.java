@@ -14,100 +14,100 @@ public class InitiatedUpgradeShopConfig extends Configurator implements UpgradeS
 
     @Override
     public String getMenuName() {
-        return Color.getTranslated(getString("menu-name"));
+        return Color.getTranslated((String) getValue("menu-name"));
     }
 
     @Override
     public MenuItem getBackgroundItem() {
-        return new MenuItem(Material.valueOf(getString("background-item"))).setName("&f");
+        return new MenuItem(Material.valueOf((String) getValue("background-item"))).setName("&f");
     }
 
     public String getDaturaName() {
-        return Color.getTranslated(getString("skill.datura.name"));
+        return Color.getTranslated((String) getValue("skill.datura.name"));
     }
 
     public String getDaturaLore() {
-        return Color.getTranslated(getString("skill.datura.lore"));
+        return Color.getTranslated((String) getValue("skill.datura.lore"));
     }
 
     public MenuItem getDaturaItem() {
         return new MenuItem(
-                Material.valueOf(getString("skill.datura.item")))
+                Material.valueOf((String) getValue("skill.datura.item")))
                 .setName(getDaturaName())
                 .setLore(getDaturaLore());
     }
 
     public String getLeprosyName() {
-        return Color.getTranslated(getString("skill.leprosy.name"));
+        return Color.getTranslated((String) getValue("skill.leprosy.name"));
     }
 
     public String getLeprosyLore() {
-        return Color.getTranslated(getString("skill.leprosy.lore"));
+        return Color.getTranslated((String) getValue("skill.leprosy.lore"));
     }
 
     public MenuItem getLeprosyItem() {
         return new MenuItem(
-                Material.valueOf(getString("skill.leprosy.item")))
+                Material.valueOf((String) getValue("skill.leprosy.item")))
                 .setName(getLeprosyName())
                 .setLore(getLeprosyLore());
     }
 
     public String getParticipleName() {
-        return Color.getTranslated(getString("skill.participle.name"));
+        return Color.getTranslated((String) getValue("skill.participle.name"));
     }
 
     public String getParticipleLore() {
-        return Color.getTranslated(getString("skill.participle.lore"));
+        return Color.getTranslated((String) getValue("skill.participle.lore"));
     }
 
     public MenuItem getParticipleItem() {
         return new MenuItem(
-                Material.valueOf(getString("skill.participle.item")))
+                Material.valueOf((String) getValue("skill.participle.item")))
                 .setName(getParticipleName())
                 .setLore(getParticipleLore());
     }
 
     public String getSaintFaceName() {
-        return Color.getTranslated(getString("skill.saint-face.name"));
+        return Color.getTranslated((String) getValue("skill.saint-face.name"));
     }
 
     public String getSaintFaceLore() {
-        return Color.getTranslated(getString("skill.saint-face.lore"));
+        return Color.getTranslated((String) getValue("skill.saint-face.lore"));
     }
 
     public MenuItem getSaintFaceItem() {
         return new MenuItem(
-                Material.valueOf(getString("skill.saint-face.item")))
+                Material.valueOf((String) getValue("skill.saint-face.item")))
                 .setName(getSaintFaceName())
                 .setLore(getSaintFaceLore());
     }
 
     public String getSpiderEyeName() {
-        return Color.getTranslated(getString("skill.spider-eye.name"));
+        return Color.getTranslated((String) getValue("skill.spider-eye.name"));
     }
 
     public String getSpiderEyeLore() {
-        return Color.getTranslated(getString("skill.spider-eye.lore"));
+        return Color.getTranslated((String) getValue("skill.spider-eye.lore"));
     }
 
     public MenuItem getSpiderEyeItem() {
         return new MenuItem(
-                Material.valueOf(getString("skill.spider-eye.item")))
+                Material.valueOf((String) getValue("skill.spider-eye.item")))
                 .setName(getSpiderEyeName())
                 .setLore(getSpiderEyeLore());
     }
 
     public String getStartWhisperName() {
-        return Color.getTranslated(getString("skill.start-whisper.name"));
+        return Color.getTranslated((String) getValue("skill.start-whisper.name"));
     }
 
     public String getStartWhisperLore() {
-        return Color.getTranslated(getString("skill.start-whisper.lore"));
+        return Color.getTranslated((String) getValue("skill.start-whisper.lore"));
     }
 
     public MenuItem getStartWhisperItem() {
         return new MenuItem(
-                Material.valueOf(getString("skill.start-whisper.item")))
+                Material.valueOf((String) getValue("skill.start-whisper.item")))
                 .setName(getStartWhisperName())
                 .setLore(getStartWhisperLore());
     }

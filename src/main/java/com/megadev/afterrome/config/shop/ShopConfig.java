@@ -17,11 +17,11 @@ public class ShopConfig extends Configurator {
     }
 
     public String getNpcName() {
-        return getString("npc.name");
+        return (String) getValue("npc.name");
     }
 
     public String getMenuName() {
-        return getString("menu.name");
+        return (String) getValue("menu.name");
     }
 
     public Location getNpcLocation() {

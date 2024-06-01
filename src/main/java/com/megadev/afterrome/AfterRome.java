@@ -16,10 +16,15 @@ import com.megadev.afterrome.manager.MenuManager;
 import com.megadev.afterrome.manager.UserManager;
 
 import dev.mega.megacore.MegaCore;
+import dev.mega.megacore.config.AbstractManager;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
 
 public final class AfterRome extends MegaCore {
+    private AfterRome(AbstractManager configManager) {
+        super(configManager);
+    }
+
     @Override
     public void enable() {
         setupManagers();

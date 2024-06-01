@@ -14,100 +14,100 @@ public class SantaUpgradeShopConfig extends Configurator implements UpgradeShopC
 
     @Override
     public String getMenuName() {
-        return Color.getTranslated(getString("menu-name"));
+        return Color.getTranslated((String) getValue("menu-name"));
     }
 
     @Override
     public MenuItem getBackgroundItem() {
-        return new MenuItem(Material.valueOf(getString("background-item"))).setName("&f");
+        return new MenuItem(Material.valueOf((String) getValue("background-item"))).setName("&f");
     }
 
     public String getForTheFaithName() {
-        return Color.getTranslated(getString("skill.for-the-faith.name"));
+        return Color.getTranslated((String) getValue("skill.for-the-faith.name"));
     }
 
     public String getForTheFaithLore() {
-        return Color.getTranslated(getString("skill.for-the-faith.lore"));
+        return Color.getTranslated((String) getValue("skill.for-the-faith.lore"));
     }
 
     public MenuItem getForTheFaithItem() {
         return new MenuItem(
-                Material.valueOf(getString("skill.for-the-faith.item")))
+                Material.valueOf((String) getValue("skill.for-the-faith.item")))
                 .setName(getForTheFaithName())
                 .setLore(getForTheFaithLore());
     }
 
     public String getForTheGraceName() {
-        return Color.getTranslated(getString("skill.for-the-grace.name"));
+        return Color.getTranslated((String) getValue("skill.for-the-grace.name"));
     }
 
     public String getForTheGraceLore() {
-        return Color.getTranslated(getString("skill.for-the-grace.lore"));
+        return Color.getTranslated((String) getValue("skill.for-the-grace.lore"));
     }
 
     public MenuItem getForTheGraceItem() {
         return new MenuItem(
-                Material.valueOf(getString("skill.for-the-grace.item")))
+                Material.valueOf((String) getValue("skill.for-the-grace.item")))
                 .setName(getForTheGraceName())
                 .setLore(getForTheGraceLore());
     }
 
     public String getForTheHomeOfTheHolyName() {
-        return Color.getTranslated(getString("skill.for-the-home-of-the-holy.name"));
+        return Color.getTranslated((String) getValue("skill.for-the-home-of-the-holy.name"));
     }
 
     public String getForTheHomeOfTheHolyLore() {
-        return Color.getTranslated(getString("skill.for-the-home-of-the-holy.lore"));
+        return Color.getTranslated((String) getValue("skill.for-the-home-of-the-holy.lore"));
     }
 
     public MenuItem getForTheHomeOfTheHolyItem() {
         return new MenuItem(
-                Material.valueOf(getString("skill.for-the-home-of-the-holy.item")))
+                Material.valueOf((String) getValue("skill.for-the-home-of-the-holy.item")))
                 .setName(getForTheHomeOfTheHolyName())
                 .setLore(getForTheHomeOfTheHolyLore());
     }
 
     public String getForTheMightOfOurLordName() {
-        return Color.getTranslated(getString("skill.for-the-might-of-our-lord.name"));
+        return Color.getTranslated((String) getValue("skill.for-the-might-of-our-lord.name"));
     }
 
     public String getForTheMightOfOurLordLore() {
-        return Color.getTranslated(getString("skill.for-the-might-of-our-lord.lore"));
+        return Color.getTranslated((String) getValue("skill.for-the-might-of-our-lord.lore"));
     }
 
     public MenuItem getForTheMightOfOurLordItem() {
         return new MenuItem(
-                Material.valueOf(getString("skill.for-the-might-of-our-lord.item")))
+                Material.valueOf((String) getValue("skill.for-the-might-of-our-lord.item")))
                 .setName(getForTheMightOfOurLordName())
                 .setLore(getForTheMightOfOurLordLore());
     }
 
     public String getForTheWayOfTheSwordName() {
-        return Color.getTranslated(getString("skill.for-the-way-of-the-sword.name"));
+        return Color.getTranslated((String) getValue("skill.for-the-way-of-the-sword.name"));
     }
 
     public String getForTheWayOfTheSwordLore() {
-        return Color.getTranslated(getString("skill.for-the-way-of-the-sword.lore"));
+        return Color.getTranslated((String) getValue("skill.for-the-way-of-the-sword.lore"));
     }
 
     public MenuItem getForTheWayOfTheSwordItem() {
         return new MenuItem(
-                Material.valueOf(getString("skill.for-the-way-of-the-sword.item")))
+                Material.valueOf((String) getValue("skill.for-the-way-of-the-sword.item")))
                 .setName(getForTheWayOfTheSwordName())
                 .setLore(getForTheWayOfTheSwordLore());
     }
 
     public String getHighlightsName() {
-        return Color.getTranslated(getString("skill.highlights.name"));
+        return Color.getTranslated((String) getValue("skill.highlights.name"));
     }
 
     public String getHighlightsLore() {
-        return Color.getTranslated(getString("skill.highlights.lore"));
+        return Color.getTranslated((String) getValue("skill.highlights.lore"));
     }
 
     public MenuItem getHighlightsItem() {
         return new MenuItem(
-                Material.valueOf(getString("skill.highlights.item")))
+                Material.valueOf((String) getValue("skill.highlights.item")))
                 .setName(getHighlightsName())
                 .setLore(getHighlightsLore());
     }

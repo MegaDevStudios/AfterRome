@@ -20,100 +20,100 @@ public class AesculapiusUpgradeShopConfig extends Configurator implements Upgrad
 
     @Override
     public String getMenuName() {
-        return Color.getTranslated(getString("menu-name"));
+        return Color.getTranslated((String) getValue("menu-name"));
     }
 
     @Override
     public MenuItem getBackgroundItem() {
-        return new MenuItem(Material.valueOf(getString("background-item"))).setName("&f");
+        return new MenuItem(Material.valueOf((String) getValue("background-item"))).setName("&f");
     }
 
     public String getAlchemyName() {
-        return Color.getTranslated(getString("skill.alchemy.name"));
+        return Color.getTranslated((String) getValue("skill.alchemy.name"));
     }
 
     public String getBrutalSurgeryName() {
-        return Color.getTranslated(getString("skill.brutal-surgery.name"));
+        return Color.getTranslated((String) getValue("skill.brutal-surgery.name"));
     }
 
     public String getCombatStimulantsName() {
-        return Color.getTranslated(getString("skill.combat-stimulants.name"));
+        return Color.getTranslated((String) getValue("skill.combat-stimulants.name"));
     }
 
     public String getDoctorMaskName() {
-        return Color.getTranslated(getString("skill.doctor-mask.name"));
+        return Color.getTranslated((String) getValue("skill.doctor-mask.name"));
     }
 
     public String getHealingName() {
-        return Color.getTranslated(getString("skill.healing.name"));
+        return Color.getTranslated((String) getValue("skill.healing.name"));
     }
 
     public String getUrineTherapyName() {
-        return Color.getTranslated(getString("skill.urine-therapy.name"));
+        return Color.getTranslated((String) getValue("skill.urine-therapy.name"));
     }
 
     public String getAlchemyLore() {
-        return Color.getTranslated(getString("skill.alchemy.lore"));
+        return Color.getTranslated((String) getValue("skill.alchemy.lore"));
     }
 
     public String getBrutalSurgeryLore() {
-        return Color.getTranslated(getString("skill.brutal-surgery.lore"));
+        return Color.getTranslated((String) getValue("skill.brutal-surgery.lore"));
     }
 
     public String getCombatStimulantsLore() {
-        return Color.getTranslated(getString("skill.combat-stimulants.lore"));
+        return Color.getTranslated((String) getValue("skill.combat-stimulants.lore"));
     }
 
     public String getDoctorMaskLore() {
-        return Color.getTranslated(getString("skill.doctor-mask.lore"));
+        return Color.getTranslated((String) getValue("skill.doctor-mask.lore"));
     }
 
     public String getHealingLore() {
-        return Color.getTranslated(getString("skill.healing.lore"));
+        return Color.getTranslated((String) getValue("skill.healing.lore"));
     }
 
     public String getUrineTherapyLore() {
-        return Color.getTranslated(getString("skill.urine-therapy.lore"));
+        return Color.getTranslated((String) getValue("skill.urine-therapy.lore"));
     }
 
     public MenuItem getAlchemyItem() {
         return new MenuItem(
-                Material.valueOf(getString("skill.alchemy.item")))
+                Material.valueOf((String) getValue("skill.alchemy.item")))
                 .setName(getAlchemyName())
                 .setLore(getAlchemyLore());
     }
 
     public MenuItem getBrutalSurgeryItem() {
         return new MenuItem(
-                Material.valueOf(getString("skill.brutal-surgery.item")))
+                Material.valueOf((String) getValue("skill.brutal-surgery.item")))
                 .setName(getBrutalSurgeryName())
                 .setLore(getBrutalSurgeryLore());
     }
 
     public MenuItem getCombatStimulantsItem() {
         return new MenuItem(
-                Material.valueOf(getString("skill.combat-stimulants.item")))
+                Material.valueOf((String) getValue("skill.combat-stimulants.item")))
                 .setName(getCombatStimulantsName())
                 .setLore(getCombatStimulantsLore());
     }
 
     public MenuItem getDoctorMaskItem() {
         return new MenuItem(
-                Material.valueOf(getString("skill.doctor-mask.item")))
+                Material.valueOf((String) getValue("skill.doctor-mask.item")))
                 .setName(getDoctorMaskName())
                 .setLore(getDoctorMaskLore());
     }
 
     public MenuItem getHealingItem() {
         return new MenuItem(
-                Material.valueOf(getString("skill.healing.item")))
+                Material.valueOf((String) getValue("skill.healing.item")))
                 .setName(getHealingName())
                 .setLore(getHealingLore());
     }
 
     public MenuItem getUrineTherapyItem() {
         return new MenuItem(
-                Material.valueOf(getString("skill.urine-therapy.item")))
+                Material.valueOf((String) getValue("skill.urine-therapy.item")))
                 .setName(getUrineTherapyName())
                 .setLore(getUrineTherapyLore());
     }

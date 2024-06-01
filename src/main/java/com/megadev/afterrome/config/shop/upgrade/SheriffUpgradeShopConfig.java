@@ -16,100 +16,100 @@ public class SheriffUpgradeShopConfig extends Configurator implements UpgradeSho
 
     @Override
     public String getMenuName() {
-        return Color.getTranslated(getString("menu-name"));
+        return Color.getTranslated((String) getValue("menu-name"));
     }
 
     @Override
     public MenuItem getBackgroundItem() {
-        return new MenuItem(Material.valueOf(getString("background-item"))).setName("&f");
+        return new MenuItem(Material.valueOf((String) getValue("background-item"))).setName("&f");
     }
 
     public String getChaseName() {
-        return Color.getTranslated(getString("skill.chase.name"));
+        return Color.getTranslated((String) getValue("skill.chase.name"));
     }
 
     public String getChaseLore() {
-        return Color.getTranslated(getString("skill.chase.lore"));
+        return Color.getTranslated((String) getValue("skill.chase.lore"));
     }
 
     public MenuItem getChaseItem() {
         return new MenuItem(
-                Material.valueOf(getString("skill.chase.item")))
+                Material.valueOf((String) getValue("skill.chase.item")))
                 .setName(getChaseName())
                 .setLore(getChaseLore());
     }
 
     public String getCriminologyName() {
-        return Color.getTranslated(getString("skill.criminology.name"));
+        return Color.getTranslated((String) getValue("skill.criminology.name"));
     }
 
     public String getCriminologyLore() {
-        return Color.getTranslated(getString("skill.criminology.lore"));
+        return Color.getTranslated((String) getValue("skill.criminology.lore"));
     }
 
     public MenuItem getCriminologyItem() {
         return new MenuItem(
-                Material.valueOf(getString("skill.criminology.item")))
+                Material.valueOf((String) getValue("skill.criminology.item")))
                 .setName(getCriminologyName())
                 .setLore(getCriminologyLore());
     }
 
     public String getDonutsName() {
-        return Color.getTranslated(getString("skill.donuts.name"));
+        return Color.getTranslated((String) getValue("skill.donuts.name"));
     }
 
     public String getDonutsLore() {
-        return Color.getTranslated(getString("skill.donuts.lore"));
+        return Color.getTranslated((String) getValue("skill.donuts.lore"));
     }
 
     public MenuItem getDonutsItem() {
         return new MenuItem(
-                Material.valueOf(getString("skill.donuts.item")))
+                Material.valueOf((String) getValue("skill.donuts.item")))
                 .setName(getDonutsName())
                 .setLore(getDonutsLore());
     }
 
     public String getHoldingName() {
-        return Color.getTranslated(getString("skill.holding.name"));
+        return Color.getTranslated((String) getValue("skill.holding.name"));
     }
 
     public String getHoldingLore() {
-        return Color.getTranslated(getString("skill.holding.lore"));
+        return Color.getTranslated((String) getValue("skill.holding.lore"));
     }
 
     public MenuItem getHoldingItem() {
         return new MenuItem(
-                Material.valueOf(getString("skill.holding.item")))
+                Material.valueOf((String) getValue("skill.holding.item")))
                 .setName(getHoldingName())
                 .setLore(getHoldingLore());
     }
 
     public String getShortBarreledName() {
-        return Color.getTranslated(getString("skill.short-barreled.name"));
+        return Color.getTranslated((String) getValue("skill.short-barreled.name"));
     }
 
     public String getShortBarreledLore() {
-        return Color.getTranslated(getString("skill.short-barreled.lore"));
+        return Color.getTranslated((String) getValue("skill.short-barreled.lore"));
     }
 
     public MenuItem getShortBarreledItem() {
         return new MenuItem(
-                Material.valueOf(getString("skill.short-barreled.item")))
+                Material.valueOf((String) getValue("skill.short-barreled.item")))
                 .setName(getShortBarreledName())
                 .setLore(getShortBarreledLore());
     }
 
     public String getWakeName() {
-        return Color.getTranslated(getString("skill.wake.name"));
+        return Color.getTranslated((String) getValue("skill.wake.name"));
     }
 
     public String getWakeLore() {
-        return Color.getTranslated(getString("skill.wake.lore"));
+        return Color.getTranslated((String) getValue("skill.wake.lore"));
     }
 
     public MenuItem getWakeItem() {
         return new MenuItem(
-                Material.valueOf(getString("skill.wake.item")))
+                Material.valueOf((String) getValue("skill.wake.item")))
                 .setName(getWakeName())
                 .setLore(getWakeLore());
     }

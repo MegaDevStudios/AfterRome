@@ -14,100 +14,100 @@ public class ForesterUpgradeShopConfig extends Configurator implements UpgradeSh
 
     @Override
     public String getMenuName() {
-        return Color.getTranslated(getString("menu-name"));
+        return Color.getTranslated((String) getValue("menu-name"));
     }
 
     @Override
     public MenuItem getBackgroundItem() {
-        return new MenuItem(Material.valueOf(getString("background-item"))).setName("&f");
+        return new MenuItem(Material.valueOf((String) getValue("background-item"))).setName("&f");
     }
 
     public String getCampCookingName() {
-        return Color.getTranslated(getString("skill.camp-cooking.name"));
+        return Color.getTranslated((String) getValue("skill.camp-cooking.name"));
     }
 
     public String getCampCookingLore() {
-        return Color.getTranslated(getString("skill.camp-cooking.lore"));
+        return Color.getTranslated((String) getValue("skill.camp-cooking.lore"));
     }
 
     public MenuItem getCampCookingItem() {
         return new MenuItem(
-                Material.valueOf(getString("skill.camp-cooking.item")))
+                Material.valueOf((String) getValue("skill.camp-cooking.item")))
                 .setName(getCampCookingName())
                 .setLore(getCampCookingLore());
     }
 
     public String getHaltName() {
-        return Color.getTranslated(getString("skill.halt.name"));
+        return Color.getTranslated((String) getValue("skill.halt.name"));
     }
 
     public String getHaltLore() {
-        return Color.getTranslated(getString("skill.halt.lore"));
+        return Color.getTranslated((String) getValue("skill.halt.lore"));
     }
 
     public MenuItem getHaltItem() {
         return new MenuItem(
-                Material.valueOf(getString("skill.halt.item")))
+                Material.valueOf((String) getValue("skill.halt.item")))
                 .setName(getHaltName())
                 .setLore(getHaltLore());
     }
 
     public String getHorseRidingName() {
-        return Color.getTranslated(getString("skill.horse-riding.name"));
+        return Color.getTranslated((String) getValue("skill.horse-riding.name"));
     }
 
     public String getHorseRidingLore() {
-        return Color.getTranslated(getString("skill.horse-riding.lore"));
+        return Color.getTranslated((String) getValue("skill.horse-riding.lore"));
     }
 
     public MenuItem getHorseRidingItem() {
         return new MenuItem(
-                Material.valueOf(getString("skill.horse-riding.item")))
+                Material.valueOf((String) getValue("skill.horse-riding.item")))
                 .setName(getHorseRidingName())
                 .setLore(getHorseRidingLore());
     }
 
     public String getLadleStaffName() {
-        return Color.getTranslated(getString("skill.ladle-staff.name"));
+        return Color.getTranslated((String) getValue("skill.ladle-staff.name"));
     }
 
     public String getLadleStaffLore() {
-        return Color.getTranslated(getString("skill.ladle-staff.lore"));
+        return Color.getTranslated((String) getValue("skill.ladle-staff.lore"));
     }
 
     public MenuItem getLadleStaffItem() {
         return new MenuItem(
-                Material.valueOf(getString("skill.ladle-staff.item")))
+                Material.valueOf((String) getValue("skill.ladle-staff.item")))
                 .setName(getLadleStaffName())
                 .setLore(getLadleStaffLore());
     }
 
     public String getLungCapacityName() {
-        return Color.getTranslated(getString("skill.lung-capacity.name"));
+        return Color.getTranslated((String) getValue("skill.lung-capacity.name"));
     }
 
     public String getLungCapacityLore() {
-        return Color.getTranslated(getString("skill.lung-capacity.lore"));
+        return Color.getTranslated((String) getValue("skill.lung-capacity.lore"));
     }
 
     public MenuItem getLungCapacityItem() {
         return new MenuItem(
-                Material.valueOf(getString("skill.lung-capacity.item")))
+                Material.valueOf((String) getValue("skill.lung-capacity.item")))
                 .setName(getLungCapacityName())
                 .setLore(getLungCapacityLore());
     }
 
     public String getSeafaringName() {
-        return Color.getTranslated(getString("skill.seafaring.name"));
+        return Color.getTranslated((String) getValue("skill.seafaring.name"));
     }
 
     public String getSeafaringLore() {
-        return Color.getTranslated(getString("skill.seafaring.lore"));
+        return Color.getTranslated((String) getValue("skill.seafaring.lore"));
     }
 
     public MenuItem getSeafaringItem() {
         return new MenuItem(
-                Material.valueOf(getString("skill.seafaring.item")))
+                Material.valueOf((String) getValue("skill.seafaring.item")))
                 .setName(getSeafaringName())
                 .setLore(getSeafaringLore());
     }

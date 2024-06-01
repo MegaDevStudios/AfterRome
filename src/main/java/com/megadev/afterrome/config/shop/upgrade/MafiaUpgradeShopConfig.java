@@ -16,100 +16,100 @@ public class MafiaUpgradeShopConfig extends Configurator implements UpgradeShopC
 
     @Override
     public String getMenuName() {
-        return Color.getTranslated(getString("menu-name"));
+        return Color.getTranslated((String) getValue("menu-name"));
     }
 
     @Override
     public MenuItem getBackgroundItem() {
-        return new MenuItem(Material.valueOf(getString("background-item"))).setName("&f");
+        return new MenuItem(Material.valueOf((String) getValue("background-item"))).setName("&f");
     }
 
     public String getHackName() {
-        return Color.getTranslated(getString("skill.hack.name"));
+        return Color.getTranslated((String) getValue("skill.hack.name"));
     }
 
     public String getHackLore() {
-        return Color.getTranslated(getString("skill.hack.lore"));
+        return Color.getTranslated((String) getValue("skill.hack.lore"));
     }
 
     public MenuItem getHackItem() {
         return new MenuItem(
-                Material.valueOf(getString("skill.hack.item")))
+                Material.valueOf((String) getValue("skill.hack.item")))
                 .setName(getHackName())
                 .setLore(getHackLore());
     }
 
     public String getKillerName() {
-        return Color.getTranslated(getString("skill.killer.name"));
+        return Color.getTranslated((String) getValue("skill.killer.name"));
     }
 
     public String getKillerLore() {
-        return Color.getTranslated(getString("skill.killer.lore"));
+        return Color.getTranslated((String) getValue("skill.killer.lore"));
     }
 
     public MenuItem getKillerItem() {
         return new MenuItem(
-                Material.valueOf(getString("skill.killer.item")))
+                Material.valueOf((String) getValue("skill.killer.item")))
                 .setName(getKillerName())
                 .setLore(getKillerLore());
     }
 
     public String getPoisonName() {
-        return Color.getTranslated(getString("skill.poison.name"));
+        return Color.getTranslated((String) getValue("skill.poison.name"));
     }
 
     public String getPoisonLore() {
-        return Color.getTranslated(getString("skill.poison.lore"));
+        return Color.getTranslated((String) getValue("skill.poison.lore"));
     }
 
     public MenuItem getPoisonItem() {
         return new MenuItem(
-                Material.valueOf(getString("skill.poison.item")))
+                Material.valueOf((String) getValue("skill.poison.item")))
                 .setName(getPoisonName())
                 .setLore(getPoisonLore());
     }
 
     public String getSlipperyName() {
-        return Color.getTranslated(getString("skill.slippery.name"));
+        return Color.getTranslated((String) getValue("skill.slippery.name"));
     }
 
     public String getSlipperyLore() {
-        return Color.getTranslated(getString("skill.slippery.lore"));
+        return Color.getTranslated((String) getValue("skill.slippery.lore"));
     }
 
     public MenuItem getSlipperyItem() {
         return new MenuItem(
-                Material.valueOf(getString("skill.slippery.item")))
+                Material.valueOf((String) getValue("skill.slippery.item")))
                 .setName(getSlipperyName())
                 .setLore(getSlipperyLore());
     }
 
     public String getStealthName() {
-        return Color.getTranslated(getString("skill.stealth.name"));
+        return Color.getTranslated((String) getValue("skill.stealth.name"));
     }
 
     public String getStealthLore() {
-        return Color.getTranslated(getString("skill.stealth.lore"));
+        return Color.getTranslated((String) getValue("skill.stealth.lore"));
     }
 
     public MenuItem getStealthItem() {
         return new MenuItem(
-                Material.valueOf(getString("skill.stealth.item")))
+                Material.valueOf((String) getValue("skill.stealth.item")))
                 .setName(getStealthName())
                 .setLore(getStealthLore());
     }
 
     public String getWakeName() {
-        return Color.getTranslated(getString("skill.wake.name"));
+        return Color.getTranslated((String) getValue("skill.wake.name"));
     }
 
     public String getWakeLore() {
-        return Color.getTranslated(getString("skill.wake.lore"));
+        return Color.getTranslated((String) getValue("skill.wake.lore"));
     }
 
     public MenuItem getWakeItem() {
         return new MenuItem(
-                Material.valueOf(getString("skill.wake.item")))
+                Material.valueOf((String) getValue("skill.wake.item")))
                 .setName(getWakeName())
                 .setLore(getWakeLore());
     }

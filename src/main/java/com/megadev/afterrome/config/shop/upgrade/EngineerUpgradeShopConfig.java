@@ -14,100 +14,100 @@ public class EngineerUpgradeShopConfig extends Configurator implements UpgradeSh
 
     @Override
     public String getMenuName() {
-        return Color.getTranslated(getString("menu-name"));
+        return Color.getTranslated((String) getValue("menu-name"));
     }
 
     @Override
     public MenuItem getBackgroundItem() {
-        return new MenuItem(Material.valueOf(getString("background-item"))).setName("&f");
+        return new MenuItem(Material.valueOf((String) getValue("background-item"))).setName("&f");
     }
 
     public String getArmorerName() {
-        return Color.getTranslated(getString("skill.armorer.name"));
+        return Color.getTranslated((String) getValue("skill.armorer.name"));
     }
 
     public String getArmorerLore() {
-        return Color.getTranslated(getString("skill.armorer.lore"));
+        return Color.getTranslated((String) getValue("skill.armorer.lore"));
     }
 
     public MenuItem getArmorerItem() {
         return new MenuItem(
-                Material.valueOf(getString("skill.armorer.item")))
+                Material.valueOf((String) getValue("skill.armorer.item")))
                 .setName(getArmorerName())
                 .setLore(getArmorerLore());
     }
 
     public String getBosnianArtilleryName() {
-        return Color.getTranslated(getString("skill.bosnian-artillery.name"));
+        return Color.getTranslated((String) getValue("skill.bosnian-artillery.name"));
     }
 
     public String getBosnianArtilleryLore() {
-        return Color.getTranslated(getString("skill.bosnian-artillery.lore"));
+        return Color.getTranslated((String) getValue("skill.bosnian-artillery.lore"));
     }
 
     public MenuItem getBosnianArtilleryItem() {
         return new MenuItem(
-                Material.valueOf(getString("skill.bosnian-artillery.item")))
+                Material.valueOf((String) getValue("skill.bosnian-artillery.item")))
                 .setName(getBosnianArtilleryName())
                 .setLore(getBosnianArtilleryLore());
     }
 
     public String getChemicalWeaponsName() {
-        return Color.getTranslated(getString("skill.chemical-weapons.name"));
+        return Color.getTranslated((String) getValue("skill.chemical-weapons.name"));
     }
 
     public String getChemicalWeaponsLore() {
-        return Color.getTranslated(getString("skill.chemical-weapons.lore"));
+        return Color.getTranslated((String) getValue("skill.chemical-weapons.lore"));
     }
 
     public MenuItem getChemicalWeaponsItem() {
         return new MenuItem(
-                Material.valueOf(getString("skill.chemical-weapons.item")))
+                Material.valueOf((String) getValue("skill.chemical-weapons.item")))
                 .setName(getChemicalWeaponsName())
                 .setLore(getChemicalWeaponsLore());
     }
 
     public String getDrawingsName() {
-        return Color.getTranslated(getString("skill.drawings.name"));
+        return Color.getTranslated((String) getValue("skill.drawings.name"));
     }
 
     public String getDrawingsLore() {
-        return Color.getTranslated(getString("skill.drawings.lore"));
+        return Color.getTranslated((String) getValue("skill.drawings.lore"));
     }
 
     public MenuItem getDrawingsItem() {
         return new MenuItem(
-                Material.valueOf(getString("skill.drawings.item")))
+                Material.valueOf((String) getValue("skill.drawings.item")))
                 .setName(getDrawingsName())
                 .setLore(getDrawingsLore());
     }
 
     public String getHeavyIndustryName() {
-        return Color.getTranslated(getString("skill.heavy-industry.name"));
+        return Color.getTranslated((String) getValue("skill.heavy-industry.name"));
     }
 
     public String getHeavyIndustryLore() {
-        return Color.getTranslated(getString("skill.heavy-industry.lore"));
+        return Color.getTranslated((String) getValue("skill.heavy-industry.lore"));
     }
 
     public MenuItem getHeavyIndustryItem() {
         return new MenuItem(
-                Material.valueOf(getString("skill.heavy-industry.item")))
+                Material.valueOf((String) getValue("skill.heavy-industry.item")))
                 .setName(getHeavyIndustryName())
                 .setLore(getHeavyIndustryLore());
     }
 
     public String getModificationsName() {
-        return Color.getTranslated(getString("skill.modifications.name"));
+        return Color.getTranslated((String) getValue("skill.modifications.name"));
     }
 
     public String getModificationsLore() {
-        return Color.getTranslated(getString("skill.modifications.lore"));
+        return Color.getTranslated((String) getValue("skill.modifications.lore"));
     }
 
     public MenuItem getModificationsItem() {
         return new MenuItem(
-                Material.valueOf(getString("skill.modifications.item")))
+                Material.valueOf((String) getValue("skill.modifications.item")))
                 .setName(getModificationsName())
                 .setLore(getModificationsLore());
     }
