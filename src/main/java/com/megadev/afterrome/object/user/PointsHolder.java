@@ -4,4 +4,6 @@ public interface PointsHolder {
     double getPoints();
 
     void addPoints(double amount);
+
+    boolean subtractPoints();
 }

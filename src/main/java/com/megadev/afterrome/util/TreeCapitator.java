@@ -3,6 +3,7 @@ package com.megadev.afterrome.util;
 import dev.mega.megacore.MegaCore;
 import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.inventory.ItemStack;
 import org.bukkit.scheduler.BukkitRunnable;
 
 import java.util.*;
@@ -35,6 +36,9 @@ public class TreeCapitator {
                 Location currentLocation = woodLocations.poll();
                 if (currentLocation != null) {
                     currentLocation.getBlock().setType(Material.AIR);
+                    currentLocation.getWorld().dropItemNaturally(
+                            currentLocation.clone(), new ItemStack(material)
+                    );
                     processedLocations.add(currentLocation);
 
                     for (Location neighbor : getNeighboringLocations(currentLocation)) {

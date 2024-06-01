@@ -88,7 +88,32 @@ skill:
   tanner:
     level:
       1:
+        leather1: 30.0
+        leather2: 30.0
+        leather3: 20.0
+        leather4: 10.0
+        leather5: 10.0
       2:
+        leather1: 25.0
+        leather2: 25.0
+        leather3: 20.0
+        leather4: 15.0
+        leather5: 15.0
       3:
+        leather1: 20.0
+        leather2: 20.0
+        leather3: 20.0
+        leather4: 20.0
+        leather5: 20.0
       4:
+        leather1: 10.0
+        leather2: 15.0
+        leather3: 20.0
+        leather4: 30.0
+        leather5: 25.0
       5:
+        leather1: 10.0
+        leather2: 10.0
+        leather3: 10.0
+        leather4: 40.0
+        leather5: 30.0

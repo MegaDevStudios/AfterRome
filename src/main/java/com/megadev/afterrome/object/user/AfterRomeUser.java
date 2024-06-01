@@ -25,7 +25,7 @@ import java.util.List;
 
 @Getter
 @SerializableAs("users")
-public class AfterRomeUser implements User, PointsHolder {
+public class AfterRomeUser implements User {
     private static final MainConfig mainConfig = ConfigManager.getInstance().getConfig(MainConfig.class);
     private static final int MAX_UNIT_PER_POINT = mainConfig.getMaxUnitsPerPoint();
 
@@ -80,8 +80,6 @@ public class AfterRomeUser implements User, PointsHolder {
                 Color.getTranslated(second),
                 input, delay, out
         );
-
-        // getPlayer().showTitle(Title.title(Component.text(first), Component.text(second)));
         // TODO: change deprecated method
     }
 
@@ -115,6 +113,14 @@ public class AfterRomeUser implements User, PointsHolder {
     @Override
     public void addPoints(double amount) {
         points += (int) (amount / MAX_UNIT_PER_POINT);
+    }
+
+    @Override
+    public boolean subtractPoints() {
+        if (points < 1)
+            return false;
+        points--;
+        return true;
     }
 
     @Override

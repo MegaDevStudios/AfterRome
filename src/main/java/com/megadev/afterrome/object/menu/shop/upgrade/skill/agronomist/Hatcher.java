@@ -9,11 +9,22 @@ import com.megadev.afterrome.object.menu.item.MenuItem;
 import com.megadev.afterrome.object.menu.shop.upgrade.skill.Skill;
 
 import com.megadev.afterrome.util.ConditionCalculator;
+import dev.mega.megacore.MegaCore;
+import dev.mega.megacore.util.MegaCoreUtil;
 import lombok.Getter;
+import org.bukkit.Bukkit;
+import org.bukkit.Location;
 import org.bukkit.World;
+import org.bukkit.entity.Chicken;
+import org.bukkit.entity.Entity;
+import org.bukkit.entity.EntityType;
 import org.bukkit.event.Event;
 import org.bukkit.event.entity.CreatureSpawnEvent;
 import org.bukkit.event.player.PlayerEggThrowEvent;
+import org.bukkit.util.BoundingBox;
+
+import java.util.Collection;
+import java.util.List;
 
 @Getter
 public class Hatcher implements Skill {
@@ -38,6 +49,8 @@ public class Hatcher implements Skill {
 
         PlayerEggThrowEvent eggThrowEvent = ((PlayerEggThrowEvent) event);
 
-        eggThrowEvent.setNumHatches((byte) (eggThrowEvent.getNumHatches() * multiplier));
+        eggThrowEvent.setHatching(true);
+        eggThrowEvent.setNumHatches((byte) multiplier);
+
     }
 }
