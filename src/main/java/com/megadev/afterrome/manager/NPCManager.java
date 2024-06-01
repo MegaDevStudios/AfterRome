@@ -3,6 +3,7 @@ package com.megadev.afterrome.manager;
 import com.megadev.afterrome.config.ConfigManager;
 import com.megadev.afterrome.config.manager.ShopManager;
 import com.megadev.afterrome.config.shop.ShopConfig;
+import com.megadev.afterrome.listener.MenuTrait;
 import dev.mega.megacore.MegaCore;
 import dev.mega.megacore.manager.Manager;
 import net.citizensnpcs.api.CitizensAPI;
@@ -34,6 +35,8 @@ public class NPCManager extends Manager {
         String name = shopConfig.getNpcName();
 
         npc = CitizensAPI.getNPCRegistry().createNPC(EntityType.PLAYER, name);
+        npc.addTrait(MenuTrait.class);
+
         npc.spawn(location);
     }
 
