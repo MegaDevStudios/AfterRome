@@ -9,9 +9,6 @@ import com.megadev.afterrome.object.user.User;
 
 import org.bukkit.entity.Player;
 
-import java.lang.reflect.InvocationTargetException;
-import java.util.Optional;
-
 public class SkillsCommand extends BaseCommand {
     @CommandAlias("skills")
     public void onCommand(Player player) {

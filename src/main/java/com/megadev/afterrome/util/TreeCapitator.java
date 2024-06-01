@@ -11,9 +11,11 @@ import java.util.*;
 public class TreeCapitator {
     private final Location location;
     private final Material material;
+    private final MegaCore megaCore;
 
-    public TreeCapitator(Location location, Material material) {
+    public TreeCapitator(Location location, Material material, MegaCore megaCore) {
         this.location = location;
+        this.megaCore = megaCore;
         this.material = material;
     }
 
@@ -49,7 +51,7 @@ public class TreeCapitator {
                     }
                 }
             }
-        }.runTaskTimer(MegaCore.getInstance(), 1, 1);
+        }.runTaskTimer(megaCore, 1, 1);
     }
 
     private List<Location> getNeighboringLocations(Location location) {

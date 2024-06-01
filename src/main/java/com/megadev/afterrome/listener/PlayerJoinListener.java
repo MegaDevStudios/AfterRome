@@ -17,12 +17,15 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 
-import java.util.Optional;
-
 public class PlayerJoinListener implements Listener {
     UserManager userManager = UserManager.getInstance();
     ConfigManager configManager = ConfigManager.getInstance();
-    ConfigUserManager configUserManager = configManager.getManager(ConfigUserManager.class);
+    ConfigUserManager configUserManager = configManager.getConfig(ConfigUserManager.class);
+    MegaCore megaCore;
+
+    public PlayerJoinListener(MegaCore megaCore) {
+        this.megaCore = megaCore;
+    }
 
     @EventHandler
     public void onLogin(PlayerJoinEvent event) {
@@ -43,7 +46,7 @@ public class PlayerJoinListener implements Listener {
         if (user == null) return;
 
         if (user.getProfession() instanceof DefaultProfession) {
-            Menu menu = new ChoiceMenu(user);
+            Menu menu = new ChoiceMenu(user, megaCore);
             menu.open();
         }
     }

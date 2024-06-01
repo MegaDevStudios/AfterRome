@@ -1,12 +1,11 @@
-package com.megadev.afterrome.config.manager;
+package com.megadev.afterrome.config.manager.shop;
 
-import com.megadev.afterrome.config.shop.ShopConfig;
 import com.megadev.afterrome.config.shop.upgrade.*;
 import dev.mega.megacore.config.AbstractManager;
 import org.bukkit.plugin.Plugin;
 
-public class ShopManager extends AbstractManager {
-    public ShopManager(Plugin plugin, String dataFolder) {
+public class UpgradeManager extends AbstractManager {
+    public UpgradeManager(Plugin plugin, String dataFolder) {
         super(plugin, dataFolder);
 
         addConfig(AesculapiusUpgradeShopConfig.class, new AesculapiusUpgradeShopConfig(plugin, getDataFolder() + "/aesculapius"));
@@ -19,7 +18,7 @@ public class ShopManager extends AbstractManager {
         addConfig(SantaUpgradeShopConfig.class, new SantaUpgradeShopConfig(plugin, getDataFolder() + "/santa"));
         addConfig(SheriffUpgradeShopConfig.class, new SheriffUpgradeShopConfig(plugin, getDataFolder() + "/sheriff"));
         addConfig(SonOfMarsUpgradeShopConfig.class, new SonOfMarsUpgradeShopConfig(plugin, getDataFolder() + "/sonOfMars"));
-
-        addConfig(ShopConfig.class, new ShopConfig(plugin, getDataFolder() + "/shop"));
     }
+
+
 }

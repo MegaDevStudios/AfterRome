@@ -1,12 +1,16 @@
 package com.megadev.afterrome.manager;
 
+import com.megadev.afterrome.object.menu.AbstractMenu;
 import com.megadev.afterrome.object.user.User;
 
 import com.megadev.afterrome.storage.RefreshingData;
 import dev.mega.megacore.MegaCore;
 import dev.mega.megacore.manager.Manager;
+import dev.mega.megacore.util.Color;
 import lombok.Getter;
 
+import net.kyori.adventure.text.Component;
+import org.bukkit.Bukkit;
 import org.bukkit.scheduler.BukkitTask;
 
 import java.util.HashMap;
@@ -27,8 +31,15 @@ public class MenuManager extends Manager {
         }
     }
 
-    public void putTaskForUser(User user, BukkitTask task) {
-        refreshingData.addValue(user.getUuid(), task);
+    public void putTaskForUser(User user, AbstractMenu menu) {
+        refreshingData.addValue(user.getUuid(), Bukkit.getScheduler().runTaskTimer(this.megaCore, () -> {
+            if (!menu.getUser().getPlayer().getOpenInventory().title().equals(Component.text(Color.getTranslated(menu.getMenuName())))) {
+                cancelTaskForUser(user);
+                removeTaskForUser(user);
+                return;
+            }
+            menu.update();
+        }, menu.updateTime(), menu.updateTime()));
     }
 
     public void removeTaskForUser(User user) {
@@ -46,6 +57,11 @@ public class MenuManager extends Manager {
     @Override
     public void reload() {
         refreshingData = new RefreshingData();
+    }
+
+    @Override
+    public void enable() {
+
     }
 
     @Override

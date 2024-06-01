@@ -1,8 +1,6 @@
 package com.megadev.afterrome.object.profession;
 
 import com.megadev.afterrome.config.ConfigManager;
-import com.megadev.afterrome.config.manager.ProfessionsManager;
-import com.megadev.afterrome.config.manager.ShopManager;
 import com.megadev.afterrome.config.profession.AgronomistConfig;
 import com.megadev.afterrome.config.shop.upgrade.AgronomistUpgradeShopConfig;
 import com.megadev.afterrome.object.menu.AbstractUpgradeMenu;
@@ -12,6 +10,7 @@ import com.megadev.afterrome.object.menu.shop.upgrade.skill.Skill;
 import com.megadev.afterrome.object.menu.shop.upgrade.skill.SkillType;
 import com.megadev.afterrome.object.menu.shop.upgrade.skill.agronomist.*;
 import com.megadev.afterrome.object.user.User;
+import dev.mega.megacore.MegaCore;
 import lombok.Getter;
 
 import org.jetbrains.annotations.NotNull;
@@ -22,14 +21,16 @@ import java.util.Map;
 @Getter
 public class Agronomist implements Profession {
     List<Skill> skills;
+    private final MegaCore megaCore;
 
-    public Agronomist() {
-       skills = List.of(
+    public Agronomist(MegaCore megaCore) {
+       this.megaCore = megaCore;
+        skills = List.of(
                new Butcher(),
                new Cook(),
                new Farmer(),
                new Hatcher(),
-               new Lumberjack(),
+               new Lumberjack(megaCore),
                new Tanner()
        );
     }
@@ -46,12 +47,9 @@ public class Agronomist implements Profession {
         };
     }
 
-
-
     @Override
     public String getNameOfProfession() {
-        ProfessionsManager shopManager = ConfigManager.getInstance().getManager(ProfessionsManager.class);
-        return shopManager.getConfig(AgronomistConfig.class).getName();
+        return ConfigManager.getInstance().getConfig(AgronomistConfig.class).getName();
     }
 
     @Override
@@ -61,8 +59,7 @@ public class Agronomist implements Profession {
 
     @Override
     public MenuItem getBackgroundItem() {
-        ShopManager shopManager = ConfigManager.getInstance().getManager(ShopManager.class);
-        return shopManager.getConfig(AgronomistUpgradeShopConfig.class).getBackgroundItem();
+        return ConfigManager.getInstance().getConfig(AgronomistUpgradeShopConfig.class).getBackgroundItem();
     }
 
     @Override

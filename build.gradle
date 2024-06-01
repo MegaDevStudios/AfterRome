@@ -43,8 +43,8 @@ repositories {
 dependencies {
     compileOnly group: 'com.mojang', name: 'authlib', version: '1.5.25'
 
-    implementation files (new File("lib/megacore-1.1-beta.jar"))
-    testImplementation files (new File("lib/megacore-1.1-beta.jar"))
+    implementation files (new File("lib/megacore-1.2-beta.jar"))
+    testImplementation files (new File("lib/megacore-1.2-beta.jar"))
 
     implementation 'org.jetbrains:annotations:24.0.0'
     compileOnly "io.papermc.paper:paper-api:1.20.4-R0.1-SNAPSHOT"

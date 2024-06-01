@@ -1,7 +1,7 @@
 package com.megadev.afterrome.config;
 
 import com.megadev.afterrome.config.manager.ProfessionsManager;
-import com.megadev.afterrome.config.manager.ShopManager;
+import com.megadev.afterrome.config.manager.shop.ShopManager;
 import dev.mega.megacore.config.AbstractManager;
 import com.megadev.afterrome.config.user.ConfigUserManager;
 

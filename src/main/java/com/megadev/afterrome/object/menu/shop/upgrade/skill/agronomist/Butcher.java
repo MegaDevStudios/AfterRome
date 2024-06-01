@@ -1,7 +1,5 @@
 package com.megadev.afterrome.object.menu.shop.upgrade.skill.agronomist;
 
-import com.megadev.afterrome.config.manager.ProfessionsManager;
-import com.megadev.afterrome.config.manager.ShopManager;
 import com.megadev.afterrome.config.profession.AgronomistConfig;
 import com.megadev.afterrome.config.shop.upgrade.AgronomistUpgradeShopConfig;
 import com.megadev.afterrome.config.ConfigManager;
@@ -24,8 +22,7 @@ public class Butcher implements Skill {
     private int level = 1;
 
     public Butcher() {
-        ShopManager shopManager = ConfigManager.getInstance().getManager(ShopManager.class);
-        menuItem = shopManager.getConfig(AgronomistUpgradeShopConfig.class).getButcherItem();
+        menuItem = ConfigManager.getInstance().getConfig(AgronomistUpgradeShopConfig.class).getButcherItem();
     }
 
     @Override
@@ -35,8 +32,7 @@ public class Butcher implements Skill {
 
     @Override
     public void execute(Event event) {
-        ProfessionsManager professionsManager = ConfigManager.getInstance().getManager(ProfessionsManager.class);
-        double[] percents = professionsManager.getConfig(AgronomistConfig.class)
+        double[] percents = ConfigManager.getInstance().getConfig(AgronomistConfig.class)
                 .getPercents(this.level, AgronomistConfig.LevelType.MEAT);
         int countOfMeat = ConditionCalculator.choiceOne(percents);
         EntityDeathEvent entityDeathEvent = (EntityDeathEvent) event;

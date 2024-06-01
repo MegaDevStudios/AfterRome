@@ -2,6 +2,7 @@ package com.megadev.afterrome.config;
 
 import dev.mega.megacore.config.Configurator;
 import dev.mega.megacore.util.Color;
+import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.plugin.Plugin;
 import org.jetbrains.annotations.NotNull;
 
@@ -76,6 +77,16 @@ public class MainConfig extends Configurator {
     }
 
     public int getMaxUnitsPerPoint() {
-        return (int) getValue("player.max-units-per-points");
+        return getValue("player.max-units-per-points");
+    }
+
+    @Override
+    public @NotNull String saveToString() {
+        return "";
+    }
+
+    @Override
+    public void loadFromString(@NotNull String s) throws InvalidConfigurationException {
+
     }
 }

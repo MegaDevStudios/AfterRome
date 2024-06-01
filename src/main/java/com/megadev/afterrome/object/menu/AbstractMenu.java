@@ -85,14 +85,7 @@ public abstract class AbstractMenu implements Menu {
             menuManager.removeTaskForUser(user);
         }
 
-        menuManager.putTaskForUser(user, Bukkit.getScheduler().runTaskTimer(MegaCore.getInstance(), () -> {
-            if (!player.getOpenInventory().title().equals(Component.text(Color.getTranslated(getMenuName())))) {
-                menuManager.cancelTaskForUser(user);
-                menuManager.removeTaskForUser(user);
-                return;
-            }
-            update();
-        }, updateTime(), updateTime()));
+        menuManager.putTaskForUser(user, this);
     }
 
     @Override
@@ -118,7 +111,7 @@ public abstract class AbstractMenu implements Menu {
         return items.length;
     }
 
-    protected int updateTime() {
+    public int updateTime() {
         return 20;
     }
 

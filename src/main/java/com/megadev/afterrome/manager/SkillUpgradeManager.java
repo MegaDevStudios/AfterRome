@@ -14,6 +14,11 @@ public class SkillUpgradeManager extends Manager {
     }
 
     @Override
+    public void enable() {
+
+    }
+
+    @Override
     public void disable() {
 
     }

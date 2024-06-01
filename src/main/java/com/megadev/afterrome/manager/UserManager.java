@@ -20,7 +20,7 @@ import java.util.Set;
 @Getter
 public class UserManager {
     ConfigManager configManager = ConfigManager.getInstance();
-    ConfigUserManager configUserManager = configManager.getManager(ConfigUserManager.class);
+    ConfigUserManager configUserManager = configManager.getConfig(ConfigUserManager.class);
 
     @Getter
     private static UserManager instance;
@@ -49,12 +49,10 @@ public class UserManager {
     }
 
     public void saveUser(Player player) {
-        if (!users.isEmpty()) return;
         saveUser(new AfterRomeUser(player));
     }
 
     public void saveUser(AfterRomeUser afterRomeUser) {
-        MegaCore.getInstance().getLogger().info(getUsers().toString());
         users.add(afterRomeUser);
     }
 

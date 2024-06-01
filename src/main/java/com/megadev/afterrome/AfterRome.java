@@ -37,7 +37,7 @@ public final class AfterRome extends MegaCore {
         }
 
         ConfigManager configManager = ConfigManager.getInstance();
-        ConfigUserManager configUserManager = configManager.getManager(ConfigUserManager.class);
+        ConfigUserManager configUserManager = configManager.getConfig(ConfigUserManager.class);
 
         userManager.getUsers().forEach(user -> {
             configUserManager.getAfterRomeUserConfig(user.getUuid()).saveData(user.serialize());
@@ -56,13 +56,12 @@ public final class AfterRome extends MegaCore {
         commandManager.registerCommand(new SkillsCommand());
         commandManager.registerCommand(new ProgCommand());
         commandManager.registerCommand(new ShopCommand());
-        commandManager.registerCommand(new ShopCommand2());
     }
 
     private void setupListeners() {
         PluginManager pluginManager = Bukkit.getPluginManager();
 
-        pluginManager.registerEvents(new PlayerJoinListener(), this);
+        pluginManager.registerEvents(new PlayerJoinListener(this), this);
         pluginManager.registerEvents(new MenuListener(), this);
         pluginManager.registerEvents(new BlockListener(), this);
         pluginManager.registerEvents(new KillListener(), this);

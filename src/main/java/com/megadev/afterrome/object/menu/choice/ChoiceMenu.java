@@ -1,6 +1,5 @@
 package com.megadev.afterrome.object.menu.choice;
 
-import com.megadev.afterrome.AfterRome;
 import com.megadev.afterrome.config.ConfigManager;
 import com.megadev.afterrome.config.MainConfig;
 import com.megadev.afterrome.config.user.ConfigUserManager;
@@ -13,20 +12,21 @@ import com.megadev.afterrome.object.menu.item.MenuItem;
 import com.megadev.afterrome.object.profession.*;
 import com.megadev.afterrome.object.user.User;
 
+import dev.mega.megacore.MegaCore;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryCloseEvent;
 
-import java.util.Optional;
-
 public class ChoiceMenu extends AbstractMenu {
     UserManager userManager = UserManager.getInstance();
     ConfigManager configManager = ConfigManager.getInstance();
-    ConfigUserManager configUserManager = configManager.getManager(ConfigUserManager.class);
+    ConfigUserManager configUserManager = configManager.getConfig(ConfigUserManager.class);
+    private final MegaCore megaCore;
 
-    public ChoiceMenu(User user) {
+    public ChoiceMenu(User user, MegaCore megaCore) {
         super(user, 3);
+        this.megaCore = megaCore;
     }
 
     @Override
@@ -46,7 +46,7 @@ public class ChoiceMenu extends AbstractMenu {
                 .setName(mainConfig.getAgronomistName())
                 .setLore(mainConfig.getAgronomistLore())
                 .toMenuItem()
-                .addClickAction(event -> clickAction(new Agronomist())),
+                .addClickAction(event -> clickAction(new Agronomist(megaCore))),
                 9);
 
         setItem(new HeadBuilder(mainConfig.getArtisanTexture())
@@ -88,8 +88,8 @@ public class ChoiceMenu extends AbstractMenu {
         if (!(event.getInventory().getHolder() instanceof ChoiceMenu)) return;
         if (!(user.getProfession() instanceof DefaultProfession)) return;
 
-        Bukkit.getScheduler().runTaskLater(AfterRome.getInstance(), () -> {
-            Menu choiceMenu = new ChoiceMenu(user);
+        Bukkit.getScheduler().runTaskLater(megaCore, () -> {
+            Menu choiceMenu = new ChoiceMenu(user, megaCore);
             choiceMenu.open();
         }, 1L);
     }
