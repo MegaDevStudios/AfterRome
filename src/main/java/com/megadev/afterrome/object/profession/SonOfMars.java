@@ -40,6 +40,11 @@ public class SonOfMars implements Profession {
     }
 
     @Override
+    public Profession deserialize(Map<String, Object> data) {
+        return null;
+    }
+
+    @Override
     public SaleConfig getSaleConfig() {
         return ConfigManager.getInstance().getConfig(AgronomistSaleConfig.class);
     }

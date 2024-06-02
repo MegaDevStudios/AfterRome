@@ -57,9 +57,4 @@ public class Butcher implements Skill {
         }
         Bukkit.broadcastMessage("[DEBUG] Count of meat added " + countOfMeat);
     }
-
-    @Override
-    public @NotNull Map<String, Object> serialize() {
-        return Map.of();
-    }
 }

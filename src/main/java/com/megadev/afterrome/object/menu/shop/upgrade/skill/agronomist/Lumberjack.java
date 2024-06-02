@@ -42,9 +42,4 @@ public class Lumberjack implements Skill {
             TreecapitatorManager.getInstance().treeCapitate(block);
         }
     }
-
-    @Override
-    public @NotNull Map<String, Object> serialize() {
-        return Map.of("level", level);
-    }
 }

@@ -79,7 +79,7 @@ public abstract class AbstractMenu implements Menu {
 
         ConfigManager.getInstance().getConfig(AgronomistSaleConfig.class).getSaleItems();
 
-        item.doClickActions(event);
+//        item.doClickActions(event);
 
         event.setCancelled(true);
     }

@@ -59,9 +59,4 @@ public class Farmer implements Skill {
         player.sendMessage("[DEBUG] Count of fetus added " + countOfFetus);
         items.add(player.getWorld().dropItem(blockDropItemEvent.getBlock().getLocation().add(0, 1, 0), item.getItemStack().add(countOfFetus)));
     }
-
-    @Override
-    public @NotNull Map<String, Object> serialize() {
-        return Map.of();
-    }
 }

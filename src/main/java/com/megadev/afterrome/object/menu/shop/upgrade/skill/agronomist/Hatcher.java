@@ -41,9 +41,4 @@ public class Hatcher implements Skill {
 
         Bukkit.broadcastMessage("[DEBUG] Multiplier of eggs " + multiplier);
     }
-
-    @Override
-    public @NotNull Map<String, Object> serialize() {
-        return Map.of();
-    }
 }

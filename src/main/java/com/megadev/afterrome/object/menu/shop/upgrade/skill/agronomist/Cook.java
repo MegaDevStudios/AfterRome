@@ -29,9 +29,4 @@ public class Cook implements Skill {
     public void execute(Event event) {
 
     }
-
-    @Override
-    public @NotNull Map<String, Object> serialize() {
-        return Map.of();
-    }
 }

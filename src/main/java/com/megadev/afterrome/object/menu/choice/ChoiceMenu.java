@@ -47,7 +47,7 @@ public class ChoiceMenu extends AbstractMenu {
                 .setName(mainConfig.getAgronomistName())
                 .setLore(mainConfig.getAgronomistLore())
                 .toMenuItem()
-                .addClickAction(event -> clickAction(new Agronomist(megaCore))),
+                .addClickAction(event -> clickAction(new Agronomist())),
                 9);
 
         setItem(new HeadBuilder(mainConfig.getArtisanTexture())
