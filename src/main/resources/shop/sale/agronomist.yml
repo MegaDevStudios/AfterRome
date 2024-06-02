@@ -1,0 +1,80 @@
+menu:
+  name: "Skills"
+  book:
+    name:
+    lore:
+sell-items:
+  HAY_BLOCK: 2
+
+aesculapius:
+  book:
+    name:
+    lore:
+  sell-items:
+    STONE: 1
+    DIRT: 1
+    HAY_BLOCK: 2
+artisan:
+  book:
+    name:
+    lore:
+  sell-items:
+    STONE: 1
+    DIRT: 1
+    HAY_BLOCK: 2
+engineer:
+  book:
+    name:
+    lore:
+  sell-items:
+    STONE: 1
+    DIRT: 1
+    HAY_BLOCK: 2
+forester:
+  book:
+    name:
+    lore:
+  sell-items:
+    STONE: 1
+    DIRT: 1
+    HAY_BLOCK: 2
+initiated:
+  book:
+    name:
+    lore:
+  sell-items:
+    STONE: 1
+    DIRT: 1
+    HAY_BLOCK: 2
+mafia:
+  book:
+    name:
+    lore:
+  sell-items:
+    STONE: 1
+    DIRT: 1
+    HAY_BLOCK: 2
+santa:
+  book:
+    name:
+    lore:
+  sell-items:
+    STONE: 1
+    DIRT: 1
+    HAY_BLOCK: 2
+sheriff:
+  book:
+    name:
+    lore:
+  sell-items:
+    STONE: 1
+    DIRT: 1
+    HAY_BLOCK: 2
+son-of-mars:
+  book:
+    name:
+    lore:
+  sell-items:
+    STONE: 1
+    DIRT: 1
+    HAY_BLOCK: 2

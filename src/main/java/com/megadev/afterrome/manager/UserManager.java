@@ -6,7 +6,6 @@ import com.megadev.afterrome.config.user.UserConfig;
 import com.megadev.afterrome.object.user.AfterRomeUser;
 import com.megadev.afterrome.object.user.User;
 
-import dev.mega.megacore.MegaCore;
 import dev.mega.megacore.config.serializer.SerializeUtil;
 import lombok.Getter;
 
@@ -15,13 +14,12 @@ import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 
 import java.util.HashSet;
-import java.util.Optional;
 import java.util.Set;
 
 @Getter
 public class UserManager {
-    ConfigManager configManager = ConfigManager.getInstance();
-    ConfigUserManager configUserManager = configManager.getConfig(ConfigUserManager.class);
+    private final ConfigManager configManager = ConfigManager.getInstance();
+    private final ConfigUserManager configUserManager = configManager.getConfig(ConfigUserManager.class);
 
     @Getter
     private static UserManager instance;
