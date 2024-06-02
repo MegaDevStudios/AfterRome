@@ -13,7 +13,6 @@ import org.bukkit.configuration.serialization.SerializableAs;
 import java.util.List;
 import java.util.Map;
 
-@SerializableAs("profession")
 public interface Profession extends ConfigurationSerializable {
     String getName();
 

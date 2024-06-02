@@ -2,11 +2,10 @@ package com.megadev.afterrome.config.manager;
 
 import com.megadev.afterrome.config.profession.*;
 
-import dev.mega.megacore.config.AbstractManager;
-
+import dev.mega.megacore.config.SubFolder;
 import org.bukkit.plugin.Plugin;
 
-public class ProfessionsManager extends AbstractManager {
+public class ProfessionsManager extends SubFolder {
     public ProfessionsManager(Plugin plugin, String dataFolder) {
         super(plugin, dataFolder);
 

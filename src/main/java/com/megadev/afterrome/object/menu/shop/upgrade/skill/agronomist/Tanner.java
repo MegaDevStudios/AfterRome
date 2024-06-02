@@ -6,9 +6,12 @@ import com.megadev.afterrome.config.ConfigManager;
 import com.megadev.afterrome.object.menu.item.MenuItem;
 import com.megadev.afterrome.object.menu.shop.upgrade.skill.Skill;
 
+import com.megadev.afterrome.object.user.AfterRomeUser;
 import com.megadev.afterrome.util.ConditionCalculator;
 import lombok.Getter;
 import org.bukkit.Material;
+import org.bukkit.configuration.serialization.ConfigurationSerialization;
+import org.bukkit.configuration.serialization.SerializableAs;
 import org.bukkit.event.Event;
 import org.bukkit.event.entity.EntityDeathEvent;
 import org.bukkit.inventory.ItemStack;
@@ -16,8 +19,9 @@ import org.bukkit.inventory.ItemStack;
 import java.util.List;
 
 @Getter
+@SerializableAs("tanner")
 public class Tanner implements Skill {
-    private final MenuItem menuItem;
+    private final MenuItem menuItem = ConfigManager.getInstance().getConfig(AgronomistUpgradeShopConfig.class).getCookItem();
     private int level = 1;
 
     public Tanner() {
@@ -41,5 +45,9 @@ public class Tanner implements Skill {
         if (items.stream().map(ItemStack::getType).toList().contains(Material.LEATHER)) {
             items.stream().filter(item -> item.getType() == Material.LEATHER).forEach(itemStack -> itemStack.setAmount(countOfLeather));
         }
+    }
+
+    static {
+        ConfigurationSerialization.registerClass(Tanner.class);
     }
 }

@@ -1,13 +1,13 @@
 package com.megadev.afterrome.config.user;
 
-import dev.mega.megacore.config.AbstractManager;
+import dev.mega.megacore.config.SubFolder;
 import org.bukkit.plugin.Plugin;
 
 import java.io.*;
 import java.util.Objects;
 import java.util.UUID;
 
-public class ConfigUserManager extends AbstractManager {
+public class ConfigUserManager extends SubFolder {
     public ConfigUserManager(Plugin plugin, String dataFolder) {
         super(plugin, dataFolder);
     }

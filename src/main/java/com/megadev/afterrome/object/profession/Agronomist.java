@@ -21,11 +21,10 @@ import org.bukkit.configuration.serialization.ConfigurationSerialization;
 import org.bukkit.configuration.serialization.SerializableAs;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Getter
-
+@SerializableAs("agronomist")
 public class Agronomist implements Profession {
     List<Skill> skills;
 
@@ -41,7 +40,17 @@ public class Agronomist implements Profession {
     }
 
     public Agronomist(Map<String, Object> data) {
-        this.skills = (List<Skill>) data.get("skills");
+        List<Map<String, Object>> mappedSkills = (ArrayList<Map<String, Object>>) data.get("skills"); // List<{level: 0}>
+        List<Skill> skillList = List.of(
+                new Butcher((Integer) mappedSkills.get(0).get("level")),
+                new Cook((Integer) mappedSkills.get(1).get("level")),
+                new Farmer((Integer) mappedSkills.get(2).get("level")),
+                new Hatcher((Integer) mappedSkills.get(3).get("level")),
+                new Lumberjack((Integer) mappedSkills.get(4).get("level")),
+                new Tanner((Integer) mappedSkills.get(5).get("level"))
+        );
+
+        this.skills = skillList;
     }
 
     @Override
@@ -78,7 +87,16 @@ public class Agronomist implements Profession {
 
     @Override
     public @NotNull Map<String, Object> serialize() {
-        return Map.of("skills", skills.stream().map(ConfigurationSerializable::serialize));
+        Map<String, Object> skills = Map.of(
+                "butcher", getSkill(SkillType.BUTCHER).serialize(), // "butcher" -> {"level": 0}
+                "cook", getSkill(SkillType.COOK).serialize(),
+                "farmer", getSkill(SkillType.FARMER).serialize(),
+                "hatcher", getSkill(SkillType.HATCHER).serialize(),
+                "lumberjack", getSkill(SkillType.LUMBERJACK).serialize(),
+                "tanner", getSkill(SkillType.TANNER).serialize()
+        );
+
+        return Map.of("skills", skills);
     }
 
     @Override

@@ -1,4 +1,4 @@
-package com.megadev.afterrome.manager.ability;
+package com.megadev.afterrome.manager;
 
 import com.megadev.afterrome.util.TreeCapitator;
 import dev.mega.megacore.MegaCore;

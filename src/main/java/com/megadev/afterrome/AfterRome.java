@@ -14,7 +14,7 @@ import com.megadev.afterrome.listener.skill.BlockListener;
 import com.megadev.afterrome.listener.skill.KillListener;
 import com.megadev.afterrome.listener.skill.SpawnListener;
 import com.megadev.afterrome.manager.MenuManager;
-import com.megadev.afterrome.manager.ability.TreecapitatorManager;
+import com.megadev.afterrome.manager.TreecapitatorManager;
 import com.megadev.afterrome.manager.UserManager;
 
 import dev.mega.megacore.MegaCore;
@@ -24,7 +24,7 @@ import org.bukkit.plugin.PluginManager;
 
 public class AfterRome extends MegaCore {
     public AfterRome() {
-        super(ConfigManager.getInstance());
+        super(ConfigManager.getInstance(), "com.megadev.afterrome.manager");
     }
 
     @Override

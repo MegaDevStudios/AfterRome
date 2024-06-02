@@ -6,10 +6,13 @@ import com.megadev.afterrome.config.ConfigManager;
 import com.megadev.afterrome.object.menu.item.MenuItem;
 import com.megadev.afterrome.object.menu.shop.upgrade.skill.Skill;
 
+import com.megadev.afterrome.object.user.AfterRomeUser;
 import com.megadev.afterrome.util.ConditionCalculator;
 import dev.mega.megacore.util.MegaCoreUtil;
 import lombok.Getter;
 import org.bukkit.Material;
+import org.bukkit.configuration.serialization.ConfigurationSerialization;
+import org.bukkit.configuration.serialization.SerializableAs;
 import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Event;
@@ -20,12 +23,13 @@ import java.util.List;
 import java.util.Map;
 
 @Getter
+@SerializableAs("farmer")
 public class Farmer implements Skill {
-    private final MenuItem menuItem;
+    private final MenuItem menuItem = ConfigManager.getInstance().getConfig(AgronomistUpgradeShopConfig.class).getCookItem();
     private int level = 1;
 
-    public Farmer() {
-        menuItem = ConfigManager.getInstance().getConfig(AgronomistUpgradeShopConfig.class).getFarmerItem();
+    public Cook(int level) {
+        this.level = level;
     }
 
     @Override
@@ -58,5 +62,9 @@ public class Farmer implements Skill {
         MegaCoreUtil.getLogger().info("Count of fetus added " + countOfFetus);
         player.sendMessage("[DEBUG] Count of fetus added " + countOfFetus);
         items.add(player.getWorld().dropItem(blockDropItemEvent.getBlock().getLocation().add(0, 1, 0), item.getItemStack().add(countOfFetus)));
+    }
+
+    static {
+        ConfigurationSerialization.registerClass(Farmer.class);
     }
 }

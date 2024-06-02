@@ -1,9 +1,9 @@
 package com.megadev.afterrome.config.manager.shop;
 
-import dev.mega.megacore.config.AbstractManager;
+import dev.mega.megacore.config.SubFolder;
 import org.bukkit.plugin.Plugin;
 
-public class ShopManager extends AbstractManager {
+public class ShopManager extends SubFolder {
     public ShopManager(Plugin plugin, String dataFolder) {
         super(plugin, dataFolder);
 

@@ -2,7 +2,7 @@ package dev.mega.afterrome.manager;
 
 import dev.mega.megacore.MegaCore;
 import dev.mega.megacore.manager.Manager;
-import dev.mega.megacore.util.ClassFinder;
+import dev.mega.megacore.util.ClassUtil;
 import lombok.Getter;
 
 import java.util.HashMap;
@@ -26,7 +26,7 @@ public class AfterRomeManager extends Manager {
     }
 
     private void registerManagers() {
-        Set<Class<?>> managerClasses = ClassFinder.findSubclasses("dev.mega.myplugin.manager.module", Manager.class);
+        Set<Class<?>> managerClasses = ClassUtil.findSubclasses("dev.mega.myplugin.manager.module", Manager.class);
         for (Class<?> managerClass : managerClasses) {
             try {
                 Manager manager = (Manager) managerClass.getDeclaredConstructor(MegaCore.class).newInstance(megaCore);

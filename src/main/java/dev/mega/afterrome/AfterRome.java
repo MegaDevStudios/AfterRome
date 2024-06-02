@@ -1,11 +1,12 @@
 package dev.mega.afterrome;
 
+import com.megadev.afterrome.config.ConfigManager;
 import dev.mega.afterrome.manager.AfterRomeManager;
 import dev.mega.megacore.MegaCore;
 
 public class AfterRome extends MegaCore {
     public AfterRome() {
-        super(null);
+        super(ConfigManager.getInstance(), "");
     }
 
     @Override

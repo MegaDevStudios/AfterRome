@@ -1,10 +1,10 @@
 package com.megadev.afterrome.config.manager.shop;
 
 import com.megadev.afterrome.config.shop.upgrade.*;
-import dev.mega.megacore.config.AbstractManager;
+import dev.mega.megacore.config.SubFolder;
 import org.bukkit.plugin.Plugin;
 
-public class UpgradeManager extends AbstractManager {
+public class UpgradeManager extends SubFolder {
     public UpgradeManager(Plugin plugin, String dataFolder) {
         super(plugin, dataFolder);
 

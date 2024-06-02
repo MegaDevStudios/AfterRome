@@ -2,14 +2,14 @@ package com.megadev.afterrome.config;
 
 import com.megadev.afterrome.config.manager.ProfessionsManager;
 import com.megadev.afterrome.config.manager.shop.ShopManager;
-import dev.mega.megacore.config.AbstractManager;
 import com.megadev.afterrome.config.user.ConfigUserManager;
 
+import dev.mega.megacore.config.SubFolder;
 import lombok.Getter;
 
 import org.bukkit.plugin.Plugin;
 
-public class ConfigManager extends AbstractManager {
+public class ConfigManager extends SubFolder {
     @Getter
     private static ConfigManager instance;
 
