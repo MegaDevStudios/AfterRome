@@ -4,9 +4,11 @@ import com.megadev.afterrome.config.ConfigManager;
 import dev.mega.afterrome.manager.AfterRomeManager;
 import dev.mega.megacore.MegaCore;
 
+import java.lang.reflect.InvocationTargetException;
+
 public class AfterRome extends MegaCore {
-    public AfterRome() {
-        super(ConfigManager.getInstance(), "");
+    public AfterRome() throws InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
+        super(ConfigManager.class, "");
     }
 
     @Override

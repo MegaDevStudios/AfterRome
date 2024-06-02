@@ -4,26 +4,16 @@ import com.megadev.afterrome.config.manager.ProfessionsManager;
 import com.megadev.afterrome.config.manager.shop.ShopManager;
 import com.megadev.afterrome.config.user.ConfigUserManager;
 
+import dev.mega.megacore.MegaCore;
 import dev.mega.megacore.config.SubFolder;
-import lombok.Getter;
-
-import org.bukkit.plugin.Plugin;
 
 public class ConfigManager extends SubFolder {
-    @Getter
-    private static ConfigManager instance;
+    public ConfigManager(MegaCore megaCore) {
+        super(megaCore, ".");
 
-    protected ConfigManager(Plugin plugin, String dataFolder) {
-        super(plugin, dataFolder);
-
-        addConfig(ProfessionsManager.class, new ProfessionsManager(plugin, "professions"));
-        addConfig(ShopManager.class, new ShopManager(plugin, "shop"));
-        addConfig(MainConfig.class, new MainConfig(plugin, "config"));
-        addConfig(ConfigUserManager.class, new ConfigUserManager(plugin, "data"));
-    }
-
-    public static void init(Plugin plugin) {
-        if (instance == null)
-            instance = new ConfigManager(plugin, ".");
+        addConfig(ProfessionsManager.class, new ProfessionsManager(megaCore, "professions"));
+        addConfig(ShopManager.class, new ShopManager(megaCore, "shop"));
+        addConfig(MainConfig.class, new MainConfig(megaCore, "config"));
+        addConfig(ConfigUserManager.class, new ConfigUserManager(megaCore, "data"));
     }
 }

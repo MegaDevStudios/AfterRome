@@ -19,9 +19,6 @@ import java.util.Set;
 
 @Getter
 public class UserManager extends Manager {
-    private final ConfigManager configManager = ConfigManager.getInstance();
-    private final ConfigUserManager configUserManager = configManager.getConfig(ConfigUserManager.class);
-
     @Getter
     private static UserManager instance;
     private final Set<User> users = new HashSet<>();
@@ -31,11 +28,14 @@ public class UserManager extends Manager {
             instance = new UserManager(megaCore);
     }
 
-    public UserManager(MegaCore plugin) {
-        super(plugin);
+    public UserManager(MegaCore megaCore) {
+        super(megaCore);
     }
 
     public void loadUsers() {
+        ConfigManager configManager = (ConfigManager) megaCore.getConfigManager();
+        ConfigUserManager configUserManager = configManager.getConfig(ConfigUserManager.class);
+
         for (Player player : Bukkit.getOnlinePlayers()) {
             UserConfig userConfig = configUserManager.getAfterRomeUserConfig(player.getUniqueId());
             if (configUserManager.userExist(player.getUniqueId())) {
@@ -73,11 +73,12 @@ public class UserManager extends Manager {
 
     @Override
     public void enable() {
-
+        loadUsers();
+        setRunning(true);
     }
 
     @Override
     public void disable() {
-
+        setRunning(false);
     }
 }
