@@ -12,7 +12,7 @@ import java.util.Map;
 
 public class Santa implements HiddenProfession {
     @Override
-    public String getNameOfProfession() {
+    public String getName() {
         return "";
     }
 

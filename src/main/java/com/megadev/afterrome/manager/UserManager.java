@@ -35,7 +35,6 @@ public class UserManager {
 
     public UserManager(Plugin plugin) {
         this.plugin = plugin;
-        loadUsers();
     }
 
     public void loadUsers() {

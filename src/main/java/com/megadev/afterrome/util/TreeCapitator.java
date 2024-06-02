@@ -1,6 +1,7 @@
 package com.megadev.afterrome.util;
 
 import dev.mega.megacore.MegaCore;
+import lombok.Getter;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
@@ -8,14 +9,17 @@ import org.bukkit.scheduler.BukkitRunnable;
 
 import java.util.*;
 
+@Getter
 public class TreeCapitator {
-    private final Location location;
-    private final Material material;
     private final MegaCore megaCore;
 
-    public TreeCapitator(Location location, Material material, MegaCore megaCore) {
-        this.location = location;
+    private final Location location;
+    private final Material material;
+
+    public TreeCapitator(MegaCore megaCore, Location location, Material material) {
         this.megaCore = megaCore;
+
+        this.location = location;
         this.material = material;
     }
 

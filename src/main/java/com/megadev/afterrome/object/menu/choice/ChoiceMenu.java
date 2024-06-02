@@ -104,7 +104,7 @@ public class ChoiceMenu extends AbstractMenu {
         if (!(getUser().getProfession() instanceof DefaultProfession)) return;
         getUser().setProfession(profession);
 
-        SerializeUtil.serialize(configUserManager.getAfterRomeUserConfig(getUser().getUuid()), getUser());
+//        SerializeUtil.serialize(configUserManager.getAfterRomeUserConfig(getUser().getUuid()), getUser());
         close();
     }
 

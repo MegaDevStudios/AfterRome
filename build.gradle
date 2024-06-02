@@ -38,6 +38,9 @@ repositories {
         name = 'citizens-repo'
         url = 'https://maven.citizensnpcs.co/repo'
     }
+
+    mavenCentral()
+    mavenLocal()
 }
 
 dependencies {

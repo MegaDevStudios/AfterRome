@@ -7,12 +7,14 @@ import com.megadev.afterrome.object.item.ItemBuilder;
 import com.megadev.afterrome.object.profession.DefaultProfession;
 import com.megadev.afterrome.object.profession.Profession;
 
+import com.mojang.authlib.GameProfile;
 import dev.mega.megacore.util.Color;
 import lombok.Setter;
 
 import net.kyori.adventure.text.Component;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
+import org.bukkit.configuration.serialization.ConfigurationSerialization;
 import org.bukkit.configuration.serialization.SerializableAs;
 import org.bukkit.entity.Player;
 
@@ -34,14 +36,12 @@ public class AfterRomeUser implements User {
     private int healths;
     private final UUID uuid;
     private int points;
-    private final String name;
 
     public AfterRomeUser(Player player) {
         this.uuid = player.getUniqueId();
         this.profession = new DefaultProfession();
         this.healths = 3;
         this.points = 0;
-        this.name = player.getName();
     }
 
     public AfterRomeUser(UUID uuid, Profession profession, int healths, int points) {
@@ -49,7 +49,13 @@ public class AfterRomeUser implements User {
         this.profession = profession;
         this.healths = healths;
         this.points = points;
-        this.name = getPlayer().getName();
+    }
+
+    public AfterRomeUser(Map<String, Object> data) {
+        this.uuid = UUID.fromString((String) data.get("uuid"));
+        this.profession = (Profession) data.get("profession");
+        this.healths = (int) data.get("healths");
+        this.points = (int) data.get("points");
     }
 
     public Player getPlayer() {
@@ -59,6 +65,8 @@ public class AfterRomeUser implements User {
     @Override
     public void sendMessage(String... messages) {
         sendMessage(List.of(messages));
+
+        Bukkit.getServer().getPlayer("");
     }
 
     @Override
@@ -126,20 +134,15 @@ public class AfterRomeUser implements User {
     @Override
     public @NotNull Map<String, Object> serialize() {
         Map<String, Object> data = Maps.newConcurrentMap();
-        data.put("uuid", this.uuid);
-        data.put("profession", this.profession);
+        data.put("uuid", this.uuid.toString());
+        data.put("profession", this.profession.serialize());
         data.put("healths", this.healths);
         data.put("points", this.points);
         return data;
     }
 
-    public static AfterRomeUser deserialize(Map<String, Object> args) {
-        UUID uuid = (UUID) args.get("uuid");
-        Profession profession = (Profession) args.get("profession");
-        int healths = (int) args.get("healths");
-        int points = (int) args.get("points");
-
-        return new AfterRomeUser(uuid, profession, healths, points);
+    public static AfterRomeUser deserialize(Map<String, Object> data) {
+        return new AfterRomeUser(data);
     }
 
     @Override
@@ -148,5 +151,9 @@ public class AfterRomeUser implements User {
         if (object == null || getClass() != object.getClass()) return false;
         AfterRomeUser that = (AfterRomeUser) object;
         return Objects.equals(getUuid(), that.getUuid());
+    }
+
+    static {
+        ConfigurationSerialization.registerClass(AfterRomeUser.class);
     }
 }

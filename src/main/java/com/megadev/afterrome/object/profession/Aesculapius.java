@@ -17,7 +17,7 @@ public class Aesculapius implements Profession {
     List<Skill> skills;
 
     @Override
-    public String getNameOfProfession() {
+    public String getName() {
         return ConfigManager.getInstance().getConfig(AesculapiusConfig.class).getName();
     }
 

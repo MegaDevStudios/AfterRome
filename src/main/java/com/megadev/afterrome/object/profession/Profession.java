@@ -9,9 +9,10 @@ import com.megadev.afterrome.object.user.User;
 import org.bukkit.configuration.serialization.ConfigurationSerializable;
 
 import java.util.List;
+import java.util.Map;
 
 public interface Profession extends ConfigurationSerializable {
-    String getNameOfProfession();
+    String getName();
 
     AbstractUpgradeMenu getUpgradeMenu(User user);
 
@@ -20,4 +21,6 @@ public interface Profession extends ConfigurationSerializable {
     List<Skill> getSkills();
 
     Skill getSkill(SkillType skill);
+
+    Profession deserialize(Map<String, Object> data);
 }

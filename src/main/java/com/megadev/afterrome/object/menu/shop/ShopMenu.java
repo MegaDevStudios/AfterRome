@@ -19,18 +19,17 @@ public class ShopMenu extends AbstractMenu {
 
     @Override
     protected void setMenuItems() {
-        for (int i = 0; i < getSize(); i++) {
+        for (byte i = 0; i < getSize(); i++) {
             if (i == getSize() / 2) continue;
 
             setItem(new MenuItem(Material.GRAY_STAINED_GLASS_PANE), i);
         }
 
         setItem(new MenuItem(new ItemBuilder(Material.WRITABLE_BOOK)
-                .setName(profession.getNameOfProfession())
+                .setName(profession.getName())
                 .setLore("&8Блок пшеницы - 2 очка", "&8Перья 11шт - 4 очка", "&8Золотое яблоко - 10 очков")
                 .toItemStack()
         ), getSize() - 1);
-
     }
 
     @Override

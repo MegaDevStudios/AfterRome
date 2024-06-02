@@ -1,10 +1,8 @@
 package com.megadev.afterrome.config.shop.upgrade;
 
 import com.megadev.afterrome.manager.UserManager;
-import com.megadev.afterrome.object.menu.action.ClickAction;
 import com.megadev.afterrome.object.menu.item.MenuItem;
 
-import com.megadev.afterrome.object.menu.shop.upgrade.skill.Skill;
 import com.megadev.afterrome.object.menu.shop.upgrade.skill.SkillType;
 import com.megadev.afterrome.object.user.User;
 import dev.mega.megacore.config.Configurator;

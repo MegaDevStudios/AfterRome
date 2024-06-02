@@ -15,7 +15,7 @@ public class Engineer implements HiddenProfession {
 
 
     @Override
-    public String getNameOfProfession() {
+    public String getName() {
         return "";
     }
 

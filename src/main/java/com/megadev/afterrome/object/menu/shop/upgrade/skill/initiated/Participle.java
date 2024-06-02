@@ -7,6 +7,9 @@ import com.megadev.afterrome.object.menu.shop.upgrade.skill.Skill;
 
 import lombok.Getter;
 import org.bukkit.event.Event;
+import org.jetbrains.annotations.NotNull;
+
+import java.util.Map;
 
 @Getter
 public class Participle implements Skill {
@@ -29,5 +32,10 @@ public class Participle implements Skill {
     @Override
     public void execute(Event event) {
 
+    }
+
+    @Override
+    public @NotNull Map<String, Object> serialize() {
+        return Map.of();
     }
 }

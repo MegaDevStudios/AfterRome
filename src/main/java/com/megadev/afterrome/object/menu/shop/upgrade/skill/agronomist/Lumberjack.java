@@ -3,25 +3,25 @@ package com.megadev.afterrome.object.menu.shop.upgrade.skill.agronomist;
 import com.megadev.afterrome.config.profession.AgronomistConfig;
 import com.megadev.afterrome.config.shop.upgrade.AgronomistUpgradeShopConfig;
 import com.megadev.afterrome.config.ConfigManager;
+import com.megadev.afterrome.manager.ability.TreecapitatorManager;
 import com.megadev.afterrome.object.menu.item.MenuItem;
 import com.megadev.afterrome.object.menu.shop.upgrade.skill.Skill;
 
 import com.megadev.afterrome.util.ConditionCalculator;
-import com.megadev.afterrome.util.TreeCapitator;
-import dev.mega.megacore.MegaCore;
 import lombok.Getter;
 import org.bukkit.block.Block;
 import org.bukkit.event.Event;
 import org.bukkit.event.block.BlockBreakEvent;
+import org.jetbrains.annotations.NotNull;
+
+import java.util.Map;
 
 @Getter
 public class Lumberjack implements Skill {
     private final MenuItem menuItem;
     private int level = 1;
-    private final MegaCore megaCore;
 
-    public Lumberjack(MegaCore megaCore) {
-        this.megaCore = megaCore;
+    public Lumberjack() {
         menuItem = ConfigManager.getInstance().getConfig(AgronomistUpgradeShopConfig.class).getLumberjackItem();
     }
 
@@ -39,8 +39,12 @@ public class Lumberjack implements Skill {
         Block block = breakEvent.getBlock();
 
         if (ConditionCalculator.isPassed(percent) == 1) {
-            TreeCapitator treeCapitator = new TreeCapitator(block.getLocation(), block.getType(), megaCore);
-            treeCapitator.treeCapitate();
+            TreecapitatorManager.getInstance().treeCapitate(block);
         }
+    }
+
+    @Override
+    public @NotNull Map<String, Object> serialize() {
+        return Map.of("level", level);
     }
 }

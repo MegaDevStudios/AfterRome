@@ -14,6 +14,7 @@ import com.megadev.afterrome.listener.skill.BlockListener;
 import com.megadev.afterrome.listener.skill.KillListener;
 import com.megadev.afterrome.listener.skill.SpawnListener;
 import com.megadev.afterrome.manager.MenuManager;
+import com.megadev.afterrome.manager.ability.TreecapitatorManager;
 import com.megadev.afterrome.manager.UserManager;
 
 import dev.mega.megacore.MegaCore;
@@ -46,7 +47,8 @@ public class AfterRome extends MegaCore {
         ConfigUserManager configUserManager = configManager.getConfig(ConfigUserManager.class);
 
         userManager.getUsers().forEach(user -> {
-            SerializeUtil.serialize(configUserManager.getAfterRomeUserConfig(user.getUuid()), user);
+            UserConfig userConfig = configUserManager.getAfterRomeUserConfig(user.getUuid());
+            SerializeUtil.serialize(userConfig, user);
         });
     }
 
@@ -55,6 +57,7 @@ public class AfterRome extends MegaCore {
         MenuManager.init(this);
         MenuManager.getInstance().reload();
         UserManager.init(this);
+        TreecapitatorManager.init(this);
     }
 
     private void setupCommands() {

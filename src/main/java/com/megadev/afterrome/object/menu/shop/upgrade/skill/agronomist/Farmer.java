@@ -7,14 +7,17 @@ import com.megadev.afterrome.object.menu.item.MenuItem;
 import com.megadev.afterrome.object.menu.shop.upgrade.skill.Skill;
 
 import com.megadev.afterrome.util.ConditionCalculator;
+import dev.mega.megacore.util.MegaCoreUtil;
 import lombok.Getter;
 import org.bukkit.Material;
 import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Event;
 import org.bukkit.event.block.BlockDropItemEvent;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
+import java.util.Map;
 
 @Getter
 public class Farmer implements Skill {
@@ -52,7 +55,13 @@ public class Farmer implements Skill {
             items = List.of(item);
             return;
         }
-
+        MegaCoreUtil.getLogger().info("Count of fetus added " + countOfFetus);
+        player.sendMessage("[DEBUG] Count of fetus added " + countOfFetus);
         items.add(player.getWorld().dropItem(blockDropItemEvent.getBlock().getLocation().add(0, 1, 0), item.getItemStack().add(countOfFetus)));
+    }
+
+    @Override
+    public @NotNull Map<String, Object> serialize() {
+        return Map.of();
     }
 }

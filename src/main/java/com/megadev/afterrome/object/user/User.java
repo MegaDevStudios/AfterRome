@@ -11,6 +11,9 @@ import org.bukkit.inventory.ItemStack;
 import java.util.List;
 import java.util.UUID;
 
+/**
+ *
+ */
 public interface User extends ConfigurationSerializable, PointsHolder {
 
     Player getPlayer();

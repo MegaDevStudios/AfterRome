@@ -9,12 +9,15 @@ import com.megadev.afterrome.object.menu.shop.upgrade.skill.Skill;
 import com.megadev.afterrome.util.ConditionCalculator;
 import lombok.Getter;
 
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.event.Event;
 import org.bukkit.event.entity.EntityDeathEvent;
 import org.bukkit.inventory.ItemStack;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
+import java.util.Map;
 
 @Getter
 public class Butcher implements Skill {
@@ -52,6 +55,11 @@ public class Butcher implements Skill {
                 items.get(1).getType() == Material.MUTTON)) {
             items.get(1).setAmount(countOfMeat);
         }
+        Bukkit.broadcastMessage("[DEBUG] Count of meat added " + countOfMeat);
+    }
 
+    @Override
+    public @NotNull Map<String, Object> serialize() {
+        return Map.of();
     }
 }

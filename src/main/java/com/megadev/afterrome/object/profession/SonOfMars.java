@@ -12,7 +12,7 @@ import java.util.Map;
 
 public class SonOfMars implements Profession {
     @Override
-    public String getNameOfProfession() {
+    public String getName() {
         return "";
     }
 

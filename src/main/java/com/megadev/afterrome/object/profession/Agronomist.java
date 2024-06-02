@@ -9,10 +9,13 @@ import com.megadev.afterrome.object.menu.shop.upgrade.menu.AgronomistMenu;
 import com.megadev.afterrome.object.menu.shop.upgrade.skill.Skill;
 import com.megadev.afterrome.object.menu.shop.upgrade.skill.SkillType;
 import com.megadev.afterrome.object.menu.shop.upgrade.skill.agronomist.*;
+import com.megadev.afterrome.object.user.AfterRomeUser;
 import com.megadev.afterrome.object.user.User;
 import dev.mega.megacore.MegaCore;
 import lombok.Getter;
 
+import org.bukkit.configuration.serialization.ConfigurationSerializable;
+import org.bukkit.configuration.serialization.ConfigurationSerialization;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
@@ -21,18 +24,20 @@ import java.util.Map;
 @Getter
 public class Agronomist implements Profession {
     List<Skill> skills;
-    private final MegaCore megaCore;
 
-    public Agronomist(MegaCore megaCore) {
-       this.megaCore = megaCore;
+    public Agronomist() {
         skills = List.of(
                new Butcher(),
                new Cook(),
                new Farmer(),
                new Hatcher(),
-               new Lumberjack(megaCore),
+               new Lumberjack(),
                new Tanner()
        );
+    }
+
+    public Agronomist(Map<String, Object> data) {
+        this.skills = (List<Skill>) data.get("skills");
     }
 
     @Override
@@ -48,7 +53,7 @@ public class Agronomist implements Profession {
     }
 
     @Override
-    public String getNameOfProfession() {
+    public String getName() {
         return ConfigManager.getInstance().getConfig(AgronomistConfig.class).getName();
     }
 
@@ -64,6 +69,15 @@ public class Agronomist implements Profession {
 
     @Override
     public @NotNull Map<String, Object> serialize() {
-        return Map.of("skills", skills);
+        return Map.of("skills", skills.stream().map(ConfigurationSerializable::serialize));
+    }
+
+    @Override
+    public Profession deserialize(Map<String, Object> data) {
+        return new Agronomist(data);
+    }
+
+    static {
+        ConfigurationSerialization.registerClass(Agronomist.class);
     }
 }

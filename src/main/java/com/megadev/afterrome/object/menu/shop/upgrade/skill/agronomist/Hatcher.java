@@ -8,8 +8,12 @@ import com.megadev.afterrome.object.menu.shop.upgrade.skill.Skill;
 
 import com.megadev.afterrome.util.ConditionCalculator;
 import lombok.Getter;
+import org.bukkit.Bukkit;
 import org.bukkit.event.Event;
 import org.bukkit.event.player.PlayerEggThrowEvent;
+import org.jetbrains.annotations.NotNull;
+
+import java.util.Map;
 
 @Getter
 public class Hatcher implements Skill {
@@ -35,5 +39,11 @@ public class Hatcher implements Skill {
         eggThrowEvent.setHatching(true);
         eggThrowEvent.setNumHatches((byte) multiplier);
 
+        Bukkit.broadcastMessage("[DEBUG] Multiplier of eggs " + multiplier);
+    }
+
+    @Override
+    public @NotNull Map<String, Object> serialize() {
+        return Map.of();
     }
 }
