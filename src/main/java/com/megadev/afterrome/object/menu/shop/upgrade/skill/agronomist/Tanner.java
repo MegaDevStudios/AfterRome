@@ -21,11 +21,11 @@ import java.util.List;
 @Getter
 @SerializableAs("tanner")
 public class Tanner implements Skill {
-    private final MenuItem menuItem = ConfigManager.getInstance().getConfig(AgronomistUpgradeShopConfig.class).getCookItem();
-    private int level = 1;
+    private final MenuItem menuItem = ConfigManager.getInstance().getConfig(AgronomistUpgradeShopConfig.class).getTannerItem();
+    private int level;
 
-    public Tanner() {
-        menuItem = ConfigManager.getInstance().getConfig(AgronomistUpgradeShopConfig.class).getTannerItem();
+    public Tanner(int level) {
+        this.level = level;
     }
 
     @Override

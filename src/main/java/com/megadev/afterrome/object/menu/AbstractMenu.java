@@ -1,22 +1,17 @@
 package com.megadev.afterrome.object.menu;
 
 import com.megadev.afterrome.config.ConfigManager;
-import com.megadev.afterrome.config.shop.sale.AgronomistSaleConfig;
-import com.megadev.afterrome.config.shop.sale.SaleConfig;
 import com.megadev.afterrome.manager.MenuManager;
 import com.megadev.afterrome.manager.UserManager;
 import com.megadev.afterrome.object.menu.item.MenuItem;
 
 import com.megadev.afterrome.object.user.User;
-import dev.mega.megacore.MegaCore;
+import com.megadev.afterrome.manager.SaleTransactionManager;
 import dev.mega.megacore.util.Color;
 import lombok.Getter;
 
-import net.kyori.adventure.text.Component;
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.Material;
-import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.inventory.InventoryCloseEvent;
@@ -28,6 +23,7 @@ import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 
 @Getter
@@ -69,19 +65,26 @@ public abstract class AbstractMenu implements Menu {
     public void handleBottomInventoryClick(InventoryClickEvent event) {
         if (!allowClicks) event.setCancelled(true);
 
-        Player player = (Player) event.getView();
-        User user = UserManager.getInstance().getUser(player);
+        User user = UserManager.getInstance().getUser((Player) event.getView());
         Inventory bottomInventory = event.getView().getBottomInventory();
 
-        ItemStack item = bottomInventory.getContents()[event.getSlot()];
+        MenuItem clickedItem = new MenuItem(bottomInventory.getContents()[event.getSlot()]);
 
-        if (item == null) return;
+        HashMap<ItemStack, Integer> saleItems = user.getProfession().getSaleConfig().getSaleItems();
 
-        ConfigManager.getInstance().getConfig(AgronomistSaleConfig.class).getSaleItems();
+        for (ItemStack itemStack : saleItems.keySet()) {
+            if (!itemStack.asOne().equals(clickedItem.toItemStack().asOne())) return;
 
-//        item.doClickActions(event);
+            clickedItem.addClickAction(SaleTransactionManager.getInstance().getTransactionAction(
+                    user, itemStack, clickedItem.toItemStack(),
+                    saleItems.get(itemStack), event.getSlot()));
 
-        event.setCancelled(true);
+            clickedItem.addShiftClickAction(SaleTransactionManager.getInstance().getAllTransactionAction(
+                    user, itemStack, clickedItem.toItemStack(),
+                    saleItems.get(itemStack), event.getSlot()));
+
+            clickedItem.doClickActions(event);
+        }
     }
 
     @Override

@@ -19,11 +19,11 @@ import org.bukkit.event.block.BlockBreakEvent;
 @Getter
 @SerializableAs("lumberjack")
 public class Lumberjack implements Skill {
-    private final MenuItem menuItem = ConfigManager.getInstance().getConfig(AgronomistUpgradeShopConfig.class).getCookItem();
-    private int level = 1;
+    private final MenuItem menuItem = ConfigManager.getInstance().getConfig(AgronomistUpgradeShopConfig.class).getLumberjackItem();
+    private int level;
 
-    public Lumberjack() {
-        menuItem = ConfigManager.getInstance().getConfig(AgronomistUpgradeShopConfig.class).getLumberjackItem();
+    public Lumberjack(int level) {
+        this.level = level;
     }
 
     @Override

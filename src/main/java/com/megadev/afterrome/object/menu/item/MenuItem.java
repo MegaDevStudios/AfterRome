@@ -40,6 +40,14 @@ public class MenuItem extends AbstractItemBuilder<MenuItem> {
         return this;
     }
 
+    public MenuItem addShiftClickAction(ClickAction action) {
+        this.clickActions.add((event) -> {
+            if (!event.isShiftClick()) return;
+            action.execute(event);
+        });
+        return this;
+    }
+
     public void doClickActions(InventoryClickEvent event) {
         clickActions.forEach(action -> action.execute(event));
     }

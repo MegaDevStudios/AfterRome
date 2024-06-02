@@ -14,6 +14,7 @@ import com.megadev.afterrome.listener.skill.BlockListener;
 import com.megadev.afterrome.listener.skill.KillListener;
 import com.megadev.afterrome.listener.skill.SpawnListener;
 import com.megadev.afterrome.manager.MenuManager;
+import com.megadev.afterrome.manager.SaleTransactionManager;
 import com.megadev.afterrome.manager.TreecapitatorManager;
 import com.megadev.afterrome.manager.UserManager;
 
@@ -57,6 +58,7 @@ public class AfterRome extends MegaCore {
         MenuManager.init(this);
         UserManager.init(this);
         TreecapitatorManager.init(this);
+        SaleTransactionManager.init(this);
     }
 
     private void setupCommands() {

@@ -30,12 +30,12 @@ public class Agronomist implements Profession {
 
     public Agronomist() {
         skills = List.of(
-               new Butcher(),
-               new Cook(),
-               new Farmer(),
-               new Hatcher(),
-               new Lumberjack(),
-               new Tanner()
+               new Butcher(1),
+               new Cook(1),
+               new Farmer(1),
+               new Hatcher(1),
+               new Lumberjack(1),
+               new Tanner(1)
        );
     }
 

@@ -25,10 +25,10 @@ import java.util.Map;
 @Getter
 @SerializableAs("farmer")
 public class Farmer implements Skill {
-    private final MenuItem menuItem = ConfigManager.getInstance().getConfig(AgronomistUpgradeShopConfig.class).getCookItem();
-    private int level = 1;
+    private final MenuItem menuItem = ConfigManager.getInstance().getConfig(AgronomistUpgradeShopConfig.class).getFarmerItem();
+    private int level;
 
-    public Cook(int level) {
+    public Farmer(int level) {
         this.level = level;
     }
 

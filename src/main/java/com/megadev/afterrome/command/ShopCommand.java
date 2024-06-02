@@ -13,7 +13,7 @@ public class ShopCommand extends BaseCommand {
     public boolean shopCommand(Player player) {
         User user = UserManager.getInstance().getUser(player);
 
-        Profession profession = user.getProfession();
+//        Profession profession = user.getProfession();
 
         ShopMenu shopMenu = new ShopMenu(user, 3);
         shopMenu.open();

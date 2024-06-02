@@ -21,11 +21,11 @@ import java.util.Map;
 @Getter
 @SerializableAs("hatcher")
 public class Hatcher implements Skill {
-    private final MenuItem menuItem = ConfigManager.getInstance().getConfig(AgronomistUpgradeShopConfig.class).getCookItem();
-    private int level = 1;
+    private final MenuItem menuItem = ConfigManager.getInstance().getConfig(AgronomistUpgradeShopConfig.class).getHatcherItem();
+    private int level;
 
-    public Hatcher() {
-        menuItem = ConfigManager.getInstance().getConfig(AgronomistUpgradeShopConfig.class).getHatcherItem();
+    public Hatcher(int level) {
+        this.level = level;
     }
 
     @Override

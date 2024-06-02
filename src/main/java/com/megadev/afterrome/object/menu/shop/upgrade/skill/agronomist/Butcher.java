@@ -26,10 +26,7 @@ import java.util.Map;
 @SerializableAs("butcher")
 public class Butcher implements Skill {
     private final MenuItem menuItem = ConfigManager.getInstance().getConfig(AgronomistUpgradeShopConfig.class).getButcherItem();
-    private int level = 1;
-
-    public Butcher() {
-    }
+    private int level;
 
     public Butcher(int level) {
         this.level = level;

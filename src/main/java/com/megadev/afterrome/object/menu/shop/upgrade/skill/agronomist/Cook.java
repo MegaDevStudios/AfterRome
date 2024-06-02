@@ -14,10 +14,7 @@ import org.bukkit.event.Event;
 @SerializableAs("cook")
 public class Cook implements Skill {
     private final MenuItem menuItem = ConfigManager.getInstance().getConfig(AgronomistUpgradeShopConfig.class).getCookItem();
-    private int level = 1;
-
-    public Cook() {
-    }
+    private int level;
 
     public Cook(int level) {
         this.level = level;

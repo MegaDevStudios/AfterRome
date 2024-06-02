@@ -121,7 +121,7 @@ public class AgronomistUpgradeShopConfig extends Configurator implements Upgrade
 
     public MenuItem getTannerItem() {
         return new MenuItem(
-                Material.valueOf((String) getValue("skill.tanner.item")))
+                Material.valueOf(getValue("skill.tanner.item")))
                 .setName(getTannerName())
                 .setLore(getTannerLore())
                 .addClickAction(event -> setAction(event, SkillType.TANNER));
