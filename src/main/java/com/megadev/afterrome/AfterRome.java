@@ -13,9 +13,6 @@ import com.megadev.afterrome.config.ConfigManager;
 import com.megadev.afterrome.listener.skill.BlockListener;
 import com.megadev.afterrome.listener.skill.KillListener;
 import com.megadev.afterrome.listener.skill.SpawnListener;
-import com.megadev.afterrome.manager.MenuManager;
-import com.megadev.afterrome.manager.SaleTransactionManager;
-import com.megadev.afterrome.manager.TreecapitatorManager;
 import com.megadev.afterrome.manager.UserManager;
 
 import dev.mega.megacore.MegaCore;
@@ -30,7 +27,6 @@ public class AfterRome extends MegaCore {
 
     @Override
     public void enable() {
-        setupManagers();
         setupListeners();
         setupCommands();
     }
@@ -51,14 +47,6 @@ public class AfterRome extends MegaCore {
             UserConfig userConfig = configUserManager.getAfterRomeUserConfig(user.getUuid());
             SerializeUtil.serialize(userConfig, user);
         });
-    }
-
-    private void setupManagers() {
-        ConfigManager.init(this);
-        MenuManager.init(this);
-        UserManager.init(this);
-        TreecapitatorManager.init(this);
-        SaleTransactionManager.init(this);
     }
 
     private void setupCommands() {
