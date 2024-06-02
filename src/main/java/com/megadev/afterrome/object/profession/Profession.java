@@ -8,10 +8,12 @@ import com.megadev.afterrome.object.menu.shop.upgrade.skill.SkillType;
 import com.megadev.afterrome.object.user.User;
 
 import org.bukkit.configuration.serialization.ConfigurationSerializable;
+import org.bukkit.configuration.serialization.SerializableAs;
 
 import java.util.List;
 import java.util.Map;
 
+@SerializableAs("profession")
 public interface Profession extends ConfigurationSerializable {
     String getName();
 

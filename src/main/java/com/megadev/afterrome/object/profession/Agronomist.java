@@ -18,12 +18,14 @@ import lombok.Getter;
 
 import org.bukkit.configuration.serialization.ConfigurationSerializable;
 import org.bukkit.configuration.serialization.ConfigurationSerialization;
+import org.bukkit.configuration.serialization.SerializableAs;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 import java.util.Map;
 
 @Getter
+
 public class Agronomist implements Profession {
     List<Skill> skills;
 
@@ -85,6 +87,6 @@ public class Agronomist implements Profession {
     }
 
     static {
-        ConfigurationSerialization.registerClass(Agronomist.class);
+        ConfigurationSerialization.registerClass(Agronomist.class); // (Profession) config.get("key")
     }
 }
