@@ -17,19 +17,12 @@ import java.util.HashMap;
 
 @Getter
 public class MenuManager extends Manager {
-    @Getter private static MenuManager instance;
     @Getter private final static HashMap<User, BukkitTask> refreshingMenus = new HashMap<>();
     private RefreshingData refreshingData;
 
-    private MenuManager(MegaCore megaCore) {
+    public MenuManager(MegaCore megaCore) {
         super(megaCore);
         reload();
-    }
-
-    public static void init(MegaCore megaCore) {
-        if (instance == null) {
-            instance = new MenuManager(megaCore);
-        }
     }
 
     public void putTaskForUser(User user, AbstractMenu menu) {

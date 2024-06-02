@@ -23,7 +23,7 @@ import org.bukkit.plugin.PluginManager;
 import java.lang.reflect.InvocationTargetException;
 
 public class AfterRome extends MegaCore {
-    public AfterRome() throws InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
+    public AfterRome() throws InvocationTargetException, NoSuchMethodException, IllegalAccessException {
         super(ConfigManager.class, "com.megadev.afterrome.manager");
     }
 
@@ -42,7 +42,7 @@ public class AfterRome extends MegaCore {
             userManager = UserManager.getInstance();
         }
 
-        ConfigManager configManager = (ConfigManager) getConfigManager();
+        ConfigManager configManager = ConfigManager.getInstance();
         ConfigUserManager configUserManager = configManager.getConfig(ConfigUserManager.class);
 
         userManager.getUsers().forEach(user -> {

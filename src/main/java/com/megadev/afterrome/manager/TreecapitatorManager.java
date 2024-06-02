@@ -7,16 +7,8 @@ import lombok.Getter;
 import org.bukkit.block.Block;
 
 public class TreecapitatorManager extends Manager {
-    @Getter private static TreecapitatorManager instance;
-
-    private TreecapitatorManager(MegaCore megaCore) {
+    public TreecapitatorManager(MegaCore megaCore) {
         super(megaCore);
-    }
-
-    public static void init(MegaCore megaCore) {
-        if (instance == null) {
-            instance = new TreecapitatorManager(megaCore);
-        }
     }
 
     @Override

@@ -10,16 +10,8 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.scheduler.BukkitRunnable;
 
 public class SaleTransactionManager extends Manager {
-    @Getter
-    private static SaleTransactionManager instance;
-
-    private SaleTransactionManager(MegaCore megaCore) {
+    public SaleTransactionManager(MegaCore megaCore) {
         super(megaCore);
-    }
-
-    public static void init(MegaCore megaCore) {
-        if (instance == null)
-            instance = new SaleTransactionManager(megaCore);
     }
 
     public ClickAction getTransactionAction(User user, ItemStack saleItem, ItemStack clickedItem, int points, int slot) {

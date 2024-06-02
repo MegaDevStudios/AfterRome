@@ -33,7 +33,7 @@ public class UserManager extends Manager {
     }
 
     public void loadUsers() {
-        ConfigManager configManager = (ConfigManager) megaCore.getConfigManager();
+        ConfigManager configManager = ConfigManager.getInstance();
         ConfigUserManager configUserManager = configManager.getConfig(ConfigUserManager.class);
 
         for (Player player : Bukkit.getOnlinePlayers()) {

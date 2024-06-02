@@ -31,7 +31,7 @@ public class PlayerJoinListener implements Listener {
     public void onLogin(PlayerJoinEvent event) {
         Player player = event.getPlayer();
 
-        ConfigManager configManager = (ConfigManager) megaCore.getConfigManager();
+        ConfigManager configManager = ConfigManager.getInstance();
         ConfigUserManager configUserManager = configManager.getConfig(ConfigUserManager.class);
 
         UserConfig userConfig = configUserManager.getAfterRomeUserConfig(player.getUniqueId());

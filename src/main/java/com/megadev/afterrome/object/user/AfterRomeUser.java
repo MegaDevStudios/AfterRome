@@ -27,6 +27,7 @@ import java.util.List;
 @Getter
 @SerializableAs("users")
 public class AfterRomeUser implements User {
+    private static final MainConfig mainConfig = ConfigManager.getInstance().getConfig(MainConfig.class);
     private static final int MAX_UNIT_PER_POINT = mainConfig.getMaxUnitsPerPoint();
 
     @Setter
@@ -118,8 +119,6 @@ public class AfterRomeUser implements User {
 
     @Override
     public void addPoints(double amount) {
-        MainConfig mainConfig = ConfigManager.getInstance().getConfig(MainConfig.class);
-
         points += (int) (amount / MAX_UNIT_PER_POINT);
     }
 
