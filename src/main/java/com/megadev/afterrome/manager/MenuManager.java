@@ -23,6 +23,7 @@ public class MenuManager extends Manager {
 
     private MenuManager(MegaCore megaCore) {
         super(megaCore);
+        reload();
     }
 
     public static void init(MegaCore megaCore) {
