@@ -6,7 +6,6 @@ import com.megadev.afterrome.config.ConfigManager;
 import com.megadev.afterrome.object.menu.item.MenuItem;
 import com.megadev.afterrome.object.menu.shop.upgrade.skill.Skill;
 
-import com.megadev.afterrome.object.user.AfterRomeUser;
 import com.megadev.afterrome.util.ConditionCalculator;
 import lombok.Getter;
 import org.bukkit.Material;

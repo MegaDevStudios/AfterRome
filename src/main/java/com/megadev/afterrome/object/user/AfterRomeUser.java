@@ -7,7 +7,6 @@ import com.megadev.afterrome.object.item.ItemBuilder;
 import com.megadev.afterrome.object.profession.DefaultProfession;
 import com.megadev.afterrome.object.profession.Profession;
 
-import com.mojang.authlib.GameProfile;
 import dev.mega.megacore.util.Color;
 import lombok.Setter;
 

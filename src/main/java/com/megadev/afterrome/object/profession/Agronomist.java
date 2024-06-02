@@ -11,12 +11,9 @@ import com.megadev.afterrome.object.menu.shop.upgrade.menu.AgronomistMenu;
 import com.megadev.afterrome.object.menu.shop.upgrade.skill.Skill;
 import com.megadev.afterrome.object.menu.shop.upgrade.skill.SkillType;
 import com.megadev.afterrome.object.menu.shop.upgrade.skill.agronomist.*;
-import com.megadev.afterrome.object.user.AfterRomeUser;
 import com.megadev.afterrome.object.user.User;
-import dev.mega.megacore.MegaCore;
 import lombok.Getter;
 
-import org.bukkit.configuration.serialization.ConfigurationSerializable;
 import org.bukkit.configuration.serialization.ConfigurationSerialization;
 import org.bukkit.configuration.serialization.SerializableAs;
 import org.jetbrains.annotations.NotNull;

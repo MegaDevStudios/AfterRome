@@ -6,7 +6,6 @@ import com.megadev.afterrome.config.ConfigManager;
 import com.megadev.afterrome.object.menu.item.MenuItem;
 import com.megadev.afterrome.object.menu.shop.upgrade.skill.Skill;
 
-import com.megadev.afterrome.object.user.AfterRomeUser;
 import com.megadev.afterrome.util.ConditionCalculator;
 import dev.mega.megacore.util.MegaCoreUtil;
 import lombok.Getter;
@@ -17,10 +16,8 @@ import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Event;
 import org.bukkit.event.block.BlockDropItemEvent;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
-import java.util.Map;
 
 @Getter
 @SerializableAs("farmer")

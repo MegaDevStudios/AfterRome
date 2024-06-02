@@ -3,7 +3,6 @@ package com.megadev.afterrome.object.menu.choice;
 import com.megadev.afterrome.config.ConfigManager;
 import com.megadev.afterrome.config.MainConfig;
 import com.megadev.afterrome.config.user.ConfigUserManager;
-import com.megadev.afterrome.config.user.UserConfig;
 import com.megadev.afterrome.manager.UserManager;
 import com.megadev.afterrome.object.item.HeadBuilder;
 import com.megadev.afterrome.object.menu.AbstractMenu;
@@ -13,7 +12,6 @@ import com.megadev.afterrome.object.profession.*;
 import com.megadev.afterrome.object.user.User;
 
 import dev.mega.megacore.MegaCore;
-import dev.mega.megacore.config.serializer.SerializeUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
