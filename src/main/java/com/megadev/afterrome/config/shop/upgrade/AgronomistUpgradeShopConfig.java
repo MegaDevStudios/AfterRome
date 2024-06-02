@@ -7,6 +7,7 @@ import com.megadev.afterrome.object.menu.shop.upgrade.skill.SkillType;
 import com.megadev.afterrome.object.user.User;
 import dev.mega.megacore.config.Configurator;
 
+import dev.mega.megacore.manager.MegaManager;
 import dev.mega.megacore.util.Color;
 import org.bukkit.Material;
 import org.bukkit.entity.HumanEntity;
@@ -130,7 +131,7 @@ public class AgronomistUpgradeShopConfig extends Configurator implements Upgrade
     private void setAction(InventoryClickEvent event, SkillType skillType) {
         List<HumanEntity> viewers = event.getViewers();
         if (viewers.isEmpty()) return;
-        User user = UserManager.getInstance().getUser((Player) viewers.get(0));
+        User user = MegaManager.getManager(UserManager.class).getUser((Player) viewers.get(0));
 
         if (user.subtractPoints()) {
             user.getProfession().getSkill(skillType).incrementLevel();

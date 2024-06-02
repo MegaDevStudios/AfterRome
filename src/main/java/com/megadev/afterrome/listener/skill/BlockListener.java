@@ -6,6 +6,7 @@ import com.megadev.afterrome.object.menu.shop.upgrade.skill.agronomist.Lumberjac
 import com.megadev.afterrome.object.profession.Agronomist;
 import com.megadev.afterrome.object.profession.Profession;
 
+import dev.mega.megacore.manager.MegaManager;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.data.Ageable;
@@ -21,7 +22,7 @@ public class BlockListener implements Listener {
     public void onDropItem(BlockDropItemEvent event) {
         if (event.getItems().isEmpty()) return;
 
-        Profession profession = UserManager.getInstance().getUser(event.getPlayer()).getProfession();
+        Profession profession = MegaManager.getManager(UserManager.class).getUser(event.getPlayer()).getProfession();
 
         if (!(profession instanceof Agronomist)) return;
 
@@ -48,7 +49,7 @@ public class BlockListener implements Listener {
         Block block = event.getBlock();
 
         if (block.getType().name().endsWith("LOG")) {
-            Profession profession = UserManager.getInstance().getUser(event.getPlayer()).getProfession();
+            Profession profession = MegaManager.getManager(UserManager.class).getUser(event.getPlayer()).getProfession();
             if (!(profession instanceof Agronomist)) {
                 return;
             }

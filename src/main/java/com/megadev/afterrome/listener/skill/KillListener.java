@@ -4,6 +4,7 @@ import com.megadev.afterrome.manager.UserManager;
 import com.megadev.afterrome.object.menu.shop.upgrade.skill.SkillType;
 import com.megadev.afterrome.object.profession.Agronomist;
 import com.megadev.afterrome.object.profession.Profession;
+import dev.mega.megacore.manager.MegaManager;
 import org.bukkit.Material;
 import org.bukkit.block.data.Ageable;
 import org.bukkit.entity.Animals;
@@ -28,7 +29,7 @@ public class KillListener implements Listener {
             return;
         }
 
-        Profession profession = UserManager.getInstance().getUser(event.getEntity().getKiller()).getProfession();
+        Profession profession = MegaManager.getManager(UserManager.class).getUser(event.getEntity().getKiller()).getProfession();
         if (!(profession instanceof Agronomist)) {
             return;
         }

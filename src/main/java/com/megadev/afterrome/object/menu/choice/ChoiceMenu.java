@@ -12,13 +12,14 @@ import com.megadev.afterrome.object.profession.*;
 import com.megadev.afterrome.object.user.User;
 
 import dev.mega.megacore.MegaCore;
+import dev.mega.megacore.manager.MegaManager;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryCloseEvent;
 
 public class ChoiceMenu extends AbstractMenu {
-    UserManager userManager = UserManager.getInstance();
+    UserManager userManager = MegaManager.getManager(UserManager.class);
     ConfigManager configManager = ConfigManager.getInstance();
     ConfigUserManager configUserManager = configManager.getConfig(ConfigUserManager.class);
     private final MegaCore megaCore;
@@ -81,7 +82,7 @@ public class ChoiceMenu extends AbstractMenu {
     public void handleClose(InventoryCloseEvent event) {
         if (!(event.getPlayer() instanceof Player player)) return;
 
-        User user = UserManager.getInstance().getUser(player);
+        User user = MegaManager.getManager(UserManager.class).getUser(player);
         if (user == null) return;
 
         if (!(event.getInventory().getHolder() instanceof ChoiceMenu)) return;

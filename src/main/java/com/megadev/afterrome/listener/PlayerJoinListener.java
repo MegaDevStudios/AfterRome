@@ -13,6 +13,7 @@ import com.megadev.afterrome.object.user.User;
 
 import dev.mega.megacore.MegaCore;
 import dev.mega.megacore.config.serializer.SerializeUtil;
+import dev.mega.megacore.manager.MegaManager;
 import dev.mega.megacore.util.MegaCoreUtil;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -20,7 +21,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 
 public class PlayerJoinListener implements Listener {
-    UserManager userManager = UserManager.getInstance();
+    UserManager userManager = MegaManager.getManager(UserManager.class);
     MegaCore megaCore;
 
     public PlayerJoinListener(MegaCore megaCore) {

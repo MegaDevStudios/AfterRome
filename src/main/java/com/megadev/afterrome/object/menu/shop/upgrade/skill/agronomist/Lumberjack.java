@@ -8,6 +8,7 @@ import com.megadev.afterrome.object.menu.item.MenuItem;
 import com.megadev.afterrome.object.menu.shop.upgrade.skill.Skill;
 
 import com.megadev.afterrome.util.ConditionCalculator;
+import dev.mega.megacore.manager.MegaManager;
 import lombok.Getter;
 import org.bukkit.block.Block;
 import org.bukkit.configuration.serialization.ConfigurationSerialization;
@@ -39,7 +40,7 @@ public class Lumberjack implements Skill {
         Block block = breakEvent.getBlock();
 
         if (ConditionCalculator.isPassed(percent) == 1) {
-            TreecapitatorManager.getInstance().treeCapitate(block);
+            MegaManager.getManager(TreecapitatorManager.class).treeCapitate(block);
         }
     }
 

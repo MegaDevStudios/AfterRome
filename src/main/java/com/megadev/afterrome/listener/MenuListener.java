@@ -6,6 +6,7 @@ import com.megadev.afterrome.object.menu.Menu;
 import com.megadev.afterrome.object.profession.DefaultProfession;
 import com.megadev.afterrome.object.user.User;
 
+import dev.mega.megacore.manager.MegaManager;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
@@ -63,7 +64,7 @@ public class MenuListener implements Listener {
 
         menu.handleClose(event);
 
-        User user = UserManager.getInstance().getUser(player);
+        User user = MegaManager.getManager(UserManager.class).getUser(player);
         if (user != null) {
             if (MenuManager.getRefreshingMenus().containsKey(user)) {
                 MenuManager.getRefreshingMenus().get(user).cancel();
@@ -76,7 +77,7 @@ public class MenuListener implements Listener {
     public void onMove(PlayerMoveEvent event) {
         Player player = event.getPlayer();
 
-        User user = UserManager.getInstance().getUser(player);
+        User user = MegaManager.getManager(UserManager.class).getUser(player);
         if (user == null) return;
 
         if (user.getProfession() instanceof DefaultProfession) event.setCancelled(true);
