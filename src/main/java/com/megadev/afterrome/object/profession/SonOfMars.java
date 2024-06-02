@@ -1,5 +1,8 @@
 package com.megadev.afterrome.object.profession;
 
+import com.megadev.afterrome.config.ConfigManager;
+import com.megadev.afterrome.config.shop.sale.AgronomistSaleConfig;
+import com.megadev.afterrome.config.shop.sale.SaleConfig;
 import com.megadev.afterrome.object.menu.AbstractUpgradeMenu;
 import com.megadev.afterrome.object.menu.item.MenuItem;
 import com.megadev.afterrome.object.menu.shop.upgrade.skill.Skill;
@@ -34,6 +37,11 @@ public class SonOfMars implements Profession {
     @Override
     public Skill getSkill(SkillType skill) {
         return null;
+    }
+
+    @Override
+    public SaleConfig getSaleConfig() {
+        return ConfigManager.getInstance().getConfig(AgronomistSaleConfig.class);
     }
 
     @Override

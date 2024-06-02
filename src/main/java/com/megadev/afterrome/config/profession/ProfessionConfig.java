@@ -6,7 +6,6 @@ import org.bukkit.plugin.Plugin;
 import org.jetbrains.annotations.NotNull;
 
 public abstract class ProfessionConfig extends Configurator {
-
     protected ProfessionConfig(@NotNull Plugin plugin, String... path) {
         super(plugin, path);
     }

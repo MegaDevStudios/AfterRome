@@ -2,6 +2,8 @@ package com.megadev.afterrome.object.profession;
 
 import com.megadev.afterrome.config.ConfigManager;
 import com.megadev.afterrome.config.profession.AgronomistConfig;
+import com.megadev.afterrome.config.shop.sale.AgronomistSaleConfig;
+import com.megadev.afterrome.config.shop.sale.SaleConfig;
 import com.megadev.afterrome.config.shop.upgrade.AgronomistUpgradeShopConfig;
 import com.megadev.afterrome.object.menu.AbstractUpgradeMenu;
 import com.megadev.afterrome.object.menu.item.MenuItem;
@@ -50,6 +52,11 @@ public class Agronomist implements Profession {
             case LUMBERJACK -> skills.get(4);
             case TANNER -> skills.get(5);
         };
+    }
+
+    @Override
+    public SaleConfig getSaleConfig() {
+        return ConfigManager.getInstance().getConfig(AgronomistSaleConfig.class);
     }
 
     @Override

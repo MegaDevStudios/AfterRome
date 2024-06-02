@@ -1,5 +1,7 @@
-package com.megadev.afterrome.config.shop.sale;
+package com.megadev.afterrome.config.manager.shop;
 
+import com.megadev.afterrome.config.shop.sale.AgronomistSaleConfig;
+import com.megadev.afterrome.config.shop.sale.NPCConfig;
 import dev.mega.megacore.config.AbstractManager;
 import org.bukkit.plugin.Plugin;
 

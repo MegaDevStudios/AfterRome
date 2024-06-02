@@ -1,8 +1,8 @@
 package com.megadev.afterrome.object.menu.shop;
 
 import com.megadev.afterrome.config.ConfigManager;
-import com.megadev.afterrome.config.shop.ShopConfig;
-import com.megadev.afterrome.object.item.ItemBuilder;
+import com.megadev.afterrome.config.shop.sale.NPCConfig;
+import com.megadev.afterrome.config.shop.sale.SaleConfig;
 import com.megadev.afterrome.object.menu.AbstractMenu;
 import com.megadev.afterrome.object.menu.item.MenuItem;
 import com.megadev.afterrome.object.profession.Profession;
@@ -19,21 +19,18 @@ public class ShopMenu extends AbstractMenu {
 
     @Override
     protected void setMenuItems() {
-        for (byte i = 0; i < getSize(); i++) {
+        for (int i = 0; i < getSize(); i++) {
             if (i == getSize() / 2) continue;
-
             setItem(new MenuItem(Material.GRAY_STAINED_GLASS_PANE), i);
         }
 
-        setItem(new MenuItem(new ItemBuilder(Material.WRITABLE_BOOK)
-                .setName(profession.getName())
-                .setLore("&8Блок пшеницы - 2 очка", "&8Перья 11шт - 4 очка", "&8Золотое яблоко - 10 очков")
-                .toItemStack()
-        ), getSize() - 1);
+        SaleConfig saleConfig = profession.getSaleConfig();
+
+        setItem(new MenuItem(saleConfig.getBook()), getSize() / 2);
     }
 
     @Override
     public String getMenuName() {
-        return ConfigManager.getInstance().getConfig(ShopConfig.class).getMenuName();
+        return ConfigManager.getInstance().getConfig(NPCConfig.class).getMenuName();
     }
 }

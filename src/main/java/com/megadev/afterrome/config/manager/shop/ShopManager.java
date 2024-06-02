@@ -1,6 +1,5 @@
 package com.megadev.afterrome.config.manager.shop;
 
-import com.megadev.afterrome.config.shop.sale.SaleManager;
 import dev.mega.megacore.config.AbstractManager;
 import org.bukkit.plugin.Plugin;
 

@@ -3,7 +3,6 @@ package com.megadev.afterrome.listener;
 import com.megadev.afterrome.manager.MenuManager;
 import com.megadev.afterrome.manager.UserManager;
 import com.megadev.afterrome.object.menu.Menu;
-import com.megadev.afterrome.object.profession.Agronomist;
 import com.megadev.afterrome.object.profession.DefaultProfession;
 import com.megadev.afterrome.object.user.User;
 
@@ -17,16 +16,19 @@ import org.bukkit.event.inventory.InventoryOpenEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryHolder;
+import org.bukkit.inventory.InventoryView;
 import org.bukkit.inventory.ItemStack;
-
-import java.util.Optional;
 
 public class MenuListener implements Listener {
     @EventHandler(priority = EventPriority.NORMAL)
     public void onMenuClick(InventoryClickEvent event) {
         if (!(event.getWhoClicked() instanceof Player)) return;
 
-        Inventory inventory = event.getView().getTopInventory();
+        InventoryView view = event.getView();
+        Inventory topInventory = view.getTopInventory();
+        Inventory bottomInventory = view.getBottomInventory();
+        Inventory clickedInventory = event.getClickedInventory();
+
         ItemStack item = event.getCurrentItem();
 
         InventoryHolder holder = event.getInventory().getHolder();
@@ -35,9 +37,11 @@ public class MenuListener implements Listener {
         event.setCancelled(true);
 
         if (item == null) return;
-        if (event.getClickedInventory() != inventory) return;
-
-        menu.handleClick(event);
+        if (clickedInventory == topInventory) {
+            menu.handleClick(event);
+        } else if (clickedInventory == bottomInventory) {
+            menu.handleBottomInventoryClick(event);
+        }
     }
 
     @EventHandler(priority = EventPriority.NORMAL)

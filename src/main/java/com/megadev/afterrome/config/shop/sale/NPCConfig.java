@@ -39,20 +39,4 @@ public class NPCConfig extends Configurator {
 
         return new Location(world, x, y, z);
     }
-
-    public List<ItemStack> getAgronomistSellItems() {
-        List<ItemStack> itemStacks = new ArrayList<>();
-        ConfigurationSection sellItemsSection = config.getConfigurationSection("menu.professions.agronomist.sell-items");
-
-        if (sellItemsSection == null) return new ArrayList<>();
-
-        Set<String> keysSellItems = sellItemsSection.getKeys(false);
-
-        for (String item : keysSellItems) {
-            itemStacks.add(new ItemStack(Material.valueOf(item)));
-            int price = sellItemsSection.getInt(item);
-        }
-
-        return itemStacks;
-    }
 }

@@ -1,7 +1,10 @@
 package com.megadev.afterrome.object.menu;
 
 import com.megadev.afterrome.config.ConfigManager;
+import com.megadev.afterrome.config.shop.sale.AgronomistSaleConfig;
+import com.megadev.afterrome.config.shop.sale.SaleConfig;
 import com.megadev.afterrome.manager.MenuManager;
+import com.megadev.afterrome.manager.UserManager;
 import com.megadev.afterrome.object.menu.item.MenuItem;
 
 import com.megadev.afterrome.object.user.User;
@@ -13,6 +16,7 @@ import net.kyori.adventure.text.Component;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
+import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.inventory.InventoryCloseEvent;
@@ -55,6 +59,25 @@ public abstract class AbstractMenu implements Menu {
         MenuItem item = items[event.getSlot()];
 
         if (item == null) return;
+
+        item.doClickActions(event);
+
+        event.setCancelled(true);
+    }
+
+    @Override
+    public void handleBottomInventoryClick(InventoryClickEvent event) {
+        if (!allowClicks) event.setCancelled(true);
+
+        Player player = (Player) event.getView();
+        User user = UserManager.getInstance().getUser(player);
+        Inventory bottomInventory = event.getView().getBottomInventory();
+
+        ItemStack item = bottomInventory.getContents()[event.getSlot()];
+
+        if (item == null) return;
+
+        ConfigManager.getInstance().getConfig(AgronomistSaleConfig.class).getSaleItems();
 
         item.doClickActions(event);
 

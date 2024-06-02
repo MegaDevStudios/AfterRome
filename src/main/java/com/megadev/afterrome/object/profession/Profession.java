@@ -1,5 +1,6 @@
 package com.megadev.afterrome.object.profession;
 
+import com.megadev.afterrome.config.shop.sale.SaleConfig;
 import com.megadev.afterrome.object.menu. AbstractUpgradeMenu;
 import com.megadev.afterrome.object.menu.item.MenuItem;
 import com.megadev.afterrome.object.menu.shop.upgrade.skill.Skill;
@@ -23,4 +24,6 @@ public interface Profession extends ConfigurationSerializable {
     Skill getSkill(SkillType skill);
 
     Profession deserialize(Map<String, Object> data);
+
+    SaleConfig getSaleConfig();
 }

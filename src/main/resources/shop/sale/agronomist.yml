@@ -1,10 +1,18 @@
 menu:
-  name: "Skills"
   book:
-    name:
-    lore:
+    name: "&aАгроном"
+    lore: "&8Продажи:
+           &8Блок пшеницы - 2 очка
+           &8Изумруд - 10 очков"
+
 sell-items:
-  HAY_BLOCK: 2
+  HAY_BLOCK:
+    amount: 1
+    price: 2
+  FEATHER:
+    amount: 11
+    price: 8
+
 
 aesculapius:
   book:
