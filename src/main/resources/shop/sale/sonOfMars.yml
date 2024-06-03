@@ -1,0 +1,15 @@
+menu:
+  book:
+    name: "Сын Марса"
+    lore: "&8Продажи:
+           &8Блок пшеницы - 2 очка
+           &8Изумруд - 10 очков"
+
+sell-items:
+  HAY_BLOCK:
+    amount: 1
+    price: 2
+  FEATHER:
+    amount: 11
+    price: 8
+

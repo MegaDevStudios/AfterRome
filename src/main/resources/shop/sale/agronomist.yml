@@ -2,8 +2,10 @@ menu:
   book:
     name: "&aАгроном"
     lore: "&8Продажи:
-           &8Блок пшеницы - 2 очка
-           &8Изумруд - 10 очков"
+           Блок пшеницы - 2 очка
+           11 Перьев - 4 очка
+           Золотое яблоко - 10 очков
+           Изумруд - 20 очков"
 
 sell-items:
   HAY_BLOCK:
@@ -11,78 +13,11 @@ sell-items:
     price: 2
   FEATHER:
     amount: 11
-    price: 8
+    price: 4
+  GOLDEN_APPLE:
+    amount: 1
+    price: 10
+  GEM:
+    amount: 1
+    price: 20
 
-
-aesculapius:
-  book:
-    name:
-    lore:
-  sell-items:
-    STONE: 1
-    DIRT: 1
-    HAY_BLOCK: 2
-artisan:
-  book:
-    name:
-    lore:
-  sell-items:
-    STONE: 1
-    DIRT: 1
-    HAY_BLOCK: 2
-engineer:
-  book:
-    name:
-    lore:
-  sell-items:
-    STONE: 1
-    DIRT: 1
-    HAY_BLOCK: 2
-forester:
-  book:
-    name:
-    lore:
-  sell-items:
-    STONE: 1
-    DIRT: 1
-    HAY_BLOCK: 2
-initiated:
-  book:
-    name:
-    lore:
-  sell-items:
-    STONE: 1
-    DIRT: 1
-    HAY_BLOCK: 2
-mafia:
-  book:
-    name:
-    lore:
-  sell-items:
-    STONE: 1
-    DIRT: 1
-    HAY_BLOCK: 2
-santa:
-  book:
-    name:
-    lore:
-  sell-items:
-    STONE: 1
-    DIRT: 1
-    HAY_BLOCK: 2
-sheriff:
-  book:
-    name:
-    lore:
-  sell-items:
-    STONE: 1
-    DIRT: 1
-    HAY_BLOCK: 2
-son-of-mars:
-  book:
-    name:
-    lore:
-  sell-items:
-    STONE: 1
-    DIRT: 1
-    HAY_BLOCK: 2
