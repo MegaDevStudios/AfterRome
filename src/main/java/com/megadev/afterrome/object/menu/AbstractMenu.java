@@ -7,6 +7,7 @@ import com.megadev.afterrome.object.menu.item.MenuItem;
 
 import com.megadev.afterrome.object.user.User;
 import com.megadev.afterrome.manager.SaleTransactionManager;
+import dev.mega.megacore.manager.MegaManager;
 import dev.mega.megacore.util.Color;
 import lombok.Getter;
 
@@ -65,7 +66,7 @@ public abstract class AbstractMenu implements Menu {
     public void handleBottomInventoryClick(InventoryClickEvent event) {
         if (!allowClicks) event.setCancelled(true);
 
-        User user = UserManager.getInstance().getUser((Player) event.getView());
+        User user = MegaManager.getManager(UserManager.class).getUser((Player) event.getView());
         Inventory bottomInventory = event.getView().getBottomInventory();
 
         MenuItem clickedItem = new MenuItem(bottomInventory.getContents()[event.getSlot()]);
@@ -75,11 +76,13 @@ public abstract class AbstractMenu implements Menu {
         for (ItemStack itemStack : saleItems.keySet()) {
             if (!itemStack.asOne().equals(clickedItem.toItemStack().asOne())) return;
 
-            clickedItem.addClickAction(SaleTransactionManager.getInstance().getTransactionAction(
+            SaleTransactionManager saleTransactionManager = MegaManager.getManager(SaleTransactionManager.class);
+
+            clickedItem.addClickAction(saleTransactionManager.getTransactionAction(
                     user, itemStack, clickedItem.toItemStack(),
                     saleItems.get(itemStack), event.getSlot()));
 
-            clickedItem.addShiftClickAction(SaleTransactionManager.getInstance().getAllTransactionAction(
+            clickedItem.addShiftClickAction(saleTransactionManager.getAllTransactionAction(
                     user, itemStack, clickedItem.toItemStack(),
                     saleItems.get(itemStack), event.getSlot()));
 
@@ -104,7 +107,7 @@ public abstract class AbstractMenu implements Menu {
 
         if (updateTime() <= 0) return;
 
-        MenuManager menuManager = MenuManager.getInstance();
+        MenuManager menuManager = MegaManager.getManager(MenuManager.class);
 
         if (menuManager.containsTaskForUser(user)) {
             menuManager.cancelTaskForUser(user);

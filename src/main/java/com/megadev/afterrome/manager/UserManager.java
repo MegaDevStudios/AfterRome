@@ -19,14 +19,7 @@ import java.util.Set;
 
 @Getter
 public class UserManager extends Manager {
-    @Getter
-    private static UserManager instance;
     private final Set<User> users = new HashSet<>();
-
-    public static void init(MegaCore megaCore) {
-        if (instance == null)
-            instance = new UserManager(megaCore);
-    }
 
     public UserManager(MegaCore megaCore) {
         super(megaCore);

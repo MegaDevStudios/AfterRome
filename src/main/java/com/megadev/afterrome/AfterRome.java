@@ -17,6 +17,7 @@ import com.megadev.afterrome.manager.UserManager;
 
 import dev.mega.megacore.MegaCore;
 import dev.mega.megacore.config.serializer.SerializeUtil;
+import dev.mega.megacore.manager.MegaManager;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
 
@@ -35,12 +36,7 @@ public class AfterRome extends MegaCore {
 
     @Override
     public void disable() {
-        UserManager userManager = UserManager.getInstance();
-
-        if (userManager == null) {
-            UserManager.init(this);
-            userManager = UserManager.getInstance();
-        }
+        UserManager userManager = MegaManager.getManager(UserManager.class);
 
         ConfigManager configManager = ConfigManager.getInstance();
         ConfigUserManager configUserManager = configManager.getConfig(ConfigUserManager.class);
