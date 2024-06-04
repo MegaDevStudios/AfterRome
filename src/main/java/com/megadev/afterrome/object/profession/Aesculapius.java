@@ -24,6 +24,11 @@ public class Aesculapius implements Profession {
     }
 
     @Override
+    public ProfessionType getProfessionType() {
+        return ProfessionType.AESCULAPIUS;
+    }
+
+    @Override
     public AbstractUpgradeMenu getUpgradeMenu(User user) {
         return new AesculapiusMenu(user, this);
     }

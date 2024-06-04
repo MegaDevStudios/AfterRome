@@ -8,6 +8,10 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Map;
 
 public interface Skill extends ConfigurationSerializable {
+    String getName();
+
+    SkillType getSkillType();
+
     MenuItem getMenuItem();
 
     void incrementLevel();

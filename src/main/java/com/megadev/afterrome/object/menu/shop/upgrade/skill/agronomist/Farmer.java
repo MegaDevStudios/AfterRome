@@ -6,6 +6,7 @@ import com.megadev.afterrome.config.ConfigManager;
 import com.megadev.afterrome.object.menu.item.MenuItem;
 import com.megadev.afterrome.object.menu.shop.upgrade.skill.Skill;
 
+import com.megadev.afterrome.object.menu.shop.upgrade.skill.SkillType;
 import com.megadev.afterrome.util.ConditionCalculator;
 import dev.mega.megacore.util.MegaCoreUtil;
 import lombok.Getter;
@@ -27,6 +28,16 @@ public class Farmer implements Skill {
 
     public Farmer(int level) {
         this.level = level;
+    }
+
+    @Override
+    public String getName() {
+        return "farmer";
+    }
+
+    @Override
+    public SkillType getSkillType() {
+        return SkillType.FARMER;
     }
 
     @Override

@@ -7,6 +7,7 @@ import com.megadev.afterrome.manager.TreecapitatorManager;
 import com.megadev.afterrome.object.menu.item.MenuItem;
 import com.megadev.afterrome.object.menu.shop.upgrade.skill.Skill;
 
+import com.megadev.afterrome.object.menu.shop.upgrade.skill.SkillType;
 import com.megadev.afterrome.util.ConditionCalculator;
 import dev.mega.megacore.manager.MegaManager;
 import lombok.Getter;
@@ -24,6 +25,16 @@ public class Lumberjack implements Skill {
 
     public Lumberjack(int level) {
         this.level = level;
+    }
+
+    @Override
+    public String getName() {
+        return "lumberjack";
+    }
+
+    @Override
+    public SkillType getSkillType() {
+        return SkillType.LUMBERJACK;
     }
 
     @Override

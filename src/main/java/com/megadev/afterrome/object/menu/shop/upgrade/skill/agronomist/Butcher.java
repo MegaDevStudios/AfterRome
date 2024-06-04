@@ -6,6 +6,7 @@ import com.megadev.afterrome.config.ConfigManager;
 import com.megadev.afterrome.object.menu.item.MenuItem;
 import com.megadev.afterrome.object.menu.shop.upgrade.skill.Skill;
 
+import com.megadev.afterrome.object.menu.shop.upgrade.skill.SkillType;
 import com.megadev.afterrome.util.ConditionCalculator;
 import lombok.Getter;
 
@@ -27,6 +28,16 @@ public class Butcher implements Skill {
 
     public Butcher(int level) {
         this.level = level;
+    }
+
+    @Override
+    public String getName() {
+        return "butcher";
+    }
+
+    @Override
+    public SkillType getSkillType() {
+        return SkillType.BUTCHER;
     }
 
     @Override

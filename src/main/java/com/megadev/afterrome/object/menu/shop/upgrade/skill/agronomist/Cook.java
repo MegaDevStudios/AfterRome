@@ -5,6 +5,7 @@ import com.megadev.afterrome.config.ConfigManager;
 import com.megadev.afterrome.object.menu.item.MenuItem;
 import com.megadev.afterrome.object.menu.shop.upgrade.skill.Skill;
 
+import com.megadev.afterrome.object.menu.shop.upgrade.skill.SkillType;
 import lombok.Getter;
 import org.bukkit.configuration.serialization.ConfigurationSerialization;
 import org.bukkit.configuration.serialization.SerializableAs;
@@ -18,6 +19,16 @@ public class Cook implements Skill {
 
     public Cook(int level) {
         this.level = level;
+    }
+
+    @Override
+    public String getName() {
+        return "cook";
+    }
+
+    @Override
+    public SkillType getSkillType() {
+        return SkillType.COOK;
     }
 
     @Override

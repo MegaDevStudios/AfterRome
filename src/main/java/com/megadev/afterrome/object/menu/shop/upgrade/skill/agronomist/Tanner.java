@@ -6,6 +6,7 @@ import com.megadev.afterrome.config.ConfigManager;
 import com.megadev.afterrome.object.menu.item.MenuItem;
 import com.megadev.afterrome.object.menu.shop.upgrade.skill.Skill;
 
+import com.megadev.afterrome.object.menu.shop.upgrade.skill.SkillType;
 import com.megadev.afterrome.util.ConditionCalculator;
 import lombok.Getter;
 import org.bukkit.Material;
@@ -25,6 +26,16 @@ public class Tanner implements Skill {
 
     public Tanner(int level) {
         this.level = level;
+    }
+
+    @Override
+    public String getName() {
+        return "tanner";
+    }
+
+    @Override
+    public SkillType getSkillType() {
+        return SkillType.TANNER;
     }
 
     @Override

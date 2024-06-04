@@ -32,9 +32,10 @@ public class AfterRomeUser implements User {
 
     @Setter
     private Profession profession;
+    @Getter
     private int healths;
     private final UUID uuid;
-    private int points;
+    @Getter private int points;
 
     public AfterRomeUser(Player player) {
         this.uuid = player.getUniqueId();
@@ -110,11 +111,6 @@ public class AfterRomeUser implements User {
     public void subtractHealth() {
         if (healths > 0)
             --healths;
-    }
-
-    @Override
-    public double getPoints() {
-        return points;
     }
 
     @Override

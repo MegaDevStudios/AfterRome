@@ -12,7 +12,6 @@ import com.megadev.afterrome.object.user.AfterRomeUser;
 import com.megadev.afterrome.object.user.User;
 
 import dev.mega.megacore.MegaCore;
-import dev.mega.megacore.config.serializer.SerializeUtil;
 import dev.mega.megacore.manager.MegaManager;
 import dev.mega.megacore.util.MegaCoreUtil;
 import org.bukkit.entity.Player;
@@ -42,7 +41,7 @@ public class PlayerJoinListener implements Listener {
         if (!userManager.userExist(player)) {
             if (fileExist) {
                 MegaCoreUtil.getLogger().info("File exist for " + player.getUniqueId());
-                userManager.saveUser(AfterRomeUser.deserialize(SerializeUtil.deserialize(userConfig, "")));
+//                userManager.saveUser(AfterRomeUser.deserialize(SerializeUtil.deserialize(userConfig, "")));
             } else {
                 MegaCoreUtil.getLogger().info("File does not exist for " + player.getUniqueId() + " loading from player.");
                 userManager.saveUser(player);

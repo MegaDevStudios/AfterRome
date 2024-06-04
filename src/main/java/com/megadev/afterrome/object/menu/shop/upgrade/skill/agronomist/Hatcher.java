@@ -6,6 +6,7 @@ import com.megadev.afterrome.config.ConfigManager;
 import com.megadev.afterrome.object.menu.item.MenuItem;
 import com.megadev.afterrome.object.menu.shop.upgrade.skill.Skill;
 
+import com.megadev.afterrome.object.menu.shop.upgrade.skill.SkillType;
 import com.megadev.afterrome.util.ConditionCalculator;
 import lombok.Getter;
 import org.bukkit.Bukkit;
@@ -22,6 +23,16 @@ public class Hatcher implements Skill {
 
     public Hatcher(int level) {
         this.level = level;
+    }
+
+    @Override
+    public String getName() {
+        return "hatcher";
+    }
+
+    @Override
+    public SkillType getSkillType() {
+        return SkillType.HATCHER;
     }
 
     @Override

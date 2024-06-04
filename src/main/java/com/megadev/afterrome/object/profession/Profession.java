@@ -17,6 +17,8 @@ import java.util.Map;
 public interface Profession extends ConfigurationSerializable {
     String getName();
 
+    ProfessionType getProfessionType();
+
     AbstractUpgradeMenu getUpgradeMenu(User user);
 
     MenuItem getBackgroundItem();

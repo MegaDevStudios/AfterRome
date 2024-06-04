@@ -23,6 +23,11 @@ public class Artisan implements Profession {
     }
 
     @Override
+    public ProfessionType getProfessionType() {
+        return ProfessionType.ARTISAN;
+    }
+
+    @Override
     public AbstractUpgradeMenu getUpgradeMenu(User user) {
         return null;
     }

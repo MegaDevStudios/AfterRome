@@ -22,6 +22,11 @@ public class DefaultProfession implements Profession {
     }
 
     @Override
+    public ProfessionType getProfessionType() {
+        return ProfessionType.DEFAULT;
+    }
+
+    @Override
     public AbstractUpgradeMenu getUpgradeMenu(User user) {
         return null;
     }

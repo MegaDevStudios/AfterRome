@@ -20,6 +20,11 @@ public class Santa implements HiddenProfession {
     }
 
     @Override
+    public ProfessionType getProfessionType() {
+        return null;
+    }
+
+    @Override
     public AbstractUpgradeMenu getUpgradeMenu(User user) {
         return null;
     }

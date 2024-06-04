@@ -22,6 +22,11 @@ public class Forester implements Profession {
     }
 
     @Override
+    public ProfessionType getProfessionType() {
+        return null;
+    }
+
+    @Override
     public AbstractUpgradeMenu getUpgradeMenu(User user) {
         return null;
     }

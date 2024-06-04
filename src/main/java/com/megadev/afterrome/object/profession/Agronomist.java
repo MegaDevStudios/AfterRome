@@ -36,6 +36,10 @@ public class Agronomist implements Profession {
        );
     }
 
+    public Agronomist(List<Skill> skills) {
+        this.skills = skills;
+    }
+
     public Agronomist(Map<String, Object> data) {
         List<Map<String, Object>> mappedSkills = (ArrayList<Map<String, Object>>) data.get("skills"); // List<{level: 0}>
         List<Skill> skillList = List.of(
@@ -70,6 +74,11 @@ public class Agronomist implements Profession {
     @Override
     public String getName() {
         return ConfigManager.getInstance().getConfig(AgronomistConfig.class).getName();
+    }
+
+    @Override
+    public ProfessionType getProfessionType() {
+        return ProfessionType.AGRONOMIST;
     }
 
     @Override
