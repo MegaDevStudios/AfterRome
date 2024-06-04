@@ -18,7 +18,7 @@ import java.util.UUID;
 @Getter
 public class UserManager extends Manager {
     private final Data<User> users = new Data<>();
-    private final String dataFolder = "xdev/data/";
+    private final String dataFolder = "/home/dreaght/MegaTests/plugins/AfterRome/xdev/data/";
 
     public UserManager(MegaCore megaCore) {
         super(megaCore);
@@ -33,6 +33,16 @@ public class UserManager extends Manager {
 
     public void removePlayer(Player player) {
         users.remove(player.getUniqueId());
+
+        User user = getUserOrDefault(player.getUniqueId());
+
+        UserSerializationEvent event = new UserSerializationEvent(user,
+                new File(dataFolder+user.getUuid()+".json"));
+        Bukkit.getPluginManager().callEvent(event);
+
+        if (event.isCancelled()) return;
+
+        JsonSerializer.serialize(event.getFile(), event.getUser());
     }
 
     public void addPlayer(Player player) {
