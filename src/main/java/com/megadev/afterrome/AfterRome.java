@@ -21,10 +21,8 @@ import dev.mega.megacore.manager.MegaManager;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
 
-import java.lang.reflect.InvocationTargetException;
-
 public class AfterRome extends MegaCore {
-    public AfterRome() throws InvocationTargetException, NoSuchMethodException, IllegalAccessException {
+    public AfterRome() {
         super(ConfigManager.class, "com.megadev.afterrome.manager", "");
     }
 
