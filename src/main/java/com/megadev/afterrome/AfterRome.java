@@ -25,13 +25,12 @@ import java.lang.reflect.InvocationTargetException;
 
 public class AfterRome extends MegaCore {
     public AfterRome() throws InvocationTargetException, NoSuchMethodException, IllegalAccessException {
-        super(ConfigManager.class, "com.megadev.afterrome.manager");
+        super(ConfigManager.class, "com.megadev.afterrome.manager", "");
     }
 
     @Override
     public void enable() {
         setupListeners();
-        setupCommands();
     }
 
     @Override
@@ -47,7 +46,8 @@ public class AfterRome extends MegaCore {
         });
     }
 
-    private void setupCommands() {
+    @Override
+    public void registerCommands() {
         PaperCommandManager commandManager = new PaperCommandManager(this);
         commandManager.registerCommand(new SkillsCommand());
         commandManager.registerCommand(new ProgCommand());
