@@ -14,7 +14,7 @@ public class AfterRome extends MegaCore {
 
     @Override
     protected void registerCommands() {
-
+        
     }
 
     @Override

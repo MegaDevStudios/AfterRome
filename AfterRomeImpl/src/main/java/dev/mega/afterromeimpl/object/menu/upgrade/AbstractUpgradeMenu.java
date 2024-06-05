@@ -1,9 +1,8 @@
 package dev.mega.afterromeimpl.object.menu.upgrade;
 
-import com.megadev.afterrome.object.menu.AbstractMenu;
-import com.megadev.afterrome.object.menu.shop.upgrade.skill.Skill;
-import com.megadev.afterrome.object.profession.Profession;
-import com.megadev.afterrome.object.user.User;
+import dev.mega.afterrome.user.Profession;
+import dev.mega.afterrome.user.Skill;
+import dev.mega.afterrome.user.User;
 
 public abstract class AbstractUpgradeMenu extends AbstractMenu {
     Profession profession;
@@ -20,14 +19,14 @@ public abstract class AbstractUpgradeMenu extends AbstractMenu {
 
     @Override
     protected void setMenuItems() {
-        for (int i = 0; i < getSize(); i++)
-            setItem(profession.getBackgroundItem(), i);
-
-        int i = 1;
-        for (Skill skill : profession.getSkills()) {
-            setItem(skill.getMenuItem(), i);
-            if (i == 7) i += 12;
-            else i += 3;
-        }
+//        for (int i = 0; i < getSize(); i++)
+////            setItem(profession.getBackgroundItem(), i);
+//
+//        int i = 1;
+//        for (Skill skill : profession.getSkills()) {
+////            setItem(skill.getMenuItem(), i);
+//            if (i == 7) i += 12;
+//            else i += 3;
+//        }
     }
 }

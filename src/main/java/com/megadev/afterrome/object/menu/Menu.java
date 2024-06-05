@@ -6,6 +6,8 @@ import org.bukkit.event.inventory.InventoryOpenEvent;
 import org.bukkit.inventory.InventoryHolder;
 
 public interface Menu extends InventoryHolder {
+    String getMenuName();
+
     void handleClick(InventoryClickEvent event);
 
     void handleBottomInventoryClick(InventoryClickEvent event);

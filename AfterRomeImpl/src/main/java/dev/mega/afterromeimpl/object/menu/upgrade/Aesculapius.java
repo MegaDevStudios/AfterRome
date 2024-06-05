@@ -1,4 +1,5 @@
 package dev.mega.afterromeimpl.object.menu.upgrade;
 
-public class Aesculapius {
+public class Aesculapius extends AbstractUpgradeMenu {
+
 }

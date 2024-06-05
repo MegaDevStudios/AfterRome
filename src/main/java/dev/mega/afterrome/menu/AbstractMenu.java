@@ -1,12 +1,12 @@
-package dev.mega.afterromeimpl.object.menu;
+package dev.mega.afterrome.menu;
 
 import com.megadev.afterrome.config.ConfigManager;
-import com.megadev.afterrome.manager.MenuManager;
 import com.megadev.afterrome.manager.SaleTransactionManager;
 import com.megadev.afterrome.manager.UserManager;
 import com.megadev.afterrome.object.menu.Menu;
 import com.megadev.afterrome.object.menu.item.MenuItem;
-import com.megadev.afterrome.object.user.User;
+
+import dev.mega.afterrome.user.User;
 import dev.mega.megacore.manager.MegaManager;
 import dev.mega.megacore.util.Color;
 import lombok.Getter;
@@ -39,6 +39,7 @@ public abstract class AbstractMenu implements Menu {
         this.items = new MenuItem[rows * 9];
         this.type = InventoryType.CHEST;
         this.configManager = ConfigManager.getInstance();
+
     }
 
     public AbstractMenu(User user, InventoryType type) {
@@ -60,8 +61,6 @@ public abstract class AbstractMenu implements Menu {
     public int updateTime() {
         return 20;
     }
-
-    public abstract String getMenuName();
 
     public void disallowClicks()
     {

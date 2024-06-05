@@ -1,5 +1,6 @@
 package dev.mega.afterromeimpl.listener;
 
+import dev.mega.afterrome.api.AfterRomeAPI;
 import dev.mega.afterrome.event.PreClassChoiceEvent;
 import dev.mega.afterrome.user.User;
 import org.bukkit.event.EventHandler;
