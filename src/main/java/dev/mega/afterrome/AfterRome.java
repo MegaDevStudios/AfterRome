@@ -1,5 +1,7 @@
 package dev.mega.afterrome;
 
+import dev.mega.afterrome.api.AfterRomeAPI;
+import dev.mega.afterrome.api.ArAPIHandler;
 import dev.mega.afterrome.config.ConfigManager;
 import dev.mega.megacore.MegaCore;
 
@@ -16,7 +18,7 @@ public class AfterRome extends MegaCore {
 
     @Override
     public void enable() {
-
+        AfterRomeAPI.setApi(new ArAPIHandler());
     }
 
     @Override

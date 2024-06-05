@@ -18,7 +18,7 @@ import java.io.File;
 import java.util.*;
 
 public class ArAPIHandler implements APIHandler {
-    protected ArAPIHandler() {}
+    public ArAPIHandler() {}
 
     @Override
     public boolean isDisabled() {

@@ -36,4 +36,8 @@ public class AfterRomeAPI {
     public static void setProfession(User user, Profession.Type type) {
         api.setProfession(user, type);
     }
+
+    public static void setApi(APIHandler api) {
+        AfterRomeAPI.api = api;
+    }
 }

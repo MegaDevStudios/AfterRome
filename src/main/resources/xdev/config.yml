@@ -4,7 +4,6 @@ profession-skill:
   DEFAULT: {}
   AGRONOMIST:
     - BUTCHER
-    - BUTCHER
     - COOK
     - FARMER
     - HATCHER
