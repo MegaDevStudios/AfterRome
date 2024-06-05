@@ -1,7 +1,7 @@
 package dev.mega.afterrome.manager;
 
+import dev.mega.afterrome.api.AfterRomeAPI;
 import dev.mega.afterrome.user.User;
-import dev.mega.afterrome.event.UserDeserializationEvent;
 import dev.mega.afterrome.event.UserSerializationEvent;
 import dev.mega.megacore.MegaCore;
 import dev.mega.megacore.config.serializer.JsonSerializer;
@@ -12,8 +12,6 @@ import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
 import java.io.File;
-import java.util.Objects;
-import java.util.UUID;
 
 @Getter
 public class UserManager extends Manager {
@@ -34,35 +32,19 @@ public class UserManager extends Manager {
     public void removePlayer(Player player) {
         users.remove(player.getUniqueId());
 
-        User user = getUserOrDefault(player.getUniqueId());
-
-        UserSerializationEvent event = new UserSerializationEvent(user,
-                new File(dataFolder+user.getUuid()+".json"));
-        Bukkit.getPluginManager().callEvent(event);
-
-        if (event.isCancelled()) return;
-
-        JsonSerializer.serialize(event.getFile(), event.getUser());
+        User user = AfterRomeAPI.getUserOrDefault(player.getUniqueId(), dataFolder);
+        AfterRomeAPI.serialize(user, dataFolder);
     }
 
     public void addPlayer(Player player) {
-        UUID uuid = player.getUniqueId();
-        User user = getUserOrDefault(uuid);
+        User user = AfterRomeAPI.getUserOrDefault(player.getUniqueId(), dataFolder);
 
-        if (!has(user))
-            users.addValue(player.getUniqueId(), user);
+        if (has(user)) return;
+        users.addValue(player.getUniqueId(), user);
     }
 
     public boolean has(User user) {
         return users.contains(user.getUuid());
-    }
-
-    public User getUserOrDefault(UUID uuid) {
-        UserDeserializationEvent event = new UserDeserializationEvent(new File(dataFolder+uuid+".json"));
-        Bukkit.getPluginManager().callEvent(event);
-
-        User user = (User) JsonSerializer.deserialize(event.getFile(), User.class);
-        return Objects.requireNonNullElseGet(user, () -> new User(uuid));
     }
 
     @Override

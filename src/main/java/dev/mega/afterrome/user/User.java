@@ -1,7 +1,6 @@
 package dev.mega.afterrome.user;
 
-import dev.mega.afterrome.profession.ProfessionType;
-import dev.mega.afterrome.skill.Skill;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -9,19 +8,18 @@ import java.util.List;
 import java.util.UUID;
 
 @Getter @Setter
+@AllArgsConstructor(staticName = "of")
 public class User {
     private final UUID uuid;
-    private ProfessionType type;
+    private Profession.Type type;
     private List<Skill> skills;
     private int health;
     private int points;
 
-    public User(UUID uuid) {
-        this.uuid = uuid;
-    }
-
-    public User(UUID uuid, ProfessionType type) {
-        this.uuid = uuid;
-        this.type = type;
+    public static User of(UUID uuid, List<Skill.Type> skillTypes) {
+        return User.of(uuid,
+                Profession.Type.DEFAULT,
+                skillTypes.stream().map(type -> Skill.of(type, 0)).toList(),
+                0, 0);
     }
 }

@@ -1,0 +1,12 @@
+# Do not un-capitalize them!
+
+profession-skill:
+  DEFAULT: {}
+  AGRONOMIST:
+    - BUTCHER
+    - BUTCHER
+    - COOK
+    - FARMER
+    - HATCHER
+    - LUMBERJACK
+    - TANNER

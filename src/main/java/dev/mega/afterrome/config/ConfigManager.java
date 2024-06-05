@@ -5,12 +5,13 @@ import dev.mega.megacore.config.SubFolder;
 import lombok.Getter;
 import org.bukkit.plugin.Plugin;
 
-@Getter
 public class ConfigManager extends SubFolder {
-    private static ConfigManager instance;
+    @Getter private static ConfigManager instance;
 
     private ConfigManager(Plugin plugin) {
         super(plugin, "xdev");
+
+        addConfig(Config.class, new Config(plugin, getDataFolder(), "config"));
     }
 
     public static void init(MegaCore megaCore) {

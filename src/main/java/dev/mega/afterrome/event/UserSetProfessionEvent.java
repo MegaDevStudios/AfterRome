@@ -1,7 +1,7 @@
 package dev.mega.afterrome.event;
 
+import dev.mega.afterrome.user.Profession;
 import dev.mega.afterrome.user.User;
-import dev.mega.afterrome.profession.ProfessionType;
 import lombok.Getter;
 import lombok.Setter;
 import org.bukkit.event.HandlerList;
@@ -11,9 +11,9 @@ public class UserSetProfessionEvent extends CancellableAREvent {
     @Getter private final HandlerList handlers = new HandlerList();
 
     private final User user;
-    private ProfessionType type;
+    private Profession.Type type;
 
-    public UserSetProfessionEvent(User user, ProfessionType file) {
+    public UserSetProfessionEvent(User user, Profession.Type file) {
         this.user = user;
         this.type = file;
     }
