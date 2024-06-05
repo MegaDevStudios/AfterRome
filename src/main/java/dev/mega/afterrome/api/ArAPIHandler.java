@@ -2,7 +2,8 @@ package dev.mega.afterrome.api;
 
 import dev.mega.afterrome.config.Config;
 import dev.mega.afterrome.config.ConfigManager;
-import dev.mega.afterrome.event.UserDeserializationEvent;
+import dev.mega.afterrome.event.PreDefaultUserCreateEvent;
+import dev.mega.afterrome.event.PreUserDeserializationEvent;
 import dev.mega.afterrome.event.UserSerializationEvent;
 import dev.mega.afterrome.event.UserSetProfessionEvent;
 import dev.mega.afterrome.manager.UserManager;
@@ -41,14 +42,20 @@ public class ArAPIHandler implements APIHandler {
 
     @Override
     public User getUserOrDefault(UUID uuid, String dataFolder) {
-        UserDeserializationEvent event = new UserDeserializationEvent(new File(dataFolder+uuid+".json"));
+        PreUserDeserializationEvent event = new PreUserDeserializationEvent(new File(dataFolder+uuid+".json"));
         Bukkit.getPluginManager().callEvent(event);
 
         User user = (User) JsonSerializer.deserialize(event.getFile(), User.class);
 
         return Objects.requireNonNullElseGet(user, () -> {
             List<Skill.Type> skillTypes = ConfigManager.getInstance().getConfig(Config.class).getSkillsOf(Profession.Type.DEFAULT);
-            return User.of(uuid, skillTypes);
+
+            User defaultUser = User.of(uuid, skillTypes);
+
+            PreDefaultUserCreateEvent preDefaultUserCreateEvent = new PreDefaultUserCreateEvent(defaultUser);
+            Bukkit.getPluginManager().callEvent(preDefaultUserCreateEvent);
+
+            return defaultUser;
         });
     }
 
@@ -79,5 +86,11 @@ public class ArAPIHandler implements APIHandler {
         if (event.isCancelled()) return;
 
         user.setType(event.getType());
+    }
+
+    @Override
+    public boolean hasPlayedBefore(Player player) {
+        if (isDisabled()) return false;
+        return MegaManager.getManager(UserManager.class).hasPlayedBefore(player);
     }
 }

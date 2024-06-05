@@ -22,4 +22,6 @@ public interface APIHandler {
     void serialize(User user, String dataFolder);
 
     void setProfession(User user, Profession.Type type);
+
+    boolean hasPlayedBefore(Player player);
 }

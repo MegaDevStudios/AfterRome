@@ -29,11 +29,19 @@ public class UserManager extends Manager {
         setRunning(true);
     }
 
+    public boolean hasPlayedBefore(Player player) {
+        return new File(dataFolder+player.getUniqueId()+".json").exists();
+    }
+
     public void removePlayer(Player player) {
         users.remove(player.getUniqueId());
 
         User user = AfterRomeAPI.getUserOrDefault(player.getUniqueId(), dataFolder);
         AfterRomeAPI.serialize(user, dataFolder);
+    }
+
+    public void addUser(User user) {
+        users.addValue(user.getUuid(), user);
     }
 
     public void addPlayer(Player player) {

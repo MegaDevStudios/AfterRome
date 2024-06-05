@@ -6,7 +6,6 @@ public final class AfterRomeImpl extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        // Plugin startup logic
 
     }
 
