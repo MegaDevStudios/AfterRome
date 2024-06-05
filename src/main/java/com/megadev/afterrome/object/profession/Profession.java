@@ -9,12 +9,12 @@ import com.megadev.afterrome.object.user.User;
 
 import org.bukkit.configuration.serialization.ConfigurationSerializable;
 import org.bukkit.configuration.serialization.SerializableAs;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 import java.util.Map;
 
-@SerializableAs("profession")
-public interface Profession extends ConfigurationSerializable {
+public interface Profession {
     String getName();
 
     ProfessionType getProfessionType();
@@ -27,7 +27,9 @@ public interface Profession extends ConfigurationSerializable {
 
     Skill getSkill(SkillType skill);
 
+    SaleConfig getSaleConfig();
+
     Profession deserialize(Map<String, Object> data);
 
-    SaleConfig getSaleConfig();
+    Map<String, Object> serialize();
 }

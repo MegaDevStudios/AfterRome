@@ -14,6 +14,7 @@ import com.megadev.afterrome.object.menu.shop.upgrade.skill.agronomist.*;
 import com.megadev.afterrome.object.user.User;
 import lombok.Getter;
 
+import org.bukkit.configuration.serialization.ConfigurationSerializable;
 import org.bukkit.configuration.serialization.ConfigurationSerialization;
 import org.bukkit.configuration.serialization.SerializableAs;
 import org.jetbrains.annotations.NotNull;
@@ -22,7 +23,7 @@ import java.util.*;
 
 @Getter
 @SerializableAs("agronomist")
-public class Agronomist implements Profession {
+public class Agronomist implements Profession, ConfigurationSerializable {
     List<Skill> skills;
 
     public Agronomist() {
@@ -42,7 +43,8 @@ public class Agronomist implements Profession {
 
     public Agronomist(Map<String, Object> data) {
         List<Map<String, Object>> mappedSkills = (ArrayList<Map<String, Object>>) data.get("skills"); // List<{level: 0}>
-        List<Skill> skillList = List.of(
+
+        this.skills = List.of(
                 new Butcher((Integer) mappedSkills.get(0).get("level")),
                 new Cook((Integer) mappedSkills.get(1).get("level")),
                 new Farmer((Integer) mappedSkills.get(2).get("level")),
@@ -50,8 +52,6 @@ public class Agronomist implements Profession {
                 new Lumberjack((Integer) mappedSkills.get(4).get("level")),
                 new Tanner((Integer) mappedSkills.get(5).get("level"))
         );
-
-        this.skills = skillList;
     }
 
     @Override
@@ -93,8 +93,9 @@ public class Agronomist implements Profession {
 
     @Override
     public @NotNull Map<String, Object> serialize() {
+        // "butcher" -> {"level": 0}
         Map<String, Object> skills = Map.of(
-                "butcher", getSkill(SkillType.BUTCHER).serialize(), // "butcher" -> {"level": 0}
+                "butcher", getSkill(SkillType.BUTCHER).serialize(),
                 "cook", getSkill(SkillType.COOK).serialize(),
                 "farmer", getSkill(SkillType.FARMER).serialize(),
                 "hatcher", getSkill(SkillType.HATCHER).serialize(),
@@ -105,7 +106,6 @@ public class Agronomist implements Profession {
         return Map.of("skills", skills);
     }
 
-    @Override
     public Profession deserialize(Map<String, Object> data) {
         return new Agronomist(data);
     }

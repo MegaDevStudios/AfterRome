@@ -130,7 +130,7 @@ public class AfterRomeUser implements User {
     public @NotNull Map<String, Object> serialize() {
         Map<String, Object> data = Maps.newConcurrentMap();
         data.put("uuid", this.uuid.toString());
-        data.put("profession", this.profession.serialize());
+//        data.put("profession", this.profession.serialize());
         data.put("healths", this.healths);
         data.put("points", this.points);
         return data;

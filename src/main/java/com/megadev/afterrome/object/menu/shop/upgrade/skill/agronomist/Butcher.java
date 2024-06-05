@@ -12,17 +12,20 @@ import lombok.Getter;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
+import org.bukkit.configuration.serialization.ConfigurationSerializable;
 import org.bukkit.configuration.serialization.ConfigurationSerialization;
 import org.bukkit.configuration.serialization.SerializableAs;
 import org.bukkit.event.Event;
 import org.bukkit.event.entity.EntityDeathEvent;
 import org.bukkit.inventory.ItemStack;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
+import java.util.Map;
 
 @Getter
 @SerializableAs("butcher")
-public class Butcher implements Skill {
+public class Butcher implements Skill, ConfigurationSerializable {
     private final MenuItem menuItem = ConfigManager.getInstance().getConfig(AgronomistUpgradeShopConfig.class).getButcherItem();
     private int level;
 
@@ -68,6 +71,11 @@ public class Butcher implements Skill {
             items.get(1).setAmount(countOfMeat);
         }
         Bukkit.broadcastMessage("[DEBUG] Count of meat added " + countOfMeat);
+    }
+
+    @Override
+    public @NotNull Map<String, Object> serialize() {
+        return Skill.super.serialize();
     }
 
     static {

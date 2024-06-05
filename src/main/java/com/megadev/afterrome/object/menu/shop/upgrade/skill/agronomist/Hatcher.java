@@ -10,14 +10,18 @@ import com.megadev.afterrome.object.menu.shop.upgrade.skill.SkillType;
 import com.megadev.afterrome.util.ConditionCalculator;
 import lombok.Getter;
 import org.bukkit.Bukkit;
+import org.bukkit.configuration.serialization.ConfigurationSerializable;
 import org.bukkit.configuration.serialization.ConfigurationSerialization;
 import org.bukkit.configuration.serialization.SerializableAs;
 import org.bukkit.event.Event;
 import org.bukkit.event.player.PlayerEggThrowEvent;
+import org.jetbrains.annotations.NotNull;
+
+import java.util.Map;
 
 @Getter
 @SerializableAs("hatcher")
-public class Hatcher implements Skill {
+public class Hatcher implements Skill, ConfigurationSerializable {
     private final MenuItem menuItem = ConfigManager.getInstance().getConfig(AgronomistUpgradeShopConfig.class).getHatcherItem();
     private int level;
 
@@ -51,6 +55,11 @@ public class Hatcher implements Skill {
         eggThrowEvent.setNumHatches((byte) multiplier);
 
         Bukkit.broadcastMessage("[DEBUG] Multiplier of eggs " + multiplier);
+    }
+
+    @Override
+    public @NotNull Map<String, Object> serialize() {
+        return Skill.super.serialize();
     }
 
     static {

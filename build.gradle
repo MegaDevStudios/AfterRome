@@ -6,6 +6,10 @@ plugins {
 group = 'com.megadev'
 version = '1.0-beta'
 
+subprojects {
+    apply plugin: 'java'
+}
+
 repositories {
     mavenCentral()
     mavenLocal()
@@ -43,7 +47,7 @@ repositories {
 }
 
 dependencies {
-    implementation files (new File("lib/megacore-1.2-beta.jar"))
+    implementation files (new File("AfterRomeImpl/lib/megacore-1.2-beta.jar"))
     testImplementation files (new File("lib/megacore-1.2-beta.jar"))
 
     implementation 'org.jetbrains:annotations:24.0.0'

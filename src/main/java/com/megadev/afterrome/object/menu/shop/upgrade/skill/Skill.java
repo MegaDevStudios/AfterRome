@@ -7,7 +7,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Map;
 
-public interface Skill extends ConfigurationSerializable {
+public interface Skill {
     String getName();
 
     SkillType getSkillType();

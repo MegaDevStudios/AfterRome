@@ -8,7 +8,7 @@ import org.bukkit.event.HandlerList;
 
 @Getter @Setter
 @AllArgsConstructor
-public class ClassChoiceEvent extends CancellableAREvent {
+public class PreClassChoiceEvent extends CancellableAREvent {
     private final HandlerList handlers = new HandlerList();
 
     private final User user;

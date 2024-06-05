@@ -12,14 +12,18 @@ import com.megadev.afterrome.util.ConditionCalculator;
 import dev.mega.megacore.manager.MegaManager;
 import lombok.Getter;
 import org.bukkit.block.Block;
+import org.bukkit.configuration.serialization.ConfigurationSerializable;
 import org.bukkit.configuration.serialization.ConfigurationSerialization;
 import org.bukkit.configuration.serialization.SerializableAs;
 import org.bukkit.event.Event;
 import org.bukkit.event.block.BlockBreakEvent;
+import org.jetbrains.annotations.NotNull;
+
+import java.util.Map;
 
 @Getter
 @SerializableAs("lumberjack")
-public class Lumberjack implements Skill {
+public class Lumberjack implements Skill, ConfigurationSerializable {
     private final MenuItem menuItem = ConfigManager.getInstance().getConfig(AgronomistUpgradeShopConfig.class).getLumberjackItem();
     private int level;
 
@@ -53,6 +57,11 @@ public class Lumberjack implements Skill {
         if (ConditionCalculator.isPassed(percent) == 1) {
             MegaManager.getManager(TreecapitatorManager.class).treeCapitate(block);
         }
+    }
+
+    @Override
+    public @NotNull Map<String, Object> serialize() {
+        return Skill.super.serialize();
     }
 
     static {

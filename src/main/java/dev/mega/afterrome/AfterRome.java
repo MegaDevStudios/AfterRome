@@ -8,7 +8,8 @@ import dev.mega.megacore.MegaCore;
 public class AfterRome extends MegaCore {
     public AfterRome() {
         super(ConfigManager.class,
-                "dev.mega.afterrome.manager", "dev.mega.afterrome.listener");
+                "dev.mega.afterrome.manager",
+                "dev.mega.afterrome.listener");
     }
 
     @Override

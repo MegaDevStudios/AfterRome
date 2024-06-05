@@ -11,18 +11,21 @@ import com.megadev.afterrome.util.ConditionCalculator;
 import dev.mega.megacore.util.MegaCoreUtil;
 import lombok.Getter;
 import org.bukkit.Material;
+import org.bukkit.configuration.serialization.ConfigurationSerializable;
 import org.bukkit.configuration.serialization.ConfigurationSerialization;
 import org.bukkit.configuration.serialization.SerializableAs;
 import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Event;
 import org.bukkit.event.block.BlockDropItemEvent;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
+import java.util.Map;
 
 @Getter
 @SerializableAs("farmer")
-public class Farmer implements Skill {
+public class Farmer implements Skill, ConfigurationSerializable {
     private final MenuItem menuItem = ConfigManager.getInstance().getConfig(AgronomistUpgradeShopConfig.class).getFarmerItem();
     private int level;
 
@@ -70,6 +73,11 @@ public class Farmer implements Skill {
         MegaCoreUtil.getLogger().info("Count of fetus added " + countOfFetus);
         player.sendMessage("[DEBUG] Count of fetus added " + countOfFetus);
         items.add(player.getWorld().dropItem(blockDropItemEvent.getBlock().getLocation().add(0, 1, 0), item.getItemStack().add(countOfFetus)));
+    }
+
+    @Override
+    public @NotNull Map<String, Object> serialize() {
+        return Skill.super.serialize();
     }
 
     static {
