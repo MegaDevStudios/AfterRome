@@ -38,11 +38,11 @@ public class MenuListener implements Listener {
         event.setCancelled(true);
 
         if (item == null) return;
-        if (clickedInventory == topInventory) {
-            menu.handleClick(event);
-        } else if (clickedInventory == bottomInventory) {
-            menu.handleBottomInventoryClick(event);
-        }
+//        if (clickedInventory == topInventory) {
+        menu.handleClick(event);
+//        } else if (clickedInventory == bottomInventory) {
+//            menu.handleBottomInventoryClick(event);
+//        }
     }
 
     @EventHandler(priority = EventPriority.NORMAL)

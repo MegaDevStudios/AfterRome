@@ -1,7 +1,7 @@
 package dev.mega.afterromeimpl.object.menu.upgrade;
 
+import dev.mega.afterrome.menu.AbstractMenu;
 import dev.mega.afterrome.user.Profession;
-import dev.mega.afterrome.user.Skill;
 import dev.mega.afterrome.user.User;
 
 public abstract class AbstractUpgradeMenu extends AbstractMenu {

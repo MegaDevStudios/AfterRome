@@ -1,4 +1,4 @@
-package dev.mega.afterromeimpl.object.menu.action;
+package dev.mega.afterrome.menu.action;
 
 import org.bukkit.event.inventory.InventoryClickEvent;
 
