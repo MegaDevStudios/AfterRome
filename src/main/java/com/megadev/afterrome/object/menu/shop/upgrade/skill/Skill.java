@@ -14,9 +14,13 @@ public interface Skill extends ConfigurationSerializable {
 
     MenuItem getMenuItem();
 
-    void incrementLevel();
-
     int getLevel();
+
+    void setLevel(int level);
+
+    default void incrementLevel() {
+        setLevel(getLevel() + 1);
+    }
 
     void execute(Event event);
 

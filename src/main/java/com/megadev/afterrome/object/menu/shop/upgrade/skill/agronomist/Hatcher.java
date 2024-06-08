@@ -9,6 +9,7 @@ import com.megadev.afterrome.object.menu.shop.upgrade.skill.Skill;
 import com.megadev.afterrome.object.menu.shop.upgrade.skill.SkillType;
 import com.megadev.afterrome.util.ConditionCalculator;
 import lombok.Getter;
+import lombok.Setter;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.serialization.ConfigurationSerialization;
 import org.bukkit.configuration.serialization.SerializableAs;
@@ -19,6 +20,7 @@ import org.bukkit.event.player.PlayerEggThrowEvent;
 @SerializableAs("hatcher")
 public class Hatcher implements Skill {
     private final MenuItem menuItem = ConfigManager.getInstance().getConfig(AgronomistUpgradeShopConfig.class).getHatcherItem();
+    @Setter
     private int level;
 
     public Hatcher(int level) {
@@ -27,17 +29,12 @@ public class Hatcher implements Skill {
 
     @Override
     public String getName() {
-        return "hatcher";
+        return ConfigManager.getInstance().getConfig(AgronomistUpgradeShopConfig.class).getHatcherName();
     }
 
     @Override
     public SkillType getSkillType() {
         return SkillType.HATCHER;
-    }
-
-    @Override
-    public void incrementLevel() {
-        level++;
     }
 
     @Override
@@ -49,8 +46,6 @@ public class Hatcher implements Skill {
 
         eggThrowEvent.setHatching(true);
         eggThrowEvent.setNumHatches((byte) multiplier);
-
-        Bukkit.broadcastMessage("[DEBUG] Multiplier of eggs " + multiplier);
     }
 
     static {

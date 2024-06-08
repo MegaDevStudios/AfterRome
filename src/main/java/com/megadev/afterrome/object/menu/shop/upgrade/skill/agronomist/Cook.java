@@ -7,6 +7,7 @@ import com.megadev.afterrome.object.menu.shop.upgrade.skill.Skill;
 
 import com.megadev.afterrome.object.menu.shop.upgrade.skill.SkillType;
 import lombok.Getter;
+import lombok.Setter;
 import org.bukkit.configuration.serialization.ConfigurationSerialization;
 import org.bukkit.configuration.serialization.SerializableAs;
 import org.bukkit.event.Event;
@@ -15,6 +16,7 @@ import org.bukkit.event.Event;
 @SerializableAs("cook")
 public class Cook implements Skill {
     private final MenuItem menuItem = ConfigManager.getInstance().getConfig(AgronomistUpgradeShopConfig.class).getCookItem();
+    @Setter
     private int level;
 
     public Cook(int level) {
@@ -23,17 +25,12 @@ public class Cook implements Skill {
 
     @Override
     public String getName() {
-        return "cook";
+        return ConfigManager.getInstance().getConfig(AgronomistUpgradeShopConfig.class).getCookName();
     }
 
     @Override
     public SkillType getSkillType() {
         return SkillType.COOK;
-    }
-
-    @Override
-    public void incrementLevel() {
-        level++;
     }
 
     @Override

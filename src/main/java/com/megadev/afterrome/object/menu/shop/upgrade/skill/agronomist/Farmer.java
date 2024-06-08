@@ -10,6 +10,7 @@ import com.megadev.afterrome.object.menu.shop.upgrade.skill.SkillType;
 import com.megadev.afterrome.util.ConditionCalculator;
 import dev.mega.megacore.util.MegaCoreUtil;
 import lombok.Getter;
+import lombok.Setter;
 import org.bukkit.Material;
 import org.bukkit.configuration.serialization.ConfigurationSerialization;
 import org.bukkit.configuration.serialization.SerializableAs;
@@ -24,6 +25,7 @@ import java.util.List;
 @SerializableAs("farmer")
 public class Farmer implements Skill {
     private final MenuItem menuItem = ConfigManager.getInstance().getConfig(AgronomistUpgradeShopConfig.class).getFarmerItem();
+    @Setter
     private int level;
 
     public Farmer(int level) {
@@ -32,17 +34,12 @@ public class Farmer implements Skill {
 
     @Override
     public String getName() {
-        return "farmer";
+        return ConfigManager.getInstance().getConfig(AgronomistUpgradeShopConfig.class).getFarmerName();
     }
 
     @Override
     public SkillType getSkillType() {
         return SkillType.FARMER;
-    }
-
-    @Override
-    public void incrementLevel() {
-        level++;
     }
 
     @Override

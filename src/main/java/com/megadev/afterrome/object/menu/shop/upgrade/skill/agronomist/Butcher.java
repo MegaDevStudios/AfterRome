@@ -10,6 +10,7 @@ import com.megadev.afterrome.object.menu.shop.upgrade.skill.SkillType;
 import com.megadev.afterrome.util.ConditionCalculator;
 import lombok.Getter;
 
+import lombok.Setter;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.configuration.serialization.ConfigurationSerialization;
@@ -24,6 +25,7 @@ import java.util.List;
 @SerializableAs("butcher")
 public class Butcher implements Skill {
     private final MenuItem menuItem = ConfigManager.getInstance().getConfig(AgronomistUpgradeShopConfig.class).getButcherItem();
+    @Setter
     private int level;
 
     public Butcher(int level) {
@@ -32,17 +34,12 @@ public class Butcher implements Skill {
 
     @Override
     public String getName() {
-        return "butcher";
+        return ConfigManager.getInstance().getConfig(AgronomistUpgradeShopConfig.class).getButcherName();
     }
 
     @Override
     public SkillType getSkillType() {
         return SkillType.BUTCHER;
-    }
-
-    @Override
-    public void incrementLevel() {
-        level++;
     }
 
     @Override
@@ -54,20 +51,25 @@ public class Butcher implements Skill {
 
         List<ItemStack> items = entityDeathEvent.getDrops();
 
-        if (items.size() == 1 && (items.get(0).getType() == Material.BEEF ||
+        if (items.size() == 1 &&
+                (items.get(0).getType() == Material.BEEF ||
                 items.get(0).getType() == Material.RABBIT ||
                 items.get(0).getType() == Material.CHICKEN ||
                 items.get(0).getType() == Material.PORKCHOP ||
-                items.get(0).getType() == Material.MUTTON)) {
+                items.get(0).getType() == Material.MUTTON))
+        {
             items.get(0).setAmount(countOfMeat);
-        } else if (items.size() == 2 && (items.get(1).getType() == Material.BEEF ||
+        }
+
+        else if (items.size() == 2 &&
+                (items.get(1).getType() == Material.BEEF ||
                 items.get(1).getType() == Material.RABBIT ||
                 items.get(1).getType() == Material.CHICKEN ||
                 items.get(1).getType() == Material.PORKCHOP ||
-                items.get(1).getType() == Material.MUTTON)) {
+                items.get(1).getType() == Material.MUTTON))
+        {
             items.get(1).setAmount(countOfMeat);
         }
-        Bukkit.broadcastMessage("[DEBUG] Count of meat added " + countOfMeat);
     }
 
     static {

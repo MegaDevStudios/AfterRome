@@ -9,6 +9,7 @@ import com.megadev.afterrome.object.menu.shop.upgrade.skill.Skill;
 import com.megadev.afterrome.object.menu.shop.upgrade.skill.SkillType;
 import com.megadev.afterrome.util.ConditionCalculator;
 import lombok.Getter;
+import lombok.Setter;
 import org.bukkit.Material;
 import org.bukkit.configuration.serialization.ConfigurationSerialization;
 import org.bukkit.configuration.serialization.SerializableAs;
@@ -22,6 +23,7 @@ import java.util.List;
 @SerializableAs("tanner")
 public class Tanner implements Skill {
     private final MenuItem menuItem = ConfigManager.getInstance().getConfig(AgronomistUpgradeShopConfig.class).getTannerItem();
+    @Setter
     private int level;
 
     public Tanner(int level) {
@@ -30,17 +32,12 @@ public class Tanner implements Skill {
 
     @Override
     public String getName() {
-        return "tanner";
+        return ConfigManager.getInstance().getConfig(AgronomistUpgradeShopConfig.class).getTannerName();
     }
 
     @Override
     public SkillType getSkillType() {
         return SkillType.TANNER;
-    }
-
-    @Override
-    public void incrementLevel() {
-        level++;
     }
 
     @Override

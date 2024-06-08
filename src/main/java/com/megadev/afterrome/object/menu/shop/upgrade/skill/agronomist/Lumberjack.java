@@ -11,6 +11,7 @@ import com.megadev.afterrome.object.menu.shop.upgrade.skill.SkillType;
 import com.megadev.afterrome.util.ConditionCalculator;
 import dev.mega.megacore.manager.MegaManager;
 import lombok.Getter;
+import lombok.Setter;
 import org.bukkit.block.Block;
 import org.bukkit.configuration.serialization.ConfigurationSerialization;
 import org.bukkit.configuration.serialization.SerializableAs;
@@ -21,6 +22,7 @@ import org.bukkit.event.block.BlockBreakEvent;
 @SerializableAs("lumberjack")
 public class Lumberjack implements Skill {
     private final MenuItem menuItem = ConfigManager.getInstance().getConfig(AgronomistUpgradeShopConfig.class).getLumberjackItem();
+    @Setter
     private int level;
 
     public Lumberjack(int level) {
@@ -29,17 +31,12 @@ public class Lumberjack implements Skill {
 
     @Override
     public String getName() {
-        return "lumberjack";
+        return ConfigManager.getInstance().getConfig(AgronomistUpgradeShopConfig.class).getLumberjackName();
     }
 
     @Override
     public SkillType getSkillType() {
         return SkillType.LUMBERJACK;
-    }
-
-    @Override
-    public void incrementLevel() {
-        level++;
     }
 
     @Override

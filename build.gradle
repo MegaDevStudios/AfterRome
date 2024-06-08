@@ -28,6 +28,7 @@ repositories {
         name = "github"
         url = uri("https://maven.pkg.github.com/BGMP/CommandFramework")
     }
+
     maven {
         name = 'minecraft-repo'
         url = 'https://libraries.minecraft.net/'
@@ -39,9 +40,6 @@ repositories {
         name = 'citizens-repo'
         url = 'https://maven.citizensnpcs.co/repo'
     }
-
-    mavenCentral()
-    mavenLocal()
 }
 
 dependencies {

@@ -30,7 +30,7 @@ public class AgronomistUpgradeShopConfig extends Configurator implements Upgrade
 
     @Override
     public MenuItem getBackgroundItem() {
-        return new MenuItem(Material.valueOf((String) getValue("background-item"))).setName("&f");
+        return new MenuItem(Material.valueOf(getValue("background-item"))).setName("&f");
     }
 
     public String getButcherName() {
