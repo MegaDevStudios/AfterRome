@@ -8,7 +8,6 @@ import com.megadev.afterrome.object.skill.XSkill;
 import com.megadev.afterrome.object.user.AfterRomeUser;
 import com.megadev.afterrome.object.user.User;
 
-import com.megadev.afterrome.object.user.XUser;
 import dev.mega.megacore.MegaCore;
 import dev.mega.megacore.config.serializer.JsonSerializer;
 import dev.mega.megacore.manager.Manager;

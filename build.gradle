@@ -8,6 +8,7 @@ version = '1.0-beta'
 
 repositories {
     mavenCentral()
+    mavenLocal()
     maven {
         name = "spigotmc-repo"
         url = "https://hub.spigotmc.org/nexus/content/repositories/snapshots/"
@@ -44,10 +45,9 @@ repositories {
 }
 
 dependencies {
-    compileOnly group: 'com.mojang', name: 'authlib', version: '1.5.25'
+    compileOnly 'com.mojang:authlib:5.0.47'
 
-    implementation files (new File("lib/megacore-1.2-beta.jar"))
-    testImplementation files (new File("lib/megacore-1.2-beta.jar"))
+    implementation 'dev.mega:megacore:1.2-beta'
 
     implementation 'org.jetbrains:annotations:24.0.0'
     compileOnly "io.papermc.paper:paper-api:1.20.4-R0.1-SNAPSHOT"
@@ -58,7 +58,7 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
     testImplementation 'org.mockito:mockito-core:5.8.0'
 
-    testImplementation 'org.powermock:powermock-module-junit4:2.0.9'
+    testImplementation 'org.powermock:powermock-module-junit4:4.12'
     testImplementation 'org.powermock:powermock-api-mockito2:2.0.9'
 
     testCompileOnly 'org.projectlombok:lombok:1.18.32'
@@ -70,7 +70,7 @@ dependencies {
         exclude group: '*', module: '*'
     }
 
-    implementation group: 'com.google.code.gson', name: 'gson', version: '2.7'
+    implementation 'com.google.code.gson:gson:2.8.9'
 }
 
 def targetJavaVersion = 17
