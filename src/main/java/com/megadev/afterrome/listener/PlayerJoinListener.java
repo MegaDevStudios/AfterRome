@@ -31,29 +31,13 @@ public class PlayerJoinListener implements Listener {
     public void onLogin(PlayerJoinEvent event) {
         Player player = event.getPlayer();
 
-        ConfigManager configManager = ConfigManager.getInstance();
-        ConfigUserManager configUserManager = configManager.getConfig(ConfigUserManager.class);
-
-        UserConfig userConfig = configUserManager.getAfterRomeUserConfig(player.getUniqueId());
-
-        boolean fileExist = configUserManager.userExist(player.getUniqueId());
-
-        if (!userManager.userExist(player)) {
-            if (fileExist) {
-                MegaCoreUtil.getLogger().info("File exist for " + player.getUniqueId());
-//                userManager.saveUser(AfterRomeUser.deserialize(SerializeUtil.deserialize(userConfig, "")));
-            } else {
-                MegaCoreUtil.getLogger().info("File does not exist for " + player.getUniqueId() + " loading from player.");
-                userManager.saveUser(player);
-            }
-        }
-
-        User user = userManager.getUser(player);
-        if (user == null) return;
-
-        if (user.getProfession() instanceof DefaultProfession) {
-            Menu menu = new ChoiceMenu(user, megaCore);
-            menu.open();
+        if (!userManager.isRegistered(player.getUniqueId())) {
+            userManager.saveUser(player);
+            MegaCoreUtil.getLogger().info("File exist for " + player.getUniqueId());
+            userManager.serializeUser(userManager.getUser(player));
+        } else {
+            MegaCoreUtil.getLogger().info("File does not exist for " + player.getUniqueId() + " loading from player.");
+            userManager.saveUser(userManager.deserialize(player.getUniqueId()));
         }
     }
 }
