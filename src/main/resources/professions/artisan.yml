@@ -1,1 +1,84 @@
 name: "&8Кустарь"
+skill:
+  blacksmith:
+    level:
+      1:
+        IRON_CHESTPLATE:
+        IRON_HELMET:
+        IRON_LEGGINGS:
+        IRON_BOOTS:
+      2:
+        GOLDEN_CHESTPLATE:
+        GOLDEN_HELMET:
+        GOLDEN_LEGGINGS:
+        GOLDEN_BOOTS:
+      3:
+        CHAINMAIL_CHESTPLATE:
+        CHAINMAIL_HELMET:
+        CHAINMAIL_LEGGINGS:
+        CHAINMAIL_BOOTS:
+      4:
+        DIAMOND_CHESTPLATE:
+        DIAMOND_HELMET:
+        DIAMOND_LEGGINGS:
+        DIAMOND_BOOTS:
+      5:
+        NETHERITE_CHESTPLATE:
+        NETHERITE_HELMET:
+        NETHERITE_LEGGINGS:
+        NETHERITE_BOOTS:
+  fisherman:
+    level:
+      1: 2.0
+      2: 4.0
+      3: 6.0
+      4: 8.0
+      5: 10.0
+  horseman:
+    level:
+      1:
+      2:
+      3:
+      4:
+      5:
+  metallurgist:
+    level:
+      1: 20.0
+      2: 40.0
+      3: 60.0
+      4: 80.0
+      5: 100.0
+  miner:
+    level:
+      1: 10.0
+      2: 20.0
+      3: 30.0
+      4: 40.0
+      5: 50.0
+  toolmaker:
+    level:
+      1:
+        IRON_AXE:
+        IRON_PICKAXE:
+        IRON_SHOVEL:
+        IRON_SWORD:
+        IRON_HOE:
+      2:
+        GOLDEN_AXE:
+        GOLDEN_PICKAXE:
+        GOLDEN_SHOVEL:
+        GOLDEN_SWORD:
+        GOLDEN_HOE:
+      3:
+        DIAMOND_AXE:
+        DIAMOND_PICKAXE:
+        DIAMOND_SHOVEL:
+        DIAMOND_SWORD:
+        DIAMOND_HOE:
+      4:
+      5:
+        NETHERITE_AXE:
+        NETHERITE_PICKAXE:
+        NETHERITE_SHOVEL:
+        NETHERITE_SWORD:
+        NETHERITE_HOE:

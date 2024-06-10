@@ -7,4 +7,13 @@ public enum SkillType {
     HATCHER,
     LUMBERJACK,
     TANNER,
+
+    BLACKSMITH,
+    FISHERMAN,
+    HORSEMAN,
+    METALLURGIST,
+    MINER,
+    TOOLMAKER
+
+
 }

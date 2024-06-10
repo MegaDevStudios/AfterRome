@@ -8,7 +8,6 @@ import com.megadev.afterrome.object.menu.shop.upgrade.skill.Skill;
 
 import com.megadev.afterrome.object.menu.shop.upgrade.skill.SkillType;
 import com.megadev.afterrome.util.ConditionCalculator;
-import dev.mega.megacore.util.MegaCoreUtil;
 import lombok.Getter;
 import lombok.Setter;
 import org.bukkit.Material;
@@ -51,7 +50,9 @@ public class Farmer implements Skill {
         Player player = blockDropItemEvent.getPlayer();
 
         List<Item> items = blockDropItemEvent.getItems();
+
         Item item = items.get(0);
+
         Material itemType = items.get(0).getItemStack().getType();
 
         if (items.size() == 1 &&
@@ -64,8 +65,6 @@ public class Farmer implements Skill {
             items = List.of(item);
             return;
         }
-        MegaCoreUtil.getLogger().info("Count of fetus added " + countOfFetus);
-        player.sendMessage("[DEBUG] Count of fetus added " + countOfFetus);
         items.add(player.getWorld().dropItem(blockDropItemEvent.getBlock().getLocation().add(0, 1, 0), item.getItemStack().add(countOfFetus)));
     }
 

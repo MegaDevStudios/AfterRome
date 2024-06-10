@@ -1,6 +1,7 @@
 package com.megadev.afterrome.object.menu.shop.upgrade.skill.agronomist;
 
 import com.megadev.afterrome.config.profession.AgronomistConfig;
+import com.megadev.afterrome.config.profession.ProfessionConfig;
 import com.megadev.afterrome.config.shop.upgrade.AgronomistUpgradeShopConfig;
 import com.megadev.afterrome.config.ConfigManager;
 import com.megadev.afterrome.object.menu.item.MenuItem;
@@ -42,7 +43,8 @@ public class Tanner implements Skill {
 
     @Override
     public void execute(Event event) {
-        double[] percents = ConfigManager.getInstance().getConfig(AgronomistConfig.class).getPercents(this.level, AgronomistConfig.LevelType.LEATHER);
+        double[] percents = ConfigManager.getInstance().getConfig(AgronomistConfig.class)
+                .getPercents(this.level, ProfessionConfig.LevelType.LEATHER);
         int countOfLeather = ConditionCalculator.choiceOne(percents);
 
         EntityDeathEvent entityDeathEvent = (EntityDeathEvent) event;

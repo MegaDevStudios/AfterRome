@@ -1,6 +1,7 @@
 package com.megadev.afterrome.object.menu.shop.upgrade.skill.agronomist;
 
 import com.megadev.afterrome.config.profession.AgronomistConfig;
+import com.megadev.afterrome.config.profession.ProfessionConfig;
 import com.megadev.afterrome.config.shop.upgrade.AgronomistUpgradeShopConfig;
 import com.megadev.afterrome.config.ConfigManager;
 import com.megadev.afterrome.object.menu.item.MenuItem;
@@ -10,7 +11,6 @@ import com.megadev.afterrome.object.menu.shop.upgrade.skill.SkillType;
 import com.megadev.afterrome.util.ConditionCalculator;
 import lombok.Getter;
 import lombok.Setter;
-import org.bukkit.Bukkit;
 import org.bukkit.configuration.serialization.ConfigurationSerialization;
 import org.bukkit.configuration.serialization.SerializableAs;
 import org.bukkit.event.Event;
@@ -39,7 +39,8 @@ public class Hatcher implements Skill {
 
     @Override
     public void execute(Event event) {
-        double percent = ConfigManager.getInstance().getConfig(AgronomistConfig.class).getPercent(this.level, AgronomistConfig.LevelType.CHICKEN);
+        double percent = ConfigManager.getInstance().getConfig(AgronomistConfig.class)
+                .getPercent(this.level, ProfessionConfig.LevelType.CHICKEN);
         int multiplier = ConditionCalculator.isPassed(percent);
 
         PlayerEggThrowEvent eggThrowEvent = ((PlayerEggThrowEvent) event);

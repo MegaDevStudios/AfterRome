@@ -4,6 +4,7 @@ import com.megadev.afterrome.manager.UserManager;
 import com.megadev.afterrome.object.menu.shop.upgrade.skill.SkillType;
 import com.megadev.afterrome.object.menu.shop.upgrade.skill.agronomist.Lumberjack;
 import com.megadev.afterrome.object.profession.Agronomist;
+import com.megadev.afterrome.object.profession.Artisan;
 import com.megadev.afterrome.object.profession.Profession;
 
 import dev.mega.megacore.manager.MegaManager;
@@ -50,11 +51,13 @@ public class BlockListener implements Listener {
 
         if (block.getType().name().endsWith("LOG")) {
             Profession profession = MegaManager.getManager(UserManager.class).getUser(event.getPlayer()).getProfession();
-            if (!(profession instanceof Agronomist)) {
-                return;
+            if (profession instanceof Agronomist) {
+                profession.getSkill(SkillType.LUMBERJACK).execute(event);
+            } else if (profession instanceof Artisan) {
+                profession.getSkill(SkillType.BLACKSMITH).execute(event);
             }
 
-            profession.getSkill(SkillType.LUMBERJACK).execute(event);
+
         }
     }
 }

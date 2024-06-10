@@ -1,6 +1,7 @@
 package com.megadev.afterrome.object.menu.shop.upgrade.skill.agronomist;
 
 import com.megadev.afterrome.config.profession.AgronomistConfig;
+import com.megadev.afterrome.config.profession.ProfessionConfig;
 import com.megadev.afterrome.config.shop.upgrade.AgronomistUpgradeShopConfig;
 import com.megadev.afterrome.config.ConfigManager;
 import com.megadev.afterrome.manager.TreecapitatorManager;
@@ -41,7 +42,8 @@ public class Lumberjack implements Skill {
 
     @Override
     public void execute(Event event) {
-        double percent = ConfigManager.getInstance().getConfig(AgronomistConfig.class).getPercent(this.level, AgronomistConfig.LevelType.LUMBERJACK);
+        double percent = ConfigManager.getInstance().getConfig(AgronomistConfig.class)
+                .getPercent(this.level, ProfessionConfig.LevelType.LUMBERJACK);
 
         BlockBreakEvent breakEvent = (BlockBreakEvent) event;
 
