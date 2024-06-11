@@ -21,8 +21,9 @@ public class ConfigManager extends SubFolder {
         addConfig(ConfigUserManager.class, new ConfigUserManager(plugin, "data"));
     }
 
-    public static void init(MegaCore plugin) {
+    public static ConfigManager init(MegaCore plugin) {
         if (instance == null)
             instance = new ConfigManager(plugin, ".");
+        return instance;
     }
 }

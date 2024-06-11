@@ -6,6 +6,8 @@ import com.megadev.afterrome.object.menu.Menu;
 import com.megadev.afterrome.object.profession.DefaultProfession;
 import com.megadev.afterrome.object.user.User;
 
+import dev.mega.megacore.MegaCore;
+import dev.mega.megacore.listener.MegaListener;
 import dev.mega.megacore.manager.MegaManager;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -21,6 +23,10 @@ import org.bukkit.inventory.InventoryView;
 import org.bukkit.inventory.ItemStack;
 
 public class MenuListener implements Listener {
+//    public MenuListener(MegaCore megaCore) {
+//        super(megaCore);
+//    }
+
     @EventHandler(priority = EventPriority.NORMAL)
     public void onMenuClick(InventoryClickEvent event) {
         if (!(event.getWhoClicked() instanceof Player)) return;
