@@ -25,11 +25,16 @@ public class UserManager extends Manager {
         super(megaCore);
     }
 
+    public boolean isRegistered(UUID uuid) {
+        return new File("data/" + uuid.toString()).exists();
+    }
+
     public void serializeUser(User user) {
-        List<Skill> skillList = user.getProfession().getSkills();
-
-
         JsonSerializer.serialize(new File("data/" + user.getUuid().toString()), user);
+    }
+
+    public AfterRomeUser deserialize(UUID uuid) {
+        return (AfterRomeUser) JsonSerializer.deserialize(new File("data/"+uuid.toString()), AfterRomeUser.class);
     }
 
     public void loadUsers() {

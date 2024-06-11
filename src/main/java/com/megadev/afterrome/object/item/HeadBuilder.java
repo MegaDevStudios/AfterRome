@@ -1,25 +1,14 @@
 package com.megadev.afterrome.object.item;
 
 import com.megadev.afterrome.object.menu.item.MenuItem;
-import com.mojang.authlib.BaseUserAuthentication;
 import com.mojang.authlib.GameProfile;
 import com.mojang.authlib.properties.Property;
 
-import org.bukkit.Bukkit;
 import org.bukkit.Material;
-import org.bukkit.Server;
-import org.bukkit.entity.Entity;
-import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.SkullMeta;
-import org.bukkit.profile.PlayerProfile;
-import org.bukkit.profile.PlayerTextures;
 
 import java.lang.reflect.Field;
-import java.net.MalformedURLException;
-import java.net.URI;
-import java.net.URL;
-import java.util.Random;
 import java.util.UUID;
 
 public class HeadBuilder extends AbstractItemBuilder<HeadBuilder> {

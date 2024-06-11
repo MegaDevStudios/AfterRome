@@ -13,7 +13,9 @@ import dev.mega.megacore.manager.MegaManager;
 
 public class AfterRome extends MegaCore {
     public AfterRome() {
-        super(ConfigManager.class, "com.megadev.afterrome.manager", "com.megadev.afterrome.listener");
+        super(ConfigManager.class,
+                "com.megadev.afterrome.manager",
+                "com.megadev.afterrome.listener");
     }
 
     @Override
