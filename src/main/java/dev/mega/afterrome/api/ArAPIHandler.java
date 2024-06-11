@@ -48,14 +48,14 @@ public class ArAPIHandler implements APIHandler {
         User user = (User) JsonSerializer.deserialize(event.getFile(), User.class);
 
         return Objects.requireNonNullElseGet(user, () -> {
-            List<Skill.Type> skillTypes = ConfigManager.getInstance().getConfig(Config.class).getSkillsOf(Profession.Type.DEFAULT);
+//            List<Skill.Type> skillTypes = ConfigManager.getInstance().getConfig(Config.class).getSkillsOf(Profession.Type.DEFAULT);
 
-            User defaultUser = User.of(uuid, skillTypes);
+//            User defaultUser = User.of(uuid, skillTypes);
 
-            PreDefaultUserCreateEvent preDefaultUserCreateEvent = new PreDefaultUserCreateEvent(defaultUser);
-            Bukkit.getPluginManager().callEvent(preDefaultUserCreateEvent);
+//            PreDefaultUserCreateEvent preDefaultUserCreateEvent = new PreDefaultUserCreateEvent(defaultUser);
+//            Bukkit.getPluginManager().callEvent(preDefaultUserCreateEvent);
 
-            return defaultUser;
+            return null;
         });
     }
 

@@ -63,7 +63,6 @@ public abstract class AbstractMenu implements Menu {
         event.setCancelled(true);
     }
 
-    @Override
     public void handleBottomInventoryClick(InventoryClickEvent event) {
         if (!allowClicks) event.setCancelled(true);
 
@@ -79,13 +78,13 @@ public abstract class AbstractMenu implements Menu {
 
             SaleTransactionManager saleTransactionManager = MegaManager.getManager(SaleTransactionManager.class);
 
-            clickedItem.addClickAction(saleTransactionManager.getTransactionAction(
-                    user, itemStack, clickedItem.toItemStack(),
-                    saleItems.get(itemStack), event.getSlot()));
-
-            clickedItem.addShiftClickAction(saleTransactionManager.getAllTransactionAction(
-                    user, itemStack, clickedItem.toItemStack(),
-                    saleItems.get(itemStack), event.getSlot()));
+//            clickedItem.addClickAction(saleTransactionManager.getTransactionAction(
+//                    user, itemStack, clickedItem.toItemStack(),
+//                    saleItems.get(itemStack), event.getSlot()));
+//
+//            clickedItem.addShiftClickAction(saleTransactionManager.getAllTransactionAction(
+//                    user, itemStack, clickedItem.toItemStack(),
+//                    saleItems.get(itemStack), event.getSlot()));
 
             clickedItem.doClickActions(event);
         }
@@ -164,11 +163,6 @@ public abstract class AbstractMenu implements Menu {
     protected abstract void setMenuItems();
 
     public abstract String getMenuName();
-
-    public void disallowClicks()
-    {
-        this.allowClicks = false;
-    }
 
     private static ItemStack[] convertToItemStacks(MenuItem[] items) {
         return Arrays.stream(items)

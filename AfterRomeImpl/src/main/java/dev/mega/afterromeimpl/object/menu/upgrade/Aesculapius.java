@@ -3,7 +3,6 @@ package dev.mega.afterromeimpl.object.menu.upgrade;
 import com.megadev.afterrome.object.item.ItemBuilder;
 import dev.mega.afterrome.user.Profession;
 import dev.mega.afterrome.user.User;
-import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 

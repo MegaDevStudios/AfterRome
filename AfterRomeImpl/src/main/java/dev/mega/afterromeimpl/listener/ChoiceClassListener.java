@@ -10,6 +10,5 @@ public class ChoiceClassListener implements Listener {
     @EventHandler
     public void onOpenChoiceMenu(PreClassChoiceEvent event) {
         User user = event.getUser();
-
     }
 }

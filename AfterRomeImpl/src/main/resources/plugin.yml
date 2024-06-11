@@ -1,4 +1,0 @@
-name: AfterRomeImpl
-version: '${version}'
-main: dev.mega.afterromeimpl.AfterRomeImpl
-api-version: '1.20'

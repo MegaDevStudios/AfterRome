@@ -3,9 +3,101 @@
 profession-skill:
   DEFAULT: {}
   AGRONOMIST:
-    - BUTCHER
-    - COOK
-    - FARMER
-    - HATCHER
-    - LUMBERJACK
-    - TANNER
+    FARMER:
+      level:
+        1:
+          chances:
+            1: 30%
+            2: 20%
+            3: 10%
+      events:
+        BlockDropItemEvent:
+          trueIf:
+            material: BEETROOT
+          falseIf:
+            material: AIR
+          execute:
+            type: BOOST
+            executor: () -> event
+
+  SON_OF_MARS:
+    IRON_OUTSIDE:
+      events:
+        PlayerMoveEvent:
+          level:
+            1:
+              multiplier: 100%
+            2:
+              multiplier: 84%
+            3:
+              multiplier: 68%
+          execute-type:
+            effect:
+              type: SLOW
+              duration: 1
+
+
+    IRON_INSIDE:
+      execute-type: STATIC_BOOST
+      executor: %player%.setHealth(26)
+      events:
+        PlayerJoinEvent:
+          level:
+            1:
+              chances: 100%
+            2:
+              chances: 200%
+            3:
+              chances: 300%
+            4:
+              chances: 400%
+            5:
+              chances: 500%
+          execute-type:
+
+
+  SON_OF_GOVNA:
+    BUILDER:
+      level:
+        1:
+          chances:
+
+      events:
+        BlockPlaceEvent:
+          trueIf:
+            methods:
+              getBlock().getType(): // event.getBlock().getType() == STONE // 
+                - STONE
+              %type%:
+                 - STONE
+          falseIf:
+            methods:
+              getBlock().getType():
+                - AIR
+          chances:
+            1: 10%
+            2: 20%
+            3: 30%
+    MINER:
+      level:
+        1: 20%
+        2: 40%
+        3: 60%
+        4: 80%
+        5: 100%
+      events:
+        BlockBreakEvent:
+          trueIf:
+            methods:
+              getBlock().getType():
+                - COAL_ORE
+                - IRON_ORE
+                - GOLDEN_ORE
+          falseIf: {}
+        execute-type:
+          effect:
+            type: HEALTH_BOOST
+            duration: 0
+
+
+

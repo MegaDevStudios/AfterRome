@@ -35,7 +35,7 @@ public class SaleTransactionManager extends Manager {
         ItemStack resultItem = clickedItem.clone();
         resultItem.setAmount(clickedItem.getAmount() - saleItem.getAmount());
         player.getInventory().setItem(slot, resultItem);
-        user.addPoints(points);
+//        user.addPoints(points);
         return true;
     }
 
