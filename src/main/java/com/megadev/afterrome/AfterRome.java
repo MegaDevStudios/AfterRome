@@ -6,10 +6,13 @@ import com.megadev.afterrome.command.ProgCommand;
 import com.megadev.afterrome.command.ShopCommand;
 import com.megadev.afterrome.command.SkillsCommand;
 import com.megadev.afterrome.config.ConfigManager;
+import com.megadev.afterrome.listener.MenuListener;
+import com.megadev.afterrome.listener.PlayerJoinListener;
 import com.megadev.afterrome.manager.UserManager;
 
 import dev.mega.megacore.MegaCore;
 import dev.mega.megacore.manager.MegaManager;
+import org.bukkit.Bukkit;
 
 public class AfterRome extends MegaCore {
     public AfterRome() {
@@ -20,7 +23,8 @@ public class AfterRome extends MegaCore {
 
     @Override
     public void enable() {
-
+        Bukkit.getPluginManager().registerEvents(new PlayerJoinListener(), this);
+        Bukkit.getPluginManager().registerEvents(new MenuListener(), this);
     }
 
     @Override

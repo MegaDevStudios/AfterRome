@@ -20,6 +20,7 @@ public class ConfigUserManager extends SubFolder {
         String dataFolderPath = getPlugin().getDataFolder().getAbsolutePath();
 
         File fileDataFolder = new File(dataFolderPath + File.separator + "data");
+        fileDataFolder.mkdirs();
 
         for (File file : Objects.requireNonNull(fileDataFolder.listFiles())) {
             try {
