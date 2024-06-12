@@ -1,14 +1,14 @@
-package dev.mega.afterrome.api;
+package dev.mega.afterromeimpl.api;
 
-import dev.mega.afterrome.config.Config;
-import dev.mega.afterrome.config.ConfigManager;
-import dev.mega.afterrome.event.PreDefaultUserCreateEvent;
+import dev.mega.afterrome.AfterRome;
+import dev.mega.afterrome.api.APIHandler;
+import dev.mega.afterrome.api.AfterRomeAPI;
 import dev.mega.afterrome.event.PreUserDeserializationEvent;
 import dev.mega.afterrome.event.UserSerializationEvent;
 import dev.mega.afterrome.event.UserSetProfessionEvent;
+import dev.mega.afterrome.manager.ProfessionManager;
 import dev.mega.afterrome.manager.UserManager;
 import dev.mega.afterrome.user.Profession;
-import dev.mega.afterrome.user.Skill;
 import dev.mega.afterrome.user.User;
 import dev.mega.megacore.config.serializer.JsonSerializer;
 import dev.mega.megacore.manager.MegaManager;
@@ -24,6 +24,11 @@ public class ArAPIHandler implements APIHandler {
     @Override
     public boolean isDisabled() {
         return MegaManager.getInstance() == null || !MegaManager.getInstance().isRunning();
+    }
+
+    @Override
+    public void setAfterRomeImpl(AfterRome afterRomeImpl) {
+        //todo: set implementation
     }
 
     @Override
@@ -77,15 +82,20 @@ public class ArAPIHandler implements APIHandler {
     }
 
     @Override
-    public void setProfession(User user, Profession.Type type) {
+    public void addProfession(Profession profession) {
+        MegaManager.getManager(ProfessionManager.class).add(profession);
+    }
+
+    @Override
+    public void setProfession(User user, String name) {
         if (isDisabled()) return;
 
-        UserSetProfessionEvent event = new UserSetProfessionEvent(user, type);
+        UserSetProfessionEvent event = new UserSetProfessionEvent(user, name);
         Bukkit.getPluginManager().callEvent(event);
 
         if (event.isCancelled()) return;
 
-        user.setType(event.getType());
+        user.setProfession(event.getName());
     }
 
     @Override

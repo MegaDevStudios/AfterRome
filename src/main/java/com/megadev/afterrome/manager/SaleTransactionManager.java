@@ -4,7 +4,7 @@ import com.megadev.afterrome.object.menu.action.ClickAction;
 import dev.mega.afterrome.user.User;
 import dev.mega.megacore.MegaCore;
 import dev.mega.megacore.manager.Manager;
-import lombok.Getter;
+
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;

@@ -2,33 +2,27 @@ package dev.mega.afterrome.config.data;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import dev.mega.afterrome.config.data.event.ConditionSection;
-import dev.mega.afterrome.config.data.event.EventSection;
-import dev.mega.afterrome.config.data.event.LevelSection;
-import dev.mega.afterrome.config.data.event.MethodSection;
+import dev.mega.afterrome.config.data.event.*;
 import dev.mega.afterrome.config.data.execute.Boost;
 import dev.mega.afterrome.config.data.execute.ExecuteSection;
 import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
 
 public class ConfigDataTest {
 
     @Test
     public void testConfigData() {
+        List<ValueSection> valueSections = new ArrayList<>();
+        valueSections.add(new ValueSection(50, 1));
+        valueSections.add(new ValueSection(20, 2));
+        valueSections.add(new ValueSection(15, 3));
+        valueSections.add(new ValueSection(10, 4));
+        valueSections.add(new ValueSection(5, 5));
+
         List<LevelSection> levelSections = new ArrayList<>();
-        levelSections.add(new LevelSection(1, 50, 1, LevelSection.Type.CHANCE));
-        levelSections.add(new LevelSection(1, 30, 2, LevelSection.Type.CHANCE));
-        levelSections.add(new LevelSection(1, 20, 3, LevelSection.Type.CHANCE));
-        levelSections.add(new LevelSection(1, 20, 4, LevelSection.Type.CHANCE));
-        levelSections.add(new LevelSection(1, 20, 5, LevelSection.Type.CHANCE));
-        levelSections.add(new LevelSection(2, 50, 1, LevelSection.Type.CHANCE));
-        levelSections.add(new LevelSection(2, 30, 2, LevelSection.Type.CHANCE));
-        levelSections.add(new LevelSection(3, 20, 3, LevelSection.Type.CHANCE));
-        levelSections.add(new LevelSection(3, 20, 4, LevelSection.Type.CHANCE));
-        levelSections.add(new LevelSection(3, 20, 5, LevelSection.Type.CHANCE));
+        levelSections.add(new LevelSection(1, valueSections, LevelSection.Type.CHANCE));
 
         List<MethodSection> methodSections = new ArrayList<>();
         methodSections.add(new MethodSection("%type%", List.of("STONE", "GRAVEL")));

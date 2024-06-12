@@ -29,8 +29,8 @@ public class ChoiceMenu extends AbstractMenu {
             setItem(new HeadBuilder(headSection.getTexture())
                     .setName(headSection.getName())
                     .setLore(headSection.getLore())
-                    .toMenuItem()
-                    .addClickAction(event -> clickAction(Profession.of(Profession.Type.AGRONOMIST))),
+                    .toMenuItem(),
+//                    .addClickAction(event -> clickAction(Profession.of(Profession.Type.AGRONOMIST))),
                 headSection.getSlot());
         }
     }

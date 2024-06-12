@@ -94,6 +94,8 @@ public abstract class AbstractMenu implements Menu {
         event.setCancelled(true);
     }
 
+
+
     protected void setItem(MenuItemBuilder item, int index) {
         items[index] = item;
     }

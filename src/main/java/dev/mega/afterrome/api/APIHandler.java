@@ -1,5 +1,6 @@
 package dev.mega.afterrome.api;
 
+import dev.mega.afterrome.AfterRome;
 import dev.mega.afterrome.user.Profession;
 import dev.mega.afterrome.user.User;
 import org.bukkit.entity.Player;
@@ -11,6 +12,10 @@ import java.util.UUID;
 public interface APIHandler {
     boolean isDisabled();
 
+    AfterRome getAfterRomeImpl();
+
+    void setAfterRomeImpl(AfterRome afterRomeImpl);
+
     Set<User> getUsers();
 
     Optional<User> getUser(Player player);
@@ -21,7 +26,9 @@ public interface APIHandler {
 
     void serialize(User user, String dataFolder);
 
-    void setProfession(User user, Profession.Type type);
+    void addProfession(Profession profession);
+
+    void setProfession(User user, String name);
 
     boolean hasPlayedBefore(Player player);
 }
