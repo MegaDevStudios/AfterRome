@@ -4,7 +4,7 @@ import com.megadev.afterrome.config.ConfigManager;
 import com.megadev.afterrome.config.shop.upgrade.AgronomistUpgradeShopConfig;
 import com.megadev.afterrome.object.menu.AbstractUpgradeMenu;
 import com.megadev.afterrome.object.profession.Profession;
-import com.megadev.afterrome.object.user.User;
+import dev.mega.afterrome.user.User;
 
 public class AgronomistMenu extends AbstractUpgradeMenu {
     public AgronomistMenu(User user, Profession profession) {

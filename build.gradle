@@ -47,8 +47,7 @@ repositories {
 }
 
 dependencies {
-    implementation files (new File("AfterRomeImpl/lib/megacore-1.2-beta.jar"))
-    testImplementation files (new File("AfterRomeImpl/lib/megacore-1.2-beta.jar"))
+    implementation 'dev.mega:megacore:1.2-beta'
 
     implementation 'org.jetbrains:annotations:24.0.0'
     compileOnly "io.papermc.paper:paper-api:1.20.4-R0.1-SNAPSHOT"

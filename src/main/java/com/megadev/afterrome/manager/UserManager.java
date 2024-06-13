@@ -15,6 +15,7 @@ import dev.mega.megacore.manager.Manager;
 import lombok.Getter;
 
 import org.bukkit.Bukkit;
+import org.bukkit.Material;
 import org.bukkit.entity.Player;
 
 import java.io.File;

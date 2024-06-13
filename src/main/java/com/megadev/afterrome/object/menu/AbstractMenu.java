@@ -2,11 +2,10 @@ package com.megadev.afterrome.object.menu;
 
 import com.megadev.afterrome.config.ConfigManager;
 import com.megadev.afterrome.manager.MenuManager;
-import com.megadev.afterrome.manager.UserManager;
 import com.megadev.afterrome.object.menu.item.MenuItem;
 
 import com.megadev.afterrome.object.user.User;
-import com.megadev.afterrome.manager.SaleTransactionManager;
+import dev.mega.afterrome.menu.Menu;
 import dev.mega.megacore.manager.MegaManager;
 import dev.mega.megacore.util.Color;
 import lombok.Getter;
@@ -21,7 +20,6 @@ import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
-import org.bukkit.scheduler.BukkitTask;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Arrays;
@@ -64,31 +62,7 @@ public abstract class AbstractMenu implements Menu {
     }
 
     @Override
-    public void handleBottomInventoryClick(InventoryClickEvent event) {
-        if (!allowClicks) event.setCancelled(true);
-
-        User user = MegaManager.getManager(UserManager.class).getUser((Player) event.getView());
-        Inventory bottomInventory = event.getView().getBottomInventory();
-
-        MenuItem clickedItem = new MenuItem(bottomInventory.getContents()[event.getSlot()]);
-
-        HashMap<ItemStack, Integer> saleItems = user.getProfession().getSaleConfig().getSaleItems();
-
-        for (ItemStack itemStack : saleItems.keySet()) {
-            if (!itemStack.asOne().equals(clickedItem.toItemStack().asOne())) return;
-
-            SaleTransactionManager saleTransactionManager = MegaManager.getManager(SaleTransactionManager.class);
-
-            clickedItem.addClickAction(saleTransactionManager.getTransactionAction(
-                    user, itemStack, clickedItem.toItemStack(),
-                    saleItems.get(itemStack), event.getSlot()));
-
-            clickedItem.addShiftClickAction(saleTransactionManager.getAllTransactionAction(
-                    user, itemStack, clickedItem.toItemStack(),
-                    saleItems.get(itemStack), event.getSlot()));
-
-            clickedItem.doClickActions(event);
-        }
+    public void handleBottomClick(InventoryClickEvent event) {
     }
 
     @Override

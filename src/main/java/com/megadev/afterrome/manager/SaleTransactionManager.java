@@ -4,7 +4,6 @@ import com.megadev.afterrome.object.menu.action.ClickAction;
 import dev.mega.afterrome.user.User;
 import dev.mega.megacore.MegaCore;
 import dev.mega.megacore.manager.Manager;
-import lombok.Getter;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
@@ -35,7 +34,7 @@ public class SaleTransactionManager extends Manager {
         ItemStack resultItem = clickedItem.clone();
         resultItem.setAmount(clickedItem.getAmount() - saleItem.getAmount());
         player.getInventory().setItem(slot, resultItem);
-        user.addPoints(points);
+        user.setPoints(user.getPoints() + points);
         return true;
     }
 
