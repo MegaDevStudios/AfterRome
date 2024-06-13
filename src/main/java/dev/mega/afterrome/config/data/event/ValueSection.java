@@ -4,6 +4,9 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
+/**
+ * Class represents the value section.
+ */
 @Getter @Setter
 @AllArgsConstructor
 public class ValueSection {

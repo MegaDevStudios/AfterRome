@@ -34,7 +34,7 @@ public class ConfigDataTest {
         executeSections.add(new ExecuteSection(new Boost(), ExecuteSection.Type.BOOST));
 
         List<EventSection> events = new ArrayList<>();
-        events.add(new EventSection("PlayerJoinEvent", levelSections, conditionSections, executeSections));
+        events.add(new EventSection("BlockBreakEvent", levelSections, conditionSections, executeSections));
 
         List<SkillSection> skills = new ArrayList<>();
         skills.add(new SkillSection("FARMER", events));

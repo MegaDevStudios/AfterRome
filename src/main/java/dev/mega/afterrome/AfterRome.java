@@ -6,7 +6,11 @@ import dev.mega.megacore.MegaCore;
 import dev.mega.megacore.util.MegaCoreUtil;
 import org.bukkit.Bukkit;
 
+/**
+ * Class represents AfterRome entrypoint.
+ */
 public abstract class AfterRome extends MegaCore {
+
     public AfterRome() {
         super(ConfigManager.class,
                 "dev.mega.afterrome.manager",
@@ -17,6 +21,9 @@ public abstract class AfterRome extends MegaCore {
     protected void registerCommands() {
     }
 
+    /**
+     * Calls on plugin enable.
+     */
     @Override
     public void enable() {
         enableImpl();
@@ -27,6 +34,9 @@ public abstract class AfterRome extends MegaCore {
         }
     }
 
+    /**
+     * Calls when plugin disables.
+     */
     @Override
     public void disable() {
         disableImpl();

@@ -6,6 +6,9 @@ import lombok.Setter;
 
 import java.util.List;
 
+/**
+ * Class represents the level section.
+ */
 @Getter @Setter
 @AllArgsConstructor
 public class LevelSection {
