@@ -13,6 +13,9 @@ import org.bukkit.entity.Player;
 
 import java.io.File;
 
+/**
+ * Class represents the manager to manage users.
+ */
 @Getter
 public class UserManager extends Manager {
     private final Data<User> users = new Data<>();
@@ -22,6 +25,9 @@ public class UserManager extends Manager {
         super(megaCore);
     }
 
+    /**
+     * Calls when manager enables.
+     */
     @Override
     public void enable() {
         Bukkit.getOnlinePlayers().forEach(this::addPlayer);
@@ -29,10 +35,19 @@ public class UserManager extends Manager {
         setRunning(true);
     }
 
+    /**
+     * Checks if player is already exists.
+     * @param player
+     * @return
+     */
     public boolean hasPlayedBefore(Player player) {
         return new File(dataFolder+player.getUniqueId()+".json").exists();
     }
 
+    /**
+     * Removes the player from map.
+     * @param player
+     */
     public void removePlayer(Player player) {
         users.remove(player.getUniqueId());
 
@@ -40,10 +55,18 @@ public class UserManager extends Manager {
         AfterRomeAPI.serialize(user, dataFolder);
     }
 
+    /**
+     * Adds the User to map.
+     * @param user
+     */
     public void addUser(User user) {
         users.addValue(user.getUuid(), user);
     }
 
+    /**
+     * Adds the Player to map.
+     * @param player
+     */
     public void addPlayer(Player player) {
         User user = AfterRomeAPI.getUserOrDefault(player.getUniqueId(), dataFolder);
 
@@ -51,10 +74,18 @@ public class UserManager extends Manager {
         users.addValue(player.getUniqueId(), user);
     }
 
+    /**
+     * Checks if User is already registered.
+     * @param user
+     * @return
+     */
     public boolean has(User user) {
         return users.contains(user.getUuid());
     }
 
+    /**
+     * Calls when plugin disables.
+     */
     @Override
     public void disable() {
         users.getData().values().forEach(user -> {

@@ -1,11 +1,16 @@
 package dev.mega.afterrome;
 
 import dev.mega.afterrome.api.AfterRomeAPI;
-import dev.mega.afterrome.api.ArAPIHandler;
 import dev.mega.afterrome.config.ConfigManager;
 import dev.mega.megacore.MegaCore;
+import dev.mega.megacore.util.MegaCoreUtil;
+import org.bukkit.Bukkit;
 
-public class AfterRome extends MegaCore {
+/**
+ * Class represents AfterRome entrypoint.
+ */
+public abstract class AfterRome extends MegaCore {
+
     public AfterRome() {
         super(ConfigManager.class,
                 "dev.mega.afterrome.manager",
@@ -14,16 +19,30 @@ public class AfterRome extends MegaCore {
 
     @Override
     protected void registerCommands() {
-        
     }
 
+    /**
+     * Calls on plugin enable.
+     */
     @Override
     public void enable() {
-        AfterRomeAPI.setApi(new ArAPIHandler());
+        enableImpl();
+
+        if (AfterRomeAPI.getAfterRomeImpl() == null || !AfterRomeAPI.isImplemented()) {
+            MegaCoreUtil.getLogger().severe("AfterRome has no implementation! Disabling plugin...");
+            Bukkit.getPluginManager().disablePlugin(this);
+        }
     }
 
+    /**
+     * Calls when plugin disables.
+     */
     @Override
     public void disable() {
-
+        disableImpl();
     }
+
+    protected abstract void enableImpl();
+
+    protected abstract void disableImpl();
 }

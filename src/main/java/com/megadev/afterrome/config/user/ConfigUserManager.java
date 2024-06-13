@@ -27,7 +27,7 @@ public class ConfigUserManager extends SubFolder {
                         && new BufferedReader(new FileReader(file)).readLine() != null)
                     return true;
             } catch (IOException exception) {
-                exception.printStackTrace();;
+                exception.printStackTrace();
             }
         }
         return false;

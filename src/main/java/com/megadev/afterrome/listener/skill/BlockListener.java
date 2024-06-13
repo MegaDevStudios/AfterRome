@@ -26,6 +26,8 @@ public class BlockListener implements Listener {
 
         if (!(profession instanceof Agronomist)) return;
 
+        event.getItems().size();
+
         if (event.getItems().stream().map(Item::getItemStack).map(ItemStack::getType)
                 .anyMatch(type -> type.equals(Material.POTATO) ||
                         type.equals(Material.BEETROOT) ||

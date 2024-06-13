@@ -7,19 +7,10 @@ import lombok.Setter;
 @Getter @Setter
 @AllArgsConstructor(staticName = "of")
 public class Skill {
-    private Type type;
+    private String name;
     private int level;
 
     public int incrementAndGet() {
         return ++this.level;
-    }
-
-    public enum Type {
-        BUTCHER,
-        COOK,
-        FARMER,
-        HATCHER,
-        LUMBERJACK,
-        TANNER,
     }
 }

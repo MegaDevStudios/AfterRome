@@ -7,11 +7,16 @@ import dev.mega.megacore.MegaCore;
 import dev.mega.megacore.manager.MegaManager;
 import dev.mega.megacore.util.MegaCoreUtil;
 import org.bukkit.Bukkit;
+import org.bukkit.Effect;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.block.BlockBreakEvent;
+import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 
 public class JoinListener implements Listener {
     private final UserManager userManager;

@@ -2,10 +2,11 @@ package com.megadev.afterrome.object.menu;
 
 import com.megadev.afterrome.config.ConfigManager;
 import com.megadev.afterrome.manager.MenuManager;
+import com.megadev.afterrome.manager.UserManager;
 import com.megadev.afterrome.object.menu.item.MenuItem;
 
 import com.megadev.afterrome.object.user.User;
-import dev.mega.afterrome.menu.Menu;
+import com.megadev.afterrome.manager.SaleTransactionManager;
 import dev.mega.megacore.manager.MegaManager;
 import dev.mega.megacore.util.Color;
 import lombok.Getter;
@@ -20,6 +21,7 @@ import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
+import org.bukkit.scheduler.BukkitTask;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Arrays;

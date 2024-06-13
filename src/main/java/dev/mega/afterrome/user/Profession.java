@@ -9,11 +9,10 @@ import java.util.List;
 @Getter @Setter
 @AllArgsConstructor(staticName = "of")
 public class Profession {
-    private Type type;
+    private String name;
     private List<Skill> skills;
 
-    public enum Type {
-        DEFAULT,
-        AGRONOMIST,
+    public static Profession copyOf(Profession profession) {
+        return new Profession(profession.name, profession.skills);
     }
 }
