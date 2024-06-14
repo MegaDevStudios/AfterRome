@@ -30,5 +30,7 @@ public interface APIHandler {
 
     void setProfession(User user, String name);
 
+    void setProfession(User user, Profession profession);
+
     boolean hasPlayedBefore(Player player);
 }

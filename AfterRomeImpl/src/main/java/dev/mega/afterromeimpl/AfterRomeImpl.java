@@ -5,7 +5,6 @@ import dev.mega.afterrome.AfterRome;
 public class AfterRomeImpl extends AfterRome {
     @Override
     protected void enableImpl() {
-
     }
 
     @Override

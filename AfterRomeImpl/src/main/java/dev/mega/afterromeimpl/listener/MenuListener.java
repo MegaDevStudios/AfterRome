@@ -1,8 +1,5 @@
 package dev.mega.afterromeimpl.listener;
 
-import com.megadev.afterrome.manager.UserManager;
-import com.megadev.afterrome.object.profession.DefaultProfession;
-import com.megadev.afterrome.object.user.User;
 import dev.mega.afterromeimpl.object.menu.Menu;
 import dev.mega.megacore.manager.MegaManager;
 import org.bukkit.entity.Player;

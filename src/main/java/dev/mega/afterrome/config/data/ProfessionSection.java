@@ -1,5 +1,7 @@
 package dev.mega.afterrome.config.data;
 
+import dev.mega.afterrome.config.menu.HeadSection;
+import dev.mega.afterrome.config.menu.MenuSection;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -12,6 +14,9 @@ import java.util.List;
 @Getter @Setter
 @AllArgsConstructor
 public class ProfessionSection {
-    private String name;
+    private final String name;
+    private final boolean isHidden;
     private final List<SkillSection> skills;
+    private final MenuSection menuSection;
+    private final HeadSection headSection;
 }

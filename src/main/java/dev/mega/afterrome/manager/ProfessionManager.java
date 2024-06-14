@@ -1,17 +1,15 @@
 package dev.mega.afterrome.manager;
 
-import dev.mega.afterrome.config.data.execute.ExecuteSection;
 import dev.mega.afterrome.listener.ProfessionListener;
 import dev.mega.afterrome.parser.Parser;
 import dev.mega.afterrome.user.Profession;
-import dev.mega.afterrome.user.User;
 import dev.mega.megacore.MegaCore;
 import dev.mega.megacore.manager.Manager;
 import org.bukkit.Bukkit;
-import org.bukkit.event.Event;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Class represents the manager to manage profession events.
@@ -41,12 +39,25 @@ public class ProfessionManager extends Manager {
 
     /**
      * Gets cloned default profession.
-     * @return
+     * @return default profession.
      */
     public Profession getDefault() {
         if (!professionListMap.isEmpty())
             return Profession.copyOf(professionListMap.get(0));
         return Profession.of("default", new ArrayList<>());
+    }
+
+    /**
+     * Gets profession by name.
+     * @return profession.
+     */
+    public Profession getProfession(String professionName) {
+        Optional<Profession> optionalProfession = professionListMap
+                .stream()
+                .filter(profession -> professionName.equals(profession.getName()))
+                .findAny();
+
+        return optionalProfession.orElseGet(() -> Profession.copyOf(professionListMap.get(0)));
     }
 
     /**

@@ -1,9 +1,9 @@
 package dev.mega.afterromeimpl.object.menu.shop;
 
 import dev.mega.afterrome.api.AfterRomeAPI;
-import dev.mega.afterrome.menu.AbstractMenu;
 import dev.mega.afterrome.user.User;
-import dev.mega.afterromeimpl.object.menu.item.MenuItem;
+import dev.mega.afterromeimpl.object.menu.AbstractMenu;
+import dev.mega.megacore.inventory.builder.menu.MenuItemBuilder;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.Inventory;
@@ -21,6 +21,11 @@ public class ShopMenu extends AbstractMenu {
     }
 
     @Override
+    public String getTitle() {
+        return "";
+    }
+
+    @Override
     public void handleBottomClick(InventoryClickEvent event) {
         if (!allowClicks) event.setCancelled(true);
 
@@ -30,7 +35,7 @@ public class ShopMenu extends AbstractMenu {
 
         Inventory bottomInventory = event.getView().getBottomInventory();
 
-        MenuItem clickedItem = new MenuItem(bottomInventory.getContents()[event.getSlot()]);
+        MenuItemBuilder clickedItem = new MenuItemBuilder(bottomInventory.getContents()[event.getSlot()]);
 
 //        HashMap<ItemStack, Integer> saleItems = user.getProfession().getSaleConfig().getSaleItems();
 //
@@ -49,10 +54,5 @@ public class ShopMenu extends AbstractMenu {
 //
 //            clickedItem.doClickActions(event); //TODO получать предметы по профессии из конфига и обрабатывать их
 //        }
-    }
-
-    @Override
-    public String getMenuName() {
-        return ""; //TODO возвращать название магазина
     }
 }

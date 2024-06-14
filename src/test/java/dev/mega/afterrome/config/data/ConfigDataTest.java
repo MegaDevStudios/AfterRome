@@ -5,13 +5,13 @@ import com.google.gson.GsonBuilder;
 import dev.mega.afterrome.config.data.event.*;
 import dev.mega.afterrome.config.data.execute.Boost;
 import dev.mega.afterrome.config.data.execute.ExecuteSection;
+import dev.mega.afterrome.config.menu.ChoiceClassMenu;
 import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ConfigDataTest {
-
     @Test
     public void testConfigData() {
         List<ValueSection> valueSections = new ArrayList<>();
@@ -40,9 +40,9 @@ public class ConfigDataTest {
         skills.add(new SkillSection("FARMER", events));
 
         List<ProfessionSection> professionSections = new ArrayList<>();
-        professionSections.add(new ProfessionSection("AGRONOMIST", skills));
+        professionSections.add(new ProfessionSection("AGRONOMIST", true, skills, null, null));
 
-        ConfigData configData = new ConfigData(professionSections);
+        ConfigData configData = new ConfigData(professionSections, new ChoiceClassMenu(null, null));
 
         Gson gs = new GsonBuilder().setPrettyPrinting().create();
         String jsonString = gs.toJson(configData.getProfessions());

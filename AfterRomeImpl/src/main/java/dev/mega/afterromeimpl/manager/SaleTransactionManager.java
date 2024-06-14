@@ -1,8 +1,8 @@
-package com.megadev.afterrome.manager;
+package dev.mega.afterromeimpl.manager;
 
-import com.megadev.afterrome.object.menu.action.ClickAction;
 import dev.mega.afterrome.user.User;
 import dev.mega.megacore.MegaCore;
+import dev.mega.megacore.inventory.builder.menu.ClickAction;
 import dev.mega.megacore.manager.Manager;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;

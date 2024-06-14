@@ -1,12 +1,7 @@
 package com.megadev.afterrome.config.profession;
 
-import com.megadev.afterrome.object.menu.shop.upgrade.skill.SkillType;
-import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.Plugin;
 import org.jetbrains.annotations.NotNull;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class AgronomistConfig extends ProfessionConfig {
     public AgronomistConfig(@NotNull Plugin plugin, String... path) {

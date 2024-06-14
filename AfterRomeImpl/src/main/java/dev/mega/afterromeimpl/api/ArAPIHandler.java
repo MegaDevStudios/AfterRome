@@ -8,6 +8,7 @@ import dev.mega.afterrome.event.UserSerializationEvent;
 import dev.mega.afterrome.event.UserSetProfessionEvent;
 import dev.mega.afterrome.manager.ProfessionManager;
 import dev.mega.afterrome.manager.UserManager;
+import dev.mega.afterrome.parser.Parser;
 import dev.mega.afterrome.user.Profession;
 import dev.mega.afterrome.user.User;
 import dev.mega.megacore.config.serializer.JsonSerializer;
@@ -19,11 +20,20 @@ import java.io.File;
 import java.util.*;
 
 public class ArAPIHandler implements APIHandler {
-    public ArAPIHandler() {}
+    private final AfterRome afterRome;
+
+    public ArAPIHandler(AfterRome afterRome) {
+        this.afterRome = afterRome;
+    }
 
     @Override
     public boolean isDisabled() {
         return MegaManager.getInstance() == null || !MegaManager.getInstance().isRunning();
+    }
+
+    @Override
+    public AfterRome getAfterRomeImpl() {
+        return afterRome;
     }
 
     @Override
@@ -95,7 +105,24 @@ public class ArAPIHandler implements APIHandler {
 
         if (event.isCancelled()) return;
 
-        user.setProfession(event.getName());
+        Optional<Profession> optionalProfession = Parser.getInstance().getProfessions()
+                .stream()
+                .filter(p -> p.getName().equals(event.getName()))
+                .findAny();
+
+        if (optionalProfession.isEmpty()) return;
+        Profession profession = optionalProfession.get();
+
+        user.setProfession(profession);
+    }
+
+    @Override
+    public void setProfession(User user, Profession settingProfession) {
+        if (isDisabled()) return;
+
+        String name = settingProfession.getName();
+
+        setProfession(user, name);
     }
 
     @Override
