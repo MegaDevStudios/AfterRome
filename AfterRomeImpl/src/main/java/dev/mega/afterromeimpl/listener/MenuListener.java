@@ -1,7 +1,8 @@
 package dev.mega.afterromeimpl.listener;
 
+import dev.mega.afterrome.api.AfterRomeAPI;
+import dev.mega.afterrome.user.User;
 import dev.mega.afterromeimpl.object.menu.Menu;
-import dev.mega.megacore.manager.MegaManager;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
@@ -14,6 +15,8 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryHolder;
 import org.bukkit.inventory.InventoryView;
 import org.bukkit.inventory.ItemStack;
+
+import java.util.Optional;
 
 public class MenuListener implements Listener {
     @EventHandler(priority = EventPriority.NORMAL)
@@ -64,9 +67,10 @@ public class MenuListener implements Listener {
     public void onMove(PlayerMoveEvent event) {
         Player player = event.getPlayer();
 
-        User user = MegaManager.getManager(UserManager.class).getUser(player);
-        if (user == null) return;
+        Optional<User> optionalUser = AfterRomeAPI.getUser(player);
+        if (optionalUser.isEmpty()) return;
+        User user = optionalUser.get();
 
-        if (user.getProfession() instanceof DefaultProfession) event.setCancelled(true);
+        if (user.getProfession().getName().equalsIgnoreCase("default")) event.setCancelled(true);
     }
 }

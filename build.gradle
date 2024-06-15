@@ -1,6 +1,5 @@
 plugins {
     id 'java'
-    id 'com.github.johnrengelman.shadow' version '7.1.2'
 }
 
 group = 'com.megadev'
@@ -57,8 +56,6 @@ dependencies {
     compileOnly 'org.projectlombok:lombok:1.18.32'
     annotationProcessor 'org.projectlombok:lombok:1.18.32'
 
-    compileOnly group: 'com.mojang', name: 'authlib', version: '1.5.25'
-
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
     testImplementation 'org.mockito:mockito-core:5.8.0'
 
@@ -102,9 +99,4 @@ processResources {
     filesMatching('plugin.yml') {
         expand props
     }
-}
-
-shadowJar {
-    destinationDirectory.set(new File(System.getenv("OUTPUT_DIR").toString()))
-    archiveFileName = "AfterRome-${version}.jar"
 }

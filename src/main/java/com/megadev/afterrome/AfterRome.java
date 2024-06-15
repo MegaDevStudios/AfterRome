@@ -6,9 +6,12 @@ import dev.mega.megacore.MegaCore;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class AfterRome extends MegaCore {
     public AfterRome() {
-        super(ConfigManager.class, "com.megadev.afterrome.manager", "");
+        super(ConfigManager.class, List.of("com.megadev.afterrome.manager"), new ArrayList<>());
     }
 
     @Override

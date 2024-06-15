@@ -8,7 +8,6 @@ import dev.mega.afterrome.config.data.execute.ExecuteSection;
 import dev.mega.afterrome.parser.Parser;
 import dev.mega.afterrome.user.User;
 import dev.mega.afterrome.util.ProbabilityCalculator;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import org.bukkit.event.Event;
 
@@ -16,13 +15,17 @@ import java.util.List;
 import java.util.Optional;
 
 @Getter
-@AllArgsConstructor
 public class EventHandler {
     private final User user;
     private final Event event;
 
-    private final List<EventSection> eventSections = Parser.getInstance()
-            .getAvailableEventSections(user, event);
+    private final List<EventSection> eventSections;
+
+    public EventHandler(User user, Event event) {
+        this.user = user;
+        this.event = event;
+        this.eventSections = Parser.getInstance().getAvailableEventSections(user, event);
+    }
 
     public void handleEvent() {
         if (eventSections.isEmpty()) return;

@@ -42,7 +42,7 @@ repositories {
 }
 
 dependencies {
-    compileOnly project(":")
+    implementation modules {}
 
     implementation "dev.mega:megacore:1.2-beta"
 
@@ -95,4 +95,9 @@ processResources {
     filesMatching('plugin.yml') {
         expand props
     }
+}
+
+shadowJar {
+    destinationDirectory.set(new File(System.getenv("OUTPUT_DIR").toString()))
+    archiveFileName = "AfterRome-${version}.jar"
 }

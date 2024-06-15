@@ -1,5 +1,8 @@
 name: AfterRome
 version: '${version}'
-main: dev.mega.afterromeimpl.AfterRome
+main: dev.mega.afterromeimpl.AfterRomeImpl
 api-version: '1.20'
-commands: {}
+commands:
+  skills: {}
+  prog: {}
+  progress: {}
