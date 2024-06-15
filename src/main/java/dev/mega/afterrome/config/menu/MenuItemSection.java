@@ -7,8 +7,7 @@ import lombok.Setter;
 
 import java.util.List;
 
-@Getter
-@Setter
+@Getter @Setter
 @AllArgsConstructor
 public class MenuItemSection {
     private final MenuItemBuilder item;
