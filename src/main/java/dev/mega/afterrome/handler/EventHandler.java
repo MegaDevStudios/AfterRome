@@ -3,9 +3,11 @@ package dev.mega.afterrome.handler;
 import dev.mega.afterrome.config.data.SkillSection;
 import dev.mega.afterrome.config.data.event.EventSection;
 import dev.mega.afterrome.config.data.event.LevelSection;
+import dev.mega.afterrome.config.data.event.ValueSection;
 import dev.mega.afterrome.config.data.execute.ExecuteSection;
 import dev.mega.afterrome.parser.Parser;
 import dev.mega.afterrome.user.User;
+import dev.mega.afterrome.util.ProbabilityCalculator;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import org.bukkit.event.Event;
@@ -68,9 +70,14 @@ public class EventHandler {
 
     private void handleChance(LevelSection levelSection,
                               List<ExecuteSection> executeSections) {
-        
-        executeSections.forEach(executeSection -> executeSection.getSkill()
-                .execute(user, event));
+
+        double[] probabilities = levelSection.getValues().stream()
+                .mapToDouble(ValueSection::getPercent).toArray();
+
+        probabilities = ProbabilityCalculator.validateAndGet(probabilities);
+        int indexEvent = ProbabilityCalculator.choiceOne(probabilities);
+
+        executeSections.get(indexEvent).getSkill().execute(user, event);
     }
 
     private Optional<LevelSection> getLevelSectionBy(EventSection eventSection,

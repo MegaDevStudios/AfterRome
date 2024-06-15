@@ -6,15 +6,17 @@ import dev.mega.megacore.MegaCore;
 import dev.mega.megacore.util.MegaCoreUtil;
 import org.bukkit.Bukkit;
 
+import java.util.List;
+
 /**
  * Class represents AfterRome entrypoint.
  */
 public abstract class AfterRome extends MegaCore {
 
-    public AfterRome() {
+    public AfterRome(String managersPath, String listenersPath) {
         super(ConfigManager.class,
-                "dev.mega.afterrome.manager",
-                "dev.mega.afterrome.listener");
+                List.of("dev.mega.afterrome.manager", managersPath),
+                List.of("dev.mega.afterrome.listener", listenersPath));
     }
 
     @Override

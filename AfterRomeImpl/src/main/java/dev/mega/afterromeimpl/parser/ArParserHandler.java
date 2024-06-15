@@ -87,17 +87,12 @@ public class ArParserHandler implements ParserHandler {
 
     @Override
     public void registerProfessionsEvents() {
-        List<String> events = new ArrayList<>();
-
-        for (ProfessionSection professionSection : configData.getProfessions()) {
-            for (SkillSection skillSection : professionSection.getSkills()) {
-                for (EventSection eventSection : skillSection.getEvents()) {
-                    events.add(eventSection.getName());
-                }
-            }
-        }
-
-        MegaManager.getManager(ProfessionManager.class).registerEvents(events);
+        MegaManager.getManager(ProfessionManager.class).registerEvents(
+                new ArrayList<>(configData.getProfessions().stream()
+                        .flatMap(ps -> ps.getSkills().stream())
+                        .flatMap(ss -> ss.getEvents().stream())
+                        .map(EventSection::getName).toList())
+        );
     }
 
     @Override

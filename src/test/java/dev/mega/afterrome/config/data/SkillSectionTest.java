@@ -38,7 +38,7 @@ class SkillSectionTest {
                                 ), false)
                         ),
                         List.of(
-                                new ExecuteSection(new Boost(), ExecuteSection.Type.BOOST)
+                                new ExecuteSection(new Boost())
                         ))
         ));
 

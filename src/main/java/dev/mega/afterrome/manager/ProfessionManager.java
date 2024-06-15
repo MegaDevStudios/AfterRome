@@ -1,12 +1,17 @@
 package dev.mega.afterrome.manager;
 
+import dev.mega.afterrome.config.data.ConfigData;
 import dev.mega.afterrome.listener.ProfessionListener;
 import dev.mega.afterrome.parser.Parser;
 import dev.mega.afterrome.user.Profession;
 import dev.mega.megacore.MegaCore;
+import dev.mega.megacore.config.serializer.JsonSerializer;
 import dev.mega.megacore.manager.Manager;
+import dev.mega.megacore.util.MegaCoreUtil;
+import lombok.Getter;
 import org.bukkit.Bukkit;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -14,7 +19,11 @@ import java.util.Optional;
 /**
  * Class represents the manager to manage profession events.
  */
+@Getter
 public class ProfessionManager extends Manager {
+    private final String dataFolder = megaCore.getDataFolder().getAbsolutePath() + File.separator + "xdev/";
+
+    private ConfigData configData;
     private final List<Profession> professionListMap = new ArrayList<>();
 
     public ProfessionManager(MegaCore megaCore) {
@@ -65,6 +74,10 @@ public class ProfessionManager extends Manager {
      */
     @Override
     public void enable() {
+         configData = (ConfigData) JsonSerializer.deserialize(
+                new File(dataFolder + File.separator + "professions.json"), ConfigData.class);
+
+        MegaCoreUtil.getLogger().warning("Profession config file not found");
         professionListMap.addAll(Parser.getInstance().getProfessions());
     }
 

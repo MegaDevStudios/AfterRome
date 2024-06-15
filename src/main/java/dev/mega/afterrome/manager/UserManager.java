@@ -19,7 +19,7 @@ import java.io.File;
 @Getter
 public class UserManager extends Manager {
     private final Data<User> users = new Data<>();
-    private final String dataFolder = "/home/dreaght/MegaTests/plugins/AfterRome/xdev/data/";
+    private final String dataFolder = megaCore.getDataFolder().getAbsolutePath() + File.separator + "xdev/data/";
 
     public UserManager(MegaCore megaCore) {
         super(megaCore);

@@ -31,7 +31,7 @@ public class ConfigDataTest {
         conditionSections.add(new ConditionSection(methodSections, true));
 
         List<ExecuteSection> executeSections = new ArrayList<>();
-        executeSections.add(new ExecuteSection(new Boost(), ExecuteSection.Type.BOOST));
+        executeSections.add(new ExecuteSection(new Boost()));
 
         List<EventSection> events = new ArrayList<>();
         events.add(new EventSection("BlockBreakEvent", levelSections, conditionSections, executeSections));
@@ -48,8 +48,6 @@ public class ConfigDataTest {
         String jsonString = gs.toJson(configData.getProfessions());
 
         System.out.print(jsonString);
-
-        Class.forName("org.bukkit.inventory.meta.ItemMeta")
     }
 
 }
