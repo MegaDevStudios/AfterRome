@@ -1,5 +1,6 @@
 package com.megadev.afterrome.util;
 
+import dev.mega.afterrome.util.ProbabilityCalculator;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -16,7 +17,7 @@ class ConditionCalculatorTest {
         List<Integer> integers = new ArrayList<>();
 
         for (int i = 0; i < Math.pow(2, 30) - 1; i++) {
-            int index = ConditionCalculator.choiceOne(probabilities);
+            int index = ProbabilityCalculator.choiceOne(probabilities);
             integers.add(index);
             System.out.println(i + "; current index is " + index);
         }

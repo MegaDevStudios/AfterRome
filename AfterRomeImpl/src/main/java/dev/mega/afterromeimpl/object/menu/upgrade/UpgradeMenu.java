@@ -8,6 +8,8 @@ import dev.mega.afterrome.config.menu.MenuItemSection;
 import dev.mega.afterrome.user.Profession;
 import dev.mega.afterrome.user.User;
 import dev.mega.afterromeimpl.object.menu.AbstractMenu;
+import org.bukkit.Material;
+import org.bukkit.inventory.ItemStack;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,16 +43,29 @@ public class UpgradeMenu extends AbstractMenu {
         ConfigData configData = ConfigManager.getInstance().getConfig(Config.class).getConfigData();
         List<MenuItemSection> menuItemSections = new ArrayList<>();
 
+
+
         for (ProfessionSection professionSection : configData.getProfessions()) {
             if (professionSection.getName().equals(getUser().getProfession().getName())) {
                 menuItemSections = professionSection.getMenuSection().getUpgradeMenuSection().getItems();
             }
         }
 
+
+
         for (MenuItemSection menuItemSection : menuItemSections) {
             setItem(menuItemSection.getItem()
                             .setName(menuItemSection.getName())
-                            .setLore(menuItemSection.getLore()),
+                            .setLore(menuItemSection.getLore())
+                            .addClickAction(event -> {
+                                ItemStack itemStack = event.getCurrentItem();
+                                if (itemStack == null) return;
+                                if (!menuItemSection.getExecute().isClicked()) return;
+                                menuItemSection
+                                        .getExecute()
+                                        .getItemExecute()
+                                        .execute(getUser(), itemStack, menuItemSection.getSkillName());
+                            }),
                     menuItemSection.getSlot());
         }
     }

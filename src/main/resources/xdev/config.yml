@@ -68,8 +68,6 @@ profession-skill:
             methods:
               getBlock().getType(): // event.getBlock().getType() == STONE // 
                 - STONE
-              %type%:
-                 - STONE
           falseIf:
             methods:
               getBlock().getType():

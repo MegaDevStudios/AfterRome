@@ -11,12 +11,4 @@ import lombok.Setter;
 @AllArgsConstructor
 public class ExecuteSection {
     private final Skill skill;
-    private final Type type;
-
-    public enum Type {
-        EFFECT,
-        PERMISSION,
-        BOOST,
-        ABILITY,
-    }
 }

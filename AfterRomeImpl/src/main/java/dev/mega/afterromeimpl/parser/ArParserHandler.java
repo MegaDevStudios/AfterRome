@@ -66,6 +66,26 @@ public class ArParserHandler implements ParserHandler {
     }
 
     @Override
+    public List<EventSection> getAvailableEventSections(User user, Event event) {
+        return configData.getProfessions().stream()
+                .filter(professionSection -> professionSection.getName().equals(user.getProfession().getName()))
+                .flatMap(professionSection -> professionSection.getSkills().stream()
+                        .flatMap(skillSection -> skillSection.getEvents().stream())
+                        .filter(eventSection -> eventSection.matches(event)))
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public List<SkillSection> getSkillSectionsBy(User user, Event event) {
+        return configData.getProfessions().stream()
+                .filter(ps -> ps.getName().equals(user.getProfession().getName()))
+                .flatMap(ps -> ps.getSkills().stream()
+                        .filter(skillSection -> skillSection.getEvents().stream()
+                                .anyMatch(es -> es.matches(event)))
+                ).toList();
+    }
+
+    @Override
     public void registerProfessionsEvents() {
         List<String> events = new ArrayList<>();
 

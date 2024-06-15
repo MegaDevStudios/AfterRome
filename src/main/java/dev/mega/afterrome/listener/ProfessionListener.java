@@ -1,9 +1,9 @@
 package dev.mega.afterrome.listener;
 
 import dev.mega.megacore.MegaCore;
+import org.bukkit.event.Event;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.block.BlockBreakEvent;
 
 import java.util.List;
 
@@ -18,7 +18,7 @@ public class ProfessionListener implements Listener {
     }
 
     @EventHandler
-    public boolean onEvent(BlockBreakEvent event) {
+    public boolean onEvent(Event event) {
         System.out.println("Started");
 
         for (String eventName : eventNames) {

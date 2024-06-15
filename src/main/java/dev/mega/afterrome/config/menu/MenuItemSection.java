@@ -11,7 +11,9 @@ import java.util.List;
 @AllArgsConstructor
 public class MenuItemSection {
     private final MenuItemBuilder item;
-    private final String name;
+    private final String skillName; //Сюда вписывается название скилла к которому относится предмет если он у него есть
+    private final String name;      //Это название которое выводится в меню
     private final List<String> lore;
     private final int slot;
+    private final ItemExecuteSection execute;
 }

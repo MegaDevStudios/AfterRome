@@ -16,6 +16,7 @@ import dev.mega.afterromeimpl.object.menu.Menu;
 import dev.mega.megacore.MegaCore;
 import dev.mega.megacore.inventory.builder.HeadBuilder;
 import dev.mega.megacore.manager.MegaManager;
+
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryCloseEvent;
@@ -44,10 +45,11 @@ public class ChoiceMenu extends AbstractMenu {
                             .setName(headSection.getName())
                             .setLore(headSection.getLore())
                             .toMenuItem()
-                    .addClickAction(event -> clickAction(MegaManager.getManager(ProfessionManager.class)
+                            .addClickAction(event -> clickAction(MegaManager.getManager(ProfessionManager.class)
                             .getProfession(professionSection.getName()))),
                     headSection.getSlot());
         }
+
     }
 
     @Override

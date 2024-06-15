@@ -1,15 +1,16 @@
-package com.megadev.afterrome.util;
+package dev.mega.afterrome.util;
 
 import java.util.Arrays;
 import java.util.Random;
 
-public class ConditionCalculator {
+public class ProbabilityCalculator {
     public static int isPassed(double percent) {
         return new Random().nextDouble() * 100 < percent ? 1 : 0;
     }
 
     public static double[] validateAndGet(double[] percents) {
         double sum = Arrays.stream(percents).sum();
+
         return Arrays.stream(percents)
                 .map(percent -> percent + (100 - sum) / percents.length)
                 .toArray();

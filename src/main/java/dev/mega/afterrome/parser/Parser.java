@@ -1,12 +1,16 @@
 package dev.mega.afterrome.parser;
 
+import dev.mega.afterrome.config.data.SkillSection;
 import dev.mega.afterrome.config.data.event.ConditionSection;
+import dev.mega.afterrome.config.data.event.EventSection;
 import dev.mega.afterrome.config.data.execute.ExecuteSection;
 import dev.mega.afterrome.user.Profession;
+import dev.mega.afterrome.user.Skill;
 import dev.mega.afterrome.user.User;
 import org.bukkit.event.Event;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Class represents a Parser for build profession configuration objects.
@@ -26,6 +30,10 @@ public class Parser {
             instance = new Parser();
         }
         return instance;
+    }
+
+    public List<SkillSection> getSkillSectionBy(User user, Event event) {
+        return parserHandler.getSkillSectionsBy(user, event);
     }
 
     /**
@@ -65,6 +73,16 @@ public class Parser {
     }
 
     /**
+     * Gets the available events list section by event.
+     * @param user
+     * @param event
+     * @return
+     */
+    public List<EventSection> getAvailableEventSections(User user, Event event) {
+        return parserHandler.getAvailableEventSections(user, event);
+    }
+
+    /**
      * Registers profession events. Should be called once!
      */
     public void registerProfessionsEvents() {
@@ -78,5 +96,11 @@ public class Parser {
      */
     public List<ExecuteSection> getExecutes(Profession profession) {
         return parserHandler.getExecutes(profession);
+    }
+
+    public Optional<Integer> getUserLevel(User user, SkillSection skillSection) {
+        return user.getProfession().getSkills().stream()
+                .filter(skill -> skill.getName().equals(skillSection.getName()))
+                .map(Skill::getLevel).findAny();
     }
 }

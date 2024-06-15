@@ -48,6 +48,8 @@ public class ConfigDataTest {
         String jsonString = gs.toJson(configData.getProfessions());
 
         System.out.print(jsonString);
+
+        Class.forName("org.bukkit.inventory.meta.ItemMeta")
     }
 
 }

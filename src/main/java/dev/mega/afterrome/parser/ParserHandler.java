@@ -1,5 +1,6 @@
 package dev.mega.afterrome.parser;
 
+import dev.mega.afterrome.config.data.SkillSection;
 import dev.mega.afterrome.config.data.event.ConditionSection;
 import dev.mega.afterrome.config.data.event.EventSection;
 import dev.mega.afterrome.config.data.execute.ExecuteSection;
@@ -15,6 +16,10 @@ public interface ParserHandler {
     List<ConditionSection> getConditionOf(Profession profession, Event event);
 
     List<ExecuteSection> getExecutesIfMatches(User user, Event event);
+
+    List<EventSection> getAvailableEventSections(User user, Event event);
+
+    List<SkillSection> getSkillSectionsBy(User user, Event event);
 
     void registerProfessionsEvents();
 
