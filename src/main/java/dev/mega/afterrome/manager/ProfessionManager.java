@@ -10,6 +10,7 @@ import dev.mega.megacore.manager.Manager;
 import dev.mega.megacore.util.MegaCoreUtil;
 import lombok.Getter;
 import org.bukkit.Bukkit;
+import org.bukkit.scheduler.BukkitRunnable;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -74,11 +75,22 @@ public class ProfessionManager extends Manager {
      */
     @Override
     public void enable() {
-         configData = (ConfigData) JsonSerializer.deserialize(
+
+        configData = (ConfigData) JsonSerializer.deserialize(
                 new File(dataFolder + File.separator + "professions.json"), ConfigData.class);
 
+
         MegaCoreUtil.getLogger().warning("Profession config file not found");
-        professionListMap.addAll(Parser.getInstance().getProfessions());
+
+        Bukkit.getScheduler().runTaskLater(megaCore,
+                new BukkitRunnable() {
+                    @Override
+                    public void run() {
+                        professionListMap.addAll(Parser.getInstance().getProfessions());
+
+                    }
+                }, 40);
+
     }
 
     /**

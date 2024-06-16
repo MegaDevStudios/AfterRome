@@ -32,6 +32,14 @@ public class Parser {
         return instance;
     }
 
+    /**
+     * Determines if Parser has been set.
+     * @return True if Parser initialized, False otherwise.
+     */
+    public boolean isInitialized() {
+        return this.parserHandler != null;
+    }
+
     public List<SkillSection> getSkillSectionBy(User user, Event event) {
         return parserHandler.getSkillSectionsBy(user, event);
     }
@@ -49,6 +57,9 @@ public class Parser {
      * @return Professions list.
      */
     public List<Profession> getProfessions() {
+
+        System.out.println("dev.mega.afterrome.parser.Parser#getProfessions");
+
         return parserHandler.getProfessions();
     }
 

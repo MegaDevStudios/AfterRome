@@ -5,7 +5,6 @@ import dev.mega.megacore.event.CancellableEvent;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
-import org.bukkit.event.HandlerList;
 
 @Getter @Setter
 @AllArgsConstructor

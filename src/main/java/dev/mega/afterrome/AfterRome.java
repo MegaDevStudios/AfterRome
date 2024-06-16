@@ -2,9 +2,11 @@ package dev.mega.afterrome;
 
 import dev.mega.afterrome.api.AfterRomeAPI;
 import dev.mega.afterrome.config.ConfigManager;
+import dev.mega.afterrome.listener.JoinListener;
 import dev.mega.megacore.MegaCore;
 import dev.mega.megacore.util.MegaCoreUtil;
 import org.bukkit.Bukkit;
+import org.bukkit.plugin.PluginManager;
 
 import java.util.List;
 
@@ -30,10 +32,17 @@ public abstract class AfterRome extends MegaCore {
     public void enable() {
         enableImpl();
 
-        if (AfterRomeAPI.getAfterRomeImpl() == null || !AfterRomeAPI.isImplemented()) {
+        if (!AfterRomeAPI.isImplemented() || AfterRomeAPI.getAfterRomeImpl() == null) {
             MegaCoreUtil.getLogger().severe("AfterRome has no implementation! Disabling plugin...");
             Bukkit.getPluginManager().disablePlugin(this);
         }
+
+        registerListeners();
+    }
+
+    private void registerListeners() {
+        PluginManager pluginManager = Bukkit.getPluginManager();
+        pluginManager.registerEvents(new JoinListener(this), this);
     }
 
     /**

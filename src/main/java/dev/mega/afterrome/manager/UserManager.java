@@ -1,8 +1,8 @@
 package dev.mega.afterrome.manager;
 
 import dev.mega.afterrome.api.AfterRomeAPI;
-import dev.mega.afterrome.user.User;
 import dev.mega.afterrome.event.UserSerializationEvent;
+import dev.mega.afterrome.user.User;
 import dev.mega.megacore.MegaCore;
 import dev.mega.megacore.config.serializer.JsonSerializer;
 import dev.mega.megacore.manager.Manager;

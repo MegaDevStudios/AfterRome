@@ -1,7 +1,5 @@
 package dev.mega.afterrome.util;
 
-import dev.mega.afterrome.config.data.execute.ExecuteSection;
-
 import java.util.Arrays;
 import java.util.Random;
 

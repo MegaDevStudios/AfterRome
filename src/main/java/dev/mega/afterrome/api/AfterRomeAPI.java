@@ -5,7 +5,9 @@ import dev.mega.afterrome.user.Profession;
 import dev.mega.afterrome.user.User;
 import org.bukkit.entity.Player;
 
-import java.util.*;
+import java.util.Optional;
+import java.util.Set;
+import java.util.UUID;
 
 public class AfterRomeAPI {
     private static APIHandler api;
