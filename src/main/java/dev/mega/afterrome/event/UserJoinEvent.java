@@ -10,6 +10,7 @@ import org.jetbrains.annotations.NotNull;
 @Getter
 @AllArgsConstructor
 public class UserJoinEvent extends MegaEvent {
+    private final static HandlerList handlers = new HandlerList();
     private final User user;
 
     public @NotNull HandlerList getHandlers() {

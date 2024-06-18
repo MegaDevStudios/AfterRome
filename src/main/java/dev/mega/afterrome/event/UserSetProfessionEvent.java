@@ -12,7 +12,8 @@ import org.jetbrains.annotations.NotNull;
 
 @Getter @Setter
 @AllArgsConstructor
-public class UserSetProfessionEvent extends CancellableEvent {
+public class UserSetProfessionEvent extends CancellableEvent  {
+    private final static HandlerList handlers = new HandlerList();
     private final User user;
     private String name;
 

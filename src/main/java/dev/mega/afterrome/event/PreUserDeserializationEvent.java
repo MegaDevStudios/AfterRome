@@ -12,6 +12,7 @@ import java.io.File;
 @Getter @Setter
 @AllArgsConstructor
 public class PreUserDeserializationEvent extends MegaEvent {
+    private final static HandlerList handlers = new HandlerList();
     private File file;
 
     public @NotNull HandlerList getHandlers() {

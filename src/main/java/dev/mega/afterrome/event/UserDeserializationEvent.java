@@ -13,6 +13,7 @@ import java.io.File;
 @Getter @Setter
 @AllArgsConstructor
 public class UserDeserializationEvent extends MegaEvent {
+    private final static HandlerList handlers = new HandlerList();
     private final File file;
     private final User user;
 

@@ -11,6 +11,7 @@ import org.jetbrains.annotations.NotNull;
 @Getter @Setter
 @AllArgsConstructor
 public class PreDefaultUserCreateEvent extends MegaEvent {
+    private final static HandlerList handlers = new HandlerList();
     private User user;
 
     public @NotNull HandlerList getHandlers() {

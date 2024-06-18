@@ -13,6 +13,7 @@ import java.io.File;
 @Getter @Setter
 @AllArgsConstructor
 public class UserSerializationEvent extends CancellableEvent {
+    private final static HandlerList handlers = new HandlerList();
     private User user;
     private File file;
 
