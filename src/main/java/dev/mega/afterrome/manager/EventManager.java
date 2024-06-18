@@ -29,7 +29,7 @@ public class EventManager extends Manager {
      */
     @Override
     public void enable() {
-
+        setRunning(true);
     }
 
     /**
@@ -37,6 +37,6 @@ public class EventManager extends Manager {
      */
     @Override
     public void disable() {
-
+        setRunning(false);
     }
 }

@@ -55,5 +55,5 @@ shadowJar {
     }
 
     destinationDirectory.set(new File(System.getenv('OUTPUT_DIR').toString()))
-    archiveFileName = "DailyBet-${version}.jar"
+    archiveFileName = "AfterRome-${version}.jar"
 }

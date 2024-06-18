@@ -14,9 +14,10 @@ public class ConfigManager extends SubFolder {
         addConfig(Config.class, new Config(plugin, getDataFolder(), "config"));
     }
 
-    public static void init(MegaCore megaCore) {
+    public static SubFolder init(MegaCore megaCore) {
         if (instance == null) {
             instance = new ConfigManager(megaCore);
         }
+        return instance;
     }
 }

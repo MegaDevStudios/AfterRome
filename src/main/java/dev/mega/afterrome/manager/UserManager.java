@@ -6,6 +6,7 @@ import dev.mega.afterrome.user.User;
 import dev.mega.megacore.MegaCore;
 import dev.mega.megacore.config.serializer.JsonSerializer;
 import dev.mega.megacore.manager.Manager;
+import dev.mega.megacore.manager.priority.ManagerPriority;
 import dev.mega.megacore.storage.Data;
 import lombok.Getter;
 import org.bukkit.Bukkit;
@@ -17,6 +18,7 @@ import java.io.File;
  * Class represents the manager to manage users.
  */
 @Getter
+@ManagerPriority(enumPriority = ManagerPriority.PriorityLevel.LOW)
 public class UserManager extends Manager {
     private final Data<User> users = new Data<>();
     private final String dataFolder = megaCore.getDataFolder().getAbsolutePath() + File.separator + "xdev/data/";
@@ -30,9 +32,11 @@ public class UserManager extends Manager {
      */
     @Override
     public void enable() {
-        Bukkit.getOnlinePlayers().forEach(this::addPlayer);
-
         setRunning(true);
+    }
+
+    public void loadUsers() {
+        Bukkit.getOnlinePlayers().forEach(this::addPlayer);
     }
 
     /**

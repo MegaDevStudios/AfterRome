@@ -3,6 +3,7 @@ package dev.mega.afterromeimpl.api;
 import dev.mega.afterrome.AfterRome;
 import dev.mega.afterrome.api.APIHandler;
 import dev.mega.afterrome.api.AfterRomeAPI;
+import dev.mega.afterrome.event.PreDefaultUserCreateEvent;
 import dev.mega.afterrome.event.PreUserDeserializationEvent;
 import dev.mega.afterrome.event.UserSerializationEvent;
 import dev.mega.afterrome.event.UserSetProfessionEvent;
@@ -63,14 +64,12 @@ public class ArAPIHandler implements APIHandler {
         User user = (User) JsonSerializer.deserialize(event.getFile(), User.class);
 
         return Objects.requireNonNullElseGet(user, () -> {
-//            List<Skill.Type> skillTypes = ConfigManager.getInstance().getConfig(Config.class).getSkillsOf(Profession.Type.DEFAULT);
+            User defaultUser = User.of(uuid);
 
-//            User defaultUser = User.of(uuid, skillTypes);
+            PreDefaultUserCreateEvent preDefaultUserCreateEvent = new PreDefaultUserCreateEvent(defaultUser);
+            Bukkit.getPluginManager().callEvent(preDefaultUserCreateEvent);
 
-//            PreDefaultUserCreateEvent preDefaultUserCreateEvent = new PreDefaultUserCreateEvent(defaultUser);
-//            Bukkit.getPluginManager().callEvent(preDefaultUserCreateEvent);
-
-            return null;
+            return defaultUser;
         });
     }
 

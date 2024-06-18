@@ -1,6 +1,15 @@
 package dev.mega.afterrome.event.skill;
 
-import dev.mega.megacore.event.MegaEvent;
+import org.bukkit.event.Event;
+import org.bukkit.event.HandlerList;
+import org.jetbrains.annotations.NotNull;
 
-public class SkillActivationEvent extends MegaEvent {
+public class SkillActivationEvent extends Event {
+    private final static HandlerList handlers = new HandlerList();
+
+    @NotNull
+    @Override
+    public HandlerList getHandlers() {
+        return handlers;
+    }
 }

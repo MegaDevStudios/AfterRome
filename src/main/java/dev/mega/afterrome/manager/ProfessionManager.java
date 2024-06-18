@@ -83,13 +83,7 @@ public class ProfessionManager extends Manager {
         MegaCoreUtil.getLogger().warning("Profession config file not found");
 
         Bukkit.getScheduler().runTaskLater(megaCore,
-                new BukkitRunnable() {
-                    @Override
-                    public void run() {
-                        professionListMap.addAll(Parser.getInstance().getProfessions());
-
-                    }
-                }, 40);
+                () -> professionListMap.addAll(Parser.getInstance().getProfessions()), 40);
 
     }
 

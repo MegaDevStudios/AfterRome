@@ -5,6 +5,8 @@ import dev.mega.megacore.event.MegaEvent;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
+import org.bukkit.event.HandlerList;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 
@@ -13,4 +15,8 @@ import java.io.File;
 public class UserDeserializationEvent extends MegaEvent {
     private final File file;
     private final User user;
+
+    public @NotNull HandlerList getHandlers() {
+        return handlers;
+    }
 }
