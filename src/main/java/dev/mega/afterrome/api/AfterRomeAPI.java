@@ -5,8 +5,8 @@ import dev.mega.afterrome.user.Profession;
 import dev.mega.afterrome.user.User;
 import org.bukkit.entity.Player;
 
+import java.util.Collection;
 import java.util.Optional;
-import java.util.Set;
 import java.util.UUID;
 
 public class AfterRomeAPI {
@@ -28,7 +28,7 @@ public class AfterRomeAPI {
         api.setAfterRomeImpl(afterRomeImpl);
     }
 
-    public static Set<User> getUsers() {
+    public static Collection<User> getUsers() {
         return api.getUsers();
     }
 

@@ -19,8 +19,4 @@ public class PreClassChoiceEvent extends CancellableEvent {
     public HandlerList getHandlers() {
         return handlers;
     }
-
-    public static HandlerList getHandlerList() {
-        return handlers;
-    }
 }

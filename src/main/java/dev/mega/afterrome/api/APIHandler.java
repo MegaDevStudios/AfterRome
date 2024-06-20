@@ -3,8 +3,10 @@ package dev.mega.afterrome.api;
 import dev.mega.afterrome.AfterRome;
 import dev.mega.afterrome.user.Profession;
 import dev.mega.afterrome.user.User;
+import org.bukkit.Color;
 import org.bukkit.entity.Player;
 
+import java.util.Collection;
 import java.util.Optional;
 import java.util.Set;
 import java.util.UUID;
@@ -16,7 +18,7 @@ public interface APIHandler {
 
     void setAfterRomeImpl(AfterRome afterRomeImpl);
 
-    Set<User> getUsers();
+    Collection<User> getUsers();
 
     Optional<User> getUser(Player player);
 

@@ -1,13 +1,13 @@
 package dev.mega.afterromeimpl.menu.choice;
 
 import dev.mega.afterrome.api.AfterRomeAPI;
-import dev.mega.afterrome.config.ClassChoiceConfig;
+import dev.mega.afterrome.config.menu.ClassChoiceConfig;
 import dev.mega.afterrome.config.Config;
 import dev.mega.afterrome.config.ConfigManager;
 import dev.mega.afterrome.config.data.ConfigData;
 import dev.mega.afterrome.config.data.ProfessionSection;
-import dev.mega.afterrome.config.menu.HeadSection;
-import dev.mega.afterrome.config.menu.MenuItemSection;
+import dev.mega.afterrome.config.menu.item.HeadSection;
+import dev.mega.afterrome.config.menu.item.MenuItemSection;
 import dev.mega.afterrome.manager.ProfessionManager;
 import dev.mega.afterrome.user.Profession;
 import dev.mega.afterrome.user.User;

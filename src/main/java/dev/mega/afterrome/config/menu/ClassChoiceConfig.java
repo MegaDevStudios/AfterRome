@@ -1,6 +1,5 @@
-package dev.mega.afterrome.config;
+package dev.mega.afterrome.config.menu;
 
-import dev.mega.afterrome.config.menu.ClassChoiceMenuData;
 import dev.mega.megacore.config.Configurator;
 import org.bukkit.plugin.Plugin;
 import org.jetbrains.annotations.NotNull;

@@ -4,11 +4,10 @@ import dev.mega.afterrome.config.Config;
 import dev.mega.afterrome.config.ConfigManager;
 import dev.mega.afterrome.config.data.ConfigData;
 import dev.mega.afterrome.config.data.ProfessionSection;
-import dev.mega.afterrome.config.menu.MenuItemSection;
+import dev.mega.afterrome.config.menu.item.MenuItemSection;
 import dev.mega.afterrome.user.Profession;
 import dev.mega.afterrome.user.User;
 import dev.mega.afterromeimpl.menu.AbstractMenu;
-import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 
 import java.util.ArrayList;

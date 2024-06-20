@@ -1,6 +1,6 @@
 package dev.mega.afterrome.config.data;
 
-import dev.mega.afterrome.config.menu.HeadSection;
+import dev.mega.afterrome.config.menu.item.HeadSection;
 import dev.mega.afterrome.config.menu.MenuSection;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

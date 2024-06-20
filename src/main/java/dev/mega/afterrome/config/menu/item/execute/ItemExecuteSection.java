@@ -1,4 +1,4 @@
-package dev.mega.afterrome.config.menu;
+package dev.mega.afterrome.config.menu.item.execute;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

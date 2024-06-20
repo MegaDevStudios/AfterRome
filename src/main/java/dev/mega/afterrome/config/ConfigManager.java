@@ -11,7 +11,7 @@ public class ConfigManager extends SubFolder {
     private ConfigManager(Plugin plugin) {
         super(plugin, "xdev");
 
-        addConfig(Config.class, new Config(plugin, getDataFolder(), "config"));
+        addConfig(new Config(plugin, getDataFolder(), "config"));
     }
 
     public static SubFolder init(MegaCore megaCore) {

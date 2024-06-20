@@ -1,5 +1,6 @@
-package dev.mega.afterrome.config.menu;
+package dev.mega.afterrome.config.menu.item;
 
+import dev.mega.afterrome.config.menu.item.execute.ItemExecuteSection;
 import dev.mega.megacore.inventory.builder.menu.MenuItemBuilder;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

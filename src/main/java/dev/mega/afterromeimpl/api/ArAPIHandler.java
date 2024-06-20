@@ -43,9 +43,9 @@ public class ArAPIHandler implements APIHandler {
     }
 
     @Override
-    public Set<User> getUsers() {
+    public Collection<User> getUsers() {
         if (isDisabled()) return Set.of();
-        return (Set<User>) MegaManager.getManager(UserManager.class).getUsers().getData().values();
+        return  MegaManager.getManager(UserManager.class).getUsers().getData().values();
     }
 
     @Override
