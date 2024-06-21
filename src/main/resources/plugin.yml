@@ -1,5 +1,5 @@
 name: AfterRome
-main: dev.mega.afterromeimpl.AfterRomeImpl
+main: dev.mega.afterrome.impl.AfterRomeImpl
 version: 2.0-beta
 authors: [ "Dreaght", "Legeu"]
 api-version: 1.20
