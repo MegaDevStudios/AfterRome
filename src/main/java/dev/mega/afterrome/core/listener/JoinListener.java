@@ -3,6 +3,7 @@ package dev.mega.afterrome.core.listener;
 import dev.mega.afterrome.core.event.PreClassChoiceEvent;
 import dev.mega.afterrome.core.event.UserJoinEvent;
 import dev.mega.afterrome.core.manager.UserManager;
+import dev.mega.afterrome.impl.listener.ChoiceClassListener;
 import dev.mega.megacore.MegaCore;
 import dev.mega.megacore.manager.MegaManager;
 import dev.mega.megacore.util.MegaCoreUtil;
@@ -16,8 +17,10 @@ import org.bukkit.plugin.PluginManager;
 
 public class JoinListener implements Listener {
     private final UserManager userManager;
+    private final MegaCore megaCore;
 
     public JoinListener(MegaCore megaCore) {
+        this.megaCore = megaCore;
         this.userManager = MegaManager.getManager(UserManager.class);
     }
 
@@ -32,8 +35,12 @@ public class JoinListener implements Listener {
         pluginManager.callEvent(userJoinEvent);
 
         if (!userManager.hasPlayedBefore(player)) {
-            PreClassChoiceEvent preClassChoiceEvent = new PreClassChoiceEvent(userJoinEvent.getUser());
-            pluginManager.callEvent(preClassChoiceEvent);
+            try {
+                ChoiceClassListener.class.getMethod("onUserChoice", PreClassChoiceEvent.class)
+                        .invoke(new ChoiceClassListener(megaCore), new PreClassChoiceEvent(userJoinEvent.getUser()));
+            } catch (Exception e) {
+                return;
+            }
         }
 
         MegaCoreUtil.getLogger().info(userManager.getUsers().getData().values().toString());
