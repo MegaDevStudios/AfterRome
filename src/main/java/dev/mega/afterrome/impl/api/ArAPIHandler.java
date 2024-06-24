@@ -60,17 +60,16 @@ public class ArAPIHandler implements APIHandler {
     public User getUserOrDefault(UUID uuid, String dataFolder) {
         PreUserDeserializationEvent event = new PreUserDeserializationEvent(new File(dataFolder+uuid+".json"));
         Bukkit.getPluginManager().callEvent(event);
-
         User user = (User) JsonSerializer.deserialize(event.getFile(), User.class);
 
-        return Objects.requireNonNullElseGet(user, () -> {
-            User defaultUser = User.of(uuid);
+        if (user != null) return user;
 
-            PreDefaultUserCreateEvent preDefaultUserCreateEvent = new PreDefaultUserCreateEvent(defaultUser);
-            Bukkit.getPluginManager().callEvent(preDefaultUserCreateEvent);
+        User defaultUser = User.of(uuid);
 
-            return defaultUser;
-        });
+        PreDefaultUserCreateEvent preDefaultUserCreateEvent = new PreDefaultUserCreateEvent(defaultUser);
+        Bukkit.getPluginManager().callEvent(preDefaultUserCreateEvent);
+
+        return defaultUser;
     }
 
     @Override
