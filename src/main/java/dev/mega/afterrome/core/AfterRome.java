@@ -32,7 +32,7 @@ public abstract class AfterRome extends MegaCore {
         enableImpl();
 
         if (!AfterRomeAPI.isImplemented() || AfterRomeAPI.getAfterRomeImpl() == null) {
-            MegaCoreUtil.getLogger().severe("AfterRome has no implementation! Disabling plugin...");
+            MegaCoreUtil.getLogger().severe("AfterRome has no implementation! Disabling plugin");
             Bukkit.getPluginManager().disablePlugin(this);
         }
 
