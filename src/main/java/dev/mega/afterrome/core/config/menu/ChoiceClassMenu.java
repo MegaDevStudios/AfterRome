@@ -12,6 +12,7 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 public class ChoiceClassMenu {
+    private final String title;
     private final List<MenuItemSection> backgroundItems;
     private final List<HeadSection> heads;
 }

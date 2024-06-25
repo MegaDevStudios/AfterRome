@@ -14,7 +14,6 @@ import java.util.List;
  * Class represents AfterRome entrypoint.
  */
 public abstract class AfterRome extends MegaCore {
-
     public AfterRome(String managersPath, String listenersPath) {
         super(ConfigManager.class,
                 List.of("dev.mega.afterrome.core.manager", managersPath),
