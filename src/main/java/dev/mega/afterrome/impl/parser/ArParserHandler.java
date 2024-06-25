@@ -50,9 +50,9 @@ public class ArParserHandler implements ParserHandler {
     public List<ConditionSection> getConditionOf(Profession profession, Event event) {
         return configData.getProfessions().stream()
                 .flatMap(professionSection -> professionSection.getSkills().stream()
-                .flatMap(skillSection -> skillSection.getEvents().stream()
-                .filter(eventSection -> eventSection.getName().equals(event.getEventName()))
-                .flatMap(eventSection -> eventSection.getConditionSections().stream())))
+                        .flatMap(skillSection -> skillSection.getEvents().stream()
+                                .filter(eventSection -> eventSection.getName().equals(event.getEventName()))
+                                .flatMap(eventSection -> eventSection.getConditionSections().stream())))
                 .collect(Collectors.toList());
     }
 
@@ -61,7 +61,7 @@ public class ArParserHandler implements ParserHandler {
         return configData.getProfessions().stream()
                 .filter(professionSection -> professionSection.getName().equals(user.getProfession().getName()))
                 .flatMap(professionSection -> professionSection.getSkills().stream()
-                .flatMap(skillSection -> skillSection.getExecutorsIfMatches(event).stream()))
+                        .flatMap(skillSection -> skillSection.getExecutorsIfMatches(event).stream()))
                 .collect(Collectors.toList());
     }
 

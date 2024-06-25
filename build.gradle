@@ -1,12 +1,13 @@
 plugins {
     id 'java'
     id 'com.github.johnrengelman.shadow' version '8.1.1'
+    id 'maven-publish'
 }
 
 apply plugin: 'com.github.johnrengelman.shadow'
 apply plugin: 'java'
 
-group = 'com.megadev'
+group = 'dev.mega'
 version = '2.0-beta'
 
 repositories {
@@ -59,4 +60,15 @@ shadowJar {
 
     destinationDirectory.set(new File(System.getenv('OUTPUT_DIR').toString()))
     archiveFileName = "AfterRome-${version}.jar"
+}
+
+publishing {
+    repositories {
+        mavenLocal()
+    }
+    publications {
+        myJava(MavenPublication) {
+            from components.java
+        }
+    }
 }

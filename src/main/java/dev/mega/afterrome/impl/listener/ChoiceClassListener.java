@@ -15,7 +15,7 @@ public class ChoiceClassListener implements Listener {
         this.megaCore = megaCore;
     }
 
-    @EventHandler(priority = EventPriority.NORMAL)
+    @EventHandler(priority = EventPriority.LOWEST)
     public void onUserChoice(PreClassChoiceEvent event) {
         User user = event.getUser();
 

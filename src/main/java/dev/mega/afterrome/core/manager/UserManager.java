@@ -13,7 +13,7 @@ import lombok.Getter;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
-import java.io.File;
+import java.io.*;
 
 /**
  * Class represents the manager to manage users.
@@ -46,7 +46,12 @@ public class UserManager extends Manager {
      * @return
      */
     public boolean hasPlayedBefore(Player player) {
-        return new File(dataFolder+player.getUniqueId()+".json").exists();
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(dataFolder + player.getUniqueId() + ".json"));
+            return br.readLine() != null;
+        } catch (IOException e) {
+            return false;
+        }
     }
 
     /**
