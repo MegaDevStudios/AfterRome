@@ -3,6 +3,7 @@ package dev.mega.afterrome.impl.menu;
 import dev.mega.afterrome.core.api.AfterRomeAPI;
 import dev.mega.afterrome.core.user.User;
 import dev.mega.megacore.inventory.builder.menu.MenuItemBuilder;
+import dev.mega.megacore.inventory.builder.object.MegaStack;
 import dev.mega.megacore.util.Color;
 import lombok.Getter;
 import org.bukkit.Bukkit;
@@ -68,7 +69,7 @@ public abstract class AbstractMenu implements Menu {
 
         Inventory bottomInventory = event.getView().getBottomInventory();
 
-        MenuItemBuilder clickedItem = new MenuItemBuilder(bottomInventory.getContents()[event.getSlot()]);
+        MenuItemBuilder clickedItem = new MenuItemBuilder((MegaStack) bottomInventory.getContents()[event.getSlot()]);
 
 //        HashMap<ItemStack, Integer> saleItems = user.getProfession().getSaleConfig().getSaleItems();
 //
