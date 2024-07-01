@@ -19,6 +19,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 @Getter
@@ -36,11 +37,6 @@ public abstract class AbstractMenu implements Menu {
 
     }
 
-    public AbstractMenu(User user, InventoryType type) {
-        this.user = user;
-        this.type = type;
-    }
-
     public void update() {
         items = new MenuItemBuilder[this.items.length];
         setMenuItems();
@@ -49,45 +45,6 @@ public abstract class AbstractMenu implements Menu {
 
     public int getSize() {
         return items.length;
-    }
-
-    public int updateTime() {
-        return 20;
-    }
-
-    public void disallowClicks() {
-        this.allowClicks = false;
-    }
-    
-    @Override
-    public void handleBottomClick(InventoryClickEvent event) {
-        if (!allowClicks) event.setCancelled(true);
-
-        Optional<User> optionalUser = AfterRomeAPI.getUser((Player) event.getView());
-        if (optionalUser.isEmpty()) return;
-        User user = optionalUser.get();
-
-        Inventory bottomInventory = event.getView().getBottomInventory();
-
-        MenuItemBuilder clickedItem = new MenuItemBuilder((MegaStack) bottomInventory.getContents()[event.getSlot()]);
-
-//        HashMap<ItemStack, Integer> saleItems = user.getProfession().getSaleConfig().getSaleItems();
-//
-//        for (ItemStack itemStack : saleItems.keySet()) {
-//            if (!itemStack.asOne().equals(clickedItem.toItemStack().asOne())) return;
-//
-//            SaleTransactionManager saleTransactionManager = MegaManager.getManager(SaleTransactionManager.class);
-//
-//            clickedItem.addClickAction(saleTransactionManager.getTransactionAction(
-//                    user, itemStack, clickedItem.toItemStack(),
-//                    saleItems.get(itemStack), event.getSlot()));
-//
-//            clickedItem.addShiftClickAction(saleTransactionManager.getAllTransactionAction(
-//                    user, itemStack, clickedItem.toItemStack(),
-//                    saleItems.get(itemStack), event.getSlot()));
-//
-//            clickedItem.doClickActions(event);
-//        }
     }
 
     @Override
@@ -103,18 +60,17 @@ public abstract class AbstractMenu implements Menu {
     @Override
     public void open() {
         Player player = Bukkit.getPlayer(user.getUuid());
+        assert player != null;
         player.openInventory(getInventory());
     }
 
     @Override
     public void close() {
-        Bukkit.getPlayer(user.getUuid()).closeInventory();
+        Objects.requireNonNull(Bukkit.getPlayer(user.getUuid())).closeInventory();
     }
 
     @Override
     public void handleClick(InventoryClickEvent event) {
-        if (!allowClicks) event.setCancelled(true);
-
         MenuItemBuilder item = items[event.getSlot()];
 
         if (item == null) return;
@@ -130,23 +86,12 @@ public abstract class AbstractMenu implements Menu {
     @Override
     public void handleClose(InventoryCloseEvent event) {}
 
-    protected void setItems(MenuItemBuilder item, int... indexes) {
-        for (int index : indexes) {
-            setItem(item, index);
-        }
-    }
-
     protected void setItem(MenuItemBuilder item, int index) {
         items[index] = item;
     }
 
     protected abstract void setMenuItems();
 
-    protected void setItems(MenuItemBuilder item, List<Integer> indexes) {
-        for (int index : indexes) {
-            setItem(item, index);
-        }
-    }
     private static ItemStack[] convertToItemStacks(MenuItemBuilder[] items) {
         return Arrays.stream(items)
                 .map(item -> item == null ? new ItemStack(Material.AIR) : item.toItemStack())
