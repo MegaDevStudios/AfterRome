@@ -1,9 +1,7 @@
 package dev.mega.afterrome.impl.menu;
 
-import dev.mega.afterrome.core.api.AfterRomeAPI;
 import dev.mega.afterrome.core.user.User;
 import dev.mega.megacore.inventory.builder.menu.MenuItemBuilder;
-import dev.mega.megacore.inventory.builder.object.MegaStack;
 import dev.mega.megacore.util.Color;
 import lombok.Getter;
 import org.bukkit.Bukkit;
@@ -18,9 +16,7 @@ import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Arrays;
-import java.util.List;
 import java.util.Objects;
-import java.util.Optional;
 
 @Getter
 public abstract class AbstractMenu implements Menu {
